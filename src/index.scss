@@ -4,7 +4,6 @@
   font-weight: 300;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Scandia";
   src: url("./assets/fonts/Scandia-Regular.ttf") format("truetype");
@@ -31,11 +30,9 @@
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   font-family: Scandia, sans-serif;
 }
-/*# sourceMappingURL=index.css.map */
