@@ -1,0 +1,31 @@
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  --color: #333333;
+  color: var(--color);
+  font-size: 0.75em;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    width: 100%;
+    left: 0;
+    height: 2px;
+    background-color: var(--color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  &.active {
+    font-weight: 700;
+    --color: var(--primary-color);
+  }
+}

@@ -26,6 +26,10 @@
   font-style: normal;
 }
 
+:root {
+  --primary-color: #9d50f6;
+}
+
 *,
 *::before,
 *::after {

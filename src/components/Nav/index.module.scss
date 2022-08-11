@@ -1,0 +1,17 @@
+.nav {
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    width: 170px;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+}

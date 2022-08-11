@@ -1,0 +1,39 @@
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  --color: #333333;
+  color: var(--color);
+  font-size: 0.75em;
+  position: relative;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  background-color: var(--color);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.link:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.link.active {
+  font-weight: 700;
+  --color: var(--primary-color);
+}
+/*# sourceMappingURL=index.module.css.map */

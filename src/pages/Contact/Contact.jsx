@@ -1,9 +1,10 @@
 import React from "react";
-import { Footer } from "../../components";
+import { Footer, Nav } from "../../components";
 
 function Contact() {
   return (
     <section className="contact">
+      <Nav />
       <Footer />
     </section>
   );
