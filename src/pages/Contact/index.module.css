@@ -1,1 +1,66 @@
-/*# sourceMappingURL=index.module.css.map */
+.contact {
+  background-image: url(../../assets/Pattern/RadialCircle.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contact .ellipse-1 {
+  position: absolute;
+  top: 50%;
+  margin-top: -5%;
+  margin-left: 20%;
+}
+.contact .ellipse-2 {
+  position: absolute;
+  top: 50%;
+  margin-top: 10%;
+  margin-left: -10%;
+}
+.contact .ellipse-3 {
+  position: absolute;
+  top: 50%;
+  margin-top: -15%;
+  margin-left: 10%;
+}
+.contact .ellipse-4 {
+  position: absolute;
+  top: 50%;
+  margin-top: 20%;
+  margin-left: -20%;
+}
+.contact .ellipse-5 {
+  position: absolute;
+  top: 50%;
+  margin-top: -25%;
+  margin-left: 0%;
+}
+.contact .content {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  justify-content: space-evenly;
+}
+.contact .content .illustrations {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+}
+.contact .content .details {
+  width: 60%;
+  margin-inline: auto;
+  font-size: large;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.contact .content .details a {
+  -webkit-text-decoration-color: #3D3DFF;
+          text-decoration-color: #3D3DFF;
+  color: #3D3DFF;
+}/*# sourceMappingURL=index.module.css.map */

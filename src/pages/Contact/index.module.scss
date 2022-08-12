@@ -1,3 +1,63 @@
+ @mixin y-effect($i) {
+            @if ($i % 2 == 0){
+            margin-top: (5% * $i);
+         }       
+            @else{
+            margin-top: -5% * $i;
+            }
+ }
+  @mixin x-effect($i) {
+            @if ($i % 2 != 0){
+            margin-left: 5% *  (5 - $i);
+         }       
+            @else{
+            margin-left: -5% * $i;
+            }
+ }
 .contact{
+    background-image: url(../../assets/Pattern/RadialCircle.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    @for $i from 1 to 6 {
+        .ellipse-#{$i}{
+            position: absolute; 
+            top: 50% ;
+            @include y-effect($i);
+            @include x-effect($i);
+        }
+        }
 
+    .content{
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        justify-content: space-evenly;
+
+        .illustrations{
+            display: flex;
+            width: 60%;
+            justify-content: space-between;
+            align-items: center;
+            margin-inline: auto;
+        }
+            .details{
+                width: 60%;
+                margin-inline: auto;
+                font-size: large;
+                font-weight: 400;
+                line-height: 30px;
+                letter-spacing: 1px;
+                a{
+                    text-decoration-color: #3D3DFF;
+                    color: #3D3DFF;
+                }
+            }
+            
+    }
 }
