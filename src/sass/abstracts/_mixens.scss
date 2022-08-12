@@ -1,0 +1,16 @@
+ @mixin y-effect($i) {
+            @if ($i % 2 == 0){
+            margin-top: (5% * $i);
+         }       
+            @else{
+            margin-top: -5% * $i;
+            }
+ }
+  @mixin x-effect($i) {
+            @if ($i % 2 != 0){
+            margin-left: 5% *  (5 - $i);
+         }       
+            @else{
+            margin-left: -5% * $i;
+            }
+ }
