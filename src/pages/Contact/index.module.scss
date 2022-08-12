@@ -1,25 +1,9 @@
- @mixin y-effect($i) {
-            @if ($i % 2 == 0){
-            margin-top: (5% * $i);
-         }       
-            @else{
-            margin-top: -5% * $i;
-            }
- }
-  @mixin x-effect($i) {
-            @if ($i % 2 != 0){
-            margin-left: 5% *  (5 - $i);
-         }       
-            @else{
-            margin-left: -5% * $i;
-            }
- }
+@import "../../sass/abstracts/abstract";
 .contact{
     background-image: url(../../assets/Pattern/RadialCircle.svg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
     @for $i from 1 to 6 {
         .ellipse-#{$i}{
             position: absolute; 
@@ -54,8 +38,8 @@
                 line-height: 30px;
                 letter-spacing: 1px;
                 a{
-                    text-decoration-color: #3D3DFF;
-                    color: #3D3DFF;
+                    text-decoration-color: $Link;
+                    color: $Link;
                 }
             }
             
