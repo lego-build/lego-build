@@ -34,6 +34,9 @@ const Contact = () => {
             .
           </p>
         </div>
+        <p aria-hidden className={style.watermark}>
+          REACH OUT
+        </p>
       </div>
       <Footer />
     </section>

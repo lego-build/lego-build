@@ -460,6 +460,7 @@ video {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   padding: 25px;
+  overflow: hidden;
 }
 
 .contact .content .illustrations {
@@ -500,9 +501,27 @@ video {
   color: #3D3DFF;
 }
 
+.contact .content .watermark {
+  position: absolute;
+  color: #f7f7f7;
+  font-weight: 700;
+  font-size: 90px;
+  bottom: 10px;
+  right: -40px;
+  line-height: 1em;
+  z-index: -1;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 @media screen and (max-width: 650px) {
   .contact .content .illustrations {
     gap: 50px;
+  }
+  .contact .content .watermark {
+    right: unset;
+    left: 0;
   }
 }
 /*# sourceMappingURL=index.module.css.map */
