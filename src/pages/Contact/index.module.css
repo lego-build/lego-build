@@ -5,7 +5,8 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   border-width: 0;
   /* 2 */
@@ -188,9 +189,9 @@ select {
 2. Remove default button styles.
 */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -232,7 +233,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type=search] {
+[type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -311,14 +312,32 @@ textarea {
 1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
-input::-moz-placeholder, textarea::-moz-placeholder {
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -337,7 +356,7 @@ textarea::placeholder {
 Set the default cursor for buttons.
 */
 button,
-[role=button] {
+[role="button"] {
   cursor: pointer;
 }
 
@@ -382,63 +401,108 @@ video {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .contact .ellipse-1 {
   position: absolute;
   top: 50%;
+  width: 15px;
   margin-top: -5%;
   margin-left: 20%;
 }
+
 .contact .ellipse-2 {
   position: absolute;
   top: 50%;
+  width: 15px;
   margin-top: 10%;
   margin-left: -10%;
 }
+
 .contact .ellipse-3 {
   position: absolute;
   top: 50%;
+  width: 15px;
   margin-top: -15%;
   margin-left: 10%;
 }
+
 .contact .ellipse-4 {
   position: absolute;
   top: 50%;
+  width: 15px;
   margin-top: 20%;
   margin-left: -20%;
 }
+
 .contact .ellipse-5 {
   position: absolute;
   top: 50%;
+  width: 15px;
   margin-top: -25%;
   margin-left: 0%;
 }
+
 .contact .content {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 25px;
 }
+
 .contact .content .illustrations {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  width: 60%;
-  justify-content: space-between;
-  align-items: center;
+  gap: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-inline: auto;
+  width: 100%;
 }
+
+.contact .content .illustrations svg {
+  max-width: 200px;
+}
+
+.contact .content .illustrations .logo {
+  max-width: 100px;
+}
+
 .contact .content .details {
-  width: 60%;
+  max-width: 530px;
   margin-inline: auto;
-  font-size: large;
   font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 1px;
+  line-height: 1.5em;
+  color: #4c4c4c;
 }
+
 .contact .content .details a {
+  text-decoration: underline;
   -webkit-text-decoration-color: #3D3DFF;
           text-decoration-color: #3D3DFF;
   color: #3D3DFF;
-}/*# sourceMappingURL=index.module.css.map */
+}
+
+@media screen and (max-width: 650px) {
+  .contact .content .illustrations {
+    gap: 50px;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */
