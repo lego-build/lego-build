@@ -382,41 +382,6 @@ video {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.contact .ellipse-1 {
-  position: absolute;
-  top: 50%;
-  width: 15px;
-  margin-top: -5%;
-  margin-left: 16;
-}
-.contact .ellipse-2 {
-  position: absolute;
-  top: 50%;
-  width: 15px;
-  margin-top: 10%;
-  margin-left: -21;
-}
-.contact .ellipse-3 {
-  position: absolute;
-  top: 50%;
-  width: 15px;
-  margin-top: -15%;
-  margin-left: 24;
-}
-.contact .ellipse-4 {
-  position: absolute;
-  top: 50%;
-  width: 15px;
-  margin-top: 20%;
-  margin-left: -25;
-}
-.contact .ellipse-5 {
-  position: absolute;
-  top: 50%;
-  width: 15px;
-  margin-top: -25%;
-  margin-left: 24;
-}
 .contact .content {
   position: relative;
   min-height: 90vh;
@@ -427,6 +392,128 @@ video {
   justify-content: space-evenly;
   padding: 25px;
   overflow: hidden;
+}
+.contact .content .blobs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.contact .content .blobs .blobContainer {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 5;
+  -webkit-animation: round infinite 10s alternate;
+          animation: round infinite 10s alternate;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes round {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.contact .content .blobs .blobContainer .ellipse-1 {
+  position: relative;
+  align-self: center;
+}
+.contact .content .blobs .blobContainer .ellipse-2 {
+  position: relative;
+  align-self: flex-start;
+  -webkit-animation: ball2 infinite 10s;
+          animation: ball2 infinite 10s;
+}
+@-webkit-keyframes ball2 {
+  0% {
+    align-self: flex-start;
+  }
+  100% {
+    align-self: flex-end;
+  }
+}
+@keyframes ball2 {
+  0% {
+    align-self: flex-start;
+  }
+  100% {
+    align-self: flex-end;
+  }
+}
+.contact .content .blobs .blobContainer .ellipse-3 {
+  position: relative;
+  align-self: flex-end;
+  -webkit-animation: ball1 infinite 10s;
+          animation: ball1 infinite 10s;
+}
+@-webkit-keyframes ball1 {
+  0% {
+    align-self: flex-end;
+  }
+  100% {
+    align-self: flex-start;
+  }
+}
+@keyframes ball1 {
+  0% {
+    align-self: flex-end;
+  }
+  100% {
+    align-self: flex-start;
+  }
+}
+.contact .content .blobs .blobContainer .ellipse-4 {
+  position: relative;
+  align-self: flex-start;
+  -webkit-animation: ball2 infinite 10s;
+          animation: ball2 infinite 10s;
+}
+@keyframes ball2 {
+  0% {
+    align-self: flex-start;
+  }
+  100% {
+    align-self: flex-end;
+  }
+}
+.contact .content .blobs .blobContainer .ellipse-5 {
+  position: relative;
+  align-self: flex-end;
+  -webkit-animation: ball1 infinite 10s;
+          animation: ball1 infinite 10s;
+}
+@keyframes ball1 {
+  0% {
+    align-self: flex-end;
+  }
+  100% {
+    align-self: flex-start;
+  }
+}
+.contact .content .blobs .blobContainer .ellipse-6 {
+  position: relative;
+  align-self: center;
 }
 .contact .content .illustrations {
   display: flex;
@@ -457,7 +544,6 @@ video {
 }
 .contact .content .watermark {
   position: absolute;
-  color: #f7f7f7;
   font-weight: 700;
   font-size: 90px;
   bottom: 10px;
@@ -467,6 +553,128 @@ video {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  -webkit-animation: watermark 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+          animation: watermark 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  background: #f7f7f7;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@-webkit-keyframes watermark {
+  0% {
+    background: linear-gradient(transparent 100%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  10% {
+    background: linear-gradient(transparent 90%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  20% {
+    background: linear-gradient(transparent 80%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  30% {
+    background: linear-gradient(transparent 70%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  40% {
+    background: linear-gradient(transparent 60%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  50% {
+    background: linear-gradient(transparent 50%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  60% {
+    background: linear-gradient(transparent 40%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  70% {
+    background: linear-gradient(transparent 30%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  80% {
+    background: linear-gradient(transparent 20%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  90% {
+    background: linear-gradient(transparent 10%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: #f7f7f7;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+@keyframes watermark {
+  0% {
+    background: linear-gradient(transparent 100%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  10% {
+    background: linear-gradient(transparent 90%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  20% {
+    background: linear-gradient(transparent 80%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  30% {
+    background: linear-gradient(transparent 70%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  40% {
+    background: linear-gradient(transparent 60%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  50% {
+    background: linear-gradient(transparent 50%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  60% {
+    background: linear-gradient(transparent 40%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  70% {
+    background: linear-gradient(transparent 30%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  80% {
+    background: linear-gradient(transparent 20%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  90% {
+    background: linear-gradient(transparent 10%, #f7f7f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: #f7f7f7;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
 }
 
 @media screen and (max-width: 650px) {
