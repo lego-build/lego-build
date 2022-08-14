@@ -13,19 +13,17 @@
 
   @return $value;
 }
- @mixin y-effect($i) {
-            @if ($i % 2 == 0){
-            margin-top: (5% * $i);
-         }       
-            @else{
-            margin-top: -5% * $i;
-            }
- }
-  @mixin x-effect($i) {
-            @if ($i % 2 != 0){
-            margin-left:   (pow(5,2) - pow(($i - 4), 2));
-         }       
-            @else{
-            margin-left:   -(pow(5,2) - pow(($i - 4), 2));
-            }
- }
+@mixin y-effect($i) {
+  @if ($i % 2 == 0) {
+    margin-top: (5% * $i);
+  } @else {
+    margin-top: -5% * $i;
+  }
+}
+@mixin x-effect($i) {
+  @if ($i % 2 != 0) {
+    margin-left: (pow(5, 2) - pow(($i - 4), 2));
+  } @else {
+    margin-left: -(pow(5, 2) - pow(($i - 4), 2));
+  }
+}

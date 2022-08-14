@@ -2,7 +2,7 @@ import React, { useId } from "react";
 import { Footer, Nav } from "../../components";
 import { Logo, Mail, Curve, Ellipse } from "../../assets";
 import style from "./index.module.css";
-const ellipses = [1, 2, 3, 4, 5,6];
+const ellipses = [1, 2, 3, 4, 5, 6];
 const Contact = () => {
   const id = useId();
   return (
@@ -10,11 +10,11 @@ const Contact = () => {
       <Nav />
       <div className={style.content}>
         <div className={style.blobs}>
-        <div className={style.blobContainer}>
-        {ellipses.map((a, i) => (
-          <Ellipse key={id + i} className={style[`ellipse-${a}`]} />
-        ))}
-        </div>
+          <div className={style.blobContainer}>
+            {ellipses.map((a, i) => (
+              <Ellipse key={id + i} className={style[`ellipse-${a}`]} />
+            ))}
+          </div>
         </div>
         <div className={style.illustrations}>
           <Mail />
