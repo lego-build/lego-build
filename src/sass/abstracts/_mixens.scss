@@ -1,0 +1,29 @@
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
+@mixin y-effect($i) {
+  @if ($i % 2 == 0) {
+    margin-top: (5% * $i);
+  } @else {
+    margin-top: -5% * $i;
+  }
+}
+@mixin x-effect($i) {
+  @if ($i % 2 != 0) {
+    margin-left: (pow(5, 2) - pow(($i - 4), 2));
+  } @else {
+    margin-left: -(pow(5, 2) - pow(($i - 4), 2));
+  }
+}

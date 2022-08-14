@@ -1,0 +1,191 @@
+@import "../../sass/abstracts/abstract";
+.contact {
+  background-image: url(../../assets/Pattern/RadialCircle.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .content {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+    padding: 25px;
+    overflow: hidden;
+
+    .blobs {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 500px;
+      height: 500px;
+      width: 90%;
+      border-radius: 50%;
+      box-sizing: border-box;
+      z-index: -1;
+
+      .blobContainer {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 50%;
+        z-index: 5;
+        animation: round infinite 50s alternate;
+        animation-play-state: running;
+
+        svg {
+          width: 18px;
+        }
+
+        @keyframes round {
+          0% {
+            transform: rotate(0);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @for $i from 1 to 7 {
+          .ellipse-#{$i} {
+            position: relative;
+            @if ($i == 1) {
+              align-self: center;
+            } @else if($i == 6) {
+              align-self: center;
+            } @else if($i % 2 == 0) {
+              align-self: flex-start;
+            } @else {
+              align-self: flex-end;
+            }
+          }
+        }
+      }
+    }
+    .illustrations {
+      display: flex;
+      gap: 100px;
+      justify-content: center;
+      align-items: center;
+      margin-inline: auto;
+      width: 100%;
+
+      svg {
+        max-width: 200px;
+      }
+
+      .logo {
+        max-width: 100px;
+      }
+    }
+    .details {
+      max-width: 530px;
+      margin-inline: auto;
+      font-weight: 400;
+      line-height: 1.5em;
+      color: #4c4c4c;
+      a {
+        text-decoration: underline;
+        text-decoration-color: $Link;
+        color: $Link;
+      }
+    }
+
+    .watermark {
+      position: absolute;
+      font-weight: 700;
+      font-size: 90px;
+      bottom: 10px;
+      right: -40px;
+      line-height: 1em;
+      z-index: -1;
+      width: max-content;
+      animation: watermark 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation-iteration-count: 1;
+      background: #f7f7f7;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
+      @keyframes watermark {
+        0% {
+          background: linear-gradient(transparent 100%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        10% {
+          background: linear-gradient(transparent 90%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        20% {
+          background: linear-gradient(transparent 80%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        30% {
+          background: linear-gradient(transparent 70%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        40% {
+          background: linear-gradient(transparent 60%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        50% {
+          background: linear-gradient(transparent 50%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        60% {
+          background: linear-gradient(transparent 40%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        70% {
+          background: linear-gradient(transparent 30%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        80% {
+          background: linear-gradient(transparent 20%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        90% {
+          background: linear-gradient(transparent 10%, #f7f7f7);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        100% {
+          background: #f7f7f7;
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:650px) {
+  .contact .content {
+    min-height: 70vh;
+  }
+
+  .contact .content .illustrations {
+    gap: 50px;
+  }
+
+  .contact .content .watermark {
+    right: unset;
+    left: 0;
+  }
+}
