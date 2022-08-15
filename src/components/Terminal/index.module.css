@@ -1,0 +1,9 @@
+.terminal {
+  margin-bottom: 20px;
+  font-family: "Consolas", monospace;
+}
+
+.terminal:last-child {
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=index.module.css.map */
