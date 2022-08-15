@@ -4,7 +4,7 @@ import style from "./index.module.css";
 function SideNav() {
   return (
     <aside className={style.nav}>
-      <nav></nav>
+      <nav>Sticky</nav>
     </aside>
   );
 }

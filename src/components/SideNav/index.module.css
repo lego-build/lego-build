@@ -1,4 +1,13 @@
 .nav {
   border-right: 1px solid #d9d9d9;
 }
+
+.nav nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding-left: 30px;
+  padding-top: 45px;
+}
 /*# sourceMappingURL=index.module.css.map */

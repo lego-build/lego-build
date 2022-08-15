@@ -2,12 +2,10 @@
   .main {
     border-top: 1px solid #d9d9d9;
     display: grid;
-    grid-template-columns: 270px 1fr;
+    grid-template-columns: 270px minmax(0, 1fr);
 
     main {
-      height: 85vh;
       padding: 45px 100px;
-      overflow: auto;
 
       .internal_link {
         color: #000;
