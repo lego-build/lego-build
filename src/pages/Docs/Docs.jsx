@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import {
+  Code,
   Footer,
   Heading,
   Nav,
@@ -78,6 +79,43 @@ function Docs() {
               Blocks
             </Heading>
             <p>Let's see how we'll model a 'component' block as an example:</p>
+            <Code>
+              {`{
+   "type": "component", // Name of the block type
+   "path": "src/components", // Path where the block will be stored, relative to root
+   "isFile": false, // Whether the block is a file or a folder, false by default
+   "files": [
+     // Formats for files that make up the block, if the block is a folder
+     {
+       "name": "<name>.jsx", // Use <name> to represent the block name
+       "template": "templates/jsxTemplate.jsx", // Path to file template if any
+     },
+     {
+       "name": "<name>.scss",
+     },
+     {
+       "name": "<name>.test.jsx",
+       "template": "templates/testTemplate.jsx",
+     },
+   ],
+   "file": null, // An object or a string(more on this) representing the file format, used if the block is a file and not a folder  
+}`}
+            </Code>
+            <p>
+              So basically, a block is a file or a collection of files, each
+              with their names and templates. With this configuration, a user
+              has full control over how the block is shaped and moulded.
+            </p>
+            <p>
+              File formats that will be used over different blocks can be stored
+              as constants. For example, a JSX file may be used in several
+              blocks like 'component', 'page', 'layout' etc. And all of them
+              might use the same template. So our config file will have a '
+              <a href="#file-formats" className={style.internal_link}>
+                fileFormats
+              </a>
+              ' object, mapping strings to fileFormat objects.
+            </p>
           </Section>
         </main>
       </div>
