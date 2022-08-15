@@ -1,6 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Footer, Heading, Nav, Section, SideNav } from "../../components";
+import {
+  Footer,
+  Heading,
+  Nav,
+  Section,
+  SideNav,
+  Terminal,
+} from "../../components";
 import style from "./index.module.css";
 
 function Docs() {
@@ -28,6 +35,21 @@ function Docs() {
               Installation
             </Heading>
             <p>To get started, install lego-build from npm globally.</p>
+            <Terminal>npm i @ogteam/lego-build -g</Terminal>
+          </Section>
+          <Section>
+            <Heading element={"h2"} id={`${location}#quick-start`}>
+              Quick Start
+            </Heading>
+            <p>
+              To quickly setup a component (Nav for instance), run the following
+              command.
+            </p>
+            <Terminal>lego-build component Nav</Terminal>
+            <p>
+              But lego-build can do much more than make ‘components’. Its beauty
+              lies in flexibility.
+            </p>
           </Section>
         </main>
       </div>

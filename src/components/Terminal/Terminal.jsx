@@ -8,7 +8,7 @@ function Terminal({ children }) {
         <span>username@hostname</span> <span>MINGW64</span>{" "}
         <span>~/ReactProject</span>
       </div>
-      <div className={style.main}>
+      <div className={style.body}>
         <span>$</span>
         <span>{children}</span>
       </div>

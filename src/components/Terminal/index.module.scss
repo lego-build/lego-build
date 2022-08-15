@@ -1,7 +1,45 @@
 .terminal {
   margin-bottom: 20px;
   font-family: "Consolas", monospace;
+  font-size: 15px;
+  background-color: #1e1e1e;
+  padding: 20px 30px;
+  border-radius: 7px;
+
   &:last-child {
     margin-bottom: 0;
+  }
+
+  .head {
+    pointer-events: none;
+    user-select: none;
+    span {
+      color: #d539c3;
+
+      &:first-child {
+        color: #00cc00;
+      }
+
+      &:last-child {
+        color: #e3e524;
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ebebeb;
+    margin-top: 5px;
+
+    span:first-child {
+      pointer-events: none;
+      user-select: none;
+    }
+
+    span:last-child {
+      width: 100%;
+    }
   }
 }
