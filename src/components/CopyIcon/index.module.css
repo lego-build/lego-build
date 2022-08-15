@@ -10,6 +10,9 @@
   border: 1px solid var(--gray);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  position: absolute;
+  top: 18px;
+  right: 20px;
 }
 
 .copy:hover {

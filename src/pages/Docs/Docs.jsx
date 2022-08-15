@@ -47,9 +47,37 @@ function Docs() {
             </p>
             <Terminal>lego-build component Nav</Terminal>
             <p>
-              But lego-build can do much more than make ‘components’. Its beauty
+              But lego-build can do much more than make 'components'. Its beauty
               lies in flexibility.
             </p>
+          </Section>
+          <Section>
+            <Heading element={"h2"} id={`${location}#philosophy`}>
+              Philosophy
+            </Heading>
+            <p>
+              While React is unopinionated, and every developer structures their
+              front-end app differently, every app is made up of special files
+              and folders we call{" "}
+              <a href="#blocks" className={style.internal_link}>
+                blocks
+              </a>
+              . These blocks could be components, pages, reducers, actions,
+              hooks, and so much more. Lego-build allows us easily to configure
+              (and mould 🤓) the blocks we'll be using in our application,
+              inside a{" "}
+              <a href="#json-structure" className={style.internal_link}>
+                lego.json
+              </a>{" "}
+              file. Before we look at the overall structure of the JSON file,
+              let's first model a React block as a JSON object.
+            </p>
+          </Section>
+          <Section>
+            <Heading element={"h3"} id={`${location}#blocks`}>
+              Blocks
+            </Heading>
+            <p>Let's see how we'll model a 'component' block as an example:</p>
           </Section>
         </main>
       </div>

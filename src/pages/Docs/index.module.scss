@@ -8,6 +8,12 @@
       height: 80vh;
       padding: 45px 100px;
       overflow: auto;
+
+      .internal_link {
+        color: #000;
+        text-decoration: underline;
+        font-weight: 700;
+      }
     }
   }
 }

@@ -46,8 +46,6 @@
 
   .absolute {
     position: absolute;
-    top: 18px;
-    right: 20px;
     opacity: 0;
   }
 
@@ -59,6 +57,7 @@
     pointer-events: none;
     user-select: none;
     top: 25px;
+    right: 20px;
   }
 
   &:hover .absolute {
