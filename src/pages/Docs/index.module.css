@@ -1,0 +1,14 @@
+.docs .main {
+  border-top: 1px solid #d9d9d9;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 270px 1fr;
+      grid-template-columns: 270px 1fr;
+}
+
+.docs .main main {
+  height: 80vh;
+  padding: 50px 70px;
+  overflow: auto;
+}
+/*# sourceMappingURL=index.module.css.map */
