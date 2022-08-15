@@ -13,7 +13,7 @@ import style from "./index.module.css";
 
 function Docs() {
   const location = useLocation().pathname;
-
+  console.log(location)
   return (
     <div className={style.docs}>
       <Nav />
