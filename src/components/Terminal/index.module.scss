@@ -1,10 +1,11 @@
 .terminal {
   margin-bottom: 20px;
-  font-family: "Consolas", monospace;
+  font-family: Consolas, monospace;
   font-size: 15px;
   background-color: #1e1e1e;
-  padding: 20px 30px;
+  padding: 20px;
   border-radius: 7px;
+  position: relative;
 
   &:last-child {
     margin-bottom: 0;
@@ -41,5 +42,26 @@
     span:last-child {
       width: 100%;
     }
+  }
+
+  .absolute {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    opacity: 0;
+  }
+
+  .copied {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    font-family: Scandia, sans-serif;
+    pointer-events: none;
+    user-select: none;
+    top: 25px;
+  }
+
+  &:hover .absolute {
+    opacity: 1;
   }
 }
