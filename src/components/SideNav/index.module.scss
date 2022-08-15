@@ -38,6 +38,36 @@
 }
     .containerDoc{
       height: 100%;
+      span{
+          .philosophy{
+          padding-left: 20px;
+          transition: color;
+        transition-duration: 300ms;
+          transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+          cursor: pointer;
+            }
+            .philosophy:hover{
+              color: #9D50F6;
+            }
+      .containerPhilosophy{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        a{
+        padding-left: 40px;
+        transition: color;
+        width: fit-content;
+        transition-duration: 300ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+      }
+      a:hover{
+        color: #9D50F6;
+      }
+          
+      }
     }
+  }
   }
 }

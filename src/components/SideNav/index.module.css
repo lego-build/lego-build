@@ -419,4 +419,33 @@ video {
 }
 .nav nav .containerDoc {
   height: 100%;
+}
+.nav nav .containerDoc span .philosophy {
+  padding-left: 20px;
+  transition: color;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  cursor: pointer;
+}
+.nav nav .containerDoc span .philosophy:hover {
+  color: #9D50F6;
+}
+.nav nav .containerDoc span .containerPhilosophy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+.nav nav .containerDoc span .containerPhilosophy a {
+  padding-left: 40px;
+  transition: color;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.nav nav .containerDoc span .containerPhilosophy a:hover {
+  color: #9D50F6;
 }/*# sourceMappingURL=index.module.css.map */
