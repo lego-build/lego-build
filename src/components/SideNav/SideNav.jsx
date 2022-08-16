@@ -1,27 +1,39 @@
 import React, { useState } from "react";
 import style from "./index.module.css";
-const Documentation = ["Installation", "Quick Start", "Philosophy", "Commands", "Options", "Summary"];
+const Documentation = [
+  "Installation",
+  "Quick Start",
+  "Philosophy",
+  "Commands",
+  "Options",
+  "Summary",
+];
 function SideNav() {
-  const [drop, setDrop] = useState(false)
+  const [drop, setDrop] = useState(false);
   return (
     <aside className={style.nav}>
       <nav>
         <div className={style.containerDoc}>
-          <h3 className={style.header}>Documentation</h3>
+          <h3 className={style.header}>DOCUMENTATION</h3>
           <a href="#installation">Installation</a>
-          <a href="#quickstart">Quick Start</a>
+          <a href="#quick-start">Quick Start</a>
           <span>
-            <span className={style.philosophy} onClick={()=> setDrop((prev)=>!prev)}>Philosophy</span>
-            {drop &&
+            <span
+              className={style.philosophy}
+              onClick={() => setDrop((prev) => !prev)}
+            >
+              Philosophy
+            </span>
+            {drop && (
               <span className={style.containerPhilosophy}>
-            <a href="#blocks">Blocks</a>
-            <a href="#file-formats">File Formats</a>
-            <a href="#templates">Templates</a>
-            <a href="#json-structure">JSON Structure</a>
+                <a href="#blocks">Blocks</a>
+                <a href="#file-formats">File Formats</a>
+                <a href="#templates">Templates</a>
+                <a href="#json-structure">JSON Structure</a>
               </span>
-            }
+            )}
           </span>
-            
+
           <a href="#commands">Commands</a>
           <a href="#options">Options</a>
           <a href="#summary">Summary</a>

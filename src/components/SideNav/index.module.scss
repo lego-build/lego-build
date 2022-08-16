@@ -9,65 +9,64 @@
     bottom: 0;
     padding-left: 30px;
     padding-top: 45px;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
+    padding-bottom: 50px;
     color: $DocText;
-    .header{
-        font-weight: 600;
-        font-size: 18px;
-      }
-      a{
-        padding-left: 20px;
-        transition: color;
-        width: fit-content;
-        transition-duration: 300ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-      }
-      a:hover{
-        color: #9D50F6;
-      }
-      div{
-          display: flex;
+    .header {
+      font-weight: 600;
+      font-size: 17px;
+    }
+    a {
+      padding-left: 20px;
+      color: #333;
+      transition: color;
+      width: fit-content;
+      transition-duration: 300ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+      font-size: 0.95em;
+    }
+    a:hover {
+      color: #9d50f6;
+    }
+    div {
+      display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
-      }
-.containerRef{
-  height: 50%;
-}
-    .containerDoc{
-      height: 100%;
-      span{
-          .philosophy{
+      gap: 15px;
+    }
+    .containerRef {
+      margin-top: 30px;
+    }
+    .containerDoc {
+      span {
+        .philosophy {
           padding-left: 20px;
           transition: color;
-        transition-duration: 300ms;
+          transition-duration: 300ms;
           transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
           cursor: pointer;
-            }
-            .philosophy:hover{
-              color: #9D50F6;
-            }
-      .containerPhilosophy{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 100%;
-        a{
-        padding-left: 40px;
-        transition: color;
-        width: fit-content;
-        transition-duration: 300ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-      }
-      a:hover{
-        color: #9D50F6;
-      }
-          
+        }
+        .philosophy:hover {
+          color: #9d50f6;
+        }
+        .containerPhilosophy {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 15px;
+          a {
+            padding-left: 40px;
+            transition: color;
+            width: fit-content;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            color: #878787;
+            font-size: 0.9em;
+          }
+          a:hover {
+            color: #9d50f6;
+          }
+        }
       }
     }
-  }
   }
 }
