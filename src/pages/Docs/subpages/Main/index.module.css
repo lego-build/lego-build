@@ -1,6 +1,11 @@
-.internal_link {
+.emphasized_link {
   color: #000;
   text-decoration: underline;
   font-weight: 700;
+}
+
+.subtle_link {
+  text-decoration: underline;
+  color: #3d3dff;
 }
 /*# sourceMappingURL=index.module.css.map */

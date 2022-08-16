@@ -28,7 +28,7 @@ function Code({ children }) {
         language="javascript"
         customStyle={{
           fontSize: "15px",
-          padding: "20px",
+          padding: "20px 30px",
           fontFamily: "Consolas, monospace",
         }}
         codeTagProps={{

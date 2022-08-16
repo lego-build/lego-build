@@ -443,7 +443,7 @@ video {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .nav nav .containerRef {
@@ -474,8 +474,8 @@ video {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 18px;
+  margin-top: 18px;
 }
 
 .nav nav .containerDoc span .containerPhilosophy a {
