@@ -11,6 +11,7 @@ root.render(
       <Routes>
         <Route path="/contact" exact element={<Contact />} />
         <Route path="/docs" exact element={<Docs />} />
+        <Route path="/docs/:subpage" exact element={<Docs />} />
       </Routes>
     </Router>
   </React.StrictMode>

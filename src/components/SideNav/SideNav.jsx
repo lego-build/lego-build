@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./index.module.css";
+import { HashLink } from "react-router-hash-link";
 const Documentation = [
   "Installation",
   "Quick Start",
@@ -15,8 +16,8 @@ function SideNav() {
       <nav>
         <div className={style.containerDoc}>
           <h3 className={style.header}>DOCUMENTATION</h3>
-          <a href="#installation">Installation</a>
-          <a href="#quick-start">Quick Start</a>
+          <HashLink to="/docs#installation">Installation</HashLink>
+          <HashLink to="/docs#quick-start">Quick Start</HashLink>
           <span>
             <span
               className={style.philosophy}
@@ -26,22 +27,22 @@ function SideNav() {
             </span>
             {drop && (
               <span className={style.containerPhilosophy}>
-                <a href="#blocks">Blocks</a>
-                <a href="#file-formats">File Formats</a>
-                <a href="#templates">Templates</a>
-                <a href="#json-structure">JSON Structure</a>
+                <HashLink to="/docs#blocks">Blocks</HashLink>
+                <HashLink to="/docs#file-formats">File Formats</HashLink>
+                <HashLink to="/docs#templates">Templates</HashLink>
+                <HashLink to="/docs#json-structure">JSON Structure</HashLink>
               </span>
             )}
           </span>
 
-          <a href="#commands">Commands</a>
-          <a href="#options">Options</a>
-          <a href="#summary">Summary</a>
+          <HashLink to="/docs#commands">Commands</HashLink>
+          <HashLink to="/docs#options">Options</HashLink>
+          <HashLink to="/docs#summary">Summary</HashLink>
         </div>
         <div className={style.containerRef}>
           <h3 className={style.header}>REFERENCES</h3>
-          <a href="#blocks">Blocks</a>
-          <a href="#file">File Formats</a>
+          <HashLink to="/docs#blocks">Blocks</HashLink>
+          <HashLink to="/docs#file">File Formats</HashLink>
         </div>
       </nav>
     </aside>
