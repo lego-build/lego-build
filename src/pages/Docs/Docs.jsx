@@ -12,21 +12,19 @@ function Docs() {
   if (!subpage) component = <Main />;
 useEffect(() => {
   const link = document.querySelectorAll('a#link')
-  ,sections = document.querySelectorAll('section')
-  console.log(link);
+    ,sections = document.querySelectorAll('section');
   const toggleLogic = () => {
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
       /* eslint-disable */
-      return (pageYOffset >= (sectionTop - sectionHeight / 3)) ?
+      return (scrollY >= (sectionTop - sectionHeight / 3)) ?
         current = section.getAttribute('id')
         :
         current;
 
     });
-    console.log(current);
     link.forEach(li => {
       li.style.color = "inherit";
       if (li.classList.contains(current)) {
