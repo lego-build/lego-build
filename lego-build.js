@@ -1,5 +1,4 @@
 const fs = require("node:fs");
-const { mainModule } = require("node:process");
 const Block = require("./blocks/Block.js");
 const Init = require("./init");
 const Logger = require("./Logger.js");
@@ -28,8 +27,12 @@ const main = () => {
       start();
     });
   } else {
-    const init = new Init(main);
-    init.generatePackageFile();
+    if (arguments[0] != "init") {
+      const init = new Init(main);
+      init.generatePackageFile();
+    }else{
+      start();
+    }
   }
 };
 
