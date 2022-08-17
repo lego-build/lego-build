@@ -1,6 +1,7 @@
 const { throws } = require("node:assert");
 const fs = require("node:fs");
 const Logger = require("../Logger");
+const ConfigFile = require("./ConfigFile");
 const readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -9,8 +10,8 @@ const readline = require("readline").createInterface({
 class Block {
   constructor(configFile, fileFormats) {
     this.configFile = configFile;
-    this.files = this.configFile.files;
-    this.fileFormats = fileFormats;
+    this.files = configFile.files;
+    this.config = new ConfigFile(configFile, fileFormats);
   }
 
   /**
@@ -30,84 +31,43 @@ class Block {
   };
 
   /**
-   * Generate the paths to use for creating the block by using the configFile and the fileFormats
-   * @param {file} file | the file type
-   * @returns An object containing the fileName, filePath and the path to the template file
+   * Generate a map containing objects that has the paths for each file needed for a block
+   * @param {*} noOfFiles | The amount of items in the map to be generated
+   * @param {*} blockName | The block name to be used in renaming the files
+   * @returns A map conating key value pairs of number and object(the object contains the path to use for the file and
+   * the location of the template)
    */
+  generateFilePathsMap = (noOfFiles, blockName) => {
+    const fileMap = new Map();
 
-  generateSingleFilePath = (blockName) => {
-    let fileName = this.configFile.file.name.replace("<name>", blockName);
-    let filePath = this.configFile.path + "/" + fileName;
-    let templateFilePath = this.configFile.file.template;
-
-    if (templateFilePath == "DEFAULT") {
-      switch (this.configFile.type) {
-        case "reducer":
-          templateFilePath = "templates/reducerTemplate.jsx";
-          break;
-        case "action":
-          templateFilePath = "templates/actionTemplate.jsx";
-          break;
-        default:
-          templateFilePath = "blank.jsx";
-          break;
+    for (var i = 0; i < noOfFiles; i++) {
+      const tempFileObj = {};
+      if (this.configFile.isFile) {
+        tempFileObj["filePath"] = this.config.getFilePath(null, blockName);
+        tempFileObj["templateFilePath"] = this.config.getTemplateFilePath(
+          this.configFile.file.template
+        );
+      } else {
+        tempFileObj["filePath"] = this.config.getFilePath(
+          this.files[i],
+          blockName
+        );
+        tempFileObj["templateFilePath"] = this.config.getTemplateFilePath(
+          this.files[i]
+        );
       }
+      fileMap.set(i, tempFileObj);
     }
 
-    return {
-      filePath: filePath,
-      templateFilePath: templateFilePath,
-    };
+    return fileMap;
   };
 
-  generatePaths = (file, blockName) => {
-    let fileName = this.fileFormats[file].name.replace("<name>", blockName);
-    let filePath = this.configFile.path + "/" + blockName + "/" + fileName;
-    let templateFilePath =
-      this.fileFormats[file].template == undefined
-        ? "templates/blank.jsx"
-        : this.fileFormats[file].template;
-
-    //If template file path is default then find the corresponding default file
-    if (templateFilePath == "DEFAULT") {
-      switch (file) {
-        case "JSX":
-          templateFilePath = "templates/jsxTemplate.jsx";
-          break;
-        case "JS":
-          templateFilePath = "templates/jsTemplate.js";
-          break;
-        default:
-          templateFilePath = "templates/blank.jsx";
-          break;
-      }
-    }
-    return {
-      filePath: filePath,
-      templateFilePath: templateFilePath,
-    };
-  };
-
-  generateDirectoryName = (blockName) => {
-    return this.configFile.path + "/" + blockName;
-  };
-
-  /**
-   * Creates all the files required for a particular block
-   * @param {String} blockName | The name of the block - this will be used for the naming of the separate files
-   */
-  createBlocks = (blockName) => {
-    //Loop through each of the file types and create the file for each
-    for (var i = 0; i < this.files.length; i++) {
-      let { filePath, templateFilePath } = this.generatePaths(
-        this.files[i],
-        blockName
-      );
-
-      //Generate the template file
-      let templateFile;
-
-      fs.readFile(templateFilePath, (err, data) => {
+  //This will create all the files
+  createBlock = (fileMap, blockName) => {
+    let templateFile;
+    //Loop through the map containing all the file paths and template files
+    for (const file of fileMap) {
+      fs.readFile(file[1].templateFilePath, (err, data) => {
         //The template file doesn't exist so it throws an expected error, so use the default
         //template
         if (err) {
@@ -117,55 +77,34 @@ class Block {
         }
 
         //After reading the file, create the file
-        this.createFile(filePath, templateFile);
+        this.createFile(file[1].filePath, templateFile);
       });
     }
   };
 
-  createSingleBlock = (blockName) => {
-    let { filePath, templateFilePath } = this.generateSingleFilePath(blockName);
-
-    //Generate the template file
-    let templateFile;
-
-    fs.readFile(templateFilePath, (err, data) => {
-      //The template file doesn't exist so it throws an expected error, so use the default
-      //template
-      if (err) {
-        console.log("There was an error");
-      } else {
-        templateFile = data.toString().replaceAll("blockName", blockName);
-      }
-
-      //After reading the file, create the file
-      this.createFile(filePath, templateFile);
-    });
+  generateDirectoryName = (blockName) => {
+    return this.configFile.path + "/" + blockName;
   };
 
   createDirectory = (blockName, createBlocks, createSingleBlock) => {
     //Do not create folder for single files
-    let directory = this.configFile.isFile ? this.configFile.path : this.generateDirectoryName(blockName);
+    let directory = this.configFile.isFile
+      ? this.configFile.path
+      : this.generateDirectoryName(blockName);
 
-    fs.mkdir(
-      directory,
-      { recursive: true },
-      (err) => {
-        if (err) {
-          console.log("Error Occured creating Directory");
-          console.log(err);
-          return;
-        } else {
-          //If this is a single file then handle it differently
-          if (this.configFile.isFile) {
-            createSingleBlock(blockName);
-          } else {
-            createBlocks(blockName);
-          }
-        }
-
-        console.log("Create directory is over");
+    fs.mkdir(directory, { recursive: true }, (err) => {
+      if (err) {
+        console.log("Error Occured creating Directory");
+        console.log(err);
+        return;
+      } else {
+        let numOfFiles = this.files == undefined ? 1 : this.files.length;
+        this.createBlock(
+          this.generateFilePathsMap(numOfFiles, blockName),
+          blockName
+        );
       }
-    );
+    });
   };
 
   main(blockName) {

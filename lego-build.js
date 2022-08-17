@@ -37,7 +37,6 @@ const generateConfigFile = (block) => {
       arguments[pathIndex + 1] != undefined &&
       arguments[pathIndex + 1].length > 0
     ) {
-      console.log("NEW PATH IS " + arguments[pathIndex + 1]);
       configFile.path = arguments[pathIndex + 1];
     }
   }
@@ -75,7 +74,7 @@ const main = () => {
       if (packageExists) {
         //Get the config files for the block
         const configFile = generateConfigFile(arguments[0]);
-
+        
         if (configFile) {
           const block = new Block(configFile, config.fileFormats);
           block.main(arguments[1]);
