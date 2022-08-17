@@ -1,3 +1,4 @@
+const { throws } = require("node:assert");
 const fs = require("node:fs");
 const Logger = require("../Logger");
 const readline = require("readline").createInterface({
@@ -36,7 +37,7 @@ class Block {
 
   generateSingleFilePath = (blockName) => {
     let fileName = this.configFile.file.name.replace("<name>", blockName);
-    let filePath = this.configFile.path + "/" + blockName + "/" + fileName;
+    let filePath = this.configFile.path + "/" + fileName;
     let templateFilePath = this.configFile.file.template;
 
     if (templateFilePath == "DEFAULT") {
@@ -142,8 +143,11 @@ class Block {
   };
 
   createDirectory = (blockName, createBlocks, createSingleBlock) => {
+    //Do not create folder for single files
+    let directory = this.configFile.isFile ? this.configFile.path : this.generateDirectoryName(blockName);
+
     fs.mkdir(
-      this.generateDirectoryName(blockName),
+      directory,
       { recursive: true },
       (err) => {
         if (err) {
