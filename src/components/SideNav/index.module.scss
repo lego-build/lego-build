@@ -10,7 +10,7 @@
     padding-left: 30px;
     padding-top: 45px;
     padding-bottom: 50px;
-    color: $DocText;
+    // color: $DocText;
     .header {
       font-weight: 600;
       font-size: 17px;
@@ -53,18 +53,22 @@
           flex-direction: column;
           gap: 18px;
           margin-top: 18px;
+          .active{
+            color: #9d50f6;
+          }
           a {
             padding-left: 40px;
             transition: color;
             width: fit-content;
             transition-duration: 300ms;
             transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-            color: #878787;
+            // color: #878787;
             font-size: 0.9em;
           }
           a:hover {
             color: #9d50f6;
           }
+          
         }
       }
     }

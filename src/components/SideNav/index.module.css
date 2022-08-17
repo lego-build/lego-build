@@ -388,7 +388,6 @@ video {
   padding-left: 30px;
   padding-top: 45px;
   padding-bottom: 50px;
-  color: #545454;
 }
 .nav nav .header {
   font-weight: 600;
@@ -433,6 +432,9 @@ video {
   gap: 18px;
   margin-top: 18px;
 }
+.nav nav .containerDoc span .containerPhilosophy .active {
+  color: #9d50f6;
+}
 .nav nav .containerDoc span .containerPhilosophy a {
   padding-left: 40px;
   transition: color;
@@ -441,7 +443,6 @@ video {
   width: fit-content;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-  color: #878787;
   font-size: 0.9em;
 }
 .nav nav .containerDoc span .containerPhilosophy a:hover {
