@@ -13,7 +13,7 @@ function Docs() {
 useEffect(() => {
   const link = document.querySelectorAll('a#link')
   ,sections = document.querySelectorAll('section')
-  console.log(sections);
+  console.log(link);
   const toggleLogic = () => {
     let current = '';
     sections.forEach(section => {
@@ -26,15 +26,16 @@ useEffect(() => {
         current;
 
     });
+    console.log(current);
     link.forEach(li => {
-      li.classList.remove('active');
+      li.style.color = "inherit";
       if (li.classList.contains(current)) {
-        li.classList.add('active');
+        li.style.color = "#9d50f6";
       }
     })
   }
   window.addEventListener('scroll', toggleLogic);
-  return window.removeEventListener('scroll', toggleLogic)
+  return () => { window.removeEventListener('scroll', toggleLogic) }
 }, [])
 
   return (
