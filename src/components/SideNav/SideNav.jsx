@@ -10,14 +10,14 @@ const Documentation = [
   "Summary",
 ];
 function SideNav() {
-  const [drop, setDrop] = useState(false);
+  const [drop, setDrop] = useState(true);
   return (
     <aside className={style.nav}>
       <nav>
         <div className={style.containerDoc}>
           <h3 className={style.header}>DOCUMENTATION</h3>
-          <HashLink to="/docs#installation">Installation</HashLink>
-          <HashLink to="/docs#quick-start">Quick Start</HashLink>
+          <HashLink to="/docs#installation" id="link">Installation</HashLink>
+          <HashLink to="/docs#quick-start" id="link">Quick Start</HashLink>
           <span>
             <span
               className={style.philosophy}
@@ -27,22 +27,22 @@ function SideNav() {
             </span>
             {drop && (
               <span className={style.containerPhilosophy}>
-                <HashLink to="/docs#blocks">Blocks</HashLink>
-                <HashLink to="/docs#file-formats">File Formats</HashLink>
-                <HashLink to="/docs#templates">Templates</HashLink>
-                <HashLink to="/docs#json-structure">JSON Structure</HashLink>
+                <HashLink to="/docs#blocks" id="link">Blocks</HashLink>
+                <HashLink to="/docs#file-formats" id="link">File Formats</HashLink>
+                <HashLink to="/docs#templates" id="link">Templates</HashLink>
+                <HashLink to="/docs#json-structure" id="link">JSON Structure</HashLink>
               </span>
             )}
           </span>
 
-          <HashLink to="/docs#commands">Commands</HashLink>
-          <HashLink to="/docs#options">Options</HashLink>
-          <HashLink to="/docs#summary">Summary</HashLink>
+          <HashLink to="/docs#commands" id="link">Commands</HashLink>
+          <HashLink to="/docs#options" id="link">Options</HashLink>
+          <HashLink to="/docs#summary" id="link">Summary</HashLink>
         </div>
         <div className={style.containerRef}>
           <h3 className={style.header}>REFERENCES</h3>
-          <HashLink to="/docs#blocks">Blocks</HashLink>
-          <HashLink to="/docs#file">File Formats</HashLink>
+          <HashLink to="/docs#blocks" id="link">Blocks</HashLink>
+          <HashLink to="/docs#file" id="link">File Formats</HashLink>
         </div>
       </nav>
     </aside>
