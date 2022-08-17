@@ -86,7 +86,8 @@ class Block {
     return this.configFile.path + "/" + blockName;
   };
 
-  createDirectory = (blockName, createBlocks, createSingleBlock) => {
+
+  createDirectory = (blockName) => {
     //Do not create folder for single files
     let directory = this.configFile.isFile
       ? this.configFile.path
@@ -125,9 +126,7 @@ class Block {
     } else {
       readline.close();
       this.createDirectory(
-        blockName,
-        this.createBlocks,
-        this.createSingleBlock
+        blockName
       );
     }
   }

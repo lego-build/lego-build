@@ -1,29 +1,37 @@
 const fs = require("node:fs");
+const { mainModule } = require("node:process");
 const Block = require("./blocks/Block.js");
 const Init = require("./init");
 const Logger = require("./Logger.js");
 
 let config;
-let packageExists = true;
 
 //Get the command line arguments
 const arguments = process.argv.slice(2);
 
-fs.readFile("lego.json", (err, data) => {
-  if (err) {
-    packageExists = false;
-  }
+const main = () => {
+  if (fs.existsSync("lego.json")) {
+    //Package already exists
+    fs.readFile("lego.json", (err, data) => {
+      if (err) {
+        console.log("There was an error reading the file");
+        return;
+      }
 
-  if (packageExists) {
-    try {
-      config = JSON.parse(data.toString());
-    } catch (e) {
-      console.log("Error parsing json file");
-    }
-  }
+      try {
+        config = JSON.parse(data.toString());
+      } catch (e) {
+        console.log("Error parsing json file");
+        return;
+      }
 
-  main();
-});
+      start();
+    });
+  } else {
+    const init = new Init(main);
+    init.generatePackageFile();
+  }
+};
 
 const generateConfigFile = (block) => {
   const configFile = getBlockConfig(block);
@@ -54,11 +62,11 @@ const getBlockConfig = (blockType) => {
 };
 
 //The main function
-const main = () => {
+const start = () => {
   //Switch depending on the command
   switch (arguments[0]) {
     case "init":
-      const init = new Init();
+      const init = new Init(() => process.exit());
       init.generatePackageFile();
       break;
 
@@ -71,23 +79,20 @@ const main = () => {
       process.exit();
 
     default:
-      if (packageExists) {
-        //Get the config files for the block
-        const configFile = generateConfigFile(arguments[0]);
-        
-        if (configFile) {
-          const block = new Block(configFile, config.fileFormats);
-          block.main(arguments[1]);
-        } else {
-          Logger.logError(
-            `Block type of '${arguments[0]} doesn't exist in package file`
-          );
-          process.exit();
-        }
-        break;
+      //Get the config files for the block
+      const configFile = generateConfigFile(arguments[0]);
+
+      if (configFile) {
+        const block = new Block(configFile, config.fileFormats);
+        block.main(arguments[1]);
       } else {
-        Logger.logError("Package file doesn't exist");
+        Logger.logError(
+          `Block type of '${arguments[0]} doesn't exist in package file`
+        );
         process.exit();
       }
+      break;
   }
 };
+
+main();

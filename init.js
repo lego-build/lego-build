@@ -28,6 +28,11 @@ const fs = require("node:fs");
 const Logger = require("node:fs");
 
 class Init {
+
+  constructor(callback){
+    this.callback = callback;
+  }
+
   generatePackageFile() {
     let defaaultPackage = `{
 "blocks": [
@@ -96,7 +101,7 @@ class Init {
         return;
       } else {
         console.log("\x1b[32m%s\x1b[0m", "Package file succesfully created");
-        process.exit();
+        this.callback();
       }
     });
   }
