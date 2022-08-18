@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import style from "./index.module.css";
 import { HashLink } from "react-router-hash-link";
+import Blocks from '../../pages/Docs/subpages/Blocks/Blocks';
 function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, templatesEl, jsonStructureEl, optionsEl, summaryEl}) {
-  const [drop, setDrop] = useState(true);
+  const [drop, setDrop] = useState(false);
   return (
     <aside className={style.nav}>
       <nav>
@@ -50,17 +51,64 @@ function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, template
               </span>
             )}
           </span>
-
+          <span>
           <HashLink to="/docs#commands" className="commands nav_link">
             Commands
           </HashLink>
+          {drop && (
+            <span className={style.containerPhilosophy}>
+              <HashLink
+                  to="/docs#initializing"
+                  className="initializing nav_link"
+                ref={fileFormatEl}
+              >
+                Initializing
+              </HashLink>
+              <HashLink
+                  to="/docs#making-blocks"
+                  className="making-blocks nav_link"
+                ref={templatesEl}
+              >
+                Making blocks
+              </HashLink>
+              <HashLink
+                  to="/docs#renaming-blocks"
+                  className="renaming-blocks nav_link"
+                ref={jsonStructureEl}
+              >
+                Renaming Blocks
+              </HashLink>
+            </span>
+            )}
+          </span>
+          <span>
+
           <HashLink
             to="/docs#options"
             className="options nav_link"
             ref={optionsEl}
           >
             Options
-          </HashLink>
+            </HashLink>
+            {drop && (
+              <span className={style.containerPhilosophy}>
+                <HashLink
+                  to="/docs#path"
+                  className="path nav_link"
+                  ref={fileFormatEl}
+                >
+                  --Path
+                </HashLink>
+                <HashLink
+                  to="/docs#parent"
+                  className="parent nav_link"
+                  ref={templatesEl}
+                >
+                  --Parent
+                </HashLink>
+              </span>
+            )}
+          </span>
           <HashLink
             to="/docs#summary"
             className="summary nav_link"
