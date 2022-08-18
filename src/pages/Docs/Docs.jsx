@@ -1,10 +1,23 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Footer, Nav, SideNav } from "../../components";
 import style from "./index.module.css";
 import { Blocks, Formats, Main } from "./subpages";
 
 function Docs() {
+  const installationEl = useRef(null);
+  const quickStartEl = useRef(null);
+  const blocksEl = useRef(null);
+  const fileFormatEl = useRef(null);
+  const templatesEl = useRef(null);
+  const jsonStructureEl = useRef(null);
+  const optionsEl = useRef(null);
+  const summaryEl = useRef(null);
+  const [showSideNav, setShowSideNav] = useState(false);
+  const useShowSideNav = (state=true) => {
+    setShowSideNav((prev)=>!prev)
+  }
+  console.log(showSideNav);
   const { subpage } = useParams();
 
   let component = <Main />;
@@ -42,18 +55,12 @@ function Docs() {
       window.removeEventListener("scroll", toggleLogic);
     };
   }, []);
-  const installationEl = useRef(null);
-  const quickStartEl = useRef(null);
-  const blocksEl = useRef(null);
-  const fileFormatEl = useRef(null);
-  const templatesEl = useRef(null);
-  const jsonStructureEl = useRef(null);
-  const optionsEl = useRef(null);
-  const summaryEl = useRef(null);
+
+
   
   return (
     <div className={style.docs}>
-      <Nav />
+      <Nav setShowSideNav={useShowSideNav} />
       <div className={style.main}>
         <SideNav
           installationEl={installationEl}
@@ -64,6 +71,7 @@ function Docs() {
           jsonStructureEl={jsonStructureEl}
           optionsEl={optionsEl}
           summaryEl={summaryEl}
+          showSideNav={showSideNav}
         />
         {component}
       </div>
