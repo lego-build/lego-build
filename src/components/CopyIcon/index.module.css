@@ -8,17 +8,14 @@
   height: var(--size);
   border-radius: 4px;
   border: 1px solid var(--gray);
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   position: absolute;
   top: 18px;
   right: 20px;
 }
-
 .copy:hover {
   --gray: #fff;
 }
-
 .copy::before, .copy::after {
   content: "";
   --offset: 3px;
@@ -28,13 +25,10 @@
   position: absolute;
   left: calc(50% + (var(--offset)) / 2);
   top: calc(50% + (var(--offset)) / 2);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 2px;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .copy::after {
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -42,5 +36,4 @@
   top: 50%;
   left: calc(50% - (var(--offset)) / 2);
   top: calc(50% - (var(--offset)) / 2);
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */
