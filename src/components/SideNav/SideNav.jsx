@@ -66,7 +66,7 @@ function SideNav() {
         <div className={style.containerRef}>
           <h3 className={style.header}>REFERENCES</h3>
           <HashLink to="/docs/blocks">Blocks</HashLink>
-          <HashLink to="/docs/formats" className="file">
+          <HashLink to="/docs/file-formats" className="file">
             File Formats
           </HashLink>
         </div>

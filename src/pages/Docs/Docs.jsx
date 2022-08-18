@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Footer, Nav, SideNav } from "../../components";
 import style from "./index.module.css";
-import { Blocks, Main } from "./subpages";
+import { Blocks, Formats, Main } from "./subpages";
 
 function Docs() {
   const { subpage } = useParams();
@@ -10,6 +10,7 @@ function Docs() {
   let component = <Main />;
   const subpageToComponent = {
     blocks: <Blocks />,
+    "file-formats": <Formats />,
   };
 
   if (subpage) {
