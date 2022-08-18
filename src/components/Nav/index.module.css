@@ -1,6 +1,7 @@
 .nav {
   padding: 25px 50px;
   display: flex;
+  justify-content: space-between;
   gap: 15px;
 }
 .nav svg {
@@ -41,13 +42,7 @@
 
 @media screen and (min-width: 1024px) {
   .nav {
-    padding: 25px 50px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-  }
-  .nav svg {
-    width: 170px;
   }
   .nav .menuBtnContainer {
     display: none;
