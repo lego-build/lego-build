@@ -8,9 +8,24 @@
   }
 
   ul {
+    display: hidden;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .nav {
+  padding: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    width: 170px;
+  }
+
+  ul {
     list-style-type: none;
     display: flex;
     align-items: center;
     gap: 40px;
   }
+}
 }
