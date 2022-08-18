@@ -1,25 +1,17 @@
 import React, { useState } from "react";
 import style from "./index.module.css";
 import { HashLink } from "react-router-hash-link";
-const Documentation = [
-  "Installation",
-  "Quick Start",
-  "Philosophy",
-  "Commands",
-  "Options",
-  "Summary",
-];
-function SideNav() {
+function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, templatesEl, jsonStructureEl, optionsEl, summaryEl}) {
   const [drop, setDrop] = useState(true);
   return (
     <aside className={style.nav}>
       <nav>
         <div className={style.containerDoc}>
           <h3 className={style.header}>DOCUMENTATION</h3>
-          <HashLink to="/docs#installation" className="installation nav_link">
+          <HashLink ref={installationEl} to="/docs#installation" className="installation nav_link">
             Installation
           </HashLink>
-          <HashLink to="/docs#quick-start" className="quick-start nav_link">
+          <HashLink ref={quickStartEl} to="/docs#quick-start" className="quick-start nav_link">
             Quick Start
           </HashLink>
           <span>
@@ -31,21 +23,27 @@ function SideNav() {
             </span>
             {drop && (
               <span className={style.containerPhilosophy}>
-                <HashLink to="/docs#blocks" className="blocks nav_link">
+                <HashLink to="/docs#blocks" ref={blocksEl} className="blocks nav_link">
                   Blocks
                 </HashLink>
                 <HashLink
                   to="/docs#file-formats"
                   className="file-formats nav_link"
+                  ref={fileFormatEl}
                 >
                   File Formats
                 </HashLink>
-                <HashLink to="/docs#templates" className="templates nav_link">
+                <HashLink
+                  to="/docs#templates"
+                  className="templates nav_link"
+                  ref={templatesEl}
+                >
                   Templates
                 </HashLink>
                 <HashLink
                   to="/docs#json-structure"
                   className="json-structure nav_link"
+                  ref={jsonStructureEl}
                 >
                   JSON Structure
                 </HashLink>
@@ -56,10 +54,18 @@ function SideNav() {
           <HashLink to="/docs#commands" className="commands nav_link">
             Commands
           </HashLink>
-          <HashLink to="/docs#options" className="options nav_link">
+          <HashLink
+            to="/docs#options"
+            className="options nav_link"
+            ref={optionsEl}
+          >
             Options
           </HashLink>
-          <HashLink to="/docs#summary" className="summary nav_link">
+          <HashLink
+            to="/docs#summary"
+            className="summary nav_link"
+            ref={summaryEl}
+          >
             Summary
           </HashLink>
         </div>
