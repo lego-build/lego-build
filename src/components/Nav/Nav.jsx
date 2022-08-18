@@ -1,6 +1,7 @@
 import React from "react";
 import NavLink from "../NavLink/NavLink";
 import style from "./index.module.css";
+import { NavLink as Link } from "react-router-dom";
 
 function Nav() {
   const navItems = [
@@ -28,6 +29,7 @@ function Nav() {
 
   return (
     <nav className={style.nav}>
+      <Link to="/">
       <svg
         width="229"
         height="47"
@@ -79,7 +81,8 @@ function Nav() {
             <stop offset="1" stopColor="#00D1AB" />
           </linearGradient>
         </defs>
-      </svg>
+        </svg>
+      </Link>
       <ul>
         {navItems.map(({ text, to }) => (
           <li key={text}>
