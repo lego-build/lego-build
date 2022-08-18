@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import NavLink from "../NavLink/NavLink";
 import style from "./index.module.css";
 import { NavLink as Link } from "react-router-dom";
 
-function Nav({ setShowSideNav }) {
+function Nav() {
   const navItems = [
     {
       text: "Home",
@@ -26,6 +26,7 @@ function Nav({ setShowSideNav }) {
       to: "/sponsor",
     },
   ];
+  const [navIsActive, setNavIsActive] = useState(false);
 
   return (
     <nav className={style.nav}>
@@ -83,14 +84,19 @@ function Nav({ setShowSideNav }) {
           </defs>
         </svg>
       </Link>
-      <ul>
+      <ul className={navIsActive ? style.active : ""}>
         {navItems.map(({ text, to }) => (
           <li key={text}>
             <NavLink to={to}>{text}</NavLink>
           </li>
         ))}
       </ul>
-      <span className={style.menuBtnContainer} onClick={() => setShowSideNav()}>
+      <span
+        className={`${style.menuBtnContainer} ${
+          navIsActive ? style.active : ""
+        }`}
+        onClick={() => setNavIsActive((prevValue) => !prevValue)}
+      >
         <span className={style.menuBtn}></span>
       </span>
     </nav>

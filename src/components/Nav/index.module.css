@@ -1,28 +1,41 @@
 .nav {
-  padding: 25px 50px;
+  --horizontal-padding: 50px;
+  --vertical-padding: 25px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
 }
 
 .nav svg {
   width: 170px;
+  position: relative;
+  z-index: 8;
 }
 
 .nav ul {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
 }
 
 .nav .menuBtnContainer {
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -31,6 +44,8 @@
       -ms-flex-align: start;
           align-items: flex-start;
   gap: 5px;
+  position: relative;
+  z-index: 8;
   cursor: pointer;
 }
 
@@ -39,6 +54,10 @@
   height: 3px;
   background-color: #545454;
   border-radius: 999px;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
 }
 
 .nav .menuBtnContainer::before, .nav .menuBtnContainer::after {
@@ -48,32 +67,77 @@
   height: 3px;
   border-radius: 999px;
   background-color: #545454;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.nav .menuBtnContainer.active .menuBtn {
+  -webkit-transform: translateX(30vw);
+          transform: translateX(30vw);
+}
+
+.nav .menuBtnContainer.active::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.nav .menuBtnContainer.active::after {
+  -webkit-transform: translateY(3px) rotate(-45deg);
+          transform: translateY(3px) rotate(-45deg);
+}
+
+@media screen and (max-width: 950px) {
+  .nav .menuBtnContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 30px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 5;
+    padding: 40px var(--horizontal-padding);
+    padding-top: 95px;
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    -webkit-transform: translateY(-105%);
+            transform: translateY(-105%);
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    transition: transform 0.35s, -webkit-transform 0.35s;
+  }
+  .nav ul.active {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 650px) {
   .nav {
-    padding: 25px 20px;
+    --horizontal-padding: 25px;
+    --vertical-padding: 20px;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .nav {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .nav .menuBtnContainer {
-    display: none;
+  .nav svg {
+    width: 130px;
   }
   .nav ul {
-    list-style-type: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 40px;
+    padding-top: 80px;
   }
 }
 /*# sourceMappingURL=index.module.css.map */

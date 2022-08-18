@@ -9,14 +9,14 @@ function Docs() {
   const [dropCommands, setDropCommands] = useState(false);
   const [dropOptions, setDropOptions] = useState(false);
   const useSetDropPhilosophy = () => {
-    setDropPhilosophy(prev => !prev);
-  }
+    setDropPhilosophy((prev) => !prev);
+  };
   const useSetDropCommands = () => {
-    setDropCommands(prev => !prev);
-  }
+    setDropCommands((prev) => !prev);
+  };
   const useSetDropOptions = () => {
-    setDropOptions(prev => !prev);
-  }
+    setDropOptions((prev) => !prev);
+  };
   const installationEl = useRef(null);
   const quickStartEl = useRef(null);
   const philosophyEl = useRef(null);
@@ -32,11 +32,7 @@ function Docs() {
   const renamingEl = useRef(null);
   const pathEl = useRef(null);
   const parentEl = useRef(null);
-  const [showSideNav, setShowSideNav] = useState(false);
-  const useShowSideNav = (state=true) => {
-    setShowSideNav((prev)=>!prev)
-  }
-  console.log(showSideNav);
+
   const { subpage } = useParams();
 
   let component = <Main />;
@@ -50,7 +46,23 @@ function Docs() {
   }
 
   useEffect(() => {
-    const links = [installationEl, quickStartEl, philosophyEl, blocksEl, fileFormatEl, templatesEl, jsonStructureEl, optionsEl, commandEl, summaryEl, initializingEl,makingEl,renamingEl,pathEl,parentEl],
+    const links = [
+        installationEl,
+        quickStartEl,
+        philosophyEl,
+        blocksEl,
+        fileFormatEl,
+        templatesEl,
+        jsonStructureEl,
+        optionsEl,
+        commandEl,
+        summaryEl,
+        initializingEl,
+        makingEl,
+        renamingEl,
+        pathEl,
+        parentEl,
+      ],
       sections = document.querySelectorAll("section");
     const toggleLogic = () => {
       let current = "";
@@ -62,27 +74,39 @@ function Docs() {
           ? (current = section.getAttribute("id"))
           : current;
       });
-      if (current === "commands" || current === "initializing" || current === "making-blocks" || current === "renaming-blocks") {
+      if (
+        current === "commands" ||
+        current === "initializing" ||
+        current === "making-blocks" ||
+        current === "renaming-blocks"
+      ) {
         setDropCommands(true);
         setDropPhilosophy(false);
         setDropOptions(false);
-      }
-      else if (current === "philosophy" || current === "blocks" || current === "file-formats" || current === "templates" || current === "json-structure") {
+      } else if (
+        current === "philosophy" ||
+        current === "blocks" ||
+        current === "file-formats" ||
+        current === "templates" ||
+        current === "json-structure"
+      ) {
         setDropPhilosophy(true);
-        setDropCommands(false)
+        setDropCommands(false);
         setDropOptions(false);
-      }
-      else if (current === "options" || current === "parent" || current === "path") {
+      } else if (
+        current === "options" ||
+        current === "parent" ||
+        current === "path"
+      ) {
         setDropOptions(true);
-        setDropCommands(false)
+        setDropCommands(false);
         setDropPhilosophy(false);
-      }
-      else {
-        setDropCommands(false)
+      } else {
+        setDropCommands(false);
         setDropPhilosophy(false);
         setDropOptions(false);
       }
-      
+
       links.forEach((li) => {
         if (li.current != null) {
           li.current.style.color = "#333";
@@ -98,11 +122,9 @@ function Docs() {
     };
   }, []);
 
-
-  
   return (
     <div className={style.docs}>
-      <Nav setShowSideNav={useShowSideNav} />
+      <Nav />
       <div className={style.main}>
         <SideNav
           installationEl={installationEl}
@@ -114,7 +136,6 @@ function Docs() {
           jsonStructureEl={jsonStructureEl}
           optionsEl={optionsEl}
           summaryEl={summaryEl}
-          showSideNav={showSideNav}
           initializingEl={initializingEl}
           makingEl={makingEl}
           renamingEl={renamingEl}
@@ -125,7 +146,7 @@ function Docs() {
           dropCommands={dropCommands}
           dropOptions={dropOptions}
           setDropPhilosophy={useSetDropPhilosophy}
-          setDropCommands={useSetDropCommands} 
+          setDropCommands={useSetDropCommands}
           setDropOptions={useSetDropOptions}
         />
         {component}
