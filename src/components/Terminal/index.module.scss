@@ -3,9 +3,27 @@
   font-family: Consolas, monospace;
   font-size: 15px;
   background-color: #1e1e1e;
-  padding: 20px;
   border-radius: 7px;
   position: relative;
+  pre {
+    white-space: nowrap;
+    overflow: auto;
+    padding: 20px;
+
+    &::-webkit-scrollbar {
+      height: 11px;
+      border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 15px;
+    }
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -33,14 +51,11 @@
     gap: 10px;
     color: #ebebeb;
     margin-top: 5px;
+    width: max-content;
 
     span:first-child {
       pointer-events: none;
       user-select: none;
-    }
-
-    span:last-child {
-      width: 100%;
     }
   }
 

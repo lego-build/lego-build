@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Code, Heading, Section, Terminal } from "../../../../components";
 import style from "./index.module.css";
@@ -260,6 +261,80 @@ export default blockName;
         </Terminal>
         <p>In this example, we're renaming a Nav component, to Navbar</p>
         <Terminal>lego-build rename Nav:component to Navbar</Terminal>
+      </Section>
+      <Section id="options">
+        <Heading element={"h2"} id={`${location}#options`}>
+          Options
+        </Heading>
+        <p>You can pass some options when moulding a block, namely:</p>
+        <ul className={style.ul}>
+          <li>--path</li>
+          <li>--parent</li>
+        </ul>
+        <Terminal>
+          {
+            "lego-build <block-type> <block-name> --path <new-path> --parent <parent-name>:<parent-type>"
+          }
+        </Terminal>
+      </Section>
+      <Section id="path">
+        <Heading element={"h3"} id={`${location}#path`}>
+          Path
+        </Heading>
+        <p>
+          The path option is used to override the default path for the block as
+          specified in the JSON file.
+        </p>
+        <Terminal>
+          lego-build component Nav --path src/components/Navigation
+        </Terminal>
+        <p>
+          If the location for component blocks as specified in the lego.json
+          file was 'src/components', using the --path option creates this Nav
+          component in the new path specified, overriding the one in the
+          lego.json file.
+        </p>
+      </Section>
+      <Section id="parent">
+        <Heading element={"h3"} id={`${location}#parent`}>
+          Parent
+        </Heading>
+        <p>
+          The parent option specifies a parent block in which to import the
+          current block.
+        </p>
+        <Terminal>lego-build component Nav --parent Home:page</Terminal>
+        <p>
+          The Nav component just created will be imported in the Home block,
+          which has a block-type of page.
+        </p>
+      </Section>
+      <Section id="summary">
+        <Heading element={"h2"} id={`${location}#summary`}>
+          Summary
+        </Heading>
+        <p>
+          We have seen how lego-build improves development workflow by making it
+          easy to configure and create the blocks your front-end app is made up
+          of. Although by default, lego-build was configured with React
+          developers in mind, because of its flexibility, it can actually be
+          used in other front-end frameworks. You can check out how other
+          developers are using lego-build in the{" "}
+          <Link className={style.subtle_link} to="/community">
+            community
+          </Link>{" "}
+          section.
+        </p>
+        <p>
+          We tried our best to make this documentation as detailed and easy to
+          understand as possible, but if you feel something is missing, feel
+          free to{" "}
+          <Link className={style.subtle_link} to="/contact">
+            contact
+          </Link>{" "}
+          us. Thanks for using our tool, we know you'll find it very useful.
+        </p>
+        <p>We're on a mission to make front-end development fun again!</p>
       </Section>
     </main>
   );
