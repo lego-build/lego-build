@@ -395,6 +395,8 @@ video {
 .nav nav {
   position: -webkit-sticky;
   position: sticky;
+  max-height: 100vh;
+  overflow: auto;
   top: 0;
   left: 0;
   bottom: 0;

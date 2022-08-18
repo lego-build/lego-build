@@ -4,6 +4,8 @@
   border-right: 1px solid #d9d9d9;
   nav {
     position: sticky;
+    max-height: 100vh;
+    overflow: auto;
     top: 0;
     left: 0;
     bottom: 0;

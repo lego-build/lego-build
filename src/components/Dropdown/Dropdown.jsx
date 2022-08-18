@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import DocLink from "../DocLink/DocLink";
 import DocSublink from "../DocSublink/DocSublink";
 import style from "./index.module.css";
@@ -20,10 +20,23 @@ function Dropdown({ id, text, sublinks, current }) {
     setOpen(false);
   }, []);
 
+  useEffect(() => {
+    let sectionInDropdownIsActive = false;
+
+    sublinks.forEach(({ id }) => {
+      if (current === id) {
+        sectionInDropdownIsActive = true;
+      }
+    });
+
+    setOpen(sectionInDropdownIsActive);
+  }, [current]);
+
   return (
     <div className={style.dropdown}>
       <DocLink
         id={id}
+        active={current === id}
         onClick={() => {
           setOpen((prevValue) => !prevValue);
         }}
@@ -38,7 +51,7 @@ function Dropdown({ id, text, sublinks, current }) {
         }}
       >
         {sublinks.map(({ id, text }) => (
-          <DocSublink id={id} key={id}>
+          <DocSublink id={id} key={id} active={current === id}>
             {text}
           </DocSublink>
         ))}
