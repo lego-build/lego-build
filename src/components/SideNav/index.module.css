@@ -409,26 +409,7 @@ video {
   font-size: 17px;
 }
 
-.nav nav a {
-  padding-left: 20px;
-  color: #333;
-  -webkit-transition: color;
-  transition: color;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-  font-size: 0.95em;
-}
-
-.nav nav a:hover {
-  color: #9d50f6;
-}
-
-.nav nav div {
+.nav nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,55 +422,5 @@ video {
 
 .nav nav .containerRef {
   margin-top: 30px;
-}
-
-.nav nav .containerDoc span .philosophy {
-  padding-left: 20px;
-  -webkit-transition: color;
-  transition: color;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-  cursor: pointer;
-}
-
-.nav nav .containerDoc span .philosophy:hover {
-  color: #9d50f6;
-}
-
-.nav nav .containerDoc span .containerPhilosophy {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.nav nav .containerDoc span .containerPhilosophy .active {
-  color: #9d50f6;
-}
-
-.nav nav .containerDoc span .containerPhilosophy a {
-  padding-left: 40px;
-  -webkit-transition: color;
-  transition: color;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-  font-size: 0.9em;
-}
-
-.nav nav .containerDoc span .containerPhilosophy a:hover {
-  color: #9d50f6;
 }
 /*# sourceMappingURL=index.module.css.map */

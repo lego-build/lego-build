@@ -9,4 +9,11 @@
 .docs .main main {
   padding: 45px 140px;
 }
+
+@media screen and (max-width: 1180px) {
+  .docs .main {
+    -ms-grid-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+  }
+}
 /*# sourceMappingURL=index.module.css.map */

@@ -9,3 +9,9 @@
     }
   }
 }
+
+@media screen and (max-width: 1180px) {
+  .docs .main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
