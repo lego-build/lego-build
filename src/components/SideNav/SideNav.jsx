@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./index.module.css";
 import { HashLink } from "react-router-hash-link";
 import Blocks from '../../pages/Docs/subpages/Blocks/Blocks';
-function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, templatesEl, jsonStructureEl, optionsEl, summaryEl}) {
-  const [drop, setDrop] = useState(false);
+function SideNav({ installationEl, quickStartEl, philosophyEl, blocksEl, fileFormatEl, templatesEl, jsonStructureEl, optionsEl, summaryEl, commandEl, initializingEl, makingEl, renamingEl, pathEl, parentEl, dropPhilosophy, setDropPhilosophy, dropCommands, dropOptions, setDropCommands, setDropOptions }){
   return (
     <aside className={style.nav}>
       <nav>
@@ -16,13 +15,14 @@ function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, template
             Quick Start
           </HashLink>
           <span>
-            <span
-              className={style.philosophy}
-              onClick={() => setDrop((prev) => !prev)}
+            <HashLink
+              onClick={() => setDropPhilosophy()}
+              ref={philosophyEl}
+              to="/docs#philosophy" className="philosophy"
             >
               Philosophy
-            </span>
-            {drop && (
+            </HashLink>
+            {dropPhilosophy && (
               <span className={style.containerPhilosophy}>
                 <HashLink to="/docs#blocks" ref={blocksEl} className="blocks nav_link">
                   Blocks
@@ -52,29 +52,34 @@ function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, template
             )}
           </span>
           <span>
-          <HashLink to="/docs#commands" className="commands nav_link">
+            <HashLink
+              to="/docs#commands"
+              className="commands nav_link"
+              onClick={() => setDropCommands()}
+              ref={commandEl}
+            >
             Commands
           </HashLink>
-          {drop && (
+            {dropCommands && (
             <span className={style.containerPhilosophy}>
               <HashLink
                   to="/docs#initializing"
                   className="initializing nav_link"
-                ref={fileFormatEl}
+                  ref={initializingEl}
               >
                 Initializing
               </HashLink>
               <HashLink
                   to="/docs#making-blocks"
                   className="making-blocks nav_link"
-                ref={templatesEl}
+                ref={makingEl}
               >
                 Making blocks
               </HashLink>
               <HashLink
                   to="/docs#renaming-blocks"
                   className="renaming-blocks nav_link"
-                ref={jsonStructureEl}
+                ref={renamingEl}
               >
                 Renaming Blocks
               </HashLink>
@@ -86,23 +91,24 @@ function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, template
           <HashLink
             to="/docs#options"
             className="options nav_link"
-            ref={optionsEl}
+              ref={optionsEl}
+              onClick={() => setDropOptions()}
           >
             Options
             </HashLink>
-            {drop && (
+            {dropOptions && (
               <span className={style.containerPhilosophy}>
                 <HashLink
                   to="/docs#path"
                   className="path nav_link"
-                  ref={fileFormatEl}
+                  ref={pathEl}
                 >
                   --Path
                 </HashLink>
                 <HashLink
                   to="/docs#parent"
                   className="parent nav_link"
-                  ref={templatesEl}
+                  ref={parentEl}
                 >
                   --Parent
                 </HashLink>
@@ -119,8 +125,8 @@ function SideNav({installationEl, quickStartEl, blocksEl, fileFormatEl, template
         </div>
         <div className={style.containerRef}>
           <h3 className={style.header}>REFERENCES</h3>
-          <HashLink to="/docs/blocks">Blocks</HashLink>
-          <HashLink to="/docs/file-formats" className="file">
+          <HashLink to="/docs/blocks#">Blocks</HashLink>
+          <HashLink to="/docs/file-formats#" className="file">
             File Formats
           </HashLink>
         </div>
