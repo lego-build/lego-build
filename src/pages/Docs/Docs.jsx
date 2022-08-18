@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Footer, Nav, SideNav } from "../../components";
 import style from "./index.module.css";
@@ -18,7 +18,7 @@ function Docs() {
   }
 
   useEffect(() => {
-    const link = document.querySelectorAll("a.nav_link"),
+    const links = [installationEl, quickStartEl, blocksEl, fileFormatEl, templatesEl, jsonStructureEl, optionsEl, summaryEl],
       sections = document.querySelectorAll("section");
     const toggleLogic = () => {
       let current = "";
@@ -30,10 +30,10 @@ function Docs() {
           ? (current = section.getAttribute("id"))
           : current;
       });
-      link.forEach((li) => {
-        li.style.color = "#333";
-        if (li.classList.contains(current)) {
-          li.style.color = "#9d50f6";
+      links.forEach((li) => {
+        li.current.style.color = "#333";
+        if (li.current.classList.contains(current)) {
+          li.current.style.color = "#9d50f6";
         }
       });
     };
@@ -42,12 +42,29 @@ function Docs() {
       window.removeEventListener("scroll", toggleLogic);
     };
   }, []);
-
+  const installationEl = useRef(null);
+  const quickStartEl = useRef(null);
+  const blocksEl = useRef(null);
+  const fileFormatEl = useRef(null);
+  const templatesEl = useRef(null);
+  const jsonStructureEl = useRef(null);
+  const optionsEl = useRef(null);
+  const summaryEl = useRef(null);
+  
   return (
     <div className={style.docs}>
       <Nav />
       <div className={style.main}>
-        <SideNav />
+        <SideNav
+          installationEl={installationEl}
+          quickStartEl={quickStartEl}
+          blocksEl={blocksEl}
+          fileFormatEl={fileFormatEl}
+          templatesEl={templatesEl}
+          jsonStructureEl={jsonStructureEl}
+          optionsEl={optionsEl}
+          summaryEl={summaryEl}
+        />
         {component}
       </div>
       <Footer />
