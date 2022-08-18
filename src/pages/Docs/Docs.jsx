@@ -2,16 +2,22 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Footer, Nav, SideNav } from "../../components";
 import style from "./index.module.css";
-import { Main } from "./subpages";
+import { Blocks, Main } from "./subpages";
 
 function Docs() {
   const { subpage } = useParams();
 
-  let component;
+  let component = <Main />;
+  const subpageToComponent = {
+    blocks: <Blocks />,
+  };
 
-  if (!subpage) component = <Main />;
+  if (subpage) {
+    component = subpageToComponent[subpage];
+  }
+
   useEffect(() => {
-    const link = document.querySelectorAll("a#link"),
+    const link = document.querySelectorAll("a.nav_link"),
       sections = document.querySelectorAll("section");
     const toggleLogic = () => {
       let current = "";

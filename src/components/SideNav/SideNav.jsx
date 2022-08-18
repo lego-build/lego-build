@@ -16,8 +16,12 @@ function SideNav() {
       <nav>
         <div className={style.containerDoc}>
           <h3 className={style.header}>DOCUMENTATION</h3>
-          <HashLink to="/docs#installation" id="link" className="installation">Installation</HashLink>
-          <HashLink to="/docs#quick-start" id="link" className="quick-start">Quick Start</HashLink>
+          <HashLink to="/docs#installation" className="installation nav_link">
+            Installation
+          </HashLink>
+          <HashLink to="/docs#quick-start" className="quick-start nav_link">
+            Quick Start
+          </HashLink>
           <span>
             <span
               className={style.philosophy}
@@ -27,22 +31,44 @@ function SideNav() {
             </span>
             {drop && (
               <span className={style.containerPhilosophy}>
-                <HashLink to="/docs#blocks" id="link" className="blocks">Blocks</HashLink>
-                <HashLink to="/docs#file-formats" id="link" className="file-formats">File Formats</HashLink>
-                <HashLink to="/docs#templates" id="link" className="templates">Templates</HashLink>
-                <HashLink to="/docs#json-structure" id="link" className="json-structure">JSON Structure</HashLink>
+                <HashLink to="/docs#blocks" className="blocks nav_link">
+                  Blocks
+                </HashLink>
+                <HashLink
+                  to="/docs#file-formats"
+                  className="file-formats nav_link"
+                >
+                  File Formats
+                </HashLink>
+                <HashLink to="/docs#templates" className="templates nav_link">
+                  Templates
+                </HashLink>
+                <HashLink
+                  to="/docs#json-structure"
+                  className="json-structure nav_link"
+                >
+                  JSON Structure
+                </HashLink>
               </span>
             )}
           </span>
 
-          <HashLink to="/docs#commands" id="link" className="commands">Commands</HashLink>
-          <HashLink to="/docs#options" id="link" className="options">Options</HashLink>
-          <HashLink to="/docs#summary" id="link" className="summary">Summary</HashLink>
+          <HashLink to="/docs#commands" className="commands nav_link">
+            Commands
+          </HashLink>
+          <HashLink to="/docs#options" className="options nav_link">
+            Options
+          </HashLink>
+          <HashLink to="/docs#summary" className="summary nav_link">
+            Summary
+          </HashLink>
         </div>
         <div className={style.containerRef}>
           <h3 className={style.header}>REFERENCES</h3>
-          <HashLink to="/docs#blocks" id="link">Blocks</HashLink>
-          <HashLink to="/docs#file" id="link" className="file">File Formats</HashLink>
+          <HashLink to="/docs/blocks">Blocks</HashLink>
+          <HashLink to="/docs/formats" className="file">
+            File Formats
+          </HashLink>
         </div>
       </nav>
     </aside>
