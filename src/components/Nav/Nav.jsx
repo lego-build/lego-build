@@ -3,7 +3,7 @@ import NavLink from "../NavLink/NavLink";
 import style from "./index.module.css";
 import { NavLink as Link } from "react-router-dom";
 
-function Nav() {
+function Nav({ setShowSideNav }) {
   const navItems = [
     {
       text: "Home",
@@ -29,7 +29,7 @@ function Nav() {
 
   return (
     <nav className={style.nav}>
-      <div className={style.menuBtnContainer}>
+      <div className={style.menuBtnContainer} onClick={() => setShowSideNav()}>
         <div className={style.menuBtn}></div>
       </div>
       <Link to="/">
