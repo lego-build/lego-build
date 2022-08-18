@@ -1,19 +1,29 @@
 .nav {
   padding: 25px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 15px;
 }
+
 .nav svg {
   width: 170px;
 }
+
 .nav ul {
   display: none;
 }
+
 .nav .menuBtnContainer {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   display: block;
 }
+
 .nav .menuBtnContainer .menuBtn {
   width: 34px;
   height: 4px;
@@ -21,9 +31,12 @@
   border-radius: 999px;
   margin: auto;
   position: relative;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   cursor: pointer;
 }
+
 .nav .menuBtnContainer .menuBtn::before, .nav .menuBtnContainer .menuBtn::after {
   content: "";
   position: absolute;
@@ -33,24 +46,33 @@
   border-radius: 999px;
   background-color: #545454;
 }
+
 .nav .menuBtnContainer .menuBtn::after {
   margin-top: 8px;
 }
+
 .nav .menuBtnContainer .menuBtn::before {
   margin-top: -8px;
 }
 
 @media screen and (min-width: 1024px) {
   .nav {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav .menuBtnContainer {
     display: none;
   }
   .nav ul {
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 40px;
   }
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */
