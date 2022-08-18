@@ -37,6 +37,9 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .terminal .head span {

@@ -425,4 +425,32 @@ video {
 .nav nav .containerRef {
   margin-top: 30px;
 }
+
+@media screen and (max-width: 1180px) {
+  .nav {
+    border: 0;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 8;
+  }
+  .nav nav {
+    position: static;
+    padding: 50px;
+  }
+  .nav.open {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .nav nav {
+    padding: 25px;
+    padding-top: 40px;
+  }
+}
 /*# sourceMappingURL=index.module.css.map */

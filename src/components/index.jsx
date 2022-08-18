@@ -8,3 +8,4 @@ export { default as Code } from "./Code/Code";
 export { default as Table } from "./Table/Table";
 export { default as DocLink } from "./DocLink/DocLink";
 export { default as Dropdown } from "./Dropdown/Dropdown";
+export { default as ContentsButton } from "./ContentsButton/ContentsButton";

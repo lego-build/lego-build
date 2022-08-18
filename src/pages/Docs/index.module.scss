@@ -13,5 +13,27 @@
 @media screen and (max-width: 1180px) {
   .docs .main {
     grid-template-columns: minmax(0, 1fr);
+
+    main {
+      padding-top: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .docs .main {
+    main {
+      padding: 50px;
+      padding-top: 35px;
+    }
+  }
+}
+
+@media screen and(max-width:650px) {
+  .docs .main {
+    main {
+      padding: 25px;
+      padding-top: 35px;
+    }
   }
 }

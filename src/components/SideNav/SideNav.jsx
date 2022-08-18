@@ -4,6 +4,7 @@ import DocLink from "../DocLink/DocLink";
 import Dropdown from "../Dropdown/Dropdown";
 import sectionStyle from "../Section/index.module.css";
 import { useLocation } from "react-router-dom";
+import ContentsButton from "../ContentsButton/ContentsButton";
 function SideNav() {
   const links = [
     {
@@ -76,9 +77,11 @@ function SideNav() {
     },
   ];
   const [current, setCurrent] = useState("");
+  const [open, setOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    setOpen(false);
     const sections = document.querySelectorAll("." + sectionStyle.section);
 
     const handleScroll = (e) => {
@@ -110,33 +113,36 @@ function SideNav() {
   }, [location]);
 
   return (
-    <aside className={style.nav}>
-      <nav>
-        <div className={style.container}>
-          <h3 className={style.header}>DOCUMENTATION</h3>
-          {links.map(({ id, text, children }) =>
-            children ? (
-              <Dropdown
-                id={id}
-                sublinks={children}
-                text={text}
-                key={id}
-                current={current}
-              />
-            ) : (
-              <DocLink id={id} key={id} active={current === id}>
-                {text}
-              </DocLink>
-            )
-          )}
-        </div>
-        <div className={`${style.container} ${style.containerRef}`}>
-          <h3 className={style.header}>REFERENCES</h3>
-          <DocLink to="/docs/blocks#">Blocks</DocLink>
-          <DocLink to="/docs/file-formats#">File Formats</DocLink>
-        </div>
-      </nav>
-    </aside>
+    <>
+      <aside className={`${style.nav} ${open ? style.open : ""}`}>
+        <nav>
+          <div className={style.container}>
+            <h3 className={style.header}>DOCUMENTATION</h3>
+            {links.map(({ id, text, children }) =>
+              children ? (
+                <Dropdown
+                  id={id}
+                  sublinks={children}
+                  text={text}
+                  key={id}
+                  current={current}
+                />
+              ) : (
+                <DocLink id={id} key={id} active={current === id}>
+                  {text}
+                </DocLink>
+              )
+            )}
+          </div>
+          <div className={`${style.container} ${style.containerRef}`}>
+            <h3 className={style.header}>REFERENCES</h3>
+            <DocLink to="/docs/blocks#">Blocks</DocLink>
+            <DocLink to="/docs/file-formats#">File Formats</DocLink>
+          </div>
+        </nav>
+      </aside>
+      <ContentsButton open={open} setOpen={setOpen} />
+    </>
   );
 }
 
