@@ -55,4 +55,10 @@
     display: flex;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .button {
+    bottom: 20px;
+  }
+}
 /*# sourceMappingURL=index.module.css.map */
