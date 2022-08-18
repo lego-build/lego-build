@@ -19,40 +19,41 @@
 
 .nav .menuBtnContainer {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .nav .menuBtnContainer .menuBtn {
-  width: 34px;
-  height: 4px;
+  width: 24px;
+  height: 3px;
   background-color: #545454;
   border-radius: 999px;
-  margin: auto;
-  position: relative;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  cursor: pointer;
 }
 
-.nav .menuBtnContainer .menuBtn::before, .nav .menuBtnContainer .menuBtn::after {
+.nav .menuBtnContainer::before, .nav .menuBtnContainer::after {
   content: "";
-  position: absolute;
-  width: 40px;
-  height: 4px;
-  cursor: pointer;
+  display: inline-block;
+  width: 28px;
+  height: 3px;
   border-radius: 999px;
   background-color: #545454;
 }
 
-.nav .menuBtnContainer .menuBtn::after {
-  margin-top: 8px;
-}
-
-.nav .menuBtnContainer .menuBtn::before {
-  margin-top: -8px;
+@media screen and (max-width: 650px) {
+  .nav {
+    padding: 25px 20px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
