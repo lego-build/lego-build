@@ -29,6 +29,9 @@ function Nav() {
 
   return (
     <nav className={style.nav}>
+      <div className={style.menuBtnContainer}>
+        <div className={style.menuBtn}></div>
+      </div>
       <Link to="/">
       <svg
         width="229"
