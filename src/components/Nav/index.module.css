@@ -1,14 +1,42 @@
 .nav {
   padding: 25px 50px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 15px;
 }
 .nav svg {
   width: 170px;
 }
 .nav ul {
-  display: hidden;
+  display: none;
+}
+.nav .menuBtnContainer {
+  align-self: center;
+  display: block;
+}
+.nav .menuBtnContainer .menuBtn {
+  width: 34px;
+  height: 4px;
+  background-color: #545454;
+  border-radius: 999px;
+  margin: auto;
+  position: relative;
+  align-self: center;
+  cursor: pointer;
+}
+.nav .menuBtnContainer .menuBtn::before, .nav .menuBtnContainer .menuBtn::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  cursor: pointer;
+  border-radius: 999px;
+  background-color: #545454;
+}
+.nav .menuBtnContainer .menuBtn::after {
+  margin-top: 8px;
+}
+.nav .menuBtnContainer .menuBtn::before {
+  margin-top: -8px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -20,6 +48,9 @@
   }
   .nav svg {
     width: 170px;
+  }
+  .nav .menuBtnContainer {
+    display: none;
   }
   .nav ul {
     list-style-type: none;
