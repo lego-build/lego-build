@@ -119,7 +119,7 @@ function SideNav() {
           <div className={style.container}>
             <h3 className={style.header}>DOCUMENTATION</h3>
             {links.map(({ id, text, children }) =>
-              children ? (
+              !!children ? (
                 <Dropdown
                   id={id}
                   sublinks={children}
