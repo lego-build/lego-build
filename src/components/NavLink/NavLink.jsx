@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import { NavLink as Link } from "react-router-dom";
 import style from "./index.module.css";
 
@@ -15,4 +15,4 @@ function NavLink({ children, to }) {
   );
 }
 
-export default NavLink;
+export default memo(NavLink);
