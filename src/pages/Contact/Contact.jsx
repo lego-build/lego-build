@@ -1,13 +1,12 @@
 import React, { useId } from "react";
-import { Footer, Nav } from "../../components";
+import { Footer, Layout, Nav } from "../../components";
 import { Logo, Mail, Curve, Ellipse } from "../../assets";
 import style from "./index.module.css";
 const ellipses = [1, 2, 3, 4, 5, 6];
 const Contact = () => {
   const id = useId();
   return (
-    <section className={style.contact}>
-      <Nav />
+      <Layout className={style.contact}>
       <div className={style.content}>
         <div className={style.blobs}>
           <div className={style.blobContainer}>
@@ -42,8 +41,7 @@ const Contact = () => {
           REACH OUT
         </p>
       </div>
-      <Footer />
-    </section>
+      </Layout>
   );
 };
 

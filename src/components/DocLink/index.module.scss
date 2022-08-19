@@ -1,0 +1,14 @@
+.link {
+  padding-left: 20px;
+  color: #333;
+  transition: color;
+  width: fit-content;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  font-size: 0.95em;
+
+  &:hover,
+  &.active {
+    color: #9d50f6;
+  }
+}

@@ -1,0 +1,19 @@
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.heading a {
+  color: var(--primary-color);
+  opacity: 0;
+  text-decoration: none;
+}
+.heading a:hover {
+  text-decoration: underline;
+}
+.heading:hover a {
+  opacity: 1;
+}/*# sourceMappingURL=index.module.css.map */

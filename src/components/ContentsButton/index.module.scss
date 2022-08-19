@@ -1,0 +1,50 @@
+.button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  --size: 50px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #008f75;
+  z-index: 10;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30px;
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: white;
+      height: 3px;
+      border-radius: 100px;
+      transform-origin: center;
+    }
+
+    &::before {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .button {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .button {
+    bottom: 20px;
+  }
+}

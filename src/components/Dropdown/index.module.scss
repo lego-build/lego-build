@@ -1,0 +1,13 @@
+.dropdown {
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow: hidden;
+    transition: height 0.4s;
+
+    a:first-child {
+      padding-top: 18px;
+    }
+  }
+}

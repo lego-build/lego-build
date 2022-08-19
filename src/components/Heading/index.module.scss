@@ -1,0 +1,20 @@
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+
+  a {
+    color: var(--primary-color);
+    opacity: 0;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &:hover a {
+    opacity: 1;
+  }
+}

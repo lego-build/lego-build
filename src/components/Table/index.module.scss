@@ -1,0 +1,23 @@
+.responsive {
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  min-width: 650px;
+
+  td,
+  th {
+    padding: 20px 0;
+    padding-right: 60px;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  tr {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+}

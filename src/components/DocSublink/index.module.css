@@ -1,0 +1,14 @@
+.link {
+  padding-left: 40px;
+  transition: color;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  color: #878787;
+  font-size: 0.9em;
+}
+.link.active, .link:hover {
+  color: #9d50f6;
+}/*# sourceMappingURL=index.module.css.map */

@@ -1,0 +1,82 @@
+.terminal {
+  margin-bottom: 20px;
+  font-family: Consolas, monospace;
+  font-size: 15px;
+  background-color: #1e1e1e;
+  border-radius: 7px;
+  position: relative;
+  pre {
+    white-space: nowrap;
+    overflow: auto;
+    padding: 20px;
+
+    &::-webkit-scrollbar {
+      height: 11px;
+      border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 15px;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .head {
+    pointer-events: none;
+    user-select: none;
+    width: max-content;
+    span {
+      color: #d539c3;
+
+      &:first-child {
+        color: #00cc00;
+      }
+
+      &:last-child {
+        color: #e3e524;
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ebebeb;
+    margin-top: 5px;
+    width: max-content;
+
+    span:first-child {
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  .absolute {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .copied {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    font-family: Scandia, sans-serif;
+    pointer-events: none;
+    user-select: none;
+    top: 25px;
+    right: 20px;
+  }
+
+  &:hover .absolute {
+    opacity: 1;
+  }
+}

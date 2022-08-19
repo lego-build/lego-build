@@ -1,16 +1,106 @@
 .nav {
-  padding: 25px 50px;
+  --horizontal-padding: 50px;
+  --vertical-padding: 25px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+
   svg {
     width: 170px;
+    position: relative;
+    z-index: 8;
   }
 
   ul {
-    list-style-type: none;
     display: flex;
+    list-style-type: none;
     align-items: center;
     gap: 40px;
+  }
+
+  .menuBtnContainer {
+    align-self: center;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    position: relative;
+    z-index: 8;
+    cursor: pointer;
+    .menuBtn {
+      width: 24px;
+      height: 3px;
+      background-color: #545454;
+      border-radius: 999px;
+      transition: transform 0.35s;
+    }
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 3px;
+      border-radius: 999px;
+      background-color: #545454;
+      transition: transform 0.35s;
+      transform-origin: left;
+    }
+
+    &.active .menuBtn {
+      transform: translateX(30vw);
+    }
+
+    &.active::before {
+      transform: rotate(45deg);
+    }
+    &.active::after {
+      transform: translateY(3px) rotate(-45deg);
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .nav {
+    .menuBtnContainer {
+      display: flex;
+    }
+
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: #fff;
+      z-index: 5;
+      padding: 40px var(--horizontal-padding);
+      padding-top: 95px;
+      box-shadow: 0 1px 10px rgba($color: #000000, $alpha: 0.1);
+      transform: translateY(-105%);
+      transition: transform 0.35s;
+
+      &.active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@media screen and(max-width:650px) {
+  .nav {
+    --horizontal-padding: 25px;
+    --vertical-padding: 20px;
+
+    svg {
+      width: 130px;
+    }
+
+    ul {
+      padding-top: 80px;
+    }
   }
 }

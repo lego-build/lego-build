@@ -1,0 +1,19 @@
+.emphasized_link {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.subtle_link {
+  text-decoration: underline;
+  color: #3d3dff;
+}
+
+.ul {
+  list-style-type: disc;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+.ul li {
+  margin-left: 30px;
+}/*# sourceMappingURL=index.module.css.map */

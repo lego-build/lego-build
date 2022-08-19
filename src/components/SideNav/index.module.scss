@@ -1,0 +1,65 @@
+@import "../../sass/abstracts/abstract";
+
+.nav {
+  border-right: 1px solid #d9d9d9;
+  nav {
+    position: sticky;
+    max-height: 100vh;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-left: 30px;
+    padding-top: 45px;
+    padding-bottom: 50px;
+    color: $DocText;
+    .header {
+      font-weight: 600;
+      font-size: 17px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .containerRef {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .nav {
+    border: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0;
+    overflow-y: hidden;
+    background-color: #fff;
+    z-index: 8;
+    transition-property: height;
+    transition-duration: 500ms;
+  
+
+    nav {
+      position: static;
+      padding: 50px;
+    }
+
+    &.open {
+      height: 100vh;
+    }
+  }
+}
+
+@media screen and(max-width:650px) {
+  .nav {
+    nav {
+      padding: 25px;
+      padding-top: 40px;
+    }
+  }
+}
