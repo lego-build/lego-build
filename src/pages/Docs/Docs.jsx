@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Footer, Nav, SideNav } from "../../components";
+import { Footer, Nav, SideNav, Layout } from "../../components";
 import style from "./index.module.css";
 import { Blocks, Formats, Main } from "./subpages";
 
@@ -18,14 +18,12 @@ function Docs() {
   }
 
   return (
-    <div className={style.docs}>
-      <Nav />
+      <Layout className={style.docs}>
       <div className={style.main}>
         <SideNav />
         {component}
       </div>
-      <Footer />
-    </div>
+      </Layout>
   );
 }
 
