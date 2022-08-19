@@ -30,7 +30,7 @@ const main = () => {
     if (arguments[0] != "init") {
       const init = new Init(main);
       init.generatePackageFile();
-    }else{
+    } else {
       start();
     }
   }
@@ -66,6 +66,8 @@ const getBlockConfig = (blockType) => {
 
 //The main function
 const start = () => {
+  let block;
+  let configFile;
   //Switch depending on the command
   switch (arguments[0]) {
     case "init":
@@ -74,19 +76,32 @@ const start = () => {
       break;
 
     case "rename":
-      console.log("rename command coming soon, so stay tuned");
-      process.exit();
+      console.log(arguments);
+      const blockType = arguments[1].split(":")[1];
+      const oldBlockName = arguments[1].split(":")[0];
+      const newBlockName = arguments[3];
 
+      console.log(`Old block name is ${oldBlockName} and new block name is ${newBlockName}`);
+
+      //Get the config files for the block
+      configFile = generateConfigFile(blockType);
+
+      if(configFile){
+        block = new Block(configFile, config.fileFormats);
+        block.rename(oldBlockName, newBlockName); 
+      }
+      break;
+      
     case "help":
       console.log("Help command is coming soon");
       process.exit();
 
     default:
       //Get the config files for the block
-      const configFile = generateConfigFile(arguments[0]);
+      configFile = generateConfigFile(arguments[0]);
 
       if (configFile) {
-        const block = new Block(configFile, config.fileFormats);
+        block = new Block(configFile, config.fileFormats);
         block.main(arguments[1]);
       } else {
         Logger.logError(

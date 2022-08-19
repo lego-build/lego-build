@@ -86,7 +86,6 @@ class Block {
     return this.configFile.path + "/" + blockName;
   };
 
-
   createDirectory = (blockName) => {
     //Do not create folder for single files
     let directory = this.configFile.isFile
@@ -108,6 +107,89 @@ class Block {
     });
   };
 
+  renameFile(oldName, newName) {
+    fs.rename(oldName, newName, (err) => {
+      if (err) {
+        Logger.logError(`There was an error renaming ${oldName} to ${newName}`);
+      }
+    });
+  }
+
+  renameDirectory(oldDirectory, newDirectory) {
+    fs.rename(oldDirectory, newDirectory, (err) => {
+      if (err) {
+        Logger.logError("There was an error creating the directory");
+        return;
+      }
+
+      process.exit();
+    });
+  }
+
+
+  generateNewBlockPath(oldBlockPath, oldBlockName, newBlockName) {
+    const paths = oldBlockPath.split("/");
+    paths[paths.length - 1] = paths[paths.length - 1].replaceAll(
+      oldBlockName,
+      newBlockName
+    );
+    return paths.join("/");
+  }
+
+  /**
+   * Rename all the files corresponding to a particular block using recursion, first rename the single files
+   * then after all the files have been renamed we arrive at the base case which checks if it is not a single
+   * block type, if it is not a single block type then also rename the directory too.
+   * @param {*} oldBlockName | The name of the old block, used for changing the file name
+   * @param {*} newBlockName | The name of the new block, used for changing the file name 
+   * @param {*} fileMap | The Map containing all the paths for files corresponding to the old block
+   * @param {*} index | Used to know if we have reached the base case
+   */
+  renameAllFiles(oldBlockName, newBlockName, fileMap, index) {
+    //Base case
+    if (fileMap.size == index) {
+      //If it's not a single file then also rename the directory
+      if (!this.configFile.isFile) {
+        this.renameDirectory(
+          this.generateDirectoryName(oldBlockName),
+          this.generateDirectoryName(newBlockName)
+        );
+      }else{
+        process.exit();
+      }
+    } else {
+      //Non base case
+      let oldFileName = fileMap.get(index).filePath;
+      let newFileName = this.generateNewBlockPath(
+        oldFileName,
+        oldBlockName,
+        newBlockName
+      );
+
+      fs.rename(oldFileName, newFileName, (err) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+
+        this.renameAllFiles(oldBlockName, newBlockName, fileMap, ++index);
+      });
+    }
+  }
+
+  /**
+   * Rename all files for a block, generates the filePathsMap for the old block and then calls
+   * this.renameAllFiles 
+   * @param {*} oldBlockName | The name of the old block, used for searching all files related to the old block
+   * @param {*} newBlockName | The name of the new block
+   */
+  rename(oldBlockName, newBlockName) {
+    let numOfFiles = this.files == undefined ? 1 : this.files.length;
+    const blockFileMap = this.generateFilePathsMap(numOfFiles, oldBlockName);
+
+    this.renameAllFiles(oldBlockName, newBlockName, blockFileMap, 0);
+  }
+
   main(blockName) {
     //If the block already exists then ask the user if they want to override the contents
     if (fs.existsSync(this.generateDirectoryName(blockName))) {
@@ -125,9 +207,7 @@ class Block {
       );
     } else {
       readline.close();
-      this.createDirectory(
-        blockName
-      );
+      this.createDirectory(blockName);
     }
   }
 }
