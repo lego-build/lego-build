@@ -15,9 +15,11 @@ function Dropdown({ id, text, sublinks, current }) {
   }
 
   useLayoutEffect(() => {
-    setHeight(inner.current.getBoundingClientRect().height);
-    setSizeHasBeenCalculated(true);
-    setOpen(false);
+    if (inner.current) {
+      setHeight(inner.current.getBoundingClientRect().height);
+      setSizeHasBeenCalculated(true);
+      setOpen(false);
+    }
   }, []);
 
   useEffect(() => {
