@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import style from "./index.module.css";
@@ -24,4 +24,4 @@ function DocLink({ id, children, active, to, ...props }) {
   );
 }
 
-export default DocLink;
+export default memo(DocLink);
