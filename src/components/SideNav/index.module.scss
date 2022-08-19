@@ -31,21 +31,26 @@
 @media screen and (max-width: 1180px) {
   .nav {
     border: 0;
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    height: 100vh;
+    height: 0;
+    overflow-y: hidden;
     background-color: #fff;
     z-index: 8;
+    transition-property: height;
+    transition-duration: 500ms;
+  
+
     nav {
       position: static;
       padding: 50px;
     }
 
     &.open {
-      display: block;
+      height: 100vh;
     }
   }
 }
