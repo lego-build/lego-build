@@ -20,8 +20,8 @@ class ConfigFile {
     let fileName = this.getFileName(file, blockName);
     //File name doesn't exist so the program shouldn't try generating a filePath
     if (fileName == null) {
-      throw new Error("This shouldn't work bro");
-
+    
+      // throw new Error("This shouldn't work bro");
     }
 
     if (this.configFile.isFile) {

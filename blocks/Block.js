@@ -2,16 +2,15 @@ const { throws } = require("node:assert");
 const fs = require("node:fs");
 const Logger = require("../Logger");
 const ConfigFile = require("./ConfigFile");
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const UserInput = require("../UserInput");
+const { read } = require("node:fs");
 
 class Block {
   constructor(configFile, fileFormats) {
     this.configFile = configFile;
     this.files = configFile.files;
     this.config = new ConfigFile(configFile, fileFormats);
+    this.userInput = new UserInput();
   }
 
   /**
@@ -86,6 +85,14 @@ class Block {
     return this.configFile.path + "/" + blockName;
   };
 
+  //Check if a block exists
+  blockExists(blockName) {
+    return (
+      fs.existsSync(this.generateDirectoryName(blockName)) ||
+      fs.existsSync(this.config.getFilePath(this.files, blockName))
+    );
+  }
+
   createDirectory = (blockName) => {
     //Do not create folder for single files
     let directory = this.configFile.isFile
@@ -126,7 +133,6 @@ class Block {
     });
   }
 
-
   generateNewBlockPath(oldBlockPath, oldBlockName, newBlockName) {
     const paths = oldBlockPath.split("/");
     paths[paths.length - 1] = paths[paths.length - 1].replaceAll(
@@ -141,7 +147,7 @@ class Block {
    * then after all the files have been renamed we arrive at the base case which checks if it is not a single
    * block type, if it is not a single block type then also rename the directory too.
    * @param {*} oldBlockName | The name of the old block, used for changing the file name
-   * @param {*} newBlockName | The name of the new block, used for changing the file name 
+   * @param {*} newBlockName | The name of the new block, used for changing the file name
    * @param {*} fileMap | The Map containing all the paths for files corresponding to the old block
    * @param {*} index | Used to know if we have reached the base case
    */
@@ -154,7 +160,7 @@ class Block {
           this.generateDirectoryName(oldBlockName),
           this.generateDirectoryName(newBlockName)
         );
-      }else{
+      } else {
         process.exit();
       }
     } else {
@@ -179,7 +185,7 @@ class Block {
 
   /**
    * Rename all files for a block, generates the filePathsMap for the old block and then calls
-   * this.renameAllFiles 
+   * this.renameAllFiles
    * @param {*} oldBlockName | The name of the old block, used for searching all files related to the old block
    * @param {*} newBlockName | The name of the new block
    */
@@ -192,9 +198,10 @@ class Block {
 
   main(blockName) {
     //If the block already exists then ask the user if they want to override the contents
-    if (fs.existsSync(this.generateDirectoryName(blockName))) {
+    let readline = this.userInput.getSingleton();
+    if (this.blockExists(blockName)) {
       readline.question(
-        `Directory already exists, are you sure you want to override the contents of the directory?(y/n)`,
+        `Block already exists, are you sure you want to override the contents of the Block?(y/n)`,
         (answer) => {
           if (answer == "y" || answer == "yes") {
             this.createDirectory(blockName, this.createFiles);

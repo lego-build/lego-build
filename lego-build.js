@@ -81,17 +81,19 @@ const start = () => {
       const oldBlockName = arguments[1].split(":")[0];
       const newBlockName = arguments[3];
 
-      console.log(`Old block name is ${oldBlockName} and new block name is ${newBlockName}`);
+      console.log(
+        `Old block name is ${oldBlockName} and new block name is ${newBlockName}`
+      );
 
       //Get the config files for the block
       configFile = generateConfigFile(blockType);
 
-      if(configFile){
+      if (configFile) {
         block = new Block(configFile, config.fileFormats);
-        block.rename(oldBlockName, newBlockName); 
+        block.rename(oldBlockName, newBlockName);
       }
       break;
-      
+
     case "help":
       console.log("Help command is coming soon");
       process.exit();

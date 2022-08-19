@@ -1,16 +1,14 @@
 const fs = require("node:fs");
 const Logger = require("node:fs");
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const UserInput = require("./UserInput");
 
 class Init {
   constructor(callback) {
     this.callback = callback;
+    this.userInput = new UserInput();
   }
 
-  createPackageFile (){
+  createPackageFile() {
     let defaaultPackage = `{
       "blocks": [
         {
@@ -81,14 +79,12 @@ class Init {
         this.callback();
       }
     });
-
   }
 
   generatePackageFile() {
-    
-
     //If package exists, ask the user if they want to override and create a new package
     if (fs.existsSync("lego.json")) {
+      let readline = this.userInput.getSingleton();
       readline.question(
         `Package file already exists, are you sure you want to override the existing package file? (y/n)`,
         (answer) => {
@@ -102,11 +98,9 @@ class Init {
           readline.close();
         }
       );
-    }else{
+    } else {
       this.createPackageFile();
     }
-
-    
   }
 }
 
