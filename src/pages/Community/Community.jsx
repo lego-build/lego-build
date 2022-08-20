@@ -36,7 +36,9 @@ function Community() {
     },
   ]);
 
-  return <Layout className={style.community}></Layout>;
+  return <Layout className={style.community}>
+    
+  </Layout>;
 }
 
 export default Community;
