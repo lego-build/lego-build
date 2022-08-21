@@ -1,1 +1,15 @@
-/*# sourceMappingURL=index.module.css.map */
+.header {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0% 0%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.header div h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+.header p {
+  width: 50%;
+}/*# sourceMappingURL=index.module.css.map */

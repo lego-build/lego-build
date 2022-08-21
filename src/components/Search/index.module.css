@@ -1,6 +1,5 @@
 .search {
   display: flex;
-  flex: 1 0% 0%;
   width: 100%;
 }
 .search .label {
@@ -42,7 +41,7 @@
           user-select: auto;
 }
 .search .label .input {
-  padding: 7.5px 55px;
+  padding: 10px 55px;
   width: 100%;
   border-radius: 999px;
   outline: 1px solid #D9D9D9;
