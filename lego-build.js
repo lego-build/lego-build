@@ -107,7 +107,7 @@ const start = () => {
         block.main(arguments[1]);
       } else {
         Logger.logError(
-          `Block type of '${arguments[0]} doesn't exist in package file`
+          `Block type of '${arguments[0]}' doesn't exist in package file`
         );
         process.exit();
       }

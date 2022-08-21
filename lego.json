@@ -6,6 +6,11 @@
           "files": ["JSX", "CSS", "TEST"]
         },
         {
+          "type": "test1",
+          "path": "src/components",
+          "files": ["JSX", "CSS", "TEST", "JAVA"]
+        },
+        {
           "type": "page",
           "path": "src/pages",
           "files": ["JSX", "CSS", "TEST"]

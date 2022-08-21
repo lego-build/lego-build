@@ -61,8 +61,10 @@ class Block {
     return fileMap;
   };
 
+  
+
   //This will create all the files
-  createBlock = (fileMap, blockName) => {
+  createBlockFiles = (fileMap, blockName) => {
     let templateFile;
     //Loop through the map containing all the file paths and template files
     for (const file of fileMap) {
@@ -104,7 +106,12 @@ class Block {
     );
   }
 
-  createDirectory = (blockName) => {
+
+  createBlock = (blockName) => {
+    //Create the file paths map first, so if there's a file that doesn't exist
+    let numOfFiles = this.files == undefined ? 1 : this.files.length;
+    const filePathsMap = this.generateFilePathsMap(numOfFiles, blockName);
+
     //Do not create folder for single files
     let directory = this.configFile.isFile
       ? this.configFile.path
@@ -116,14 +123,15 @@ class Block {
         console.log(err);
         return;
       } else {
-        let numOfFiles = this.files == undefined ? 1 : this.files.length;
-        this.createBlock(
-          this.generateFilePathsMap(numOfFiles, blockName),
+        
+        this.createBlockFiles(
+          filePathsMap,
           blockName
         );
       }
     });
   };
+
 
   renameFile(oldName, newName) {
     fs.rename(oldName, newName, (err) => {
@@ -239,7 +247,7 @@ class Block {
       );
     } else {
       readline.close();
-      this.createDirectory(blockName);
+      this.createBlock(blockName);
     }
   }
 }
