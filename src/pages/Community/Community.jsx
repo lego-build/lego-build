@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout } from "../../components";
+import { Header, Layout } from "../../components";
 import style from "./index.module.css";
 
 function Community() {
@@ -37,7 +37,7 @@ function Community() {
   ]);
 
   return <Layout className={style.community}>
-    
+    <Header />
   </Layout>;
 }
 
