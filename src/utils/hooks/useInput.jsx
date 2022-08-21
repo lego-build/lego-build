@@ -7,4 +7,4 @@ const useInput = initialValue => {
     ];
 }
 
-export default useInput
+export default useInput;
