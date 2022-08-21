@@ -1,0 +1,46 @@
+.search {
+  display: flex;
+  flex: 1 0% 0%;
+  width: 100%;
+}
+.search .label {
+  display: flex;
+  position: relative;
+  width: 83.3333333333%;
+  margin-inline: auto;
+}
+.search .label .icon {
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+.search .label .input {
+  padding: 7.5px 55px;
+  width: 100%;
+  border-radius: 999px;
+  outline: 1px solid #D9D9D9;
+}
+.search .label .input::-moz-placeholder {
+  letter-spacing: 0.05rem;
+}
+.search .label .input:-ms-input-placeholder {
+  letter-spacing: 0.05rem;
+}
+.search .label .input::placeholder {
+  letter-spacing: 0.05rem;
+}
+.search .label .input:focus {
+  outline-color: #6e6c6c;
+}
+.search .label .input:focus::-moz-placeholder {
+  color: black;
+}
+.search .label .input:focus:-ms-input-placeholder {
+  color: black;
+}
+.search .label .input:focus::placeholder {
+  color: black;
+}/*# sourceMappingURL=index.module.css.map */
