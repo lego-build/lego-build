@@ -9,28 +9,66 @@
   width: 83.3333333333%;
   margin-inline: auto;
 }
-.search .label .icon {
+.search .label span {
   position: absolute;
-  left: 15px;
   top: 0px;
   bottom: 0px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+.search .label .icon {
+  left: 15px;
+}
+.search .label .clear {
+  right: 15px;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+  transform-origin: center;
+}
+.search .label .clear.hidden {
+  transform: scale(0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.search .label .clear.show {
+  transform: scale(1);
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
 }
 .search .label .input {
   padding: 7.5px 55px;
   width: 100%;
   border-radius: 999px;
   outline: 1px solid #D9D9D9;
+  transition-property: outline;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 .search .label .input::-moz-placeholder {
   letter-spacing: 0.05rem;
+  -moz-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 .search .label .input:-ms-input-placeholder {
   letter-spacing: 0.05rem;
+  -ms-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 .search .label .input::placeholder {
   letter-spacing: 0.05rem;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 .search .label .input:focus {
   outline-color: #6e6c6c;

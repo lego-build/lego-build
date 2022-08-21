@@ -7,21 +7,46 @@
     position: relative;
     width: calc(10/12 * 100%);
     margin-inline: auto;
-    .icon{
+    span{
         position: absolute;
-        left: 15px;
         top: 0px;
         bottom: 0px;
         display: flex;
         align-items: center;
+        cursor: pointer;
+    }
+    .icon{
+        left: 15px;
+    }
+     .clear{
+        right: 15px;
+        transition-property: transform;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in;
+        transform-origin: center;
+        &.hidden{
+        transform: scale(0);
+        user-select: none;
+        }
+        &.show{
+        transform: scale(1);
+        user-select: auto;
+
+        }
     }
     .input{
         padding: 7.5px 55px;
         width: 100%;
         border-radius: 999px;
         outline: 1px solid #D9D9D9;
+        transition-property: outline;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in;
         &::placeholder{
             letter-spacing: 0.05rem;
+            transition-property: color;
+            transition-duration: 500ms;
+            transition-timing-function: ease-in;
         }
         &:focus{
             outline-color: #6e6c6c;
