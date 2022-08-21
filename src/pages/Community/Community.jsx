@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Header, Layout } from "../../components";
 import useInput from '../../utils/hooks/useInput';
 import style from "./index.module.css";
-import Search from "../Search/Search"
+import { Search } from "../../components";
 
 function Community() {
   const [value, resetValue] = useInput("");
