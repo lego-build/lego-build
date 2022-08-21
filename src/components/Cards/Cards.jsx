@@ -1,8 +1,16 @@
 import React from 'react'
-
-const Cards = () => {
+import Card from "../Card/Card"
+import style from "./index.module.css"
+const Cards = ({data}) => {
   return (
-    <div>Cards</div>
+      <div className={style.container}>
+          <a href="/#">Contribute Yours</a>
+      <div className={style.cards}>
+          {
+              data.map((details)=>(<Card data={details} />))
+          }
+      </div>
+      </div>
   )
 }
 
