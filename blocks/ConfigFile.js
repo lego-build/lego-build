@@ -1,5 +1,5 @@
 const fs = require("node:fs");
-const Logger = require("../Logger");
+const Logger = require("../utils/Logger");
 
 class ConfigFile {
   constructor(configFile, fileFormats) {
