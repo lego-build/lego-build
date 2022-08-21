@@ -1,8 +1,11 @@
 import React from 'react'
+import Preview from "../Preview/Preview";
 import style from "./index.module.css";
-const Card = () => {
+const Card = ({ id, title, description, name, profileLink }) => {
   return (
-    <div>Card</div>
+    <div className={style.card}>
+      <Preview link={profileLink} />
+    </div>
   )
 }
 
