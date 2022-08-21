@@ -1,0 +1,5 @@
+.card{
+    &::after{
+        content: attr(data-mark) " ";
+    }
+}
