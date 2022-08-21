@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
 }
+.header div {
+  position: relative;
+  border-radius: 999px;
+}
 .header div h1 {
   font-size: 34px;
   font-weight: 700;

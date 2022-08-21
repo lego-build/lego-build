@@ -1,0 +1,4 @@
+.container .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}/*# sourceMappingURL=index.module.css.map */
