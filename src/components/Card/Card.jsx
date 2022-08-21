@@ -8,7 +8,8 @@ const Card = ({ data: { id, title, description, author: { name, profileLink } } 
 
       </div>
       <h1>{title}</h1>
-      <p>Description</p>
+      <p>{description}</p>
+      <span>By <a href={profileLink}>{name}</a></span>
     </div>
   )
 }
