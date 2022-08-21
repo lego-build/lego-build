@@ -1,14 +1,15 @@
 import React from 'react'
 import { useId } from 'react';
-import { SearchBar } from "../../assets";
+import { SearchBar, Clear } from "../../assets";
 import style from "./index.module.css";
-const Search = () => {
+const Search = ({ value: {value, onChange}, resetValue }) => {
     const Id = useId();
   return (
       <div className={style.search}>
           <label for={Id} className={style.label}>
               <span className={style.icon}><SearchBar/> </span>
-              <input type={"text"} id={Id} className={style.input} placeholder="Search for workflow" />
+              <input value={value} onChange={onChange} type={"text"} id={Id} className={style.input} placeholder="Search for workflow" />
+              <span className={`${style.clear} ${value === "" ? style.hidden : style.show}`} onClick={resetValue}><Clear /> </span>
           </label>
       </div>
   )
