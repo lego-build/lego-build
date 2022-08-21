@@ -1,4 +1,11 @@
+.container {
+  width: 100%;
+}
 .container .cards {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  align-items: center;
+  justify-content: space-around;
 }/*# sourceMappingURL=index.module.css.map */

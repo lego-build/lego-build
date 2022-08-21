@@ -1,3 +1,16 @@
-.card::after {
-  content: attr(data-mark) " ";
+.card {
+  width: 75%;
+  margin: auto;
+}
+.card displa h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.card p {
+  font-size: 14px;
+}
+.card a {
+  text-decoration: underline;
+  -webkit-text-decoration-color: gr;
+          text-decoration-color: gr;
 }/*# sourceMappingURL=index.module.css.map */

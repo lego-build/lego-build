@@ -1,5 +1,16 @@
 .card{
-    &::after{
-        content: attr(data-mark) " ";
+    width: 75%;
+    margin: auto;
+    displa
+    h1{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    p{
+        font-size: 14px;
+    }
+    a{
+        text-decoration: underline;
+        text-decoration-color: gr;
     }
 }
