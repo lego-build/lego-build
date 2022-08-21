@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Header, Layout } from "../../components";
+import useInput from '../../utils/hooks/useInput';
 import style from "./index.module.css";
+import Search from "../Search/Search"
 
 function Community() {
+  const [value, resetValue] = useInput("");
   const [workflows, setWorkflows] = useState([
     {
       id: 1,
@@ -38,6 +41,7 @@ function Community() {
 
   return <Layout className={style.community}>
     <Header />
+    <Search value={value} resetValue={resetValue} />
   </Layout>;
 }
 
