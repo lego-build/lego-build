@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header, Layout } from "../../components";
+import { Cards, Header, Layout } from "../../components";
 import useInput from '../../utils/hooks/useInput';
 import style from "./index.module.css";
 import { Search } from "../../components";
@@ -42,6 +42,7 @@ function Community() {
   return <Layout className={style.community}>
     <Header />
     <Search value={value} resetValue={resetValue} />
+    <Cards data={workflows} />
   </Layout>;
 }
 
