@@ -1,1 +1,3 @@
-/*# sourceMappingURL=index.module.css.map */
+.card::after {
+  content: attr(data-mark) " ";
+}/*# sourceMappingURL=index.module.css.map */
