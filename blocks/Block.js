@@ -85,6 +85,17 @@ class Block {
     return this.configFile.path + "/" + blockName;
   };
 
+  singleFileBlockExists(blockName) {
+    console.log(
+      "Block file path is " + this.config.getFilePath(this.files, blockName)
+    );
+    return fs.existsSync(this.config.getFilePath(this.files, blockName));
+  }
+
+  multipleFileBlockExists(blockName) {
+    return fs.existsSync(this.generateDirectoryName(blockName));
+  }
+
   //Check if a block exists
   blockExists(blockName) {
     return (
@@ -190,9 +201,23 @@ class Block {
    * @param {*} newBlockName | The name of the new block
    */
   rename(oldBlockName, newBlockName) {
+    //If it is a file check if the file already exists
+
+    if (this.configFile.isFile && this.singleFileBlockExists(newBlockName)) {
+      console.log("Block already exist");
+      return;
+    } else if (
+      !this.configFile.isFile &&
+      this.multipleFileBlockExists(newBlockName)
+    ) {
+      console.log("Block already exists");
+      return;
+    }
+
     let numOfFiles = this.files == undefined ? 1 : this.files.length;
     const blockFileMap = this.generateFilePathsMap(numOfFiles, oldBlockName);
 
+    console.log("The call to rename was called");
     this.renameAllFiles(oldBlockName, newBlockName, blockFileMap, 0);
   }
 
