@@ -1,3 +1,6 @@
+const fs = require("node:fs");
+const Logger = require("../Logger");
+
 class ConfigFile {
   constructor(configFile, fileFormats) {
     this.configFile = configFile;
@@ -41,11 +44,22 @@ class ConfigFile {
     }
   }
 
-
   getSingleFileBlockTemplatePath() {
     let templateFilePath;
 
     templateFilePath = this.configFile.file.template;
+
+    //Check if template file exists
+    if (
+      templateFilePath != undefined &&
+      templateFilePath != "DEFAULT" &&
+      !fs.existsSync(templateFilePath)
+    ) {
+      Logger.logWarning(
+        `Template file - '${templateFilePath}' doesn't exist, so a clean slate will be given`
+      );
+      templateFilePath = this.defaultFormats.get("default");
+    }
 
     if (templateFilePath == "DEFAULT") {
       templateFilePath = this.defaultFormats.get(this.configFile.type);
@@ -53,9 +67,9 @@ class ConfigFile {
 
     if (templateFilePath == undefined)
       templateFilePath = this.defaultFormats.get("default");
+
+    return templateFilePath;
   }
-
-
 
   getMultipleFileBlockTemplatePath(file) {
     let templateFilePath = this.fileFormats[file];
@@ -71,6 +85,18 @@ class ConfigFile {
 
     templateFilePath = this.fileFormats[file].template;
 
+    //Check if template file exists
+    if (
+      templateFilePath != undefined &&
+      templateFilePath != "DEFAULT" &&
+      !fs.existsSync(templateFilePath)
+    ) {
+      Logger.logWarning(
+        `Template file - '${templateFilePath}' doesn't exist, so a clean slate will be given`
+      );
+      templateFilePath = this.defaultFormats.get("default");
+    }
+
     //If template file path is default then find the corresponding default file
     if (templateFilePath == "DEFAULT") {
       templateFilePath = this.defaultFormats.get(file);
@@ -82,8 +108,6 @@ class ConfigFile {
 
     return templateFilePath;
   }
-
-
 
   getTemplateFilePath(file) {
     //If this is a single file
