@@ -87,13 +87,10 @@ const start = () => {
       //Get the config files for the block
       configFile = generateConfigFile(blockType);
 
-      if (configFile) {
+      if (validators.validateRenameCommand(arguments, configFile)) {
         block = new Block(configFile, config.fileFormats);
         block.rename(oldBlockName, newBlockName);
       } else {
-        Logger.logError(
-          `Block type of '${blockType}' doesn't exist in package file`
-        );
         process.exit();
       }
       break;
@@ -109,7 +106,7 @@ const start = () => {
       if (validators.validateCreateBlockCommand(arguments, configFile)) {
         block = new Block(configFile, config.fileFormats);
         block.main(arguments[1]);
-      }else{
+      } else {
         process.exit();
       }
       break;

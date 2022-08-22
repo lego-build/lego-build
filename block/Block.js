@@ -141,7 +141,7 @@ class Block {
 
   renameDirectory(oldDirectory, newDirectory) {
     fs.rename(oldDirectory, newDirectory, (err) => {
-      if (err.code === "ENOENT") {
+      if (err && err.code === "ENOENT") {
         // Old directory doesn't exist
         Logger.logError(`The directory "${oldDirectory}" doesn't exist to be renamed`)
       }
@@ -190,7 +190,7 @@ class Block {
       );
 
       fs.rename(oldFileName, newFileName, (err) => {
-        if (err.code === "ENOENT") {
+        if (err  && err.code === "ENOENT") {
           // Old file doesn't exist
           Logger.logError(`The file "${oldFileName}" doesn't exist to be renamed`)
         }
