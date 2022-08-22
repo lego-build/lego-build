@@ -237,7 +237,7 @@ class Block {
         `Block already exists, are you sure you want to override the contents of the Block?(y/n)`,
         (answer) => {
           if (answer == "y" || answer == "yes") {
-            this.createDirectory(blockName, this.createFiles);
+            this.createBlock(blockName);
           } else if (answer == "n" || answer == "no") {
             readline.close();
           }

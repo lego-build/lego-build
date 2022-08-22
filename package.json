@@ -1,12 +1,13 @@
 {
   "name": "lego-build",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Lego-build is a CLI tool that makes development fun again by automating routine tasks like creating components, pages, etc",
+  "main": "lego-build.js",
+  "bin": "lego-build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "The OG Team",
+  "license": "MIT"
 }

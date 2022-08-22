@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const Block = require("./blocks/Block.js");
-const Init = require("./init");
-const Logger = require("./Logger.js");
+const Init = require("./utils/init");
+const Logger = require("./utils/Logger.js");
 
 let config;
 
@@ -56,9 +56,10 @@ const generateConfigFile = (block) => {
 };
 
 const getBlockConfig = (blockType) => {
-  for (var i = 0; i < config.blocks.length; i++) {
-    if (config.blocks[i].type == blockType) {
-      return config.blocks[i];
+  for (let i = 0; i < config.blocks.length; i++) {
+    let currentBlock = config.blocks[i]
+    if (currentBlock.type == blockType) {
+      return currentBlock;
     }
   }
   return null;

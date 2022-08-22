@@ -78,8 +78,7 @@ class ConfigFile {
 
     //There is no template file path so end the code here
     if (!templateFilePath) {
-      //TODO: Generate file format doesn't exist error
-      console.log("File format doesn't exist");
+      Logger.logError(`File format ${file} doesn't exist`)
       process.exit();
     }
 
