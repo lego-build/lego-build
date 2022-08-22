@@ -24,6 +24,11 @@ class ConfigFile {
         ? this.configFile.file.name.replace("<name>", blockName)
         : null;
     } else {
+      //Check if it is an object
+      if (typeof file == "object") {
+        return file.name.replace("<name>", blockName);
+      }
+
       return this.fileFormats[file] != undefined
         ? this.fileFormats[file].name.replace("<name>", blockName)
         : null;
@@ -72,17 +77,23 @@ class ConfigFile {
   }
 
   getMultipleFileBlockTemplatePath(file) {
-    let templateFilePath = this.fileFormats[file];
+    let templateFilePath;
 
-    templateFilePath = this.fileFormats[file];
+    if (typeof file == "object") {
+      templateFilePath = file.template;
+    } else {
+      templateFilePath = this.fileFormats[file];
+    }
 
     //There is no template file path so end the code here
     if (!templateFilePath) {
-      Logger.logError(`File format ${file} doesn't exist`)
+      Logger.logError(`File format ${file} doesn't exist`);
       process.exit();
     }
 
-    templateFilePath = this.fileFormats[file].template;
+    //Set the template file path to its value if it's a string type
+    if (typeof file != "object")
+      templateFilePath = this.fileFormats[file].template;
 
     //Check if template file exists
     if (
