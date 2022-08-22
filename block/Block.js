@@ -59,8 +59,6 @@ class Block {
     return fileMap;
   };
 
-  
-
   //This will create all the files
   createBlockFiles = (fileMap, blockName) => {
     let templateFile;
@@ -86,9 +84,10 @@ class Block {
   };
 
   singleFileBlockExists(blockName) {
-    console.log(
-      "Block file path is " + this.config.getFilePath(this.files, blockName)
-    );
+    for (const file of this.files) {
+      if (fs.existsSync(this.config.getFilePath(file, blockName))) return true;
+    }
+    return false;
     return fs.existsSync(this.config.getFilePath(this.files, blockName));
   }
 
@@ -98,12 +97,12 @@ class Block {
 
   //Check if a block exists
   blockExists(blockName) {
-    return (
-      fs.existsSync(this.generateDirectoryName(blockName)) ||
-      fs.existsSync(this.config.getFilePath(this.files, blockName))
-    );
-  }
+    //If it is a single file check if it exists
+    if (this.configFile.isFile)
+      return fs.existsSync(this.generateDirectoryName(blockName));
 
+    return this.singleFileBlockExists(blockName);
+  }
 
   createBlock = (blockName) => {
     //Create the file paths map first, so if there's a file that doesn't exist
@@ -121,15 +120,10 @@ class Block {
         console.log(err);
         return;
       } else {
-        
-        this.createBlockFiles(
-          filePathsMap,
-          blockName
-        );
+        this.createBlockFiles(filePathsMap, blockName);
       }
     });
   };
-
 
   renameFile(oldName, newName) {
     fs.rename(oldName, newName, (err) => {
@@ -143,7 +137,9 @@ class Block {
     fs.rename(oldDirectory, newDirectory, (err) => {
       if (err && err.code === "ENOENT") {
         // Old directory doesn't exist
-        Logger.logError(`The directory "${oldDirectory}" doesn't exist to be renamed`)
+        Logger.logError(
+          `The directory "${oldDirectory}" doesn't exist to be renamed`
+        );
       }
 
       process.exit();
@@ -190,9 +186,11 @@ class Block {
       );
 
       fs.rename(oldFileName, newFileName, (err) => {
-        if (err  && err.code === "ENOENT") {
+        if (err && err.code === "ENOENT") {
           // Old file doesn't exist
-          Logger.logError(`The file "${oldFileName}" doesn't exist to be renamed`)
+          Logger.logError(
+            `The file "${oldFileName}" doesn't exist to be renamed`
+          );
         }
 
         this.renameAllFiles(oldBlockName, newBlockName, fileMap, ++index);
@@ -210,13 +208,13 @@ class Block {
     //If it is a file check if the file already exists
 
     if (this.configFile.isFile && this.singleFileBlockExists(newBlockName)) {
-      Logger.logError(`The block "${newBlockName}" already exists`)
+      Logger.logError(`The block "${newBlockName}" already exists`);
       return;
     } else if (
       !this.configFile.isFile &&
       this.multipleFileBlockExists(newBlockName)
     ) {
-      Logger.logError(`The block "${newBlockName}" already exists`)
+      Logger.logError(`The block "${newBlockName}" already exists`);
       return;
     }
 
