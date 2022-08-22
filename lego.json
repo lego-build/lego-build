@@ -4,7 +4,10 @@
       "type": "component",
       "path": "src/components",
       "files": [
-        "JSX",
+        {
+          "name": "<name>.jsx",
+          "template": "DEFAULT"
+        },
         "CSS",
         "TEST"
       ]
