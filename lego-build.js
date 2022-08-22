@@ -56,9 +56,10 @@ const generateConfigFile = (block) => {
 };
 
 const getBlockConfig = (blockType) => {
-  for (var i = 0; i < config.blocks.length; i++) {
-    if (config.blocks[i].type == blockType) {
-      return config.blocks[i];
+  for (let i = 0; i < config.blocks.length; i++) {
+    let currentBlock = config.blocks[i]
+    if (currentBlock.type == blockType) {
+      return currentBlock;
     }
   }
   return null;

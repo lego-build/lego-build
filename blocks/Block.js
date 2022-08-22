@@ -143,9 +143,9 @@ class Block {
 
   renameDirectory(oldDirectory, newDirectory) {
     fs.rename(oldDirectory, newDirectory, (err) => {
-      if (err) {
-        Logger.logError("There was an error creating the directory");
-        return;
+      if (err.code === "ENOENT") {
+        // Old directory doesn't exist
+        Logger.logError(`The directory "${oldDirectory}" doesn't exist to be renamed`)
       }
 
       process.exit();
@@ -192,9 +192,9 @@ class Block {
       );
 
       fs.rename(oldFileName, newFileName, (err) => {
-        if (err) {
-          console.log(err);
-          return;
+        if (err.code === "ENOENT") {
+          // Old file doesn't exist
+          Logger.logError(`The file "${oldFileName}" doesn't exist to be renamed`)
         }
 
         this.renameAllFiles(oldBlockName, newBlockName, fileMap, ++index);
@@ -212,13 +212,13 @@ class Block {
     //If it is a file check if the file already exists
 
     if (this.configFile.isFile && this.singleFileBlockExists(newBlockName)) {
-      console.log("Block already exist");
+      Logger.logError(`The block "${newBlockName}" already exists`)
       return;
     } else if (
       !this.configFile.isFile &&
       this.multipleFileBlockExists(newBlockName)
     ) {
-      console.log("Block already exists");
+      Logger.logError(`The block "${newBlockName}" already exists`)
       return;
     }
 
@@ -237,7 +237,7 @@ class Block {
         `Block already exists, are you sure you want to override the contents of the Block?(y/n)`,
         (answer) => {
           if (answer == "y" || answer == "yes") {
-            this.createDirectory(blockName, this.createFiles);
+            this.createBlock(blockName);
           } else if (answer == "n" || answer == "no") {
             readline.close();
           }
