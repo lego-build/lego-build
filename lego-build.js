@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const Block = require("./block/Block.js");
+const Help = require("./utils/Help.js");
 const Init = require("./utils/init");
 const Logger = require("./utils/Logger.js");
 const validators = require("./utils/validators");
@@ -98,7 +99,7 @@ const start = () => {
       break;
 
     case "help":
-      console.log("Help command is coming soon");
+      Help.logHelp();
       process.exit();
 
     default:

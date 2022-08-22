@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "The OG Team",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
 }
