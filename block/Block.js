@@ -1,9 +1,7 @@
-const { throws } = require("node:assert");
 const fs = require("node:fs");
 const Logger = require("../utils/Logger");
 const ConfigFile = require("./ConfigFile");
 const UserInput = require("../utils/UserInput");
-const { read } = require("node:fs");
 
 class Block {
   constructor(configFile, fileFormats) {

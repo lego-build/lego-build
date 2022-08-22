@@ -1,7 +1,8 @@
 const fs = require("node:fs");
-const Block = require("./blocks/Block.js");
+const Block = require("./block/Block.js");
 const Init = require("./utils/init");
 const Logger = require("./utils/Logger.js");
+const validators = require("./utils/validators");
 
 let config;
 
@@ -57,7 +58,7 @@ const generateConfigFile = (block) => {
 
 const getBlockConfig = (blockType) => {
   for (let i = 0; i < config.blocks.length; i++) {
-    let currentBlock = config.blocks[i]
+    let currentBlock = config.blocks[i];
     if (currentBlock.type == blockType) {
       return currentBlock;
     }
@@ -82,16 +83,17 @@ const start = () => {
       const oldBlockName = arguments[1].split(":")[0];
       const newBlockName = arguments[3];
 
-      console.log(
-        `Old block name is ${oldBlockName} and new block name is ${newBlockName}`
-      );
-
       //Get the config files for the block
       configFile = generateConfigFile(blockType);
 
       if (configFile) {
         block = new Block(configFile, config.fileFormats);
         block.rename(oldBlockName, newBlockName);
+      } else {
+        Logger.logError(
+          `Block type of '${blockType}' doesn't exist in package file`
+        );
+        process.exit();
       }
       break;
 
@@ -103,13 +105,10 @@ const start = () => {
       //Get the config files for the block
       configFile = generateConfigFile(arguments[0]);
 
-      if (configFile) {
+      if (validators.validateCreateBlockCommand(arguments, configFile)) {
         block = new Block(configFile, config.fileFormats);
         block.main(arguments[1]);
-      } else {
-        Logger.logError(
-          `Block type of '${arguments[0]}' doesn't exist in package file`
-        );
+      }else{
         process.exit();
       }
       break;
