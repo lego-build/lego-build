@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const Block = require("./blocks/Block.js");
-const Init = require("./init");
-const Logger = require("./Logger.js");
+const Init = require("./utils/init");
+const Logger = require("./utils/Logger.js");
 
 let config;
 
