@@ -2,14 +2,19 @@ const fs = require("node:fs");
 const Logger = require("../utils/Logger");
 const ConfigFile = require("./ConfigFile");
 const UserInput = require("../utils/UserInput");
-const chalk = require("chalk")
 
 class Block {
   constructor(configFile, fileFormats) {
     this.configFile = configFile;
-    this.files = configFile.files;
+
     this.config = new ConfigFile(configFile, fileFormats);
     this.userInput = new UserInput();
+
+    if (configFile.isFile) {
+      this.file = configFile.file;
+    } else {
+      this.files = configFile.files;
+    }
   }
 
   /**
@@ -20,10 +25,10 @@ class Block {
   createFile = (filePath, templateFile) => {
     fs.writeFile(filePath, templateFile, (err) => {
       if (err) {
-        Logger.logError("Error creating new file");
+        console.log("Error creating new file");
         throw err;
       } else {
-        Logger.logSuccess(`Created '${filePath}' successfully`);
+        Logger.logSuccess(`created '${filePath}' successfully`);
       }
     });
   };
@@ -32,7 +37,7 @@ class Block {
    * Generate a map containing objects that has the paths for each file needed for a block
    * @param {*} noOfFiles | The amount of items in the map to be generated
    * @param {*} blockName | The block name to be used in renaming the files
-   * @returns A map containing key value pairs of number and object(the object contains the path to use for the file and
+   * @returns A map conating key value pairs of number and object(the object contains the path to use for the file and
    * the location of the template)
    */
   generateFilePathsMap = (noOfFiles, blockName) => {
@@ -41,9 +46,9 @@ class Block {
     for (var i = 0; i < noOfFiles; i++) {
       const tempFileObj = {};
       if (this.configFile.isFile) {
-        tempFileObj["filePath"] = this.config.getFilePath(null, blockName);
+        tempFileObj["filePath"] = this.config.getFilePath(this.file, blockName);
         tempFileObj["templateFilePath"] = this.config.getTemplateFilePath(
-          this.configFile.file.template
+          this.file
         );
       } else {
         tempFileObj["filePath"] = this.config.getFilePath(
@@ -78,7 +83,6 @@ class Block {
         this.createFile(file[1].filePath, templateFile);
       });
     }
-
   };
 
   generateDirectoryName = (blockName) => {
@@ -86,11 +90,7 @@ class Block {
   };
 
   singleFileBlockExists(blockName) {
-    for (const file of this.files) {
-      if (fs.existsSync(this.config.getFilePath(file, blockName))) return true;
-    }
-    return false;
-    return fs.existsSync(this.config.getFilePath(this.files, blockName));
+    return fs.existsSync(this.config.getFilePath(this.file, blockName));
   }
 
   multipleFileBlockExists(blockName) {
@@ -100,10 +100,11 @@ class Block {
   //Check if a block exists
   blockExists(blockName) {
     //If it is a single file check if it exists
-    if (this.configFile.isFile)
-      return fs.existsSync(this.generateDirectoryName(blockName));
+    if (this.configFile.isFile) {
+      return this.singleFileBlockExists(blockName);
+    }
 
-    return this.singleFileBlockExists(blockName);
+    return fs.existsSync(this.generateDirectoryName(blockName));
   }
 
   createBlock = (blockName) => {
@@ -116,11 +117,10 @@ class Block {
       ? this.configFile.path
       : this.generateDirectoryName(blockName);
 
-    console.log(`\nCreating the ${chalk.yellow(blockName)} ${this.configFile.type}\n `);
-
     fs.mkdir(directory, { recursive: true }, (err) => {
       if (err) {
-        Logger.logError(`An error occurred creating the directory "${directory}"`)
+        console.log("Error Occured creating Directory");
+        console.log(err);
         return;
       } else {
         this.createBlockFiles(filePathsMap, blockName);
@@ -230,13 +230,22 @@ class Block {
 
   main(blockName) {
     //If the block already exists then ask the user if they want to override the contents
-    let readline = this.userInput;
+    let readline = this.userInput.getSingleton();
     if (this.blockExists(blockName)) {
-      readline.askQuestion( `Block already exists, are you sure you want to override the contents of the Block?(y/n)`, ()=>{
-        this.createBlock(blockName);
-      })
+      readline.question(
+        `Block already exists, are you sure you want to override the contents of the Block?(y/n)`,
+        (answer) => {
+          if (answer == "y" || answer == "yes") {
+            this.createBlock(blockName);
+          } else if (answer == "n" || answer == "no") {
+            readline.close();
+          }
+
+          readline.close();
+        }
+      );
     } else {
-      readline.getSingleton().close();
+      readline.close();
       this.createBlock(blockName);
     }
   }

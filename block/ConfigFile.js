@@ -20,19 +20,25 @@ class ConfigFile {
 
   getFileName(file, blockName) {
     if (this.configFile.isFile) {
-      return this.configFile.file != undefined
-        ? this.configFile.file.name.replace("<name>", blockName)
-        : null;
+      if (typeof file == "object")
+        return file.name.replace("<name>", blockName);
+      // return this.configFile.file != undefined
+      //   ? this.configFile.file.name.replace("<name>", blockName)
+      //   : null;
     } else {
       //Check if it is an object
       if (typeof file == "object") {
         return file.name.replace("<name>", blockName);
       }
 
-      return this.fileFormats[file] != undefined
-        ? this.fileFormats[file].name.replace("<name>", blockName)
-        : null;
+      // return this.fileFormats[file] != undefined
+      //   ? this.fileFormats[file].name.replace("<name>", blockName)
+      //   : null;
     }
+
+    return this.fileFormats[file] != undefined
+      ? this.fileFormats[file].name.replace("<name>", blockName)
+      : null;
   }
 
   getFilePath(file, blockName) {
@@ -49,34 +55,7 @@ class ConfigFile {
     }
   }
 
-  getSingleFileBlockTemplatePath() {
-    let templateFilePath;
-
-    templateFilePath = this.configFile.file.template;
-
-    //Check if template file exists
-    if (
-      templateFilePath != undefined &&
-      templateFilePath != "DEFAULT" &&
-      !fs.existsSync(templateFilePath)
-    ) {
-      Logger.logWarning(
-        `Template file - '${templateFilePath}' doesn't exist, so a clean slate will be given`
-      );
-      templateFilePath = this.defaultFormats.get("default");
-    }
-
-    if (templateFilePath == "DEFAULT") {
-      templateFilePath = this.defaultFormats.get(this.configFile.type);
-    }
-
-    if (templateFilePath == undefined)
-      templateFilePath = this.defaultFormats.get("default");
-
-    return templateFilePath;
-  }
-
-  getMultipleFileBlockTemplatePath(file) {
+  getBllockTemplateFilePath(file) {
     let templateFilePath;
 
     if (typeof file == "object") {
@@ -122,11 +101,7 @@ class ConfigFile {
   getTemplateFilePath(file) {
     //If this is a single file
     let templateFilePath;
-    if (this.configFile.isFile) {
-      templateFilePath = this.getSingleFileBlockTemplatePath();
-    } else {
-      templateFilePath = this.getMultipleFileBlockTemplatePath(file);
-    }
+    templateFilePath = this.getBllockTemplateFilePath(file);
     return templateFilePath;
   }
 }
