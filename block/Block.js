@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const Logger = require("../utils/Logger");
 const ConfigFile = require("./ConfigFile");
 const UserInput = require("../utils/UserInput");
+const chalk = require("chalk")
 
 class Block {
   constructor(configFile, fileFormats) {
@@ -19,10 +20,10 @@ class Block {
   createFile = (filePath, templateFile) => {
     fs.writeFile(filePath, templateFile, (err) => {
       if (err) {
-        console.log("Error creating new file");
+        Logger.logError("Error creating new file");
         throw err;
       } else {
-        Logger.logSuccess(`created '${filePath}' successfully`);
+        Logger.logSuccess(`Created '${filePath}' successfully`);
       }
     });
   };
@@ -31,7 +32,7 @@ class Block {
    * Generate a map containing objects that has the paths for each file needed for a block
    * @param {*} noOfFiles | The amount of items in the map to be generated
    * @param {*} blockName | The block name to be used in renaming the files
-   * @returns A map conating key value pairs of number and object(the object contains the path to use for the file and
+   * @returns A map containing key value pairs of number and object(the object contains the path to use for the file and
    * the location of the template)
    */
   generateFilePathsMap = (noOfFiles, blockName) => {
@@ -77,6 +78,7 @@ class Block {
         this.createFile(file[1].filePath, templateFile);
       });
     }
+
   };
 
   generateDirectoryName = (blockName) => {
@@ -114,10 +116,11 @@ class Block {
       ? this.configFile.path
       : this.generateDirectoryName(blockName);
 
+    console.log(`\nCreating the ${chalk.yellow(blockName)} ${this.configFile.type}\n `);
+
     fs.mkdir(directory, { recursive: true }, (err) => {
       if (err) {
-        console.log("Error Occured creating Directory");
-        console.log(err);
+        Logger.logError(`An error occurred creating the directory "${directory}"`)
         return;
       } else {
         this.createBlockFiles(filePathsMap, blockName);
