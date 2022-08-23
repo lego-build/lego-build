@@ -9,7 +9,7 @@ lego-build <block-type> <block-name> [<options>]
 
 ${chalk.bold("Other commands:")}       
 init: lego-build init
-rename: lego-build rename <old-block-type>:<old-block-name> to <new-block-name>
+rename: lego-build rename <old-block-name>:<block-type> to <new-block-name>
 
 ${chalk.bold("Options:")}
 --path: Override path to block as specified in lego.json

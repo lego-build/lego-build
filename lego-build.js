@@ -15,14 +15,14 @@ const main = () => {
     //Package already exists
     fs.readFile("lego.json", (err, data) => {
       if (err) {
-        console.log("There was an error reading the file");
+        Logger.logError("There was an issue reading your file :(")
         return;
       }
 
       try {
         config = JSON.parse(data.toString());
       } catch (e) {
-        console.log("Error parsing json file");
+        Logger.logError("There was an issue parsing your lego.json :(")
         return;
       }
 
@@ -79,7 +79,6 @@ const start = () => {
       break;
 
     case "rename":
-      console.log(arguments);
       const blockType = arguments[1].split(":")[1];
       const oldBlockName = arguments[1].split(":")[0];
       const newBlockName = arguments[3];

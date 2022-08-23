@@ -4,10 +4,7 @@
       "type": "component",
       "path": "src/components",
       "files": [
-        {
-          "name": "<name>.jsx",
-          "template": "DEFAULT"
-        },
+        "JSX",
         "CSS",
         "TEST"
       ]
@@ -35,10 +32,7 @@
       "type": "reducer",
       "path": "src/redux/reducers",
       "isFile": true,
-      "file": {
-        "name": "<name>.jsx",
-        "template": "DEFAULT"
-      }
+      "file": "JSX"
     },
     {
       "type": "action",

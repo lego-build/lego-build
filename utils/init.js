@@ -1,5 +1,5 @@
 const fs = require("node:fs");
-const Logger = require("node:fs");
+const Logger = require("./Logger");
 const UserInput = require("./UserInput");
 
 class Init {
@@ -75,7 +75,7 @@ class Init {
         console.log(err);
         return;
       } else {
-        console.log("\x1b[32m%s\x1b[0m", "Package file succesfully created");
+        Logger.logSuccess("Package file created successfully");
         this.callback();
       }
     });
