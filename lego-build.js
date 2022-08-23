@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const fs = require("node:fs");
 const Block = require("./block/Block.js");
 const Help = require("./utils/Help.js");
@@ -9,6 +8,44 @@ const validators = require("./utils/validators");
 
 let config;
 
+/**
+ * Searches the package config file to find the config file for the block specififed
+ * @param {string} blockType | The name of the block type to search for
+ * @returns {object} an object representing the block config file if the config file exists a
+ * or null if the block config file doesn't exist
+ */
+const getBlockConfig = (blockType) => {
+  for (let i = 0; i < config.blocks.length; i++) {
+    let currentBlock = config.blocks[i];
+    if (currentBlock.type == blockType) {
+      return currentBlock;
+    }
+  }
+  return null;
+};
+
+/**
+ * Over-ride some keys in the blockConfigFile depending on the command line options
+ * @param {object} block | The initial blockConfigFile
+ * @returns a modififed blockConfigFile
+ */
+const blockConfigStrategy = (blockConfigFile) => {
+  if (blockConfigFile) {
+    //Check if there was a --path parameter to overide the default config path
+    const pathIndex = arguments.indexOf("--path");
+    //There was a path index so the next item in the list is the new path to have
+    if (
+      pathIndex != -1 &&
+      arguments[pathIndex + 1] != undefined &&
+      arguments[pathIndex + 1].length > 0
+    ) {
+      blockConfigFile.path = arguments[pathIndex + 1];
+    }
+  }
+
+  return blockConfigFile;
+};
+
 //Get the command line arguments
 const arguments = process.argv.slice(2);
 
@@ -17,14 +54,14 @@ const main = () => {
     //Package already exists
     fs.readFile("lego.json", (err, data) => {
       if (err) {
-        Logger.logError("There was an issue reading your file :(")
+        Logger.logError("There was an issue reading your file :(");
         return;
       }
 
       try {
         config = JSON.parse(data.toString());
       } catch (e) {
-        Logger.logError("There was an issue parsing your lego.json :(")
+        Logger.logError("There was an issue parsing your lego.json :(");
         return;
       }
 
@@ -40,39 +77,10 @@ const main = () => {
   }
 };
 
-const generateConfigFile = (block) => {
-  const configFile = getBlockConfig(block);
-
-  if (configFile) {
-    //Check if there was a --path parameter to overide the default config path
-    const pathIndex = arguments.indexOf("--path");
-    //There was a path index so the next item in the list is the new path to have
-    if (
-      pathIndex != -1 &&
-      arguments[pathIndex + 1] != undefined &&
-      arguments[pathIndex + 1].length > 0
-    ) {
-      configFile.path = arguments[pathIndex + 1];
-    }
-  }
-
-  return configFile;
-};
-
-const getBlockConfig = (blockType) => {
-  for (let i = 0; i < config.blocks.length; i++) {
-    let currentBlock = config.blocks[i];
-    if (currentBlock.type == blockType) {
-      return currentBlock;
-    }
-  }
-  return null;
-};
-
 //The main function
 const start = () => {
   let block;
-  let configFile;
+  let blockConfigFile;
   //Switch depending on the command
   switch (arguments[0]) {
     case "init":
@@ -86,10 +94,10 @@ const start = () => {
       const newBlockName = arguments[3];
 
       //Get the config files for the block
-      configFile = generateConfigFile(blockType);
+      blockConfigFile = blockConfigStrategy(getBlockConfig(blockType));
 
-      if (validators.validateRenameCommand(arguments, configFile)) {
-        block = new Block(configFile, config.fileFormats);
+      if (validators.validateRenameCommand(arguments, blockConfigFile)) {
+        block = new Block(blockConfigFile, config.fileFormats);
         block.rename(oldBlockName, newBlockName);
       } else {
         process.exit();
@@ -102,10 +110,10 @@ const start = () => {
 
     default:
       //Get the config files for the block
-      configFile = generateConfigFile(arguments[0]);
+      blockConfigFile = blockConfigStrategy(getBlockConfig(arguments[0]));
 
-      if (validators.validateCreateBlockCommand(arguments, configFile)) {
-        block = new Block(configFile, config.fileFormats);
+      if (validators.validateCreateBlockCommand(arguments, blockConfigFile)) {
+        block = new Block(blockConfigFile, config.fileFormats);
         block.main(arguments[1]);
       } else {
         process.exit();
