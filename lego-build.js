@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require("node:fs");
 const Block = require("./block/Block.js");
 const Help = require("./utils/Help.js");
