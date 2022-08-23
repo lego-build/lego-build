@@ -227,22 +227,13 @@ class Block {
 
   main(blockName) {
     //If the block already exists then ask the user if they want to override the contents
-    let readline = this.userInput.getSingleton();
+    let readline = this.userInput;
     if (this.blockExists(blockName)) {
-      readline.question(
-        `Block already exists, are you sure you want to override the contents of the Block?(y/n)`,
-        (answer) => {
-          if (answer == "y" || answer == "yes") {
-            this.createBlock(blockName);
-          } else if (answer == "n" || answer == "no") {
-            readline.close();
-          }
-
-          readline.close();
-        }
-      );
+      readline.askQuestion( `Block already exists, are you sure you want to override the contents of the Block?(y/n)`, ()=>{
+        this.createBlock(blockName);
+      })
     } else {
-      readline.close();
+      readline.getSingleton().close();
       this.createBlock(blockName);
     }
   }

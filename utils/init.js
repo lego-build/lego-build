@@ -84,20 +84,10 @@ class Init {
   generatePackageFile() {
     //If package exists, ask the user if they want to override and create a new package
     if (fs.existsSync("lego.json")) {
-      let readline = this.userInput.getSingleton();
-      readline.question(
-        `Package file already exists, are you sure you want to override the existing package file? (y/n)`,
-        (answer) => {
-          if (answer == "y" || answer == "yes") {
-            readline.close();
-            this.createPackageFile();
-          } else if (answer == "n" || answer == "no") {
-            readline.close();
-          }
-
-          readline.close();
-        }
-      );
+      let readline = this.userInput;
+      readline.askQuestion(`Package file already exists, are you sure you want to override the existing package file? (y/n)`, ()=>{
+        this.createPackageFile()
+      })
     } else {
       this.createPackageFile();
     }

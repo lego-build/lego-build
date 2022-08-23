@@ -14,6 +14,15 @@ class UserInput{
     getSingleton(){
         return this.singleton;
     }
+
+    askQuestion(question, successCallback){
+        this.singleton.question(question, (answer)=>{
+            if (answer == "y" || answer == "yes") {
+                successCallback()
+            }
+            this.singleton.close();
+        })
+    }
 }
 
 module.exports = UserInput;
