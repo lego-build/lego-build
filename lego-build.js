@@ -31,7 +31,7 @@ const getBlockConfig = (blockType) => {
  */
 const blockConfigStrategy = (blockConfigFile) => {
   if (blockConfigFile) {
-    //Check if there was a --path parameter to overide the default config path
+    //Check if there was a --path option to overide the default config path
     const pathIndex = arguments.indexOf("--path");
     //There was a path index so the next item in the list is the new path to have
     if (
@@ -40,6 +40,17 @@ const blockConfigStrategy = (blockConfigFile) => {
       arguments[pathIndex + 1].length > 0
     ) {
       blockConfigFile.path = arguments[pathIndex + 1];
+    }
+
+    //Check if there was a --parent option to
+    const parentIndex = arguments.indexOf("--parent");
+    //There was a path index so the next item in the list is the new path to have
+    if (
+      parentIndex != -1 &&
+      arguments[parentIndex + 1] != undefined &&
+      arguments[parentIndex + 1].length > 0
+    ) {
+      blockConfigFile["parent"] = arguments[parentIndex + 1];
     }
   }
 
