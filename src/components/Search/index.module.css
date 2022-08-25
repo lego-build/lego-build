@@ -1,12 +1,14 @@
 .search {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  width: 91.6666666667%;
+  margin-inline: auto;
+  gap: 1.5em;
 }
 .search .label {
   display: flex;
   position: relative;
-  width: 83.3333333333%;
-  margin-inline: auto;
+  width: 100%;
 }
 .search .label span {
   position: absolute;
@@ -80,4 +82,11 @@
 }
 .search .label .input:focus::placeholder {
   color: black;
+}
+.search .contribute {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #3D3DFF;
+          text-decoration-color: #3D3DFF;
+  color: #3D3DFF;
+  font-size: 1.05em;
 }/*# sourceMappingURL=index.module.css.map */
