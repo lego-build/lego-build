@@ -8,7 +8,6 @@
   font-weight: 700;
 }
 .card p {
-  box-sizing: border-box;
   font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
