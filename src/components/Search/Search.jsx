@@ -11,6 +11,7 @@ const Search = ({ value: {value, onChange}, resetValue }) => {
               <input value={value} onChange={onChange} type={"text"} id={Id} className={style.input} placeholder="Search for workflow" />
               <span className={`${style.clear} ${value === "" ? style.hidden : style.show}`} onClick={resetValue}><Clear /> </span>
           </label>
+          <a href="/#" className={style.contribute}>Contribute Yours</a>
       </div>
   )
 }
