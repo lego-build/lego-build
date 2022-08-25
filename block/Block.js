@@ -119,7 +119,7 @@ class Block {
 
     fs.mkdir(directory, { recursive: true }, (err) => {
       if (err) {
-        console.log("Error Occured creating Directory");
+        Logger.logError("Error occured creating directory");
         console.log(err);
         return;
       } else {
@@ -232,18 +232,9 @@ class Block {
     //If the block already exists then ask the user if they want to override the contents
     let readline = this.userInput.getSingleton();
     if (this.blockExists(blockName)) {
-      readline.question(
-        `Block already exists, are you sure you want to override the contents of the Block?(y/n)`,
-        (answer) => {
-          if (answer == "y" || answer == "yes") {
-            this.createBlock(blockName);
-          } else if (answer == "n" || answer == "no") {
-            readline.close();
-          }
-
-          readline.close();
-        }
-      );
+      this.userInput.askQuestion(`Block already exists, are you sure you want to override the contents of the Block?(y/n)`, ()=>{
+        this.createBlock(blockName)
+      })
     } else {
       readline.close();
       this.createBlock(blockName);

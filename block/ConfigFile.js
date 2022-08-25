@@ -19,21 +19,8 @@ class ConfigFile {
   }
 
   getFileName(file, blockName) {
-    if (this.configFile.isFile) {
-      if (typeof file == "object")
-        return file.name.replace("<name>", blockName);
-      // return this.configFile.file != undefined
-      //   ? this.configFile.file.name.replace("<name>", blockName)
-      //   : null;
-    } else {
-      //Check if it is an object
-      if (typeof file == "object") {
-        return file.name.replace("<name>", blockName);
-      }
-
-      // return this.fileFormats[file] != undefined
-      //   ? this.fileFormats[file].name.replace("<name>", blockName)
-      //   : null;
+    if (typeof file == "object") {
+      return file.name.replace("<name>", blockName);
     }
 
     return this.fileFormats[file] != undefined
@@ -65,7 +52,7 @@ class ConfigFile {
     }
 
     //There is no template file path so end the code here
-    if (!templateFilePath) {
+    if (!templateFilePath && typeof file == "string") {
       Logger.logError(`File format ${file} doesn't exist`);
       process.exit();
     }

@@ -1,3 +1,5 @@
+const chalk = require("chalk");
+
 const readline = require("readline").createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -16,7 +18,7 @@ class UserInput{
     }
 
     askQuestion(question, successCallback){
-        this.singleton.question(question, (answer)=>{
+        this.singleton.question(chalk.yellow(question), (answer)=>{
             if (answer == "y" || answer == "yes") {
                 successCallback()
             }
