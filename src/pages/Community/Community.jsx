@@ -43,6 +43,7 @@ function Community() {
     <Header />
     <Search value={value} resetValue={resetValue} />
     <Cards data={workflows} />
+    <span className={style.powered}>Powered By GitHub</span>
   </Layout>;
 }
 
