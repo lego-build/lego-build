@@ -194,6 +194,8 @@ class Block {
           Logger.logError(
             `The file "${oldFileName}" doesn't exist to be renamed`
           );
+        }else{
+          Logger.logSuccess(`${oldFileName} was renamed to ${newFileName} successfully`)
         }
 
         this.renameAllFiles(oldBlockName, newBlockName, fileMap, ++index);
@@ -212,19 +214,18 @@ class Block {
 
     if (this.configFile.isFile && this.singleFileBlockExists(newBlockName)) {
       Logger.logError(`The block "${newBlockName}" already exists`);
-      return;
+      process.exit();
     } else if (
       !this.configFile.isFile &&
       this.multipleFileBlockExists(newBlockName)
     ) {
       Logger.logError(`The block "${newBlockName}" already exists`);
-      return;
+      process.exit();
     }
 
     let numOfFiles = this.files == undefined ? 1 : this.files.length;
     const blockFileMap = this.generateFilePathsMap(numOfFiles, oldBlockName);
 
-    console.log("The call to rename was called");
     this.renameAllFiles(oldBlockName, newBlockName, blockFileMap, 0);
   }
 
