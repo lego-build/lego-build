@@ -9,6 +9,9 @@
     }
     p{
         font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        height: 3em;
     }
     a{
         text-decoration: underline;
