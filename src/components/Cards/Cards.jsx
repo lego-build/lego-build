@@ -6,7 +6,6 @@ const Cards = ({ data }) => {
     const Id = useId();
   return (
       <div className={style.container}>
-          <a href="/#">Contribute Yours</a>
         <div className={style.cards}>
             {data.map((details, i) => (<Card {...details} key={Id + i} />))}
         </div>
