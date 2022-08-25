@@ -41,21 +41,16 @@ const blockConfigStrategy = (blockConfigFile) => {
     ) {
       blockConfigFile.path = arguments[pathIndex + 1];
     }
-
-    //Check if there was a --parent option to
-    const parentIndex = arguments.indexOf("--parent");
-    //There was a path index so the next item in the list is the new path to have
-    if (
-      parentIndex != -1 &&
-      arguments[parentIndex + 1] != undefined &&
-      arguments[parentIndex + 1].length > 0
-    ) {
-      blockConfigFile["parent"] = arguments[parentIndex + 1];
-    }
   }
 
   return blockConfigFile;
 };
+
+const extractParentConfig = (parentString)=>{
+  let parentType = parentString.split(":")[1]
+
+  return getBlockConfig(parentType)
+}
 
 //Get the command line arguments
 const arguments = process.argv.slice(2);

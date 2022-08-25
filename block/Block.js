@@ -25,7 +25,7 @@ class Block {
   createFile = (filePath, templateFile) => {
     fs.writeFile(filePath, templateFile, (err) => {
       if (err) {
-        console.log("Error creating new file");
+        Logger.logError("There was an error creating new file :)")
         throw err;
       } else {
         Logger.logSuccess(`created '${filePath}' successfully`);
@@ -120,7 +120,6 @@ class Block {
     fs.mkdir(directory, { recursive: true }, (err) => {
       if (err) {
         Logger.logError("Error occured creating directory");
-        console.log(err);
         return;
       } else {
         this.createBlockFiles(filePathsMap, blockName);

@@ -13,7 +13,6 @@ rename: lego-build rename <old-block-name>:<block-type> to <new-block-name>
 
 ${chalk.bold("Options:")}
 --path: Override path to block as specified in lego.json
---parent: Specify a parent block in which to import your new block 
     
 For detailed documentation, go to the docs page at ${chalk.underline("https://lego-build.github.io/docs")}`);
   }

@@ -71,8 +71,7 @@ class Init {
 
     fs.writeFile("lego.json", defaaultPackage, (err) => {
       if (err) {
-        console.log("There was an error");
-        console.log(err);
+        Logger.logError("There was an error creating the package file :(");
         return;
       } else {
         Logger.logSuccess("Package file created successfully");
