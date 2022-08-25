@@ -7,7 +7,7 @@ const Card = ({ id, title, description, author: { name, profileLink } } ) => {
       <div className={style.header} data-mark={wordParser(!!title ? title : "")}>
 
       </div>
-      <h1>{title}</h1>
+      <h1 className={style.title}>{title}</h1>
       <p>{description}</p>
       <span>By <a href={profileLink}>{name}</a></span>
     </div>
