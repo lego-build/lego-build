@@ -5,4 +5,16 @@
   min-height: 100vh;
   height: 100%;
   gap: 1.5em;
+}
+.community .powered {
+  padding: 0.95em 1.5em;
+  border-radius: 999px;
+  position: relative;
+  display: block;
+  float: right;
+  margin-left: auto;
+  right: 50px;
+  background-color: #1A1A1A;
+  color: #fff;
+  cursor: pointer;
 }/*# sourceMappingURL=index.module.css.map */

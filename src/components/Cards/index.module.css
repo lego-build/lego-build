@@ -402,4 +402,11 @@ video {
   gap: 15px;
   align-items: center;
   justify-content: space-around;
+}
+@media screen and (max-width: 950px) {
+  .container .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 }/*# sourceMappingURL=index.module.css.map */
