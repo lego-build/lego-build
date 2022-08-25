@@ -9,4 +9,11 @@
     align-items: center;
     justify-content: space-around;
 }
+@media screen and (max-width: 950px) {
+    .cards{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
 }
