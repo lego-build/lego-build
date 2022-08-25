@@ -1,11 +1,13 @@
 .search{
     display: flex;
-    width: 100%;
-    .label{
-    display: flex;
-    position: relative;
-    width: calc(10/12 * 100%);
+    flex-direction: column;
+    width: calc(11/12 * 100%);
     margin-inline: auto;
+    gap: 1.5em;
+    .label{
+        display: flex;
+        position: relative;
+        width: 100%;
     span{
         position: absolute;
         top: 0px;
@@ -54,4 +56,10 @@
         }
     }
 }
+   .contribute{
+        text-decoration: underline;
+        text-decoration-color: #3D3DFF;
+        color: #3D3DFF;
+        font-size: 1.05em;
+    }
 }
