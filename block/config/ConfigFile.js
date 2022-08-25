@@ -1,21 +1,60 @@
+const { throws } = require("node:assert");
 const fs = require("node:fs");
-const Logger = require("../utils/Logger");
+const Logger = require("../../utils/Logger");
 
 class ConfigFile {
   constructor(configFile, fileFormats) {
     this.configFile = configFile;
     this.fileFormats = fileFormats;
+    this.noOfFiles =
+      configFile.files == undefined ? 1 : configFile.files.length;
+
+    if (configFile.isFile) {
+      this.file = configFile.file;
+    } else {
+      this.files = configFile.files;
+    }
 
     //Configure the default formats
     this.defaultFormats = new Map();
-    this.defaultFormats.set("default", "templates/blank.jsx");
+    this.defaultFormats.set("default", __dirname + "/../templates/blank.jsx");
     if (this.configFile.isFile) {
-      this.defaultFormats.set("reducer", "templates/reducerTemplate.jsx");
-      this.defaultFormats.set("action", "templates/actionTemplate.jsx");
+      this.defaultFormats.set(
+        "reducer",
+        __dirname + "/../templates/reducerTemplate.jsx"
+      );
+      this.defaultFormats.set(
+        "action",
+        __dirname + "/../templates/actionTemplate.jsx"
+      );
     } else {
-      this.defaultFormats.set("JSX", "templates/jsxTemplate.jsx");
-      this.defaultFormats.set("JS", "templates/jsTemplate.jsx");
+      this.defaultFormats.set(
+        "JSX",
+        __dirname + "/../templates/jsxTemplate.jsx"
+      );
+      this.defaultFormats.set("JS", __dirname + "/../templates/jsTemplate.jsx");
     }
+  }
+
+  isFile() {
+    if (this.configFile.isFile) return true;
+    return false;
+  }
+
+  getBlockDirectory(blockName) {
+    return this.configFile.path + "/" + blockName;
+  }
+
+  getBlockRootDirectory(blockName) {
+    if (this.isFile()) {
+      return this.configFile.path;
+    }
+
+    return this.getBlockDirectory(blockName);
+  }
+
+  getBlockType() {
+    return this.configFile.type;
   }
 
   getFileName(file, blockName) {
@@ -26,6 +65,14 @@ class ConfigFile {
     return this.fileFormats[file] != undefined
       ? this.fileFormats[file].name.replace("<name>", blockName)
       : null;
+  }
+
+  getBlockFile() {
+    if (this.configFile.isFile) {
+      return this.configFile.file;
+    } else {
+      return this.configFile.files;
+    }
   }
 
   getFilePath(file, blockName) {
@@ -42,7 +89,7 @@ class ConfigFile {
     }
   }
 
-  getBllockTemplateFilePath(file) {
+  getBlockTemplateFilePath(file) {
     let templateFilePath;
 
     if (typeof file == "object") {
@@ -88,9 +135,35 @@ class ConfigFile {
   getTemplateFilePath(file) {
     //If this is a single file
     let templateFilePath;
-    templateFilePath = this.getBllockTemplateFilePath(file);
+    templateFilePath = this.getBlockTemplateFilePath(file);
     return templateFilePath;
   }
+
+  /**
+   * Generate a map containing objects that has the paths for each file needed for a block
+   * @param {*} blockName | The block name to be used in renaming the files
+   * @returns A map conating key value pairs of number and object(the object contains the path to use for the file and
+   * the location of the template)
+   */
+  generateFilePathsMap = (blockName) => {
+    const fileMap = new Map();
+
+    for (var i = 0; i < this.noOfFiles; i++) {
+      const tempFileObj = {};
+      if (this.configFile.isFile) {
+        tempFileObj["filePath"] = this.getFilePath(this.file, blockName);
+        tempFileObj["templateFilePath"] = this.getTemplateFilePath(this.file);
+      } else {
+        tempFileObj["filePath"] = this.getFilePath(this.files[i], blockName);
+        tempFileObj["templateFilePath"] = this.getTemplateFilePath(
+          this.files[i]
+        );
+      }
+      fileMap.set(i, tempFileObj);
+    }
+
+    return fileMap;
+  };
 }
 
 module.exports = ConfigFile;
