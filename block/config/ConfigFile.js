@@ -95,7 +95,7 @@ class ConfigFile {
     if (typeof file == "object") {
       templateFilePath = file.template;
     } else {
-      templateFilePath = this.fileFormats[file];
+      templateFilePath = this.fileFormats[file].template;
     }
 
     //There is no template file path so end the code here
@@ -104,16 +104,14 @@ class ConfigFile {
       process.exit();
     }
 
-    //Set the template file path to its value if it's a string type
-    if (typeof file != "object")
-      templateFilePath = this.fileFormats[file].template;
-
     //Check if template file exists
     if (
       templateFilePath != undefined &&
       templateFilePath != "DEFAULT" &&
-      !fs.existsSync(templateFilePath)
+      fs.existsSync(templateFilePath)
     ) {
+      templateFilePath = process.cwd() + "/" + templateFilePath;
+    } else {
       Logger.logWarning(
         `Template file - '${templateFilePath}' doesn't exist, so a clean slate will be given`
       );
@@ -151,17 +149,18 @@ class ConfigFile {
     for (var i = 0; i < this.noOfFiles; i++) {
       const tempFileObj = {};
       if (this.configFile.isFile) {
-        tempFileObj["filePath"] = this.getFilePath(this.file, blockName);
+        tempFileObj["filePath"] =
+          process.cwd() + "/" + this.getFilePath(this.file, blockName);
         tempFileObj["templateFilePath"] = this.getTemplateFilePath(this.file);
       } else {
-        tempFileObj["filePath"] = this.getFilePath(this.files[i], blockName);
+        tempFileObj["filePath"] =
+          process.cwd() + "/" + this.getFilePath(this.files[i], blockName);
         tempFileObj["templateFilePath"] = this.getTemplateFilePath(
           this.files[i]
         );
       }
       fileMap.set(i, tempFileObj);
     }
-
     return fileMap;
   };
 }

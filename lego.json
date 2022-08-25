@@ -67,7 +67,8 @@
       "template": "DEFAULT"
     },
     "CSS": {
-      "name": "<name>.css"
+      "name": "<name>.css",
+      "template": "temp.css"
     },
     "SCSS": {
       "name": "<name>.scss"
