@@ -8,7 +8,7 @@ const Cards = ({ data }) => {
       <div className={style.container}>
           <a href="/#">Contribute Yours</a>
         <div className={style.cards}>
-            {data.map((details, i) => (<Card data={details} key={Id + i} />))}
+            {data.map((details, i) => (<Card {...details} key={Id + i} />))}
         </div>
       </div>
   )
