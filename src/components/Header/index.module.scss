@@ -1,7 +1,6 @@
 .header {
   display: flex;
   flex-direction: column;
-  flex: 1 0% 0%;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -15,5 +14,11 @@
   }
   p{
     width: calc(6/12 * 100%);
+  }
+  @media screen and (max-width: 920px) {
+    p{
+    width: calc(10/12 * 100%);
+    margin-inline: auto;
+    }
   }
 }
