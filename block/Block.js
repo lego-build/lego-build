@@ -232,7 +232,7 @@ class Block {
     //If the block already exists then ask the user if they want to override the contents
     let readline = this.userInput.getSingleton();
     if (this.blockExists(blockName)) {
-      this.userInput.askQuestion(`Block already exists, are you sure you want to override the contents of the Block?(y/n)`, ()=>{
+      this.userInput.askQuestion(`${blockName} ${this.configFile.type} already exists, are you sure you want to override the contents of the block?(y/n)`, ()=>{
         this.createBlock(blockName)
       })
     } else {
