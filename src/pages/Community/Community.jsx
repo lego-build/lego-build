@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { parserUndo } from "../../utils/functions";
 import Setup from "./subpage/Setup/Setup";
 import TransparentRectangle from "../../assets/illustrations/TransparentRectangle";
+import { Crystals } from "../../assets";
 function Community() {
   const [value, resetValue] = useState("");
   const { setup } = useParams();
@@ -82,11 +83,14 @@ function Community() {
     ]
     const filteredData = initialValue.filter(({ title }) => title.toLowerCase().includes(value.toLowerCase()));
     setWorkflows(filteredData);
-    console.log(value)
   }, [value])
   return (
     < Layout className={style.community} >
       <TransparentRectangle className={style.TransparentRectangle} />
+      <span className={style.Crystals}>
+        <Crystals className={style.Crystal1} />
+        <Crystals className={style.Crystal2} />
+      </span>
     { component }
     < a href = "https://github.com" className = { style.powered } > Powered By GitHub</a >
     </Layout >
