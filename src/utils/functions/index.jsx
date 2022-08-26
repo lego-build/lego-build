@@ -1,1 +1,0 @@
-export { wordParser } from "./helper";

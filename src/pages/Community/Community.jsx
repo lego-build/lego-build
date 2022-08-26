@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Cards, Header, Layout } from "../../components";
 import useInput from '../../utils/hooks/useInput';
 import style from "./index.module.css";
 import { Search } from "../../components";
-
+import Main from "./subpage/Main/Main";
+import { useParams } from "react-router-dom";
 function Community() {
   const [value, resetValue] = useInput("");
+  const { setup } = useParams();
+
   const [workflows, setWorkflows] = useState([
     {
       id: 1,
@@ -38,11 +41,10 @@ function Community() {
       },
     },
   ]);
-
+  let component = <Main />;
+  
   return <Layout className={style.community}>
-    <Header />
-    <Search value={value} resetValue={resetValue} />
-    <Cards data={workflows} />
+    <Main {...{value, resetValue,workflows}} />
     <span className={style.powered}>Powered By GitHub</span>
   </Layout>;
 }
