@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Arrow } from "../../../../assets";
+import { Arrow, Dots, LeftDots } from "../../../../assets";
 import { Code } from "../../../../components";
+import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
 const Setup = ({ author:{name,profileLink }, description, id, title }) => {
     return (
@@ -9,10 +10,12 @@ const Setup = ({ author:{name,profileLink }, description, id, title }) => {
         <div className={style.setup}>
             <div className={style.content}>
                 <span className={style.link}>By <a href={profileLink}>{name}</a></span>
-                <h1 className={style.title}>{title}</h1>
+            <h1 className={style.title} data-mark={wordParser(!!title ? title : "")}>{title}</h1>
                 <p className={style.description}>{description}</p>
                 <span className={style.download}><a href="./index.module.css" download="lego.json" className={style.json}>Download JSON</a> <span className={style.container}> <a href="./index.module.scss" download={"lego"} className={style.template}>.</a></span></span>
-            </div>
+          </div>
+          <LeftDots className={style.leftDot} />
+          <Dots className={style.rightDot} />
             <div className={style.editor}>
                 <Code>
                     {`{
@@ -38,7 +41,7 @@ const Setup = ({ author:{name,profileLink }, description, id, title }) => {
                 </Code>
             </div>
         </div>
-            <span><Link to={"/community"} className={style.communityLink} >Back to Community</Link> <Arrow /></span>
+        <Link to={"/community"} className={style.communityContainer}><span  className={style.communityLink} >Back to Community</span> <Arrow /></Link>
         </section>
     );
 }
