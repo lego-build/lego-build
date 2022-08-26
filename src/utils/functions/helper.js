@@ -7,5 +7,5 @@ export const parser = (arg) => {
 }
 export const parserUndo = (arg) => {
     var string = arg.toLowerCase().replace('-', ' ');
-     return arg.indexOf('-') > -1 ? parserUndo(string) : string.split(' ').map(val => val[0].toUpperCase() + val.substring(1)).join(' ');
- }
+    return arg.indexOf('-') > -1 ? parserUndo(string) : string.split(' ').map((val) => val.includes("cript") ? val[0].toUpperCase() + val.substring(1, (val.indexOf("cript") - 1)) + val.substring(val.indexOf("cript") - 1)[0].toUpperCase() + val.substring(val.indexOf("cript")) : val[0].toUpperCase() + val.substring(1)).join(' ');
+}
