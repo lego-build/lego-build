@@ -1,4 +1,11 @@
 .setupcontainer {
+    position: relative;
+    overflow-x: hidden;
+    .shadowCircle{
+        position: absolute;
+        left: 28%;
+        top: -20px;
+    }
     .setup {
         display: flex;
         width: 100%;
@@ -148,14 +155,16 @@
             gap: 30px;
 
             .content {
-                flex-basis: 90%;
                 width: 90%;
-
+                .download{
+                a{
+                    font-size: 11px;
+                }
+                }
             }
 
             .editor {
-                flex-basis: 90%;
-                width: 90%;
+                width:  90%;
             }
 
         }
@@ -170,6 +179,9 @@
     transition-duration: 500ms;
     transition-timing-function: ease-in;
     margin-left: 5%;
+    @media screen and (max-width: 960px) {
+        margin-top: 20px;
+    }
     &:hover{
         gap:30px;
     }
