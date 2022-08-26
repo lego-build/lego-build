@@ -5,6 +5,7 @@ import Main from "./subpage/Main/Main";
 import { useParams } from "react-router-dom";
 import { parserUndo } from "../../utils/functions";
 import Setup from "./subpage/Setup/Setup";
+import TransparentRectangle from "../../assets/illustrations/TransparentRectangle";
 function Community() {
   const [value, resetValue] = useState("");
   const { setup } = useParams();
@@ -85,6 +86,7 @@ function Community() {
   }, [value])
   return (
     < Layout className={style.community} >
+      <TransparentRectangle className={style.TransparentRectangle} />
     { component }
     < a href = "https://github.com" className = { style.powered } > Powered By GitHub</a >
     </Layout >
