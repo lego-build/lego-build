@@ -1,7 +1,7 @@
-.setup .link {
+.setup .content .link {
   color: #737373;
 }
-.setup .link a {
+.setup .content .link a {
   text-decoration: underline;
   -webkit-text-decoration-color: #737373;
           text-decoration-color: #737373;

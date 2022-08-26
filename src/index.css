@@ -1,3 +1,4 @@
+@import url("./sass/abstracts/_colors.scss");
 @font-face {
   font-family: "Scandia";
   src: url("./assets/fonts/Scandia-Light.ttf") format("truetype");
