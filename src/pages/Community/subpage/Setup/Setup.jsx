@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Arrow, Dots, LeftDots } from "../../../../assets";
+import { Arrow, Dots, LeftDots, ShadowCircle } from "../../../../assets";
 import { Code } from "../../../../components";
 import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
 const Setup = ({ author:{name,profileLink }, description, id, title }) => {
     return (
-        <section className={style.setupcontainer}>
+      <section className={style.setupcontainer}>
+        <ShadowCircle className={style.shadowCircle} />
         <div className={style.setup}>
             <div className={style.content}>
                 <span className={style.link}>By <a href={profileLink}>{name}</a></span>
