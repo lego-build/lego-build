@@ -6,6 +6,11 @@
         z-index: -99;
         left: 0;
     }
+    .leftWatermark{
+            position: absolute;
+            z-index: -99;
+            right: 0;
+    }
     .cards{
     width: calc(11/12 * 100%);
     position: relative;
