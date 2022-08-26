@@ -12,11 +12,21 @@
             width: 50%;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
 
             .title {
                 font-size: 2em;
                 font-weight: 700;
+                &::before {
+                        content: attr(data-mark);
+                        position: absolute;
+                        top: 0;
+                        left: 10px;
+                        font-size: 7em;
+                        font-weight: 900;
+                        color: transparent;
+                        -webkit-text-stroke: 0.25px #F0F0F0;
+                    }
 
                 @media screen and (max-width: 960px) {
                     font-size: 1.5em;
@@ -122,6 +132,11 @@
                 }
             }
         }
+        .leftDot{
+            position: absolute;
+            left: 0;
+            z-index: -1;
+        }
 
         @media screen and(max-width: 960px) {
             flex-direction: column-reverse;
@@ -141,14 +156,22 @@
         }
 
     }
-
+.communityContainer{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition-duration: gap;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+    margin-left: 5%;
+    &:hover{
+        gap:30px;
+    }
     .communityLink {
         text-decoration: underline;
         text-decoration-color: #3D3DFF;
         color: #3D3DFF;
-
-        &::after {
-            content: "\f007";
-        }
+    }
     }
 }

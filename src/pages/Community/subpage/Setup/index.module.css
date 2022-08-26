@@ -11,11 +11,21 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .setupcontainer .setup .content .title {
   font-size: 2em;
   font-weight: 700;
+}
+.setupcontainer .setup .content .title::before {
+  content: attr(data-mark);
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 7em;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 0.25px #F0F0F0;
 }
 @media screen and (max-width: 960px) {
   .setupcontainer .setup .content .title {
@@ -105,6 +115,11 @@
   right: -10px;
   z-index: -1;
 }
+.setupcontainer .setup .leftDot {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
 @media screen and (max-width: 960px) {
   .setupcontainer .setup {
     flex-direction: column-reverse;
@@ -119,12 +134,22 @@
     width: 90%;
   }
 }
-.setupcontainer .communityLink {
+.setupcontainer .communityContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition-duration: gap;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+  margin-left: 5%;
+}
+.setupcontainer .communityContainer:hover {
+  gap: 30px;
+}
+.setupcontainer .communityContainer .communityLink {
   text-decoration: underline;
   -webkit-text-decoration-color: #3D3DFF;
           text-decoration-color: #3D3DFF;
   color: #3D3DFF;
-}
-.setupcontainer .communityLink::after {
-  content: "\f007";
 }/*# sourceMappingURL=index.module.css.map */
