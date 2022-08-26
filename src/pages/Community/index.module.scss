@@ -16,5 +16,11 @@
         background-color: #1A1A1A;
         color: #fff;
         cursor: pointer;
+        transition-property: background-color;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in;
+        &:hover{
+            background-color: #3b3a3a;
+        }
     }
 }
