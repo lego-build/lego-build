@@ -1,3 +1,12 @@
+.setupcontainer {
+  position: relative;
+  overflow-x: hidden;
+}
+.setupcontainer .shadowCircle {
+  position: absolute;
+  left: 28%;
+  top: -20px;
+}
 .setupcontainer .setup {
   display: flex;
   width: 100%;
@@ -131,11 +140,12 @@
     gap: 30px;
   }
   .setupcontainer .setup .content {
-    flex-basis: 90%;
     width: 90%;
   }
+  .setupcontainer .setup .content .download a {
+    font-size: 11px;
+  }
   .setupcontainer .setup .editor {
-    flex-basis: 90%;
     width: 90%;
   }
 }
@@ -148,6 +158,11 @@
   transition-duration: 500ms;
   transition-timing-function: ease-in;
   margin-left: 5%;
+}
+@media screen and (max-width: 960px) {
+  .setupcontainer .communityContainer {
+    margin-top: 20px;
+  }
 }
 .setupcontainer .communityContainer:hover {
   gap: 30px;

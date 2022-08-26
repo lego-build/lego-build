@@ -62,6 +62,9 @@
   background-color: #3b3a3a;
 }
 @media screen and (max-width: 950px) {
+  .community .powered {
+    font-size: 12px;
+  }
   .community .TransparentRectangle {
     display: none;
   }
