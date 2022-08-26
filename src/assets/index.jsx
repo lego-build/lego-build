@@ -12,3 +12,4 @@ export { default as LeftDots } from "./illustrations/LeftDots";
 export { default as TransparentRectangle } from "./illustrations/TransparentRectangle";
 export { default as Crystals } from "./illustrations/Crystals";
 export { default as Arrow } from "./illustrations/Arrow";
+export { default as ShadowCircle } from "./illustrations/ShadowCircle";
