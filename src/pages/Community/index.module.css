@@ -13,6 +13,34 @@
   z-index: 9;
   opacity: 0.55;
 }
+.community .Crystals {
+  display: flex;
+  position: absolute;
+  left: 25px;
+  gap: 50px;
+  height: 150px;
+  top: 10%;
+}
+.community .Crystals .Crystal1 {
+  align-self: flex-end;
+}
+.community .Crystals .Crystal2 {
+  align-self: flex-start;
+}
+.community .Crystals2 {
+  display: flex;
+  position: absolute;
+  right: 25px;
+  gap: 50px;
+  height: 150px;
+  top: 10%;
+}
+.community .Crystals2 .Crystal1 {
+  align-self: flex-end;
+}
+.community .Crystals2 .Crystal2 {
+  align-self: flex-start;
+}
 .community .powered {
   padding: 0.95em 1.5em;
   border-radius: 999px;

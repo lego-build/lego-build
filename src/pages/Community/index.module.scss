@@ -12,7 +12,38 @@
         z-index: 9;
         opacity: 0.55;
     }
- 
+ .Crystals {
+     display: flex;
+     position: absolute;
+     left: 25px;
+     gap: 50px;
+     height: 150px;
+     top: 10%;
+
+     .Crystal1 {
+         align-self: flex-end;
+     }
+
+     .Crystal2 {
+         align-self: flex-start;
+     }
+ }
+ .Crystals2 {
+     display: flex;
+     position: absolute;
+     right: 25px;
+     gap: 50px;
+     height: 150px;
+     top: 10%;
+
+     .Crystal1 {
+         align-self: flex-end;
+     }
+
+     .Crystal2 {
+         align-self: flex-start;
+     }
+ }
     .powered{
         padding: 0.95em 1.5em;
         border-radius: 999px;
