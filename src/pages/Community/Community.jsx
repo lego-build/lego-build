@@ -91,7 +91,11 @@ function Community() {
         <Crystals className={style.Crystal1} />
         <Crystals className={style.Crystal2} />
       </span>
-    { component }
+      {component}
+      <span className={style.Crystals2}>
+        <Crystals className={style.Crystal1} />
+        <Crystals className={style.Crystal2} />
+      </span>
     < a href = "https://github.com" className = { style.powered } > Powered By GitHub</a >
     </Layout >
   );
