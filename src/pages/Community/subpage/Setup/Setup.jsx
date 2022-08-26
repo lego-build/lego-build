@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Arrow } from "../../../../assets";
 import { Code } from "../../../../components";
 import style from "./index.module.css";
 const Setup = ({ author:{name,profileLink }, description, id, title }) => {
@@ -37,7 +38,7 @@ const Setup = ({ author:{name,profileLink }, description, id, title }) => {
                 </Code>
             </div>
         </div>
-            <Link to={"/community"} className={style.communityLink} >Back to Community</Link>
+            <span><Link to={"/community"} className={style.communityLink} >Back to Community</Link> <Arrow /></span>
         </section>
     );
 }
