@@ -400,6 +400,11 @@ video {
   z-index: -99;
   left: 0;
 }
+.container .leftWatermark {
+  position: absolute;
+  z-index: -99;
+  right: 0;
+}
 .container .cards {
   width: 91.6666666667%;
   position: relative;

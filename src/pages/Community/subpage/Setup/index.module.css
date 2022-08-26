@@ -1,1 +1,8 @@
-/*# sourceMappingURL=index.module.css.map */
+.setup .link {
+  color: #737373;
+}
+.setup .link a {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #737373;
+          text-decoration-color: #737373;
+}/*# sourceMappingURL=index.module.css.map */
