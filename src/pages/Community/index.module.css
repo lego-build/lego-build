@@ -5,6 +5,13 @@
   min-height: 100vh;
   height: 100%;
   gap: 1.5em;
+  position: relative;
+}
+.community .TransparentRectangle {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  opacity: 0.55;
 }
 .community .powered {
   padding: 0.95em 1.5em;

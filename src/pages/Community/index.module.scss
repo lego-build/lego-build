@@ -5,6 +5,15 @@
     min-height: 100vh;
     height: 100%;
     gap: 1.5em;
+    position: relative;
+    .TransparentRectangle{
+        position: absolute;
+        top: 0;
+        z-index: 9;
+        // filter: opacity(0.25px);
+        opacity: 0.55;
+
+    }
     .powered{
         padding: 0.95em 1.5em;
         border-radius: 999px;
