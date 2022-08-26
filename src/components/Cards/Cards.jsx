@@ -7,8 +7,8 @@ const Cards = ({ data }) => {
     const Id = useId();
   return (
     <div className={style.container}>
-      <Dots className={style.watermark} />
-      <LeftDots className={style.leftWatermark} />
+      <Dots className={style.leftWatermark} />
+      <LeftDots className={style.watermark} />
         <div className={style.cards}>
             {data.map((details, i) => (<Card {...details} key={Id + i} />))}
       </div>
