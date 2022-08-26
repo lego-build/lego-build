@@ -9,3 +9,4 @@ export { default as Second } from "./icons/Second";
 export { default as Third } from "./icons/Third";
 export { default as Dots } from "./illustrations/Dots";
 export { default as TransparentRectangle } from "./illustrations/TransparentRectangle";
+export { default as Crystals } from "./illustrations/Crystals";
