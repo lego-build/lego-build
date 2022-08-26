@@ -19,6 +19,7 @@
      gap: 50px;
      height: 150px;
      top: 10%;
+     z-index: -1;
 
      .Crystal1 {
          align-self: flex-end;
@@ -35,7 +36,7 @@
      gap: 50px;
      height: 150px;
      top: 10%;
-
+    z-index: -1;
      .Crystal1 {
          align-self: flex-end;
      }
@@ -60,6 +61,11 @@
         transition-timing-function: ease-in;
         &:hover{
             background-color: #3b3a3a;
+        }
+    }
+@media screen and (max-width: 950px) {
+            .TransparentRectangle {
+                display: none;
         }
     }
 }
