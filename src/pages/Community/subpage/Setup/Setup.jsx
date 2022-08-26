@@ -1,4 +1,5 @@
-const Setup = () => {
+const Setup = (props) => {
+    console.log(props)
     return (
         <>
         </>
