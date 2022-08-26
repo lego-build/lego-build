@@ -6,20 +6,7 @@
   gap: 0.75em;
   justify-content: center;
   position: relative;
-    .Crystals {
-        display: flex;
-        position: absolute;
-        left: 10px;
-        gap: 50px;
-        height: 150px;
-        top: 10px;
-        .Crystal1{
-          align-self: flex-end;
-        }
-        .Crystal2{
-          align-self: flex-start;
-        }
-      }
+    
   div {
     position: relative;
         border-radius: 999px;

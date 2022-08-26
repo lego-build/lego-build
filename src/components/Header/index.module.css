@@ -7,20 +7,6 @@
   justify-content: center;
   position: relative;
 }
-.header .Crystals {
-  display: flex;
-  position: absolute;
-  left: 10px;
-  gap: 50px;
-  height: 150px;
-  top: 10px;
-}
-.header .Crystals .Crystal1 {
-  align-self: flex-end;
-}
-.header .Crystals .Crystal2 {
-  align-self: flex-start;
-}
 .header div {
   position: relative;
   border-radius: 999px;
