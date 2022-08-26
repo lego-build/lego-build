@@ -64,7 +64,13 @@
   font-size: 1em;
 }
 .setupcontainer .setup .content .download .json {
+  padding: 0.8125em 2.5625em;
   background-color: #008F75;
+  border: 2px solid #008F75;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
   transition-property: background-color;
   transition-duration: 500ms;
   transition-timing-function: ease-in;
@@ -97,6 +103,9 @@
   z-index: 50;
   border-radius: inherit;
   color: transparent;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .setupcontainer .setup .content .download .container .template::before {
   content: "Download Template";
