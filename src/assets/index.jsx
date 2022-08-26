@@ -8,5 +8,6 @@ export { default as First } from "./icons/First";
 export { default as Second } from "./icons/Second";
 export { default as Third } from "./icons/Third";
 export { default as Dots } from "./illustrations/Dots";
+export { default as LeftDots } from "./illustrations/LeftDots";
 export { default as TransparentRectangle } from "./illustrations/TransparentRectangle";
 export { default as Crystals } from "./illustrations/Crystals";
