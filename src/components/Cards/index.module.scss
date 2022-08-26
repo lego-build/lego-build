@@ -1,13 +1,21 @@
 @import "../../sass/abstracts/abstract";
 .container{
     width: 100%;
+    .watermark{
+        position: absolute;
+        z-index: -99;
+        left: 0;
+    }
     .cards{
-    width: 100%;
+    width: calc(11/12 * 100%);
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     align-items: center;
     justify-content: space-around;
+    margin-inline: auto;
+    z-index: 5;
 }
 @media screen and (max-width: 950px) {
     .cards{
