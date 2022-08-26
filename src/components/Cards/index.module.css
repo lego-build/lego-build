@@ -395,13 +395,21 @@ video {
 .container {
   width: 100%;
 }
+.container .watermark {
+  position: absolute;
+  z-index: -99;
+  left: 0;
+}
 .container .cards {
-  width: 100%;
+  width: 91.6666666667%;
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   align-items: center;
   justify-content: space-around;
+  margin-inline: auto;
+  z-index: 5;
 }
 @media screen and (max-width: 950px) {
   .container .cards {
