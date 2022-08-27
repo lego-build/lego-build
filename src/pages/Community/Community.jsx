@@ -45,8 +45,10 @@ function Community() {
   ]);
   let component = <Main {...{ value, resetValue, workflows }} />;
   if (!!setup) {
-    const [value] = workflows.filter(({ title }) => title === parserUndo(setup))
-    component = <Setup {...value} />
+    const [value] = workflows.filter(
+      ({ title }) => title === parserUndo(setup)
+    );
+    component = <Setup {...value} />;
   }
   useEffect(() => {
     const initialValue = [
@@ -80,12 +82,14 @@ function Community() {
           profileLink: "https://github.com/Onyelaudochukwuka",
         },
       },
-    ]
-    const filteredData = initialValue.filter(({ title }) => title.toLowerCase().includes(value.toLowerCase()));
+    ];
+    const filteredData = initialValue.filter(({ title }) =>
+      title.toLowerCase().includes(value.toLowerCase())
+    );
     setWorkflows(filteredData);
-  }, [value])
+  }, [value]);
   return (
-    < Layout className={style.community} >
+    <Layout className={style.community}>
       <TransparentRectangle className={style.TransparentRectangle} />
       <span className={style.Crystals}>
         <Crystals className={style.Crystal1} />
@@ -96,8 +100,11 @@ function Community() {
         <Crystals className={style.Crystal1} />
         <Crystals className={style.Crystal2} />
       </span>
-    < a href = "https://github.com" className = { style.powered } > Powered By GitHub</a >
-    </Layout >
+      <a href="https://github.com" className={style.powered}>
+        {" "}
+        Powered By GitHub
+      </a>
+    </Layout>
   );
 }
 

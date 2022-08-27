@@ -4,22 +4,47 @@ import { Arrow, Dots, LeftDots, ShadowCircle } from "../../../../assets";
 import { Code } from "../../../../components";
 import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
-const Setup = ({ author:{name,profileLink }, description, id, title }) => {
-    return (
-      <section className={style.setupcontainer}>
-        <ShadowCircle className={style.shadowCircle} />
-        <div className={style.setup}>
-            <div className={style.content}>
-                <span className={style.link}>By <a href={profileLink}>{name}</a></span>
-            <h1 className={style.title} data-mark={wordParser(!!title ? title : "")}>{title}</h1>
-                <p className={style.description}>{description}</p>
-                <span className={style.download}><a href="./index.module.css" download="lego.json" className={style.json}>Download JSON</a> <span className={style.container}> <a href="./index.module.scss" download={"lego"} className={style.template}>.</a></span></span>
-          </div>
-          <LeftDots className={style.leftDot} />
-          <Dots className={style.rightDot} />
-            <div className={style.editor}>
-                <Code>
-                    {`{
+const Setup = ({ author: { name, profileLink }, description, id, title }) => {
+  return (
+    <section className={style.setupcontainer}>
+      <ShadowCircle className={style.shadowCircle} />
+      <div className={style.setup}>
+        <div className={style.content}>
+          <span className={style.link}>
+            By <a href={profileLink}>{name}</a>
+          </span>
+          <h1
+            className={style.title}
+            data-mark={wordParser(!!title ? title : "")}
+          >
+            {title}
+          </h1>
+          <p className={style.description}>{description}</p>
+          <span className={style.download}>
+            <a
+              href="./index.module.css"
+              download="lego.json"
+              className={style.json}
+            >
+              Download JSON
+            </a>{" "}
+            <span className={style.container}>
+              {" "}
+              <a
+                href="./index.module.scss"
+                download={"lego"}
+                className={style.template}
+              >
+                .
+              </a>
+            </span>
+          </span>
+        </div>
+        <LeftDots className={style.leftDot} />
+        <Dots className={style.rightDot} />
+        <div className={style.editor}>
+          <Code>
+            {`{
    "type": "component", // Name of the block type
    "path": "src/components", // Path where the block will be stored, relative to root
    "isFile": false, // Whether the block is a file or a folder, false by default
@@ -39,12 +64,14 @@ const Setup = ({ author:{name,profileLink }, description, id, title }) => {
    ],
    "file": null, // An object or a string(more on this) representing the file format, used if the block is a file and not a folder  
 }`}
-                </Code>
-            </div>
+          </Code>
         </div>
-        <Link to={"/community"} className={style.communityContainer}><span  className={style.communityLink} >Back to Community</span> <Arrow /></Link>
-        </section>
-    );
-}
- 
+      </div>
+      <Link to={"/community"} className={style.communityContainer}>
+        <span className={style.communityLink}>Back to Community</span> <Arrow />
+      </Link>
+    </section>
+  );
+};
+
 export default Setup;
