@@ -6,8 +6,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: calc(11/12 * 100%);
-  margin-inline: auto;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
   gap: 1.5em;
 }
 
@@ -42,8 +42,8 @@
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
   -webkit-transition-timing-function: ease-in;
           transition-timing-function: ease-in;
   -webkit-transform-origin: center;
@@ -72,76 +72,38 @@
   padding: 10px 55px;
   width: 100%;
   border-radius: 999px;
-  outline: 1px solid #D9D9D9;
-  -webkit-transition-property: outline;
-  transition-property: outline;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
+  border: 1px solid #d9d9d9;
+  outline: none;
+  color: #4d4d4d;
 }
 
 .search .label .input::-webkit-input-placeholder {
-  letter-spacing: 0.05rem;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
+  color: #a6a6a6;
 }
 
 .search .label .input:-ms-input-placeholder {
-  letter-spacing: 0.05rem;
-  -webkit-transition-property: color;
-  transition-property: color;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  color: #a6a6a6;
 }
 
 .search .label .input::-ms-input-placeholder {
-  letter-spacing: 0.05rem;
-  -webkit-transition-property: color;
-  transition-property: color;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  color: #a6a6a6;
 }
 
 .search .label .input::placeholder {
-  letter-spacing: 0.05rem;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
-}
-
-.search .label .input:focus {
-  outline-color: #6e6c6c;
-}
-
-.search .label .input:focus::-webkit-input-placeholder {
-  color: black;
-}
-
-.search .label .input:focus:-ms-input-placeholder {
-  color: black;
-}
-
-.search .label .input:focus::-ms-input-placeholder {
-  color: black;
-}
-
-.search .label .input:focus::placeholder {
-  color: black;
+  color: #a6a6a6;
 }
 
 .search .contribute {
   text-decoration: underline;
-  -webkit-text-decoration-color: #3D3DFF;
-          text-decoration-color: #3D3DFF;
-  color: #3D3DFF;
+  -webkit-text-decoration-color: #3d3dff;
+          text-decoration-color: #3d3dff;
+  color: #3d3dff;
   font-size: 1.05em;
+}
+
+@media screen and (max-width: 650px) {
+  .search {
+    --horizontal-padding: 25px;
+  }
 }
 /*# sourceMappingURL=index.module.css.map */

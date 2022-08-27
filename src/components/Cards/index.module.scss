@@ -1,32 +1,35 @@
 @import "../../sass/abstracts/abstract";
-.container{
-    width: 100%;
-    .watermark{
-        position: absolute;
-        z-index: -99;
-        left: 0;
-    }
-    .leftWatermark{
-            position: absolute;
-            z-index: -99;
-            right: 0;
-    }
-    .cards{
-    width: calc(11/12 * 100%);
+.container {
+  width: 100%;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
+  .watermark {
+    position: absolute;
+    z-index: -99;
+    left: 0;
+  }
+  .leftWatermark {
+    position: absolute;
+    z-index: -99;
+    right: 0;
+  }
+  .cards {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-inline: auto;
+    justify-content: space-between;
+    gap: 40px;
     z-index: 5;
-}
-@media screen and (max-width: 950px) {
-    .cards{
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+  }
+  @media screen and (max-width: 1080px) {
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
     }
-}
+  }
+
+  @media screen and(max-width:650px) {
+    --horizontal-padding: 25px;
+  }
 }

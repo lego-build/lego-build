@@ -27,8 +27,8 @@ const Search = ({ value, resetValue }) => {
           <Clear />{" "}
         </span>
       </label>
-      <a href="/#" className={style.contribute}>
-        Contribute Yours
+      <a href="/#" target="_blank" className={style.contribute}>
+        Contribute yours
       </a>
     </div>
   );

@@ -6,6 +6,8 @@
   gap: 0.5em;
   justify-content: center;
   position: relative;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
   div {
     border-radius: 999px;
     h1 {
@@ -30,12 +32,13 @@
   }
 
   @media screen and (max-width: 920px) {
+    gap: 0.2em;
     p {
-      width: calc(11 / 12 * 100%);
+      width: 100%;
     }
     div {
       h1 {
-        font-size: 1.7em;
+        font-size: 1.5em;
       }
       span {
         svg {
@@ -43,5 +46,9 @@
         }
       }
     }
+  }
+
+  @media screen and(max-width:650px) {
+    --horizontal-padding: 25px;
   }
 }

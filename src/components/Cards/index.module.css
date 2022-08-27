@@ -390,6 +390,8 @@ video {
 
 .container {
   width: 100%;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
 }
 
 .container .watermark {
@@ -405,23 +407,21 @@ video {
 }
 
 .container .cards {
-  width: calc(11/12 * 100%);
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-inline: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 40px;
   z-index: 5;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1080px) {
   .container .cards {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -430,7 +430,13 @@ video {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 30px;
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    --horizontal-padding: 25px;
   }
 }
 /*# sourceMappingURL=index.module.css.map */

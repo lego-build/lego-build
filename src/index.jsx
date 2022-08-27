@@ -13,7 +13,7 @@ root.render(
         <Route path="/docs" exact element={<Docs />} />
         <Route path="/docs/:subpage" exact element={<Docs />} />
         <Route path="/community" exact element={<Community />} />
-        <Route path="/community/:setup" exact element={<Community />} />
+        <Route path="/community/:workflow_id" exact element={<Community />} />
       </Routes>
     </Router>
   </React.StrictMode>

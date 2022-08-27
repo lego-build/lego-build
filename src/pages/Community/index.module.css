@@ -65,32 +65,27 @@
 }
 
 .community .powered {
-  padding: 0.95em 1.5em;
+  padding: 0.6em 1.5em;
   border-radius: 999px;
-  position: relative;
   display: block;
   float: right;
   margin-left: auto;
-  right: 50px;
   background-color: #1a1a1a;
   color: #fff;
   cursor: pointer;
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
+  font-size: 14px;
+  --margin-right: 50px;
+  margin-right: var(--margin-right);
+  margin-top: 30px;
 }
 
-.community .powered:hover {
-  background-color: #3b3a3a;
+@media screen and (max-width: 650px) {
+  .community .powered {
+    --margin-right: 25px;
+  }
 }
 
 @media screen and (max-width: 950px) {
-  .community .powered {
-    font-size: 12px;
-  }
   .community .TransparentRectangle {
     display: none;
   }

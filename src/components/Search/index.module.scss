@@ -1,65 +1,59 @@
-.search{
+.search {
+  display: flex;
+  flex-direction: column;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
+  gap: 1.5em;
+  .label {
     display: flex;
-    flex-direction: column;
-    width: calc(11/12 * 100%);
-    margin-inline: auto;
-    gap: 1.5em;
-    .label{
-        display: flex;
-        position: relative;
-        width: 100%;
-    span{
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+    position: relative;
+    width: 100%;
+    span {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
     }
-    .icon{
-        left: 15px;
+    .icon {
+      left: 15px;
     }
-     .clear{
-        right: 15px;
-        transition-property: transform;
-        transition-duration: 500ms;
-        transition-timing-function: ease-in;
-        transform-origin: center;
-        &.hidden{
+    .clear {
+      right: 15px;
+      transition-property: transform;
+      transition-duration: 300ms;
+      transition-timing-function: ease-in;
+      transform-origin: center;
+      &.hidden {
         transform: scale(0);
         user-select: none;
-        }
-        &.show{
+      }
+      &.show {
         transform: scale(1);
         user-select: auto;
-        }
+      }
     }
-    .input{
-        padding: 10px 55px;
-        width: 100%;
-        border-radius: 999px;
-        outline: 1px solid #D9D9D9;
-        transition-property: outline;
-        transition-duration: 500ms;
-        transition-timing-function: ease-in;
-        &::placeholder{
-            letter-spacing: 0.05rem;
-            transition-property: color;
-            transition-duration: 500ms;
-            transition-timing-function: ease-in;
-        }
-        &:focus{
-            outline-color: #6e6c6c;
-            &::placeholder{
-            color: black;
-        }
-        }
+    .input {
+      padding: 10px 55px;
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid #d9d9d9;
+      outline: none;
+      color: #4d4d4d;
+      &::placeholder {
+        color: #a6a6a6;
+      }
     }
-}
-   .contribute{
-        text-decoration: underline;
-        text-decoration-color: #3D3DFF;
-        color: #3D3DFF;
-        font-size: 1.05em;
-    }
+  }
+  .contribute {
+    text-decoration: underline;
+    text-decoration-color: #3d3dff;
+    color: #3d3dff;
+    font-size: 1.05em;
+  }
+
+  @media screen and(max-width:650px) {
+    --horizontal-padding: 25px;
+  }
 }

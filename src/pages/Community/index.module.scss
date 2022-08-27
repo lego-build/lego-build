@@ -46,27 +46,24 @@
     }
   }
   .powered {
-    padding: 0.95em 1.5em;
+    padding: 0.6em 1.5em;
     border-radius: 999px;
-    position: relative;
     display: block;
     float: right;
     margin-left: auto;
-    right: 50px;
     background-color: #1a1a1a;
     color: #fff;
     cursor: pointer;
-    transition-property: background-color;
-    transition-duration: 500ms;
-    transition-timing-function: ease-in;
-    &:hover {
-      background-color: #3b3a3a;
+    font-size: 14px;
+    --margin-right: 50px;
+    margin-right: var(--margin-right);
+    margin-top: 30px;
+
+    @media screen and(max-width:650px) {
+      --margin-right: 25px;
     }
   }
   @media screen and (max-width: 950px) {
-    .powered {
-      font-size: 12px;
-    }
     .TransparentRectangle {
       display: none;
     }

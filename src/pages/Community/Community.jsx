@@ -9,7 +9,7 @@ import TransparentRectangle from "../../assets/illustrations/TransparentRectangl
 import { Crystals } from "../../assets";
 function Community() {
   const [value, resetValue] = useState("");
-  const { setup } = useParams();
+  const { workflow_id } = useParams();
 
   const [workflows, setWorkflows] = useState([
     {
@@ -44,9 +44,9 @@ function Community() {
     },
   ]);
   let component = <Main {...{ value, resetValue, workflows }} />;
-  if (!!setup) {
+  if (!!workflow_id) {
     const [value] = workflows.filter(
-      ({ title }) => title === parserUndo(setup)
+      ({ title }) => title === parserUndo(workflow_id)
     );
     component = <Setup {...value} />;
   }
@@ -102,7 +102,7 @@ function Community() {
       </span>
       <a href="https://github.com" className={style.powered}>
         {" "}
-        Powered By GitHub
+        Powered by GitHub
       </a>
     </Layout>
   );
