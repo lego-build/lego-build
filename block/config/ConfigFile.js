@@ -18,27 +18,23 @@ class ConfigFile {
     //Configure the default formats
     this.defaultFormats = new Map();
     this.defaultFormats.set("default", __dirname + "/../templates/blank.jsx");
-    if (this.configFile.isFile) {
-      this.defaultFormats.set(
-        "reducer",
-        __dirname + "/../templates/reducerTemplate.jsx"
-      );
-      this.defaultFormats.set(
-        "action",
-        __dirname + "/../templates/actionTemplate.jsx"
-      );
-    } else {
-      this.defaultFormats.set(
-        "JSX",
-        __dirname + "/../templates/jsxTemplate.jsx"
-      );
-      this.defaultFormats.set("JS", __dirname + "/../templates/jsTemplate.jsx");
-    }
+    this.defaultFormats.set(
+      "reducer",
+      __dirname + "/../templates/reducerTemplate.jsx"
+    );
+    this.defaultFormats.set(
+      "action",
+      __dirname + "/../templates/actionTemplate.jsx"
+    );
+    this.defaultFormats.set(
+      "JSX",
+      __dirname + "/../templates/jsxTemplate.jsx"
+    );
+    this.defaultFormats.set("JS", __dirname + "/../templates/jsTemplate.jsx");
   }
 
   isFile() {
-    if (this.configFile.isFile) return true;
-    return false;
+    return !!this.configFile.isFile;
   }
 
   getBlockDirectory(blockName) {
@@ -95,7 +91,7 @@ class ConfigFile {
     if (typeof file == "object") {
       templateFilePath = file.template;
     } else {
-      templateFilePath = this.fileFormats[file].template;
+      templateFilePath = this.fileFormats[file]?.template;
     }
 
     //There is no template file path so end the code here
@@ -111,7 +107,11 @@ class ConfigFile {
       fs.existsSync(templateFilePath)
     ) {
       templateFilePath = process.cwd() + "/" + templateFilePath;
-    } else {
+    } else if (
+      templateFilePath != undefined &&
+      templateFilePath != "DEFAULT" &&
+      !fs.existsSync(templateFilePath)
+    ) {
       Logger.logWarning(
         `Template file - '${templateFilePath}' doesn't exist, so a clean slate will be given`
       );
@@ -119,9 +119,13 @@ class ConfigFile {
     }
 
     //If template file path is default then find the corresponding default file
-    if (templateFilePath == "DEFAULT") {
+
+    if(templateFilePath == "DEFAULT" && this.isFile() && typeof file == "object"){
+      templateFilePath = this.defaultFormats.get(this.getBlockType())
+    }else if (templateFilePath == "DEFAULT") {
       templateFilePath = this.defaultFormats.get(file);
     }
+
 
     //After everything there's no template file so use the default
     if (templateFilePath == undefined)
@@ -150,11 +154,11 @@ class ConfigFile {
       const tempFileObj = {};
       if (this.configFile.isFile) {
         tempFileObj["filePath"] =
-          process.cwd() + "/" + this.getFilePath(this.file, blockName);
+          this.getFilePath(this.file, blockName);
         tempFileObj["templateFilePath"] = this.getTemplateFilePath(this.file);
       } else {
         tempFileObj["filePath"] =
-          process.cwd() + "/" + this.getFilePath(this.files[i], blockName);
+          this.getFilePath(this.files[i], blockName);
         tempFileObj["templateFilePath"] = this.getTemplateFilePath(
           this.files[i]
         );

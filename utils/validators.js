@@ -16,12 +16,12 @@ class Validators {
 
     //Check if the blockName isn't blank
     if (blockName == undefined) {
-      Logger.logError("Block name can not be blank");
+      Logger.logError("Block name cannot be blank");
       return false;
     }
 
     //Check if the blockName is a valid name using regex;
-    var format = /[!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?]+/;
+    var format = /[!@#$%^&*()+=\[\]{};':"\\|,.<>\/?]+/;
 
     if (format.test(blockName)) {
       Logger.logError(
@@ -49,14 +49,14 @@ class Validators {
     //Check if the syntax is proper
     if (args[2] != "to") {
       Logger.logError(
-        `Invalid Syntax, syntax is - 'lego-build rename <old-block-type>:<old-block-name> to <new-block-name>'`
+        `Invalid Syntax, syntax is - 'lego-build rename <block-type>:<old-block-name> to <new-block-name>'`
       );
       return false;
     }
 
     //Check if the blockName isn't blank
     if (newBlockName == undefined) {
-      Logger.logError("Block name can not be blank");
+      Logger.logError("Block name cannot be blank");
       return false;
     }
 
