@@ -2,30 +2,46 @@
   position: relative;
   overflow-x: hidden;
 }
+
 .setupcontainer .shadowCircle {
   position: absolute;
   left: 28%;
   top: -20px;
 }
+
 .setupcontainer .setup {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin: auto;
   position: relative;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .setupcontainer .setup .content {
-  flex-basis: 40%;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 20px;
 }
+
 .setupcontainer .setup .content .title {
   font-size: 2em;
   font-weight: 700;
 }
+
 .setupcontainer .setup .content .title::before {
   content: attr(data-mark);
   position: absolute;
@@ -36,33 +52,45 @@
   color: transparent;
   -webkit-text-stroke: 0.25px #F0F0F0;
 }
+
 @media screen and (max-width: 960px) {
   .setupcontainer .setup .content .title {
     font-size: 1.5em;
   }
 }
+
 .setupcontainer .setup .content .link {
   color: #737373;
 }
+
 .setupcontainer .setup .content .link a {
   text-decoration: underline;
   -webkit-text-decoration-color: #737373;
           text-decoration-color: #737373;
 }
+
 .setupcontainer .setup .content .description {
   color: #4D4D4D;
 }
+
 .setupcontainer .setup .content .download {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 .setupcontainer .setup .content .download a {
   padding: 0.75em 2.5em;
   border-radius: 9999px;
   font-weight: 700;
   font-size: 1em;
 }
+
 .setupcontainer .setup .content .download .json {
   padding: 0.8125em 2.5625em;
   background-color: #008F75;
@@ -70,32 +98,48 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition-property: background-color;
   transition-property: background-color;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
   color: white;
 }
+
 .setupcontainer .setup .content .download .json:hover {
   background-color: #11caa8;
 }
+
 .setupcontainer .setup .content .download .container {
   background-image: linear-gradient(138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
   padding: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 999px;
 }
+
 .setupcontainer .setup .content .download .container:hover {
   background-image: linear-gradient(-138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
 }
+
 .setupcontainer .setup .content .download .container:hover .template::before {
   background-image: linear-gradient(-138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
 }
+
 .setupcontainer .setup .content .download .container .template {
   background: white;
   border: 2px solid transparent;
@@ -107,6 +151,7 @@
   width: -moz-fit-content;
   width: fit-content;
 }
+
 .setupcontainer .setup .content .download .container .template::before {
   content: "Download Template";
   -webkit-background-clip: text;
@@ -114,14 +159,20 @@
   color: transparent;
   background-clip: text;
   background-image: linear-gradient(138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
+  -webkit-transition-property: background-image;
   transition-property: background-image;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
+
 .setupcontainer .setup .editor {
-  flex-basis: 40%;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
   width: 40%;
 }
+
 .setupcontainer .setup .editor div::after {
   content: "";
   position: absolute;
@@ -133,19 +184,25 @@
   right: -10px;
   z-index: -1;
 }
+
 .setupcontainer .setup .leftDot {
   position: absolute;
   left: 0;
   z-index: -1;
 }
+
 .setupcontainer .setup .rightDot {
   position: absolute;
   right: 0;
   z-index: -1;
 }
+
 @media screen and (max-width: 960px) {
   .setupcontainer .setup {
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     gap: 30px;
   }
   .setupcontainer .setup .content {
@@ -158,27 +215,39 @@
     width: 90%;
   }
 }
+
 .setupcontainer .communityContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 15px;
   cursor: pointer;
-  transition-duration: gap;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  -webkit-transition-duration: gap;
+          transition-duration: gap;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
   margin-left: 5%;
 }
+
 @media screen and (max-width: 960px) {
   .setupcontainer .communityContainer {
     margin-top: 20px;
   }
 }
+
 .setupcontainer .communityContainer:hover {
   gap: 30px;
 }
+
 .setupcontainer .communityContainer .communityLink {
   text-decoration: underline;
   -webkit-text-decoration-color: #3D3DFF;
           text-decoration-color: #3D3DFF;
   color: #3D3DFF;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */

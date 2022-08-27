@@ -1,92 +1,147 @@
 .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  width: 91.6666666667%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(11/12 * 100%);
   margin-inline: auto;
   gap: 1.5em;
 }
+
 .search .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   width: 100%;
 }
+
 .search .label span {
   position: absolute;
   top: 0px;
   bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
 }
+
 .search .label .icon {
   left: 15px;
 }
+
 .search .label .clear {
   right: 15px;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
   transition-property: transform;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
-  transform-origin: center;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
+
 .search .label .clear.hidden {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
+
 .search .label .clear.show {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   -webkit-user-select: auto;
      -moz-user-select: auto;
       -ms-user-select: auto;
           user-select: auto;
 }
+
 .search .label .input {
   padding: 10px 55px;
   width: 100%;
   border-radius: 999px;
   outline: 1px solid #D9D9D9;
+  -webkit-transition-property: outline;
   transition-property: outline;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
-.search .label .input::-moz-placeholder {
+
+.search .label .input::-webkit-input-placeholder {
   letter-spacing: 0.05rem;
-  -moz-transition-property: color;
+  -webkit-transition-property: color;
   transition-property: color;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
+
 .search .label .input:-ms-input-placeholder {
   letter-spacing: 0.05rem;
-  -ms-transition-property: color;
+  -webkit-transition-property: color;
   transition-property: color;
   transition-duration: 500ms;
   transition-timing-function: ease-in;
 }
+
+.search .label .input::-ms-input-placeholder {
+  letter-spacing: 0.05rem;
+  -webkit-transition-property: color;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+}
+
 .search .label .input::placeholder {
   letter-spacing: 0.05rem;
+  -webkit-transition-property: color;
   transition-property: color;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
+
 .search .label .input:focus {
   outline-color: #6e6c6c;
 }
-.search .label .input:focus::-moz-placeholder {
+
+.search .label .input:focus::-webkit-input-placeholder {
   color: black;
 }
+
 .search .label .input:focus:-ms-input-placeholder {
   color: black;
 }
+
+.search .label .input:focus::-ms-input-placeholder {
+  color: black;
+}
+
 .search .label .input:focus::placeholder {
   color: black;
 }
+
 .search .contribute {
   text-decoration: underline;
   -webkit-text-decoration-color: #3D3DFF;
           text-decoration-color: #3D3DFF;
   color: #3D3DFF;
   font-size: 1.05em;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */

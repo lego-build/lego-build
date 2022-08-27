@@ -1,74 +1,74 @@
-.community{
-    display: flex;
-    font-size: 16px;
-    flex-direction: column;
-    min-height: 100vh;
-    height: 100%;
-    gap: 2em;
-    position: relative;
-    .TransparentRectangle{
-        position: absolute;
-        top: 0;
-        z-index: 9;
-        opacity: 0.55;
-    }
- .Crystals {
-     display: flex;
-     position: absolute;
-     left: 25px;
-     gap: 50px;
-     height: 150px;
-     top: 10%;
-     z-index: -1;
-
-     .Crystal1 {
-         align-self: flex-end;
-     }
-
-     .Crystal2 {
-         align-self: flex-start;
-     }
- }
- .Crystals2 {
-     display: flex;
-     position: absolute;
-     right: 25px;
-     gap: 50px;
-     height: 150px;
-     top: 10%;
+.community {
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  gap: 2.5em;
+  position: relative;
+  .TransparentRectangle {
+    position: absolute;
+    top: 0;
     z-index: -1;
-     .Crystal1 {
-         align-self: flex-end;
-     }
+    opacity: 0.55;
+  }
+  .Crystals {
+    display: flex;
+    position: absolute;
+    left: 25px;
+    gap: 50px;
+    height: 150px;
+    top: 10%;
+    z-index: -1;
 
-     .Crystal2 {
-         align-self: flex-start;
-     }
- }
-    .powered{
-        padding: 0.95em 1.5em;
-        border-radius: 999px;
-        position: relative;
-        display: block;
-        float: right;
-        margin-left: auto;
-        right: 50px;
-        background-color: #1A1A1A;
-        color: #fff;
-        cursor: pointer;
-        transition-property: background-color;
-        transition-duration: 500ms;
-        transition-timing-function: ease-in;
-        &:hover{
-            background-color: #3b3a3a;
-        }
+    .Crystal1 {
+      align-self: flex-end;
     }
-@media screen and (max-width: 950px) {
+
+    .Crystal2 {
+      align-self: flex-start;
+    }
+  }
+  .Crystals2 {
+    display: flex;
+    position: absolute;
+    right: 25px;
+    gap: 50px;
+    height: 150px;
+    top: 10%;
+    z-index: -1;
+    .Crystal1 {
+      align-self: flex-end;
+    }
+
+    .Crystal2 {
+      align-self: flex-start;
+    }
+  }
+  .powered {
+    padding: 0.95em 1.5em;
+    border-radius: 999px;
+    position: relative;
+    display: block;
+    float: right;
+    margin-left: auto;
+    right: 50px;
+    background-color: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+    &:hover {
+      background-color: #3b3a3a;
+    }
+  }
+  @media screen and (max-width: 950px) {
     .powered {
-        font-size: 12px;
+      font-size: 12px;
     }
-            .TransparentRectangle {
-                display: none;
-        }
+    .TransparentRectangle {
+      display: none;
     }
+  }
 }

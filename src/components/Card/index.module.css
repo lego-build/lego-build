@@ -1,30 +1,47 @@
 .card {
   width: 90%;
   margin: auto;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  -webkit-transition-property: -webkit-box-shadow;
+  transition-property: -webkit-box-shadow;
   transition-property: box-shadow;
-  transition-duration: 750ms;
-  transition-timing-function: ease-in;
+  transition-property: box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 750ms;
+          transition-duration: 750ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
+
 .card:hover {
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 }
+
 .card .header {
   width: 100%;
   height: 150px;
   border-radius: 8px 8px 0 0;
   background-image: linear-gradient(100.55deg, #7450F6 13.34%, #CF50F6 97.24%);
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .card .header p {
   font-size: 3em;
   font-weight: 700;
   color: white;
 }
+
 .card .header::before {
   content: attr(data-mark);
   position: absolute;
@@ -34,16 +51,24 @@
   color: transparent;
   -webkit-text-stroke: 0.25px white;
 }
+
 .card .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 0.25em;
   padding: 1.5em;
 }
+
 .card .body h1 {
   font-size: 1.25em;
   font-weight: 700;
 }
+
 .card .body p {
   font-size: 1.05em;
   text-overflow: ellipsis;
@@ -51,11 +76,14 @@
   height: 3em;
   color: #4D4D4D;
 }
+
 .card .body .link {
   color: #737373;
 }
+
 .card .body .link a {
   text-decoration: underline;
   -webkit-text-decoration-color: #737373;
           text-decoration-color: #737373;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */

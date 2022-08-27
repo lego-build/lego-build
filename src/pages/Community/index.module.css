@@ -1,19 +1,28 @@
 .community {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 16px;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   height: 100%;
-  gap: 2em;
+  gap: 2.5em;
   position: relative;
 }
+
 .community .TransparentRectangle {
   position: absolute;
   top: 0;
-  z-index: 9;
+  z-index: -1;
   opacity: 0.55;
 }
+
 .community .Crystals {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   left: 25px;
@@ -22,13 +31,20 @@
   top: 10%;
   z-index: -1;
 }
+
 .community .Crystals .Crystal1 {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
+
 .community .Crystals .Crystal2 {
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
+
 .community .Crystals2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   right: 25px;
@@ -37,12 +53,17 @@
   top: 10%;
   z-index: -1;
 }
+
 .community .Crystals2 .Crystal1 {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
+
 .community .Crystals2 .Crystal2 {
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
+
 .community .powered {
   padding: 0.95em 1.5em;
   border-radius: 999px;
@@ -51,16 +72,21 @@
   float: right;
   margin-left: auto;
   right: 50px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   color: #fff;
   cursor: pointer;
+  -webkit-transition-property: background-color;
   transition-property: background-color;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
+
 .community .powered:hover {
   background-color: #3b3a3a;
 }
+
 @media screen and (max-width: 950px) {
   .community .powered {
     font-size: 12px;
@@ -68,4 +94,5 @@
   .community .TransparentRectangle {
     display: none;
   }
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */

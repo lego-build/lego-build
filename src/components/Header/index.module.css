@@ -1,55 +1,56 @@
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  align-items: center;
-  gap: 0.75em;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
 }
+
 .header div {
-  position: relative;
   border-radius: 999px;
 }
+
 .header div h1 {
   font-size: 2.2em;
   font-weight: 700;
 }
+
 .header div span {
-  position: absolute;
-  right: 0px;
-  top: 0;
+  position: relative;
 }
-.header div span .First {
+
+.header div span svg {
   position: absolute;
-  top: -5px;
+  right: -28px;
+  top: -18px;
+  width: 35px;
 }
-.header div span .Second {
-  position: absolute;
-  right: -30px;
-  top: -5px;
-}
-.header div span .Third {
-  position: absolute;
-  bottom: -30px;
-  right: -20px;
-}
+
 .header p {
-  width: 50%;
+  width: calc(6 / 12 * 100%);
+  color: #4d4d4d;
 }
+
 @media screen and (max-width: 920px) {
-  .header {
-    text-align: center;
-    gap: 0px;
-  }
   .header p {
-    width: 91.6666666667%;
+    width: calc(11 / 12 * 100%);
   }
   .header div h1 {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
-  .header div span {
-    right: 5px;
-    top: -5px;
+  .header div span svg {
+    display: none;
   }
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */
