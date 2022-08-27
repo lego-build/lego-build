@@ -5,7 +5,7 @@ const Main = ({ value, resetValue, workflows }) => {
     <>
       <Header />
       <Search value={value} resetValue={resetValue} />
-      <Cards data={workflows} />
+      <Cards data={workflows} value={value} />
     </>
   );
 };

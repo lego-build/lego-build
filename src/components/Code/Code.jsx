@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import style from "./index.module.css";
 
-function Code({ children }) {
+function Code({ children, maxHeight }) {
   const [copied, setCopied] = useState(false);
   const onClick = () => {
     navigator.clipboard.writeText(children).then(() => {
@@ -30,6 +30,7 @@ function Code({ children }) {
           fontSize: "15px",
           padding: "20px 30px",
           fontFamily: "Consolas, monospace",
+          maxHeight: maxHeight ? maxHeight : "",
         }}
         codeTagProps={{
           style: {

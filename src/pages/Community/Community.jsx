@@ -3,7 +3,6 @@ import { Layout } from "../../components";
 import style from "./index.module.css";
 import Main from "./subpage/Main/Main";
 import { useParams } from "react-router-dom";
-import { parserUndo } from "../../utils/functions";
 import Setup from "./subpage/Setup/Setup";
 import TransparentRectangle from "../../assets/illustrations/TransparentRectangle";
 import { Crystals } from "../../assets";
@@ -43,51 +42,13 @@ function Community() {
       },
     },
   ]);
+
   let component = <Main {...{ value, resetValue, workflows }} />;
+
   if (!!workflow_id) {
-    const [value] = workflows.filter(
-      ({ title }) => title === parserUndo(workflow_id)
-    );
-    component = <Setup {...value} />;
+    component = <Setup />;
   }
-  useEffect(() => {
-    const initialValue = [
-      {
-        id: 1,
-        title: "TypeScript Setup",
-        description:
-          "Workflow for React + TypeScript, including components, pages, hooks and redux blocks. Use it to speed up your workflow.",
-        author: {
-          name: "Akpeti Trust",
-          profileLink: "https://github.com/AkpetiTrust",
-        },
-      },
-      {
-        id: 2,
-        title: "React Hooks",
-        description:
-          "Workflow for React + TypeScript, including components, pages, hooks and redux blocks. Use it to speed up your workflow.",
-        author: {
-          name: "Akpeti Trust",
-          profileLink: "https://github.com/AkpetiTrust",
-        },
-      },
-      {
-        id: 3,
-        title: "Vue Workflow",
-        description:
-          "Workflow for Vue, including components, pages, hooks and redux blocks. Use it to speed up your workflow.",
-        author: {
-          name: "Udoka",
-          profileLink: "https://github.com/Onyelaudochukwuka",
-        },
-      },
-    ];
-    const filteredData = initialValue.filter(({ title }) =>
-      title.toLowerCase().includes(value.toLowerCase())
-    );
-    setWorkflows(filteredData);
-  }, [value]);
+
   return (
     <Layout className={style.community}>
       <TransparentRectangle className={style.TransparentRectangle} />

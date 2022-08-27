@@ -86,7 +86,7 @@
   font-size: 0.9em;
 }
 
-.card .body .link a {
+.card .body .link span {
   text-decoration: underline;
   -webkit-text-decoration-color: #737373;
           text-decoration-color: #737373;

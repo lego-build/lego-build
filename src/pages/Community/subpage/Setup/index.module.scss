@@ -1,198 +1,217 @@
 .setupcontainer {
-    position: relative;
-    overflow-x: hidden;
-    .shadowCircle{
-        position: absolute;
-        left: 28%;
-        top: -20px;
-    }
-    .setup {
-        display: flex;
-        width: 100%;
-        margin: auto;
-        position: relative;
-        justify-content: space-around;
-        align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
 
-        .content {
-            flex-basis: 40%;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+  @media screen and(max-width:650px) {
+    --horizontal-padding: 25px;
+  }
 
-            .title {
-                font-size: 2em;
-                font-weight: 700;
-                &::before {
-                        content: attr(data-mark);
-                        position: absolute;
-                        top: 0;
-                        left: 10px;
-                        font-size: 7em;
-                        font-weight: 900;
-                        color: transparent;
-                        -webkit-text-stroke: 0.25px #F0F0F0;
-                    }
-
-                @media screen and (max-width: 960px) {
-                    font-size: 1.5em;
-                }
-            }
-
-            .link {
-                color: #737373;
-
-                a {
-                    text-decoration: underline;
-                    text-decoration-color: #737373;
-                }
-            }
-
-            .description {
-                color: #4D4D4D;
-            }
-
-            .download {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-
-                a {
-                    padding: 0.75em 2.5em;
-                    border-radius: 9999px;
-                    font-weight: 700;
-                    font-size: 1em;
-                }
-
-                .json {
-                    padding: 0.8125em 2.5625em;
-                    background-color: #008F75;
-                    border:2px solid #008F75;
-                    width: fit-content;
-                    display: flex;
-                    transition-property: background-color;
-                    transition-duration: 500ms;
-                    transition-timing-function: ease-in;
-
-                    &:hover {
-                        background-color: #11caa8;
-                    }
-
-                    color: white;
-                }
-
-                .container {
-                    background-image: linear-gradient(138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
-                    padding: 1px;
-                    display: flex;
-                    width: fit-content;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 999px;
-
-                    &:hover {
-                        background-image: linear-gradient(-138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
-
-                        .template {
-                            &::before {
-                                background-image: linear-gradient(-138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
-                            }
-                        }
-                    }
-
-                    .template {
-                        background: white;
-                        border: 2px solid transparent;
-                        position: relative;
-                        z-index: 50;
-                        border-radius: inherit;
-                        color: transparent;
-                        width: fit-content;
-                        &::before {
-                            content: "Download Template";
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                            color: transparent;
-                            background-clip: text;
-                            background-image: linear-gradient(138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
-                            transition-property: background-image;
-                            transition-duration: 500ms;
-                            transition-timing-function: ease-in;
-                        }
-                    }
-                }
-            }
-        }
-
-        .editor {
-            flex-basis: 40%;
-            width: 40%;
-
-            div {
-                &::after {
-                    content: "";
-                    position: absolute;
-                    background-image: linear-gradient(100.55deg, #7450F6 13.34%, #CF50F6 97.24%);
-                    border-radius: 8px;
-                    top: 5px;
-                    bottom: -10px;
-                    left: 5px;
-                    right: -10px;
-                    z-index: -1;
-                }
-            }
-        }
-        .leftDot{
-            position: absolute;
-            left: 0;
-            z-index: -1;
-        }
-        .rightDot{
-            position: absolute;
-                right: 0;
-                z-index: -1;
-        }
-
-        @media screen and(max-width: 960px) {
-            flex-direction: column-reverse;
-            gap: 30px;
-
-            .content {
-                width: 90%;
-                .download{
-                a{
-                    font-size: 11px;
-                }
-                }
-            }
-
-            .editor {
-                width:  90%;
-            }
-
-        }
-
-    }
-.communityContainer{
+  .shadowCircle {
+    position: absolute;
+    left: 28%;
+    top: -20px;
+  }
+  .setup {
     display: flex;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    transition-duration: gap;
-    transition-duration: 500ms;
-    transition-timing-function: ease-in;
-    margin-left: 5%;
-    @media screen and (max-width: 960px) {
-        margin-top: 20px;
+    gap: 50px;
+
+    .content {
+      position: relative;
+      .title {
+        font-size: 2em;
+        font-weight: 700;
+        line-height: 1em;
+        margin-top: 12px;
+        margin-bottom: 25px;
+        &::before {
+          content: attr(data-mark);
+          position: absolute;
+          top: -30px;
+          left: -65px;
+          font-size: 7em;
+          font-weight: 900;
+          color: transparent;
+          -webkit-text-stroke: 0.25px #f0f0f0;
+          z-index: -1;
+        }
+
+        @media screen and (max-width: 960px) {
+          font-size: 1.5em;
+        }
+      }
+
+      .link {
+        color: #737373;
+
+        a {
+          text-decoration: underline;
+          text-decoration-color: #737373;
+        }
+      }
+
+      .description {
+        color: #4d4d4d;
+        max-width: 450px;
+      }
+
+      .download {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 30px;
+
+        a {
+          padding: 0.5em 2.2em;
+          border-radius: 9999px;
+          font-weight: 700;
+          font-size: 1em;
+        }
+
+        .json {
+          background-color: #008f75;
+          border: 2px solid #008f75;
+          width: fit-content;
+          color: white;
+        }
+
+        .container {
+          background-image: linear-gradient(
+            138.94deg,
+            #9d50f6 33.05%,
+            #00d1ab 80.37%
+          );
+          padding: 1px;
+          display: flex;
+          width: fit-content;
+          justify-content: center;
+          align-items: center;
+          border-radius: 999px;
+
+          .template {
+            background: white;
+            border: 2px solid transparent;
+            position: relative;
+            z-index: 50;
+            border-radius: inherit;
+            color: transparent;
+            width: fit-content;
+            span {
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              color: transparent;
+              background-clip: text;
+              background-image: linear-gradient(
+                138.94deg,
+                #9d50f6 33.05%,
+                #00d1ab 80.37%
+              );
+              transition-property: background-image;
+              transition-duration: 500ms;
+              transition-timing-function: ease-in;
+            }
+          }
+        }
+      }
     }
-    &:hover{
-        gap:30px;
+
+    .editor {
+      max-width: 600px;
+      div {
+        z-index: 3;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: linear-gradient(
+            100.55deg,
+            #7450f6 13.34%,
+            #cf50f6 97.24%
+          );
+          border-radius: 8px;
+          top: 5px;
+          bottom: -10px;
+          left: 5px;
+          right: -10px;
+          z-index: -1;
+        }
+      }
+    }
+    .leftDot {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+    .rightDot {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+
+    @media screen and(max-width: 1270px) {
+      flex-direction: column-reverse;
+      gap: 60px;
+
+      .content {
+        align-self: stretch;
+        .description {
+          max-width: unset;
+        }
+      }
+    }
+
+    @media screen and(max-width: 750px) {
+      .editor {
+        width: 100%;
+      }
+    }
+    @media screen and(max-width: 580px) {
+      .content .download {
+        gap: 20px;
+        a {
+          padding: 0.5em 1em;
+        }
+      }
+    }
+    @media screen and(max-width: 480px) {
+      .content .download {
+        flex-direction: column;
+        a.json,
+        .container,
+        .container a.template {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .communityContainer {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 14px;
+    margin-top: 40px;
+    cursor: pointer;
+
+    svg {
+      width: 27px;
+      transform: translateX(0);
+      transition: transform 0.4s;
+    }
+    &:hover {
+      svg {
+        transform: translateX(8px);
+      }
     }
     .communityLink {
-        text-decoration: underline;
-        text-decoration-color: #3D3DFF;
-        color: #3D3DFF;
+      text-decoration: underline;
+      text-decoration-color: #3d3dff;
+      color: #3d3dff;
     }
-    }
+  }
 }
