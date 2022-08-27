@@ -1,0 +1,70 @@
+{
+  "blocks": [
+    {
+      "type": "component",
+      "path": "src/components",
+      "files": [
+        {
+          "name": "<name>.jsx",
+          "template": "templates/component.jsx"
+        },
+        "MODULE_SCSS"
+      ]
+    },
+    {
+      "type": "page",
+      "path": "src/pages",
+      "files": [
+        {
+          "name": "<name>.jsx",
+          "template": "templates/page.jsx"
+        },
+        "MODULE_SCSS"
+      ]
+    },
+    {
+      "type": "reducer",
+      "path": "src/redux/reducers",
+      "isFile": true,
+      "file": {
+        "name": "<name>.jsx",
+        "template": "DEFAULT"
+      }
+    },
+    {
+      "type": "action",
+      "path": "src/redux/actions",
+      "isFile": true,
+      "file": {
+        "name": "<name>.jsx",
+        "template": "DEFAULT"
+      }
+    },
+    {
+      "type": "hook",
+      "path": "src/utils/hooks",
+      "isFile": true,
+      "file": {
+        "name": "<name>.jsx",
+        "template": "templates/hook.jsx"
+      }
+    },
+    {
+      "type": "function",
+      "path": "src/utils/functions",
+      "isFile": true,
+      "file": {
+        "name": "<name>.jsx",
+        "template": "templates/function.jsx"
+      }
+    }
+  ],
+  "fileFormats": {
+    "MODULE_CSS": {
+      "name": "index.module.css"
+    },
+    "MODULE_SCSS": {
+      "name": "index.module.scss"
+    }
+  }
+}
