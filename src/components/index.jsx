@@ -17,3 +17,4 @@ export { default as Cards } from "./Cards/Cards";
 export { default as LoaderCard } from "./LoaderCard/LoaderCard";
 export { default as Loader } from "./Loader/Loader";
 export { default as Button } from "./Button/Button";
+export { default as Hero } from "./Hero/Hero";
