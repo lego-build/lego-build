@@ -17,7 +17,9 @@ function Community() {
   let component = <Main {...{ value, resetValue, workflows, loading }} />;
 
   if (!!workflow_id) {
-    component = <Setup loading={loading} />;
+    component = (
+      <Setup loading={loading} workflows={workflows} key={workflows} />
+    );
   }
 
   useEffect(() => {

@@ -65,10 +65,6 @@ function SideNav() {
           id: "path",
           text: "--path",
         },
-        {
-          id: "parent",
-          text: "--parent",
-        },
       ],
     },
     {

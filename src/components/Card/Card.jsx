@@ -1,10 +1,10 @@
 import React from "react";
 import { wordParser } from "../../utils/functions";
 import style from "./index.module.css";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 const Card = ({ id, title, description, author: { name } }) => {
   return (
-    <Link to={`/community/${id}`}>
+    <HashLink to={`/community/${id}#`}>
       <div className={style.card}>
         <div
           className={style.header}
@@ -20,7 +20,7 @@ const Card = ({ id, title, description, author: { name } }) => {
           </span>
         </div>
       </div>
-    </Link>
+    </HashLink>
   );
 };
 

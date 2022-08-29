@@ -27,6 +27,19 @@ const Github = {
 
     return result;
   },
+
+  async getJSON(workflowName) {
+    const jsonBlob = await fetch(
+      `https://raw.githubusercontent.com/${this.username}/${this.repo}/${this.branch}/workflows/${workflowName}/lego.json`
+    );
+    const json = await jsonBlob.text();
+
+    return json;
+  },
+
+  getDownloadUrl(path) {
+    return `https://raw.githubusercontent.com/${this.username}/${this.repo}/${this.branch}/workflows/${path}`;
+  },
 };
 
 export default Github;
