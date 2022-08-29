@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    gap: 32px;
+    width: fit-content;
+    margin-inline: auto;
+    .icons{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-image: linear-gradient(100.55deg, #7450F6 13.34%, #CF50F6 97.24%);;   
+        animation: bouncing 1.5s infinite;
+    }
+    .icons:nth-child(2) {
+                animation-delay: 250ms;
+            }
+        
+            .icons:nth-child(3) {
+                animation-delay: 500ms;
+            }
+        
+            @keyframes bouncing {
+        
+                0%,
+                100% {
+                    transform: translateY(-75%);
+                    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+                }
+        
+                50% {
+                    transform: none;
+                    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                }
+            }
+    }
+    
