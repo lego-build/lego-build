@@ -80,12 +80,12 @@ const Setup = () => {
           <Code maxHeight={"400px"}>{json}</Code>
         </div>
       </div>
-      <span className={style.backToCommunityContainer}>
+      <div className={style.backToCommunityContainer}>
       <Link to={"/community"} className={style.communityContainer}>
         <span className={style.communityLink}>Back to community</span> <Arrow className={style.Arrow} />
       </Link>
         <BlurWatermark className={style.BlurWatermark} />
-      </span>
+      </div>
     </section>
   );
 };
