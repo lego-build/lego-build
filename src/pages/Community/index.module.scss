@@ -1,0 +1,76 @@
+.community {
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  gap: 2.5em;
+  position: relative;
+  .TransparentRectangle {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 0.55;
+  }
+  .Crystals {
+    display: flex;
+    position: absolute;
+    left: 25px;
+    gap: 50px;
+    height: 150px;
+    top: 100px;
+    z-index: -1;
+
+    .Crystal1 {
+      align-self: flex-end;
+    }
+
+    .Crystal2 {
+      align-self: flex-start;
+    }
+  }
+  .Crystals2 {
+    display: flex;
+    position: absolute;
+    right: 25px;
+    gap: 50px;
+    height: 150px;
+    top: 100px;
+    z-index: -1;
+    .Crystal1 {
+      align-self: flex-end;
+    }
+
+    .Crystal2 {
+      align-self: flex-start;
+    }
+  }
+  .powered {
+    padding: 0.6em 1.5em;
+    border-radius: 999px;
+    display: block;
+    float: right;
+    margin-left: auto;
+    background-color: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    --margin-right: 50px;
+    margin-right: var(--margin-right);
+    margin-top: 30px;
+
+    @media screen and(max-width:650px) {
+      --margin-right: 25px;
+    }
+  }
+  @media screen and (max-width: 950px) {
+    .TransparentRectangle {
+      display: none;
+    }
+
+    .Crystals,
+    .Crystals2 {
+      top: 10%;
+    }
+  }
+}

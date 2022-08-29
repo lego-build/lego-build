@@ -1,0 +1,221 @@
+.setupcontainer {
+  position: relative;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
+
+  @media screen and(max-width: 650px) {
+    --horizontal-padding: 25px;
+  }
+
+  .shadowCircle {
+    position: absolute;
+    left: 28%;
+    top: -20px;
+
+    @media screen and(max-width:650px) {
+      display: none;
+    }
+  }
+  .setup {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    .content {
+      position: relative;
+      .title {
+        font-size: 2em;
+        font-weight: 700;
+        line-height: 1em;
+        margin-top: 12px;
+        margin-bottom: 25px;
+        &::before {
+          content: attr(data-mark);
+          position: absolute;
+          top: -30px;
+          left: -65px;
+          font-size: 7em;
+          font-weight: 900;
+          color: transparent;
+          -webkit-text-stroke: 0.25px #f0f0f0;
+          z-index: -1;
+        }
+
+        @media screen and (max-width: 960px) {
+          font-size: 1.5em;
+        }
+      }
+
+      .link {
+        color: #737373;
+
+        a {
+          text-decoration: underline;
+          text-decoration-color: #737373;
+        }
+      }
+
+      .description {
+        color: #4d4d4d;
+        max-width: 450px;
+      }
+
+      .download {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 30px;
+
+        a {
+          padding: 0.5em 2.2em;
+          border-radius: 9999px;
+          font-weight: 700;
+          font-size: 1em;
+        }
+
+        .container {
+          background-image: linear-gradient(
+            138.94deg,
+            #9d50f6 33.05%,
+            #00d1ab 80.37%
+          );
+          padding: 1px;
+          display: flex;
+          width: fit-content;
+          justify-content: center;
+          align-items: center;
+          border-radius: 999px;
+
+          .template {
+            background: white;
+            border: 2px solid transparent;
+            position: relative;
+            z-index: 50;
+            border-radius: inherit;
+            color: transparent;
+            width: fit-content;
+            span {
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              color: transparent;
+              background-clip: text;
+              background-image: linear-gradient(
+                138.94deg,
+                #9d50f6 33.05%,
+                #00d1ab 80.37%
+              );
+              transition-property: background-image;
+              transition-duration: 500ms;
+              transition-timing-function: ease-in;
+            }
+          }
+        }
+      }
+    }
+
+    .editor {
+      max-width: 600px;
+      div {
+        z-index: 3;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: linear-gradient(
+            100.55deg,
+            #7450f6 13.34%,
+            #cf50f6 97.24%
+          );
+          border-radius: 8px;
+          top: 5px;
+          bottom: -10px;
+          left: 5px;
+          right: -10px;
+          z-index: -1;
+        }
+      }
+    }
+    .leftDot {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+    .rightDot {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+
+    @media screen and(max-width: 1270px) {
+      flex-direction: column-reverse;
+      gap: 60px;
+
+      .content {
+        align-self: stretch;
+        .description {
+          max-width: unset;
+        }
+      }
+    }
+
+    @media screen and(max-width: 750px) {
+      .editor {
+        width: 100%;
+      }
+    }
+    @media screen and(max-width: 580px) {
+      .content .download {
+        gap: 20px;
+        a {
+          padding: 0.5em 1em;
+        }
+      }
+    }
+    @media screen and(max-width: 480px) {
+      .content .download {
+        flex-direction: column;
+        a,
+        .container,
+        .container a.template {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .backToCommunityContainer {
+    position: relative;
+    .communityContainer {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 14px;
+      margin-top: 40px;
+      cursor: pointer;
+
+      .Arrow {
+        width: 27px;
+        transform: translateX(0);
+        transition: transform 0.4s;
+      }
+      &:hover {
+        .Arrow {
+          transform: translateX(8px);
+        }
+      }
+      .communityLink {
+        text-decoration: underline;
+        text-decoration-color: #3d3dff;
+        color: #3d3dff;
+      }
+    }
+    .BlurWatermark {
+      position: absolute;
+      top: -100px;
+      z-index: -1;
+    }
+  }
+}

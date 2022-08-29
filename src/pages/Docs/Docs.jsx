@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { Footer, Nav, SideNav, Layout } from "../../components";
+import {  SideNav, Layout } from "../../components";
 import style from "./index.module.css";
 import { Blocks, Formats, Main } from "./subpages";
 

@@ -1,0 +1,93 @@
+.card {
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  -webkit-transition-property: -webkit-box-shadow;
+  transition-property: -webkit-box-shadow;
+  transition-property: box-shadow;
+  transition-property: box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+.card:hover {
+  -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card .header {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px 8px 0 0;
+  background-image: linear-gradient(100.55deg, #7450f6 13.34%, #cf50f6 97.24%);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+.card .header p {
+  font-size: 3em;
+  font-weight: 700;
+  color: white;
+}
+
+.card .header::before {
+  content: attr(data-mark);
+  position: absolute;
+  top: 0;
+  font-size: 7em;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 0.25px #ac94f9;
+  z-index: -1;
+}
+
+.card .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.5em;
+}
+
+.card .body h1 {
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.card .body p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.95em;
+  color: #4d4d4d;
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+
+.card .body .link {
+  color: #737373;
+  font-size: 0.9em;
+}
+
+.card .body .link span {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #737373;
+          text-decoration-color: #737373;
+}
+/*# sourceMappingURL=index.module.css.map */

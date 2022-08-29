@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: center;
+  position: relative;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
+  div {
+    border-radius: 999px;
+    h1 {
+      font-size: 2.2em;
+      font-weight: 700;
+    }
+
+    span {
+      position: relative;
+
+      svg {
+        position: absolute;
+        right: -28px;
+        top: -18px;
+        width: 35px;
+      }
+    }
+  }
+  p {
+    width: calc(6 / 12 * 100%);
+    color: #4d4d4d;
+  }
+
+  @media screen and (max-width: 920px) {
+    gap: 0.2em;
+    p {
+      width: 100%;
+    }
+    div {
+      h1 {
+        font-size: 1.5em;
+      }
+      span {
+        svg {
+          width: 30px;
+          right: -20px;
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width:650px) {
+    --horizontal-padding: 25px;
+  }
+}

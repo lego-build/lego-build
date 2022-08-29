@@ -1,0 +1,68 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  --horizontal-padding: 50px;
+  padding: 0 var(--horizontal-padding);
+}
+
+.header div {
+  border-radius: 999px;
+}
+
+.header div h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.header div span {
+  position: relative;
+}
+
+.header div span svg {
+  position: absolute;
+  right: -28px;
+  top: -18px;
+  width: 35px;
+}
+
+.header p {
+  width: calc(6 / 12 * 100%);
+  color: #4d4d4d;
+}
+
+@media screen and (max-width: 920px) {
+  .header {
+    gap: 0.2em;
+  }
+  .header p {
+    width: 100%;
+  }
+  .header div h1 {
+    font-size: 1.5em;
+  }
+  .header div span svg {
+    width: 30px;
+    right: -20px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    --horizontal-padding: 25px;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */
