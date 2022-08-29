@@ -1,6 +1,5 @@
 .setupcontainer {
   position: relative;
-  overflow-x: hidden;
   --horizontal-padding: 50px;
   padding: 0 var(--horizontal-padding);
 
@@ -218,7 +217,8 @@
   }
   .BlurWatermark{
     position: absolute;
-    top: 0;
+   top: -100px;
+   z-index: -1;
   }
 }
 }
