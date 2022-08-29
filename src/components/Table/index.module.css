@@ -7,19 +7,14 @@
   border-collapse: separate;
   min-width: 650px;
 }
-
 .table td,
 .table th {
   padding: 20px 0;
   padding-right: 60px;
 }
-
 .table th {
   text-align: left;
 }
-
 .table tr {
-  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-}
-/*# sourceMappingURL=index.module.css.map */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=index.module.css.map */

@@ -1,11 +1,7 @@
 .button {
   display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   --size: 50px;
   width: var(--size);
   height: var(--size);
@@ -16,49 +12,33 @@
   background-color: #008f75;
   z-index: 10;
 }
-
 .button span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 10px;
   width: 30px;
 }
-
 .button span::before, .button span::after {
   content: "";
   background-color: white;
   height: 3px;
   border-radius: 100px;
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform-origin: center;
 }
-
 .button span::before {
-  -webkit-transform: translateY(7px) rotate(45deg);
-          transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
-
 .button span::after {
-  -webkit-transform: translateY(-7px) rotate(-45deg);
-          transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 @media screen and (max-width: 1180px) {
   .button {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 }
-
 @media screen and (max-width: 650px) {
   .button {
     bottom: 20px;
   }
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */
