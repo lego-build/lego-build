@@ -4,81 +4,60 @@ const ConfigFile = require("./config/ConfigFile");
 const UserInput = require("../utils/UserInput");
 
 class Block {
-  constructor(configFile, fileFormats) {
-    this.config = new ConfigFile(configFile, fileFormats);
+  constructor(blockName, configFile, fileFormats) {
+    this.config = new ConfigFile(blockName, configFile, fileFormats);
     this.userInput = new UserInput();
   }
 
-  /**
-   * Creates a file using a template file to add boilerplate
-   * @param {*} filePath | The location to store the new file
-   * @param {*} templateFile | The boilerplate code for the file to create
-   */
-  createFile = (filePath, templateFile) => {
-    fs.writeFile(filePath, templateFile, (err) => {
+  //This will create all the files
+  createBlockFiles = (blockName, fileMap, index) => {
+    //Base case
+    if (fileMap.size == index) {
+      Logger.logSuccess(`created '${blockName}' successfully`);
+      process.exit();
+    }
+
+    let file = fileMap.get(index);
+
+    let templateFile;
+    fs.readFile(file.templateFilePath, (err, data) => {
+      //The template file doesn't exist so it throws an expected error, so use the default
+      //template
       if (err) {
-        Logger.logError("There was an error creating new file :)");
-        throw err;
+        console.log("There was an error");
+        templateFile = "";
       } else {
-        Logger.logSuccess(`created '${filePath}' successfully`);
+        templateFile = data.toString().replaceAll("blockName", blockName);
       }
+
+      fs.writeFile(file.filePath, templateFile, (err) => {
+        if (err) {
+          Logger.logError("There was an error creating new file :)");
+          throw err;
+        } else {
+          Logger.logSuccess(`created '${file.filePath}' successfully`);
+
+          this.createBlockFiles(blockName, fileMap, ++index);
+        }
+      });
     });
   };
 
-  //This will create all the files
-  createBlockFiles = (fileMap, blockName) => {
-    let templateFile;
-    //Loop through the map containing all the file paths and template files
-    for (const file of fileMap) {
-      fs.readFile(file[1].templateFilePath, (err, data) => {
-        //The template file doesn't exist so it throws an expected error, so use the default
-        //template
-        if (err) {
-          console.log("There was an error");
-        } else {
-          templateFile = data.toString().replaceAll("blockName", blockName);
-        }
+  createBlock(blockName) {
+    const filePathsMap = this.config.getBlockFiles().generateBlockFilesMap();
+    // const filePathsMap = this.config.generateFilePathsMap(blockName);
 
-        //After reading the file, create the file
-        this.createFile(file[1].filePath, templateFile);
-      });
-    }
-  };
-
-  singleFileBlockExists(blockName) {
-    return fs.existsSync(
-      this.config.getFilePath(this.config.getBlockFile(), blockName)
-    );
-  }
-
-  multipleFileBlockExists(blockName) {
-    return fs.existsSync(this.config.getBlockDirectory(blockName));
-  }
-
-  //Check if a block exists
-  blockExists(blockName) {
-    //If it is a single file check if it exists
-    if (this.config.isFile()) {
-      return this.singleFileBlockExists(blockName);
-    }
-
-    return fs.existsSync(this.config.getBlockDirectory(blockName));
-  }
-
-  createBlock = (blockName) => {
-    const filePathsMap = this.config.generateFilePathsMap(blockName);
-
-    let directory = this.config.getBlockRootDirectory(blockName);
+    let directory = this.config.getBlockDirectory(blockName);
 
     fs.mkdir(directory, { recursive: true }, (err) => {
       if (err) {
         Logger.logError("Error occured creating directory");
         return;
       } else {
-        this.createBlockFiles(filePathsMap, blockName);
+        this.createBlockFiles(blockName, filePathsMap, 0);
       }
     });
-  };
+  }
 
   renameDirectory(oldDirectory, newDirectory) {
     fs.rename(oldDirectory, newDirectory, (err) => {
@@ -159,21 +138,20 @@ class Block {
     //Check if the block already exists
 
     if (
-      (this.config.isFile() && this.singleFileBlockExists(newBlockName)) ||
-      (!this.config.isFile() && this.multipleFileBlockExists(newBlockName))
+      this.config.blockExists(newBlockName)
     ) {
       Logger.logError(`The block "${newBlockName}" already exists`);
       process.exit();
     }
-    const blockFileMap = this.config.generateFilePathsMap(oldBlockName);
+    const blockFileMap = this.config.getBlockFiles().generateBlockFilesMap();
 
     this.renameAllFiles(oldBlockName, newBlockName, blockFileMap, 0);
   }
 
-  main(blockName) {
+  create(blockName) {
     //If the block already exists then ask the user if they want to override the contents
     let readline = this.userInput.getSingleton();
-    if (this.blockExists(blockName)) {
+    if (this.config.blockExists(blockName)) {
       this.userInput.askQuestion(
         `${blockName} ${this.config.getBlockType()} already exists, are you sure you want to override the contents of the block?(y/n)`,
         () => {

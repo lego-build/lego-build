@@ -97,7 +97,7 @@ const start = () => {
       blockConfigFile = blockConfigStrategy(getBlockConfig(blockType));
 
       if (validators.validateRenameCommand(arguments, blockConfigFile)) {
-        block = new Block(blockConfigFile, config.fileFormats);
+        block = new Block(oldBlockName, blockConfigFile, config.fileFormats);
         block.rename(oldBlockName, newBlockName);
       } else {
         process.exit();
@@ -111,10 +111,11 @@ const start = () => {
     default:
       //Get the config files for the block
       blockConfigFile = blockConfigStrategy(getBlockConfig(arguments[0]));
+      let blockName = arguments[1];
 
       if (validators.validateCreateBlockCommand(arguments, blockConfigFile)) {
-        block = new Block(blockConfigFile, config.fileFormats);
-        block.main(arguments[1]);
+        block = new Block(blockName, blockConfigFile, config.fileFormats);
+        block.create(blockName);
       } else {
         process.exit();
       }
