@@ -35,7 +35,6 @@ function Community() {
     <Layout className={style.community}>
       <TransparentRectangle className={style.TransparentRectangle} />
       <span className={style.Crystals}>
-        {/* <LoaderCard /> */}
         <Crystals className={style.Crystal1} />
         <Crystals className={style.Crystal2} />
       </span>
