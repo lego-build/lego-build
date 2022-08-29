@@ -1,7 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import { Arrow, Dots, LeftDots, ShadowCircle } from "../../../../assets";
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
@@ -12,53 +8,39 @@ import {
   ShadowCircle,
 } from "../../../../assets";
 import { Code } from "../../../../components";
-import { Github } from "../../../../utils/api";
 import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
-const Setup = ({ loading, workflows }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+const Setup = () => {
+  const [title, setTitle] = useState("TypeScript Setup");
+  const [description, setDescription] = useState(
+    "Workflow for React + TypeScript, including components, pages, hooks and redux blocks. Use it to speed up your workflow."
+  );
   const [author, setAuthor] = useState({
-    name: "",
-    profileLink: "",
+    name: "Akpeti Trust",
+    profileLink: "https://github.com/AkpetiTrust",
   });
-  const [json, setJson] = useState("");
-  const [jsonIsLoading, setJsonIsLoading] = useState(true);
+  const [json, setJson] = useState(`{
+    "type": "component", // Name of the block type
+    "path": "src/components", // Path where the block will be stored, relative to root
+    "isFile": false, // Whether the block is a file or a folder, false by default
+    "files": [
+      // Formats for files that make up the block, if the block is a folder
+      {
+        "name": "<name>.jsx", // Use <name> to represent the block name
+        "template": "templates/jsxTemplate.jsx", // Path to file template if any
+      },
+      {
+        "name": "<name>.scss",
+      },
+      {
+        "name": "<name>.test.jsx",
+        "template": "templates/testTemplate.jsx",
+      },
+    ],
+    "file": null, // An object or a string(more on this) representing the file format, used if the block is a file and not a folder  
+ }`);
 
   const { workflow_id } = useParams();
-
-  useEffect(() => {
-    if (loading) return;
-    async function getJSON() {
-      const response = await Github.getJSON(workflow_id);
-      setJson(response);
-      setJsonIsLoading(false);
-    }
-
-    const activeWorkflow = workflows.find(
-      (workflow) => workflow.id === workflow_id
-    );
-    if (!activeWorkflow) return; // Throw 404 error here
-    setTitle(activeWorkflow.title);
-    setDescription(activeWorkflow.description);
-    setAuthor(activeWorkflow.author);
-    getJSON();
-  }, []);
-
-  if (loading || jsonIsLoading) {
-    return (
-      <p
-        style={{
-          fontSize: "1.2em",
-          fontWeight: 700,
-          textAlign: "center",
-          marginTop: "50px",
-        }}
-      >
-        Loading...
-      </p>
-    );
-  }
 
   return (
     <section className={style.setupcontainer}>
@@ -80,7 +62,7 @@ const Setup = ({ loading, workflows }) => {
           <p className={style.description}>{description}</p>
           <span className={style.download}>
             <a
-              href={`data:text/json;charset=utf-8,${encodeURIComponent(json)}`}
+              href="./index.module.css"
               download="lego.json"
               className={style.json}
             >
@@ -89,8 +71,8 @@ const Setup = ({ loading, workflows }) => {
             <span className={style.container}>
               {" "}
               <a
-                href={Github.getDownloadUrl(`${workflow_id}/templates.zip`)}
-                download="templates.zip"
+                href="./index.module.scss"
+                download={"lego"}
                 className={style.template}
               >
                 <span>Download Templates</span>
@@ -104,9 +86,6 @@ const Setup = ({ loading, workflows }) => {
           <Code maxHeight={"400px"}>{json}</Code>
         </div>
       </div>
-      <HashLink to={"/community#"} className={style.communityContainer}>
-        <span className={style.communityLink}>Back to community</span> <Arrow />
-      </HashLink>
       <div className={style.backToCommunityContainer}>
         <Link to={"/community"} className={style.communityContainer}>
           <span className={style.communityLink}>Back to community</span>{" "}
