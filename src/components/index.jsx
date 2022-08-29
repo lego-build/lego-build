@@ -15,3 +15,4 @@ export { default as Search } from "./Search/Search";
 export { default as Card } from "./Card/Card";
 export { default as Cards } from "./Cards/Cards";
 export { default as LoaderCard } from "./LoaderCard/LoaderCard";
+export { default as Loader } from "./Loader/Loader";
