@@ -40,7 +40,7 @@ const Setup = ({ loading, workflows }) => {
     setDescription(activeWorkflow.description);
     setAuthor(activeWorkflow.author);
     getJSON();
-  }, []);
+  }, [loading, workflow_id, workflows]);
 
   if (loading || jsonIsLoading) {
     return (
