@@ -18,7 +18,7 @@
     left: 25px;
     gap: 50px;
     height: 150px;
-    top: 10%;
+    top: 100px;
     z-index: -1;
 
     .Crystal1 {
@@ -35,7 +35,7 @@
     right: 25px;
     gap: 50px;
     height: 150px;
-    top: 10%;
+    top: 100px;
     z-index: -1;
     .Crystal1 {
       align-self: flex-end;
@@ -66,6 +66,11 @@
   @media screen and (max-width: 950px) {
     .TransparentRectangle {
       display: none;
+    }
+
+    .Crystals,
+    .Crystals2 {
+      top: 10%;
     }
   }
 }
