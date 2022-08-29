@@ -8,7 +8,7 @@ import {
   BlurWatermark,
 } from "../../../../assets";
 import { useParams } from "react-router-dom";
-import { Code, Loader } from "../../../../components";
+import { Code, JsonButton, Loader } from "../../../../components";
 import { Github } from "../../../../utils/api";
 import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
@@ -67,13 +67,8 @@ const Setup = ({ loading, workflows }) => {
           </h1>
           <p className={style.description}>{description}</p>
           <span className={style.download}>
-            <a
-              href={`data:text/json;charset=utf-8,${encodeURIComponent(json)}`}
-              download="lego.json"
-              className={style.json}
-            >
-              Download JSON
-            </a>{" "}
+            <JsonButton {...{ json }} />{" "}
+
             <span className={style.container}>
               {" "}
               <a
