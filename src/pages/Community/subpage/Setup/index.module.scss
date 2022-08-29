@@ -2,9 +2,8 @@
   position: relative;
   --horizontal-padding: 50px;
   padding: 0 var(--horizontal-padding);
-  overflow: hidden;
 
-  @media screen and(max-width:650px) {
+  @media screen and(max-width: 650px) {
     --horizontal-padding: 25px;
   }
 
@@ -12,6 +11,10 @@
     position: absolute;
     left: 28%;
     top: -20px;
+
+    @media screen and(max-width:650px) {
+      display: none;
+    }
   }
   .setup {
     display: flex;

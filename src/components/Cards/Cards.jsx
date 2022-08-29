@@ -11,23 +11,23 @@ const Cards = ({ data, value, loading }) => {
     <div className={style.container}>
       <Dots className={style.leftWatermark} />
       <LeftDots className={style.watermark} />
-      
-      <div className={style.cards}>
-        {loading
-          ?
-          <LoaderCard />
-          :
-         (data
-          ?.filter(
-            ({ title, description }) =>
-              title.toLowerCase().includes(value.toLowerCase()) ||
-              description.toLowerCase().includes(value.toLowerCase())
-          )
-          ?.map((details, i) => (
-            <Card {...details} key={Id + i} />
-          )))
-        }
 
+      <div className={style.cards}>
+        {loading ? (
+          <>
+            <LoaderCard />
+            <LoaderCard />
+            <LoaderCard />
+          </>
+        ) : (
+          data
+            ?.filter(
+              ({ title, description }) =>
+                title.toLowerCase().includes(value.toLowerCase()) ||
+                description.toLowerCase().includes(value.toLowerCase())
+            )
+            ?.map((details, i) => <Card {...details} key={Id + i} />)
+        )}
       </div>
     </div>
   );

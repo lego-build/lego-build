@@ -1,33 +1,39 @@
 .container {
   height: 300px;
   width: 100%;
-  background-image: linear-gradient(131.98deg, #FAFAFA -23.85%, #F2F2F2 87.89%);
+  max-width: 350px;
+  background-image: linear-gradient(131.98deg, #fafafa -23.85%, #f2f2f2 87.89%);
   position: relative;
+  overflow: hidden;
 }
+
 .container .loadingLine {
   position: absolute;
   left: 30px;
-  background-image: linear-gradient(179.61deg, #FAFAFA -26.96%, #FCFCFC 99.66%);
+  background-image: linear-gradient(179.61deg, #fafafa -26.96%, #fcfcfc 99.66%);
   height: 300px;
   width: 45px;
-  -webkit-animation: loading 3s ease-in-out infinite forwards;
-          animation: loading 3s ease-in-out infinite forwards;
+  -webkit-animation: loading 2s ease-in-out infinite forwards;
+          animation: loading 2s ease-in-out infinite forwards;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
+
 @-webkit-keyframes loading {
   0% {
-    left: 0%;
+    left: -65%;
   }
   100% {
-    left: 85%;
+    left: 100%;
   }
 }
+
 @keyframes loading {
   0% {
-    left: 0%;
+    left: -65%;
   }
   100% {
-    left: 85%;
+    left: 100%;
   }
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */

@@ -2,7 +2,6 @@
   position: relative;
   --horizontal-padding: 50px;
   padding: 0 var(--horizontal-padding);
-  overflow: hidden;
 }
 
 @media screen and (max-width: 650px) {
@@ -15,6 +14,12 @@
   position: absolute;
   left: 28%;
   top: -20px;
+}
+
+@media screen and (max-width: 650px) {
+  .setupcontainer .shadowCircle {
+    display: none;
+  }
 }
 
 .setupcontainer .setup {
