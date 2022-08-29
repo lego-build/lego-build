@@ -1,28 +1,19 @@
 .community {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 16px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-height: 100vh;
   height: 100%;
   gap: 2.5em;
   position: relative;
 }
-
 .community .TransparentRectangle {
   position: absolute;
   top: 0;
   z-index: -1;
   opacity: 0.55;
 }
-
 .community .Crystals {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: absolute;
   left: 25px;
@@ -31,20 +22,13 @@
   top: 10%;
   z-index: -1;
 }
-
 .community .Crystals .Crystal1 {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
-
 .community .Crystals .Crystal2 {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
-
 .community .Crystals2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: absolute;
   right: 25px;
@@ -53,17 +37,12 @@
   top: 10%;
   z-index: -1;
 }
-
 .community .Crystals2 .Crystal1 {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
-
 .community .Crystals2 .Crystal2 {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
-
 .community .powered {
   padding: 0.6em 1.5em;
   border-radius: 999px;
@@ -78,16 +57,13 @@
   margin-right: var(--margin-right);
   margin-top: 30px;
 }
-
 @media screen and (max-width: 650px) {
   .community .powered {
     --margin-right: 25px;
   }
 }
-
 @media screen and (max-width: 950px) {
   .community .TransparentRectangle {
     display: none;
   }
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */

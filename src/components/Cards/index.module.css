@@ -5,8 +5,7 @@
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   border-width: 0;
   /* 2 */
@@ -106,7 +105,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -189,9 +188,9 @@ select {
 2. Remove default button styles.
 */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -233,7 +232,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -312,6 +311,13 @@ textarea {
 1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
@@ -321,16 +327,14 @@ textarea:-ms-input-placeholder {
   /* 2 */
 }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
   /* 2 */
 }
 
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -349,7 +353,7 @@ textarea::placeholder {
 Set the default cursor for buttons.
 */
 button,
-[role="button"] {
+[role=button] {
   cursor: pointer;
 }
 
@@ -393,68 +397,46 @@ video {
   --horizontal-padding: 50px;
   padding: 0 var(--horizontal-padding);
 }
-
 .container .watermark {
   position: absolute;
   z-index: -99;
   left: 0;
 }
-
 .container .leftWatermark {
   position: absolute;
   z-index: -99;
   right: 0;
 }
-
 .container .cards {
   position: relative;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -webkit-column-gap: 40px;
-          column-gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 40px;
+       column-gap: 40px;
   row-gap: 50px;
   z-index: 5;
 }
-
 .container .cards > a {
   max-width: 350px;
 }
-
-.container .cards > a:nth-child(3n + 1) {
-  -ms-grid-column-align: start;
-      justify-self: start;
+.container .cards > a:nth-child(3n+1) {
+  justify-self: start;
 }
-
-.container .cards > a:nth-child(3n + 2) {
-  -ms-grid-column-align: center;
-      justify-self: center;
+.container .cards > a:nth-child(3n+2) {
+  justify-self: center;
 }
-
-.container .cards > a:nth-child(3n + 3) {
-  -ms-grid-column-align: end;
-      justify-self: end;
+.container .cards > a:nth-child(3n+3) {
+  justify-self: end;
 }
-
 @media screen and (max-width: 1080px) {
   .container .cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
-
 @media screen and (max-width: 650px) {
   .container {
     --horizontal-padding: 25px;
   }
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */

@@ -1,6 +1,5 @@
 .setupcontainer {
   position: relative;
-  overflow-x: hidden;
   --horizontal-padding: 50px;
   padding: 0 var(--horizontal-padding);
 
@@ -190,6 +189,8 @@
       }
     }
   }
+    .backToCommunityContainer{
+      position: relative;
   .communityContainer {
     display: flex;
     width: fit-content;
@@ -198,13 +199,13 @@
     margin-top: 40px;
     cursor: pointer;
 
-    svg {
+    .Arrow {
       width: 27px;
       transform: translateX(0);
       transition: transform 0.4s;
     }
     &:hover {
-      svg {
+      .Arrow {
         transform: translateX(8px);
       }
     }
@@ -214,4 +215,10 @@
       color: #3d3dff;
     }
   }
+  .BlurWatermark{
+    position: absolute;
+   top: -100px;
+   z-index: -1;
+  }
+}
 }

@@ -2,6 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Arrow, Dots, LeftDots, ShadowCircle } from "../../../../assets";
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import {
+  Arrow,
+  BlurWatermark,
+  Dots,
+  LeftDots,
+  ShadowCircle,
+} from "../../../../assets";
 import { Code } from "../../../../components";
 import { Github } from "../../../../utils/api";
 import { wordParser } from "../../../../utils/functions";
@@ -98,6 +107,13 @@ const Setup = ({ loading, workflows }) => {
       <HashLink to={"/community#"} className={style.communityContainer}>
         <span className={style.communityLink}>Back to community</span> <Arrow />
       </HashLink>
+      <div className={style.backToCommunityContainer}>
+        <Link to={"/community"} className={style.communityContainer}>
+          <span className={style.communityLink}>Back to community</span>{" "}
+          <Arrow className={style.Arrow} />
+        </Link>
+        <BlurWatermark className={style.BlurWatermark} />
+      </div>
     </section>
   );
 };
