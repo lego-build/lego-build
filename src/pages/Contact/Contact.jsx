@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import { Footer, Layout, Nav } from "../../components";
+import { Layout } from "../../components";
 import { Logo, Mail, Curve, Ellipse } from "../../assets";
 import style from "./index.module.css";
 const ellipses = [1, 2, 3, 4, 5, 6];
@@ -27,11 +27,12 @@ const Contact = () => {
             <a
               href="https://github.com/lego-build/lego-build/tree/contact"
               target="_blank"
+              rel="noreferrer"
             >
               DM on Twitter
             </a>
             , or post an{" "}
-            <a href="https://github.com/lego-build/lego-build" target="_blank">
+            <a href="https://github.com/lego-build/lego-build" target="_blank" rel="noreferrer">
               issue on github
             </a>
             .
