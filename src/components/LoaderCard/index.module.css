@@ -1,9 +1,8 @@
 .container {
   height: 300px;
-  width: 350px;
+  width: 100%;
   background-image: linear-gradient(131.98deg, #FAFAFA -23.85%, #F2F2F2 87.89%);
   position: relative;
-  margin-left: 100px;
 }
 .container .loadingLine {
   position: absolute;
@@ -11,28 +10,24 @@
   background-image: linear-gradient(179.61deg, #FAFAFA -26.96%, #FCFCFC 99.66%);
   height: 300px;
   width: 45px;
-  -webkit-animation: loading 3s ease-in-out infinite;
-          animation: loading 3s ease-in-out infinite;
+  -webkit-animation: loading 3s ease-in-out infinite forwards;
+          animation: loading 3s ease-in-out infinite forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 @-webkit-keyframes loading {
   0% {
-    left: 15%;
-  }
-  50% {
-    left: 75%;
+    left: 0%;
   }
   100% {
-    left: 15%;
+    left: 85%;
   }
 }
 @keyframes loading {
   0% {
-    left: 15%;
-  }
-  50% {
-    left: 75%;
+    left: 0%;
   }
   100% {
-    left: 15%;
+    left: 85%;
   }
 }/*# sourceMappingURL=index.module.css.map */
