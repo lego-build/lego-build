@@ -8,7 +8,7 @@ import {
   BlurWatermark,
 } from "../../../../assets";
 import { useParams } from "react-router-dom";
-import { Code } from "../../../../components";
+import { Code, Loader } from "../../../../components";
 import { Github } from "../../../../utils/api";
 import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
@@ -44,16 +44,7 @@ const Setup = ({ loading, workflows }) => {
 
   if (loading || jsonIsLoading) {
     return (
-      <p
-        style={{
-          fontSize: "1.2em",
-          fontWeight: 700,
-          textAlign: "center",
-          marginTop: "50px",
-        }}
-      >
-        Loading...
-      </p>
+       <Loader /> 
     );
   }
 
