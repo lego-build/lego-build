@@ -18,7 +18,11 @@ function Community() {
 
   if (!!workflow_id) {
     component = (
-      <Setup loading={loading} workflows={workflows} key={workflows} />
+      <Setup
+        loading={loading}
+        workflows={workflows}
+        key={workflows.map((workflow) => workflow.id).join(" ")}
+      />
     );
   }
 
@@ -44,7 +48,11 @@ function Community() {
         <Crystals className={style.Crystal1} />
         <Crystals className={style.Crystal2} />
       </span>
-      <a href="https://github.com" className={style.powered}>
+      <a
+        href="https://github.com/lego-build/community"
+        target="_blank"
+        className={style.powered}
+      >
         {" "}
         Powered by GitHub
       </a>
