@@ -408,17 +408,33 @@ video {
 
 .container .cards {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  row-gap: 50px;
   z-index: 5;
+}
+
+.container .cards > a {
+  max-width: 350px;
+}
+
+.container .cards > a:nth-child(3n + 1) {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.container .cards > a:nth-child(3n + 2) {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container .cards > a:nth-child(3n + 3) {
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 @media screen and (max-width: 1080px) {
@@ -430,7 +446,9 @@ video {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 50px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 

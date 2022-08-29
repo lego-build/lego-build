@@ -4,7 +4,6 @@
   transition-property: box-shadow;
   transition-duration: 200ms;
   transition-timing-function: ease-in;
-  max-width: 350px;
 
   &:hover {
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);

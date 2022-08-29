@@ -1,5 +1,5 @@
 import React from "react";
-import { wordParser, parser } from "../../utils/functions";
+import { wordParser } from "../../utils/functions";
 import style from "./index.module.css";
 import { Link } from "react-router-dom";
 const Card = ({ id, title, description, author: { name } }) => {

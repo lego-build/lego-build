@@ -55,7 +55,8 @@
     font-size: 1.5em;
   }
   .header div span svg {
-    display: none;
+    width: 30px;
+    right: -20px;
   }
 }
 

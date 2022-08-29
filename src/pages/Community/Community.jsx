@@ -6,48 +6,28 @@ import { useParams } from "react-router-dom";
 import Setup from "./subpage/Setup/Setup";
 import TransparentRectangle from "../../assets/illustrations/TransparentRectangle";
 import { Crystals } from "../../assets";
+import { Github } from "../../utils/api";
 function Community() {
   const [value, resetValue] = useState("");
   const { workflow_id } = useParams();
+  const [loading, setLoading] = useState(true);
 
-  const [workflows, setWorkflows] = useState([
-    {
-      id: 1,
-      title: "TypeScript Setup",
-      description:
-        "Workflow for React + TypeScript, including components, pages, hooks and redux blocks. Use it to speed up your workflow.",
-      author: {
-        name: "Akpeti Trust",
-        profileLink: "https://github.com/AkpetiTrust",
-      },
-    },
-    {
-      id: 2,
-      title: "React Hooks",
-      description:
-        "Workflow for React + TypeScript, including components, pages, hooks and redux blocks. Use it to speed up your workflow.",
-      author: {
-        name: "Akpeti Trust",
-        profileLink: "https://github.com/AkpetiTrust",
-      },
-    },
-    {
-      id: 3,
-      title: "Vue Workflow",
-      description:
-        "Workflow for Vue, including components, pages, hooks and redux blocks. Use it to speed up your workflow.",
-      author: {
-        name: "Udoka",
-        profileLink: "https://github.com/Onyelaudochukwuka",
-      },
-    },
-  ]);
+  const [workflows, setWorkflows] = useState([]);
 
-  let component = <Main {...{ value, resetValue, workflows }} />;
+  let component = <Main {...{ value, resetValue, workflows, loading }} />;
 
   if (!!workflow_id) {
-    component = <Setup />;
+    component = <Setup loading={loading} />;
   }
+
+  useEffect(() => {
+    async function fetchData() {
+      const githubResponse = await Github.getWorkflows();
+      setWorkflows(githubResponse);
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
 
   return (
     <Layout className={style.community}>
