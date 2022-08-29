@@ -7,7 +7,7 @@ import {
   ShadowCircle,
   BlurWatermark,
 } from "../../../../assets";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Code } from "../../../../components";
 import { Github } from "../../../../utils/api";
 import { wordParser } from "../../../../utils/functions";
@@ -101,14 +101,11 @@ const Setup = ({ loading, workflows }) => {
           <Code maxHeight={"400px"}>{json}</Code>
         </div>
       </div>
-      <HashLink to={"/community#"} className={style.communityContainer}>
-        <span className={style.communityLink}>Back to community</span> <Arrow />
-      </HashLink>
       <div className={style.backToCommunityContainer}>
-        <Link to={"/community"} className={style.communityContainer}>
+        <HashLink to={"/community#"} className={style.communityContainer}>
           <span className={style.communityLink}>Back to community</span>{" "}
           <Arrow className={style.Arrow} />
-        </Link>
+        </HashLink>
         <BlurWatermark className={style.BlurWatermark} />
       </div>
     </section>
