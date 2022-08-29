@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Arrow, Dots, LeftDots, ShadowCircle } from "../../../../assets";
+import { Arrow, BlurWatermark, Dots, LeftDots, ShadowCircle } from "../../../../assets";
 import { Code } from "../../../../components";
 import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
@@ -80,9 +80,12 @@ const Setup = () => {
           <Code maxHeight={"400px"}>{json}</Code>
         </div>
       </div>
+      <span className={style.backToCommunityContainer}>
       <Link to={"/community"} className={style.communityContainer}>
-        <span className={style.communityLink}>Back to community</span> <Arrow />
+        <span className={style.communityLink}>Back to community</span> <Arrow className={style.Arrow} />
       </Link>
+        <BlurWatermark className={style.BlurWatermark} />
+      </span>
     </section>
   );
 };
