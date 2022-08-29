@@ -156,14 +156,11 @@ class Block {
    * @param {*} newBlockName | The name of the new block
    */
   rename(oldBlockName, newBlockName) {
-    //If it is a file check if the file already exists
+    //Check if the block already exists
 
-    if (this.config.isFile() && this.singleFileBlockExists(newBlockName)) {
-      Logger.logError(`The block "${newBlockName}" already exists`);
-      process.exit();
-    } else if (
-      !this.config.isFile() &&
-      this.multipleFileBlockExists(newBlockName)
+    if (
+      (this.config.isFile() && this.singleFileBlockExists(newBlockName)) ||
+      (!this.config.isFile() && this.multipleFileBlockExists(newBlockName))
     ) {
       Logger.logError(`The block "${newBlockName}" already exists`);
       process.exit();

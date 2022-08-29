@@ -1,9 +1,18 @@
+const Help = require("./Help");
 const Logger = require("./Logger");
 
 class Validators {
   static validateCreateBlockCommand(args, configFile) {
     let blockType = args[0];
     let blockName = args[1];
+
+
+    // Check if blockType is undefined
+    // If it is, run help command
+    if(blockType === undefined){
+      Help.logHelp();
+      return false;
+    }
 
     //Check if the block type exists
     if (!configFile) {
@@ -38,18 +47,18 @@ class Validators {
     const oldBlockName = args[1].split(":")[0];
     const newBlockName = args[3];
 
-    //Check if the blockType exists
-    if (!configFile) {
+    //Check if the syntax is proper
+    if (args[2] != "to" || !blockType || !oldBlockName) {
       Logger.logError(
-        `Block type '${blockType}' doesn't exist in package file`
+        `Invalid Syntax, syntax is - 'lego-build rename <block-type>:<old-block-name> to <new-block-name>'`
       );
       return false;
     }
 
-    //Check if the syntax is proper
-    if (args[2] != "to") {
+    //Check if the blockType exists
+    if (!configFile) {
       Logger.logError(
-        `Invalid Syntax, syntax is - 'lego-build rename <block-type>:<old-block-name> to <new-block-name>'`
+        `Block type '${blockType}' doesn't exist in package file`
       );
       return false;
     }
