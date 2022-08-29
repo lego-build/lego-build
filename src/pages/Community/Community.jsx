@@ -50,6 +50,7 @@ function Community() {
       <a
         href="https://github.com/lego-build/community"
         target="_blank"
+        rel="noreferrer"
         className={style.powered}
       >
         {" "}
