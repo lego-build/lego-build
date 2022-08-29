@@ -3,8 +3,19 @@
   width: 100%;
   max-width: 350px;
   background-image: linear-gradient(131.98deg, #fafafa -23.85%, #f2f2f2 87.89%);
-  position: relative;
+  z-index: 1;
   overflow: hidden;
+
+  &:nth-child(3n + 1) {
+    justify-self: start;
+  }
+  &:nth-child(3n + 2) {
+    justify-self: center;
+  }
+  &:nth-child(3n + 3) {
+    justify-self: end;
+  }
+
   .loadingLine {
     position: absolute;
     left: 30px;

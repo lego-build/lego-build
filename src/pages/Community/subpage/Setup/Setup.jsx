@@ -8,7 +8,7 @@ import {
   BlurWatermark,
 } from "../../../../assets";
 import { useParams } from "react-router-dom";
-import { Code, JsonButton, Loader } from "../../../../components";
+import { Code, Button, Loader } from "../../../../components";
 import { Github } from "../../../../utils/api";
 import { wordParser } from "../../../../utils/functions";
 import style from "./index.module.css";
@@ -43,9 +43,7 @@ const Setup = ({ loading, workflows }) => {
   }, [loading, workflow_id, workflows]);
 
   if (loading || jsonIsLoading) {
-    return (
-       <Loader /> 
-    );
+    return <Loader />;
   }
 
   return (
@@ -67,8 +65,12 @@ const Setup = ({ loading, workflows }) => {
           </h1>
           <p className={style.description}>{description}</p>
           <span className={style.download}>
-            <JsonButton {...{ json }} />{" "}
-
+            <Button
+              href={`data:text/json;charset=utf-8,${encodeURIComponent(json)}`}
+              download="lego.json"
+            >
+              Download JSON
+            </Button>
             <span className={style.container}>
               {" "}
               <a

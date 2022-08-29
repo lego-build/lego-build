@@ -1,15 +1,13 @@
-.json {
+.button {
   background-color: #008f75;
   border: 2px solid #008f75;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   color: white;
-}
-
-a {
   padding: 0.5em 2.2em;
   border-radius: 9999px;
   font-weight: 700;
   font-size: 1em;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */

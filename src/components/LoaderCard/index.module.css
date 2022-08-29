@@ -3,8 +3,23 @@
   width: 100%;
   max-width: 350px;
   background-image: linear-gradient(131.98deg, #fafafa -23.85%, #f2f2f2 87.89%);
-  position: relative;
+  z-index: 1;
   overflow: hidden;
+}
+
+.container:nth-child(3n + 1) {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.container:nth-child(3n + 2) {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container:nth-child(3n + 3) {
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 .container .loadingLine {

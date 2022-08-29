@@ -5,7 +5,8 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   border-width: 0;
   /* 2 */
@@ -105,7 +106,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -188,9 +189,9 @@ select {
 2. Remove default button styles.
 */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -232,7 +233,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -311,13 +312,6 @@ textarea {
 1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
@@ -327,14 +321,16 @@ textarea:-ms-input-placeholder {
   /* 2 */
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -353,7 +349,7 @@ textarea::placeholder {
 Set the default cursor for buttons.
 */
 button,
-[role=button] {
+[role="button"] {
   cursor: pointer;
 }
 
@@ -398,38 +394,62 @@ video {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .contact .content {
   position: relative;
   min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   padding: 25px;
   overflow: hidden;
 }
+
 .contact .content .blobs {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   max-width: 500px;
   height: 500px;
   width: 90%;
   border-radius: 50%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   z-index: -1;
 }
+
 .contact .content .blobs .blobContainer {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 50%;
   z-index: 5;
   -webkit-animation: round infinite 50s alternate;
@@ -437,63 +457,94 @@ video {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
+
 .contact .content .blobs .blobContainer svg {
   width: 18px;
 }
+
 @-webkit-keyframes round {
   0% {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
 @keyframes round {
   0% {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
 .contact .content .blobs .blobContainer .ellipse-1 {
   position: relative;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
+
 .contact .content .blobs .blobContainer .ellipse-2 {
   position: relative;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
+
 .contact .content .blobs .blobContainer .ellipse-3 {
   position: relative;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
+
 .contact .content .blobs .blobContainer .ellipse-4 {
   position: relative;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
+
 .contact .content .blobs .blobContainer .ellipse-5 {
   position: relative;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
+
 .contact .content .blobs .blobContainer .ellipse-6 {
   position: relative;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
+
 .contact .content .illustrations {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 100px;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-inline: auto;
   width: 100%;
 }
+
 .contact .content .illustrations svg {
   max-width: 200px;
 }
+
 .contact .content .illustrations .logo {
   max-width: 100px;
 }
+
 .contact .content .details {
   max-width: 530px;
   margin-inline: auto;
@@ -501,12 +552,14 @@ video {
   line-height: 1.5em;
   color: #4c4c4c;
 }
+
 .contact .content .details a {
   text-decoration: underline;
   -webkit-text-decoration-color: #3D3DFF;
           text-decoration-color: #3D3DFF;
   color: #3D3DFF;
 }
+
 .contact .content .watermark {
   position: absolute;
   font-weight: 700;
@@ -527,53 +580,64 @@ video {
   -webkit-background-clip: text;
   color: transparent;
 }
+
 @-webkit-keyframes watermark {
   0% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 100%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   10% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 90%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   20% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 80%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   30% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 70%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   40% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 60%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   50% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 50%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   60% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 40%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   70% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 30%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   80% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 20%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   90% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 10%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
@@ -584,53 +648,64 @@ video {
     -webkit-background-clip: text;
   }
 }
+
 @keyframes watermark {
   0% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 100%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   10% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 90%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   20% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 80%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   30% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 70%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   40% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 60%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   50% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 50%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   60% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 40%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   70% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 30%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   80% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 20%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
   }
   90% {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, transparent), to(#f7f7f7));
     background: linear-gradient(transparent 10%, #f7f7f7);
     background-clip: text;
     -webkit-background-clip: text;
@@ -653,4 +728,5 @@ video {
     right: unset;
     left: 0;
   }
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */
