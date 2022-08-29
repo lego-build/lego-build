@@ -46,12 +46,6 @@ const blockConfigStrategy = (blockConfigFile) => {
   return blockConfigFile;
 };
 
-const extractParentConfig = (parentString)=>{
-  let parentType = parentString.split(":")[1]
-
-  return getBlockConfig(parentType)
-}
-
 //Get the command line arguments
 const arguments = process.argv.slice(2);
 
@@ -74,7 +68,7 @@ const main = () => {
       start();
     });
   } else {
-    if (arguments[0] != "init") {
+    if (arguments[0] != "init" && arguments[0] != "help") {
       const init = new Init(main);
       init.generatePackageFile();
     } else {

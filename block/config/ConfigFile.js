@@ -95,7 +95,7 @@ class ConfigFile {
     }
 
     //There is no template file path so end the code here
-    if (!templateFilePath && typeof file == "string") {
+    if (typeof file == "string" && !this.fileFormats[file]) {
       Logger.logError(`File format ${file} doesn't exist`);
       process.exit();
     }
