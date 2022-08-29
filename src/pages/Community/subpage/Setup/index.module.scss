@@ -2,6 +2,7 @@
   position: relative;
   --horizontal-padding: 50px;
   padding: 0 var(--horizontal-padding);
+  overflow: hidden;
 
   @media screen and(max-width:650px) {
     --horizontal-padding: 25px;
@@ -189,36 +190,36 @@
       }
     }
   }
-    .backToCommunityContainer{
-      position: relative;
-  .communityContainer {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    gap: 14px;
-    margin-top: 40px;
-    cursor: pointer;
+  .backToCommunityContainer {
+    position: relative;
+    .communityContainer {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 14px;
+      margin-top: 40px;
+      cursor: pointer;
 
-    .Arrow {
-      width: 27px;
-      transform: translateX(0);
-      transition: transform 0.4s;
-    }
-    &:hover {
       .Arrow {
-        transform: translateX(8px);
+        width: 27px;
+        transform: translateX(0);
+        transition: transform 0.4s;
+      }
+      &:hover {
+        .Arrow {
+          transform: translateX(8px);
+        }
+      }
+      .communityLink {
+        text-decoration: underline;
+        text-decoration-color: #3d3dff;
+        color: #3d3dff;
       }
     }
-    .communityLink {
-      text-decoration: underline;
-      text-decoration-color: #3d3dff;
-      color: #3d3dff;
+    .BlurWatermark {
+      position: absolute;
+      top: -100px;
+      z-index: -1;
     }
   }
-  .BlurWatermark{
-    position: absolute;
-   top: -100px;
-   z-index: -1;
-  }
-}
 }
