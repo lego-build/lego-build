@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Layout } from "../../components";
+import { Layout, LoaderCard } from "../../components";
 import style from "./index.module.css";
 import Main from "./subpage/Main/Main";
 import { useParams } from "react-router-dom";
@@ -39,6 +39,7 @@ function Community() {
         <Crystals className={style.Crystal2} />
       </span>
       {component}
+      <LoaderCard />
       <span className={style.Crystals2}>
         <Crystals className={style.Crystal1} />
         <Crystals className={style.Crystal2} />
