@@ -7,11 +7,11 @@ class FileFormats {
     this.defaultFormats = new Map();
     this.defaultFormats.set("default", __dirname + "/../templates/blank.jsx");
     this.defaultFormats.set(
-      "reducer",
+      "REDUCER",
       __dirname + "/../templates/reducerTemplate.jsx"
     );
     this.defaultFormats.set(
-      "action",
+      "ACTION",
       __dirname + "/../templates/actionTemplate.jsx"
     );
     this.defaultFormats.set("JSX", __dirname + "/../templates/jsxTemplate.jsx");

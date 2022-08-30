@@ -3,54 +3,24 @@
     {
       "type": "component",
       "path": "src/components",
-      "files": [
-        "JSX",
-        "CSS",
-        "TEST"
-      ]
-    },
-    {
-      "type": "test1",
-      "path": "src/components",
-      "files": [
-        "JSX",
-        "CSS",
-        "TEST",
-        "JAVA"
-      ]
+      "files": ["JSX", "CSS", "TEST"]
     },
     {
       "type": "page",
       "path": "src/pages",
-      "files": [
-        "JSX",
-        "CSS",
-        "TEST"
-      ]
+      "files": ["JSX", "CSS", "TEST"]
     },
     {
       "type": "reducer",
       "path": "src/redux/reducers",
       "isFile": true,
-      "file": "JSX"
+      "file": "REDUCER"
     },
     {
       "type": "action",
       "path": "src/redux/actions",
       "isFile": true,
-      "file": {
-        "name": "<name>.jsx",
-        "template": "DEFAULT"
-      }
-    },
-    {
-      "type": "test2",
-      "path": "src/redux/actions",
-      "isFile": true,
-      "file": {
-        "name": "<name>.jsx",
-        "template": "temp/java.java"
-      }
+      "file": "ACTION"
     }
   ],
   "fileFormats": {
@@ -78,9 +48,14 @@
     "MODULE_SCSS": {
       "name": "<name>.module.scss"
     },
-    "JAVA":{
-      "name": "<name>.java",
-      "template": "temp/java.java"
+    "REDUCER":{
+      "name": "<name>.jsx",
+      "template": "DEFAULT"
+    },
+    "ACTION":{
+      "name": "<name>.jsx",
+      "template": "DEFAULT"
     }
-  }
+  }    
 }
+    

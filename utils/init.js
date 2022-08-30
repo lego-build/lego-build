@@ -25,19 +25,13 @@ class Init {
       "type": "reducer",
       "path": "src/redux/reducers",
       "isFile": true,
-      "file": {
-        "name": "<name>.jsx",
-        "template": "DEFAULT"
-      }
+      "file": "REDUCER"
     },
     {
       "type": "action",
       "path": "src/redux/actions",
       "isFile": true,
-      "file": {
-        "name": "<name>.jsx",
-        "template": "DEFAULT"
-      }
+      "file": "ACTION"
     }
   ],
   "fileFormats": {
@@ -64,6 +58,14 @@ class Init {
     },
     "MODULE_SCSS": {
       "name": "<name>.module.scss"
+    },
+    "REDUCER":{
+      "name": "<name>.jsx",
+      "template": "DEFAULT"
+    },
+    "ACTION":{
+      "name": "<name>.jsx",
+      "template": "DEFAULT"
     }
   }    
 }

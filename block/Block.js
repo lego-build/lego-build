@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const Logger = require("../utils/Logger");
 const ConfigFile = require("./config/ConfigFile");
 const UserInput = require("../utils/UserInput");
+const chalk = require("chalk");
 
 class Block {
   constructor(blockName, configFile, fileFormats) {
@@ -13,7 +14,7 @@ class Block {
   createBlockFiles = (blockName, fileMap, index) => {
     //Base case
     if (fileMap.size == index) {
-      Logger.logSuccess(`created '${blockName}' successfully`);
+      console.log(`\nCreated '${blockName}' ${chalk.yellow(this.config.getBlockType())} successfully`);
       process.exit();
     }
 
