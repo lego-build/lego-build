@@ -14,7 +14,13 @@ class BlockFiles {
   generateFileName(file) {
     if (typeof file == "object") return file.name.replace("<name>", this.blockName);
 
-    let fileName = this.fileFormats.getFiles().get(file).name;
+    let fileName = this.fileFormats.getFiles().get(file)?.name;
+
+    if(!fileName){
+      Logger.logError(`File format ${file} doesn't exist`);
+      process.exit();
+    }
+
     return fileName == -1 ? null : fileName;
   }
 
@@ -42,8 +48,8 @@ class BlockFiles {
       }
       return templateFile;
     } else {
-      let templateFile = this.fileFormats.getFiles().get(file).template;;
-      if (templateFile == -1) {
+      let templateFile = this.fileFormats.getFiles().get(file)?.template;;
+      if (!templateFile) {
         Logger.logError(`File format ${file} doesn't exist`);
         process.exit();
       }
