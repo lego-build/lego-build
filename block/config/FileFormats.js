@@ -16,7 +16,7 @@ class FileFormats {
     );
     this.defaultFormats.set("JSX", __dirname + "/../templates/jsxTemplate.jsx");
     this.defaultFormats.set("JS", __dirname + "/../templates/jsTemplate.jsx");
-    this.defaultFormats.set("TEST", __dirname + "/../templates/blank.jsx");
+    this.defaultFormats.set("TEST", __dirname + "/../templates/testTemplate.jsx");
 
 
     //Set the default format
