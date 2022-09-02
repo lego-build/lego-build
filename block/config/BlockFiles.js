@@ -2,21 +2,27 @@ const fs = require("node:fs");
 const Logger = require("../../utils/Logger");
 
 class BlockFiles {
-  constructor(files, blockName,fileFormats, homePath, isFile) {
-    this.homePath = homePath;
-    this.files = files;
-    this.isFile = isFile;
+  constructor(blockName, fileFormats, configFile) {
+    if (configFile.isFile) {
+      this.files = new Array(configFile.file);
+    } else {
+      this.files = configFile.files;
+    }
+
+    this.homePath = configFile.path;
+    this.isFile = configFile.isFile;
     this.noOfFiles = this.files.length;
     this.blockName = blockName;
     this.fileFormats = fileFormats;
   }
 
   generateFileName(file) {
-    if (typeof file == "object") return file.name.replace("<name>", this.blockName);
+    if (typeof file == "object")
+      return file.name.replace("<name>", this.blockName);
 
     let fileName = this.fileFormats.getFiles().get(file)?.name;
 
-    if(!fileName){
+    if (!fileName) {
       Logger.logError(`File format ${file} doesn't exist`);
       process.exit();
     }
@@ -48,7 +54,7 @@ class BlockFiles {
       }
       return templateFile;
     } else {
-      let templateFile = this.fileFormats.getFiles().get(file)?.template;;
+      let templateFile = this.fileFormats.getFiles().get(file)?.template;
       if (!templateFile) {
         Logger.logError(`File format ${file} doesn't exist`);
         process.exit();
@@ -73,10 +79,6 @@ class BlockFiles {
 
     return fileMap;
   }
-
-  
-
-
 }
 
 module.exports = BlockFiles;

@@ -6,16 +6,8 @@ class ConfigFile {
   constructor(blockName, configFile, fileFormats) {
     //Create the BlockFiles and BlockSpecs class
     this.FileFormats = new FileFormats(blockName, fileFormats);
-    let files;
-    if (configFile.isFile) {
-      files = new Array(configFile.file);
-    } else {
-      files = configFile.files;
-    }
-
-    this.blockFiles = new BlockFiles(files, blockName, this.FileFormats, configFile.path, configFile.isFile);
+    this.blockFiles = new BlockFiles(blockName, this.FileFormats, configFile);
     this.blockName = blockName;
-
     this.configFile = configFile;
   
   }
