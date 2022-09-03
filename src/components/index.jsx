@@ -19,7 +19,7 @@ export { default as Loader } from "./Loader/Loader";
 export { default as Button } from "./Button/Button";
 export { default as Hero } from "./Hero/Hero";
 export { default as Problem } from "./Problem/Problem";
-export { default as Features } from "./Features/Features";
+export { default as Productivity } from "./Productivity/Productivity";
 export { default as Reason } from "./Reason/Reason";
 export { default as CTA } from "./CTA/CTA";
 export { default as Community } from "./Community/Community";
