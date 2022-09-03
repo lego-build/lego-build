@@ -1,12 +1,19 @@
 .container{
     display: flex;
     width: 100%;
+    position: relative;
     color: #000000;
     @media screen and (max-width: 650px){
         flex-direction: column;
     }
     justify-content: space-around;
     align-items: center;
+    .LeftZigZag{
+        position: absolute;
+        left: 0;
+        top: -20%;
+        z-index: -1;
+    }
     .illustration{
         flex-basis: 40%;
     }
@@ -16,5 +23,16 @@
             font-weight: 700;
             font-size: 35px;
         }
+        .details{
+            span{
+                font-weight: 600;
+            }
+        }
+    }
+    .RightZigZag{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
     }
 }

@@ -1,6 +1,7 @@
 .container {
   display: flex;
   width: 100%;
+  position: relative;
   color: #000000;
   justify-content: space-around;
   align-items: center;
@@ -9,6 +10,12 @@
   .container {
     flex-direction: column;
   }
+}
+.container .LeftZigZag {
+  position: absolute;
+  left: 0;
+  top: -20%;
+  z-index: -1;
 }
 .container .illustration {
   flex-basis: 40%;
@@ -19,4 +26,13 @@
 .container .content .header {
   font-weight: 700;
   font-size: 35px;
+}
+.container .content .details span {
+  font-weight: 600;
+}
+.container .RightZigZag {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }/*# sourceMappingURL=index.module.css.map */
