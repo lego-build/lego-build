@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    width: 100%;
+    color: #000000;
+    @media screen and (max-width: 650px){
+        flex-direction: column;
+    }
+    justify-content: space-around;
+    align-items: center;
+    .illustration{
+        flex-basis: 40%;
+    }
+    .content{
+        flex-basis: 40%;
+        .header{
+            font-weight: 700;
+            font-size: 35px;
+        }
+    }
+}

@@ -1,1 +1,22 @@
-/*# sourceMappingURL=index.module.css.map */
+.container {
+  display: flex;
+  width: 100%;
+  color: #000000;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.container .illustration {
+  flex-basis: 40%;
+}
+.container .content {
+  flex-basis: 40%;
+}
+.container .content .header {
+  font-weight: 700;
+  font-size: 35px;
+}/*# sourceMappingURL=index.module.css.map */
