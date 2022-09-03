@@ -12,3 +12,4 @@ export { default as Arrow } from "./illustrations/Arrow";
 export { default as HeaderAccent } from "./icons/HeaderAccent";
 export { default as ShadowCircle } from "./illustrations/ShadowCircle";
 export { default as BlurWatermark } from "./illustrations/BlurWatermark";
+export { default as ProductivityIllustration } from "./illustrations/ProductivityIllustration";
