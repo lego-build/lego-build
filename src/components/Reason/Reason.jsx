@@ -1,4 +1,4 @@
-import { ArrowsExpandOutline, BlurBlob, ClarityBlockLine, ClockOutline } from "../../assets";
+import { ArrowsExpandOutline, Block, BlurBlob, ClarityBlockLine, ClockOutline } from "../../assets";
 import ReasonCard from "../ReasonCard/ReasonCard";
 import style from "./index.module.css";
 const cardDetails = [
@@ -30,6 +30,9 @@ const Reason = () => {
             </div>
             <BlurBlob className={style.watermark} />
             <p className={style.cta}>Convinced that we're good? <span className={style.link}>Get Started</span></p>
+            <Block className={style.block1} />
+            <Block className={style.block2} />
+            <Block className={style.block3} />
         </section>
     );
 }
