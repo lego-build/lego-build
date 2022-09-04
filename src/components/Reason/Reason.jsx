@@ -1,8 +1,11 @@
 const Reason = () => {
     return (
-    <div>
-        Reason
-    </div>
+    <section>
+            <div>
+                <h1></h1>
+        </div>
+            
+    </section>
     );
 }
  
