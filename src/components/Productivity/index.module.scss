@@ -3,6 +3,7 @@
     width: 100%;
     position: relative;
     color: #000000;
+    padding-block: 20px;
     @media screen and (max-width: 650px){
         flex-direction: column;
     }
