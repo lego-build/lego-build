@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 1;
 }
 .container .details .heading {
   font-weight: 700;
@@ -30,12 +31,16 @@
   display: flex;
   justify-content: space-between;
   justify-items: flex-start;
+  z-index: 1;
 }
 @media screen and (max-width: 650px) {
   .container .cards {
     flex-direction: column;
     gap: 50px;
   }
+}
+.container .cta {
+  z-index: 1;
 }
 .container .cta .link {
   -webkit-text-decoration: underline #058d74;
@@ -48,4 +53,19 @@
   color: #09cda9;
   -webkit-text-decoration-color: #09cda9;
           text-decoration-color: #09cda9;
+}
+.container .block1 {
+  position: absolute;
+  bottom: 20px;
+  left: 20%;
+}
+.container .block2 {
+  position: absolute;
+  right: 20%;
+  bottom: 20px;
+}
+.container .block3 {
+  position: absolute;
+  left: 47%;
+  bottom: 50px;
 }/*# sourceMappingURL=index.module.css.map */
