@@ -6,7 +6,7 @@
   color: #4D4D4D;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 35px;
 }
 .container .details {
   display: flex;
@@ -28,10 +28,24 @@
 }
 .container .cards {
   display: flex;
-  gap: 20px;
+  justify-content: space-around;
+  justify-items: flex-start;
+}
+@media screen and (max-width: 650px) {
+  .container .cards {
+    flex-direction: column;
+    gap: 50px;
+  }
 }
 .container .cta .link {
   -webkit-text-decoration: underline #058d74;
           text-decoration: underline #058d74;
   color: #058d74;
+  cursor: pointer;
+  transition: color 350ms ease-in-out;
+}
+.container .cta .link:hover {
+  color: #09cda9;
+  -webkit-text-decoration-color: #09cda9;
+          text-decoration-color: #09cda9;
 }/*# sourceMappingURL=index.module.css.map */

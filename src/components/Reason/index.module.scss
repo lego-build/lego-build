@@ -6,7 +6,7 @@
     color: #4D4D4D;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
     .details{
             display: flex;
             flex-direction: column;
@@ -27,13 +27,23 @@
     }
     .cards{
         display: flex;
-        gap: 20px;
+        justify-content: space-around;
+        justify-items: flex-start;
+        @media screen and (max-width: 650px) {
+            flex-direction: column;
+            gap: 50px;
+        }
     }
     .cta{
         .link{
             text-decoration: underline #058d74;
             color: #058d74;
-
+            cursor: pointer;
+            transition: color 350ms ease-in-out;
+            &:hover{
+            color: #09cda9;
+            text-decoration-color: #09cda9;
+            }
         }
     }
 }
