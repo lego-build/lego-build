@@ -1,6 +1,6 @@
-const BlurBlob = () => {
-    return ( 
-        <svg width="324" height="464" viewBox="0 0 324 464" fill="none" xmlns="http://www.w3.org/2000/svg">
+const BlurBlob = (props) => {
+    return (
+        <svg {...props} width="324" height="464" viewBox="0 0 324 464" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_f_36_1119)">
                 <circle cx="92" cy="232" r="146" fill="url(#paint0_linear_36_1119)" fill-opacity="0.2" />
             </g>
@@ -16,7 +16,7 @@ const BlurBlob = () => {
                 </linearGradient>
             </defs>
         </svg>
-     );
+    );
 }
- 
+
 export default BlurBlob;
