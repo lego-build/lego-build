@@ -1,1 +1,5 @@
-/*# sourceMappingURL=index.module.css.map */
+.container {
+  background-color: #FBFDFD;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}/*# sourceMappingURL=index.module.css.map */
