@@ -1,3 +1,4 @@
+import { BlurBlob } from "../../assets";
 import ReasonCard from "../ReasonCard/ReasonCard";
 import style from "./index.module.css";
 const Reason = () => {
@@ -12,6 +13,7 @@ const Reason = () => {
                 <ReasonCard />
                 <ReasonCard />
             </div> */}
+            <BlurBlob className={style.watermark} />
             <p>Convinced that we're Good?</p>
     </section>
     );
