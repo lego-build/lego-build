@@ -2,8 +2,16 @@
   padding: 60px 50px;
   font-size: 16px;
   background-color: #FBFDFD;
+  position: relative;
 }
 .container .heading {
   font-weight: 700;
   font-size: 2em;
+}
+.container .watermark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
 }/*# sourceMappingURL=index.module.css.map */
