@@ -3,9 +3,19 @@
     font-size: 16px;
     background-color: #FBFDFD;
     position: relative;
-    .heading{
-        font-weight: 700;
-        font-size: 2em;
+    color: #4D4D4D;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .details{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        .heading{
+            font-weight: 700;
+            font-size: 2em;
+            color: #000000;
+        }
     }
     .watermark{
         position: absolute;
@@ -13,5 +23,16 @@
         left: 0;
         width: 250px;
         height: 250px;
+    }
+    .cards{
+        display: flex;
+        gap: 20px;
+    }
+    .cta{
+        .link{
+            text-decoration: underline #058d74;
+            color: #058d74;
+
+        }
     }
 }

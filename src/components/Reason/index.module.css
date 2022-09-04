@@ -3,10 +3,20 @@
   font-size: 16px;
   background-color: #FBFDFD;
   position: relative;
+  color: #4D4D4D;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.container .heading {
+.container .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .details .heading {
   font-weight: 700;
   font-size: 2em;
+  color: #000000;
 }
 .container .watermark {
   position: absolute;
@@ -14,4 +24,13 @@
   left: 0;
   width: 250px;
   height: 250px;
+}
+.container .cards {
+  display: flex;
+  gap: 20px;
+}
+.container .cta .link {
+  -webkit-text-decoration: underline #058d74;
+          text-decoration: underline #058d74;
+  color: #058d74;
 }/*# sourceMappingURL=index.module.css.map */
