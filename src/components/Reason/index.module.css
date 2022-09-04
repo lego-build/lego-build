@@ -1,1 +1,9 @@
-/*# sourceMappingURL=index.module.css.map */
+.container {
+  padding: 60px 50px;
+  font-size: 16px;
+  background-color: #FBFDFD;
+}
+.container .heading {
+  font-weight: 700;
+  font-size: 2em;
+}/*# sourceMappingURL=index.module.css.map */
