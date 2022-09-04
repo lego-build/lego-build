@@ -27,7 +27,7 @@
     }
     .cards{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         justify-items: flex-start;
         @media screen and (max-width: 650px) {
             flex-direction: column;
