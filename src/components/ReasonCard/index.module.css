@@ -1,5 +1,33 @@
 .container {
   background-color: #FBFDFD;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
+  box-shadow: 1px 3px 14px 2px rgba(209, 211, 211, 0.35);
+  transition: box-shadow;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  z-index: 1;
+  font-size: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #4D4D4D;
+}
+.container:hover {
+  box-shadow: 1px 3px 8px 2px rgba(209, 211, 211, 0.75);
+}
+.container .icon {
+  background-color: #008F75;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 6px;
+  border-radius: 999px;
+}
+.container .heading {
+  font-size: 1.25em;
+  color: #000000;
+  font-weight: 700;
 }/*# sourceMappingURL=index.module.css.map */
