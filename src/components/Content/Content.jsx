@@ -1,4 +1,4 @@
-import { ComputerTroubleshootingIllustration } from "../../assets";
+import { ComputerTroubleshootingIllustration, FlexBiceps } from "../../assets";
 import style from "./index.module.css";
 const Content = () => {
     return (
@@ -11,6 +11,7 @@ const Content = () => {
                 </div>
             </div>
             <ComputerTroubleshootingIllustration className={style.illustration} />
+            <FlexBiceps />
         </section>
     );
 }
