@@ -2,6 +2,7 @@ export { default as Arrow } from "./illustrations/Arrow";
 export { default as Block } from "./illustrations/Block";
 export { default as BlurBlob } from "./illustrations/BlurBlob";
 export { default as BlurWatermark } from "./illustrations/BlurWatermark";
+export { default as ComputerTroubleshootingIllustration } from "./illustrations/ComputerTroubleshootingIllustration";
 export { default as Crystals } from "./illustrations/Crystals";
 export { default as Curve } from "./illustrations/Curve";
 export { default as Dots } from "./illustrations/Dots";
