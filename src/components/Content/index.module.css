@@ -1,12 +1,15 @@
 .container {
   display: flex;
-  padding: 40px 5%;
+  padding: 60px 2.5%;
   justify-content: space-around;
   background-color: #FCFAFF;
+  position: relative;
+  color: #4D4D4D;
 }
 @media screen and (max-width: 650px) {
   .container {
     flex-direction: column-reverse;
+    padding: 40px 2.5%;
   }
 }
 .container .content {
@@ -14,6 +17,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  z-index: 1;
+  line-height: 37px;
 }
 .container .content .header {
   position: relative;
@@ -41,6 +46,21 @@
 }
 .container .illustration {
   flex-basis: 40%;
+}
+.container .biceps {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+.container .leftDots {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+.container .rightDots {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
 }
 
 /*# sourceMappingURL=index.module.css.map */
