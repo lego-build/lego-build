@@ -1,1 +1,42 @@
-
+.container{
+    display: flex;
+    padding: 40px 5%;
+    justify-content: space-around;
+    background-color: #FCFAFF;
+    @media screen and (max-width: 650px) {
+        flex-direction: column-reverse;
+    }
+    .content{
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .header{
+            position: relative;
+            font-size: 30px;
+            font-weight: 700;
+            z-index: 1;
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                width: 5ch;
+                font-size: 30px;
+                height: 13px;
+                background-color: #C99EFA;
+                bottom: 5px;
+                z-index: -1;
+                left: 1px;
+            }
+        }
+        .details{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            font-size: 16px;
+        }
+    }
+    .illustration{
+        flex-basis: 40%;
+    }
+}
