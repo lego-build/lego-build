@@ -4,6 +4,7 @@
     position: relative;
     color: #000000;
     padding-block: 20px;
+    padding-inline: 5px;
     @media screen and (max-width: 650px){
         flex-direction: column;
     }
