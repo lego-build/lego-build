@@ -1,67 +1,77 @@
-.container{
+.container {
+  display: flex;
+  padding: 60px 50px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfaff;
+  position: relative;
+  color: #4d4d4d;
+  @media screen and (max-width: 1070px) {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  @media screen and (max-width: 650px) {
+    padding: 40px 25px;
+  }
+  .content {
+    flex-basis: 50%;
     display: flex;
-    padding: 60px 2.5%;
-    justify-content: space-around;
-    background-color: #FCFAFF;
+    flex-direction: column;
+    gap: 20px;
     position: relative;
-    width: 100%;
-    @media screen and (max-width: 650px) {
-        flex-direction: column-reverse;
-        padding: 40px 2.5%;
-    }
-    .content{
-        flex-basis: 50%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        z-index: 1;
-        line-height: 37px;
-        .header{
-            position: relative;
-            font-size: 30px;
-            font-weight: 700;
-            z-index: 1;
-            &::before{
-                content: "";
-                position: absolute;
-                display: block;
-                width: 5ch;
-                font-size: 30px;
-                height: 13px;
-                background-color: #C99EFA;
-                bottom: 5px;
-                z-index: -1;
-                left: 1px;
-            }
+    z-index: 2;
+    line-height: 28px;
+    .header {
+      font-size: 2em;
+      font-weight: 700;
+      z-index: 1;
+      color: #000;
+      line-height: 1.1;
+      span {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 5ch;
+          font-size: 30px;
+          height: 8px;
+          background-color: #c99efa;
+          bottom: 5px;
+          z-index: -1;
+          left: 1px;
         }
-        .details{
-            color: #4D4D4D;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            font-size: 16px;
-            b{
-                color: #000000;
-            }
-        }
+      }
     }
-    .illustration{
-        flex-basis: 40%;
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      font-size: 16px;
+
+      b {
+        color: #000;
+      }
     }
-    .biceps{
-        position: absolute;
-        left: 25%;
-        bottom: 20px;
-        z-index: 0;
-    }
-    .leftDots{
-        position: absolute;
-        left: 0;
-        bottom: 30px;
-    }
-    .rightDots{
-        position: absolute;
-        right: 0;
-        bottom: 30px;
-    }
+  }
+  .illustration {
+    max-width: 100%;
+    height: auto;
+  }
+  .biceps {
+    position: absolute;
+    bottom: -50px;
+    z-index: -1;
+    right: 20px;
+  }
+  .leftDots {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+  }
+  .rightDots {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+  }
 }

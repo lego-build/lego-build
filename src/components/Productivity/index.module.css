@@ -1,45 +1,66 @@
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   position: relative;
   color: #000000;
-  padding: 60px 2.5%;
-  justify-content: space-around;
-  align-items: center;
+  padding: 60px 50px;
+  gap: 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-@media screen and (max-width: 650px) {
+
+@media screen and (max-width: 1070px) {
   .container {
-    flex-direction: column;
-    padding: 40px 2.5%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .container {
+    padding: 60px 25px;
+  }
+}
+
 .container .LeftZigZag {
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 0;
   z-index: -1;
 }
+
 .container .illustration {
-  flex-basis: 40%;
+  max-width: 100%;
+  height: auto;
 }
-.container .content {
-  flex-basis: 40%;
-}
+
 .container .content .header {
   font-weight: 700;
-  font-size: 35px;
+  font-size: 2em;
+  margin-bottom: 8px;
 }
+
 .container .content .details {
-  color: #4D4D4D;
-  line-height: 30px;
+  line-height: 28px;
+  max-width: 600px;
 }
+
 .container .content .details span {
   font-weight: 600;
-  color: #000000;
 }
+
 .container .RightZigZag {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: -1;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */
