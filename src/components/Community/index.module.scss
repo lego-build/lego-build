@@ -3,6 +3,12 @@
     align-items: center;
     background-color: #FCFAFF;
     position: relative;
+    .waterMark{
+        position: absolute;
+        top: 75px;
+        left: 0;
+        z-index: 0;
+    }
     .content{
         flex-basis: 60%;
         padding-left: 30px;
@@ -13,6 +19,7 @@
         .header{
             font-size: 35px;
             font-weight: 700;
+            z-index: 1;
             span{
                 color: #008F75;
             }
