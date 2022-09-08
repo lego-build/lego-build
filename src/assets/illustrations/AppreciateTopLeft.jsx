@@ -1,7 +1,7 @@
 
 const AppreciateTopLeft = (props) => {
     return ( 
-        <svg width="189" height="255" viewBox="0 0 189 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg {...props} width="189" height="255" viewBox="0 0 189 255" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.7">
                 <path opacity="0.7" d="M-185 116.733L35.88 -105.583" stroke="#DEDEDE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 0.3" />
                 <path opacity="0.7" d="M-183.23 134.866L51.5301 -101.806" stroke="#DEDEDE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 0.3" />
