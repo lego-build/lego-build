@@ -1,51 +1,32 @@
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 60px 50px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fcfaff;
   position: relative;
   color: #4d4d4d;
 }
-
 @media screen and (max-width: 1070px) {
   .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
     gap: 30px;
   }
 }
-
 @media screen and (max-width: 650px) {
   .container {
     padding: 40px 25px;
   }
 }
-
 .container .content {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-basis: 50%;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 20px;
   position: relative;
   z-index: 2;
   line-height: 28px;
 }
-
 .container .content .header {
   font-size: 2em;
   font-weight: 700;
@@ -53,11 +34,9 @@
   color: #000;
   line-height: 1.1;
 }
-
 .container .content .header span {
   position: relative;
 }
-
 .container .content .header span::before {
   content: "";
   position: absolute;
@@ -70,44 +49,32 @@
   z-index: -1;
   left: 1px;
 }
-
 .container .content .details {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 30px;
   font-size: 16px;
 }
-
 .container .content .details b {
   color: #000;
 }
-
 .container .illustration {
   max-width: 100%;
   height: auto;
 }
-
 .container .biceps {
   position: absolute;
   bottom: -50px;
   z-index: -1;
   right: 20px;
 }
-
 .container .leftDots {
   position: absolute;
   left: 0;
   bottom: 30px;
 }
-
 .container .rightDots {
   position: absolute;
   right: 0;
   bottom: 30px;
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */
