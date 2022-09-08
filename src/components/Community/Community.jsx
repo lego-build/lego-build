@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { CommunityLinkIcon, CommunityPageIllustration } from "../../assets";
+import { CommunityLinkIcon, CommunityPageIllustration, EarthGlobe } from "../../assets";
 import style from "./index.module.css";
 const Community = () => {
     return (
         <section className={style.container}>
+            <EarthGlobe className={style.waterMark} />
             <div className={style.content}>
                 <h1 className={style.header}>Get help from a <span>vast</span> community</h1>
                 <p className={style.details}>Finding a front end structure that scales well is hard but fortunately for us, there’s a whole community of people willing to share their scalable workflow with us. See how other developers are using lego-build. Check out their workflows, templates and setups. You’re welcome to share yours with the community too!</p>
