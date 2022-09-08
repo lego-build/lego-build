@@ -1,44 +1,44 @@
-.container{
-    display: flex;
-    position: relative;
-    padding: 60px 2.5%;
-    @media screen and (max-width: 650px) {
-        flex-direction: column-reverse;
-    }
-    justify-content: space-around;
-    align-items: center;
-    background-color: #FCFAFF;
-    .content{
+.container {
+  display: flex;
+  position: relative;
+  padding: 60px 2.5%;
+  @media screen and (max-width: 650px) {
+    flex-direction: column-reverse;
+  }
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fcfaff;
+  .content {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    .header{
-        font-size: 40px;
-        font-weight: 700;
-        span{
-            color: #9D50F6;
-        }
+    gap: 20px;
+    .header {
+      font-size: 2em;
+      font-weight: 700;
+      span {
+        color: #9d50f6;
+      }
     }
-    .details{
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        line-height: 30px;
-        color: #4D4D4D;
-        b{
-            color: #000000;
-        }
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      line-height: 30px;
+      color: #4d4d4d;
+      b {
+        color: #000000;
+      }
     }
-    }
-    .illustration{
+  }
+  .illustration {
     flex-basis: 40%;
     z-index: 1;
-    }
-    .rightBlurBlob{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 0;
-    }
+  }
+  .rightBlurBlob {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+  }
 }

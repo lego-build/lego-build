@@ -1,0 +1,41 @@
+.hero {
+  padding: 90px 50px;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  h1 {
+    font-weight: 700;
+    font-size: 2em;
+    max-width: 600px;
+    line-height: 1.3em;
+
+    span {
+      position: relative;
+
+      svg {
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 3.5ch;
+      }
+    }
+  }
+
+  .talk {
+    color: #4d4d4d;
+    line-height: 28px;
+    margin: 20px 0;
+    max-width: 450px;
+  }
+
+  .btn_group {
+    display: flex;
+    gap: 25px;
+    a {
+      font-size: 14px;
+      line-height: 1;
+      padding: 0.7em 2.2em;
+    }
+  }
+}

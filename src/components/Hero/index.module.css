@@ -1,1 +1,47 @@
+.hero {
+  padding: 90px 50px;
+  height: 80vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: 2em;
+  max-width: 600px;
+  line-height: 1.3em;
+}
+
+.hero h1 span {
+  position: relative;
+}
+
+.hero h1 span svg {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 3.5ch;
+}
+
+.hero .talk {
+  color: #4d4d4d;
+  line-height: 28px;
+  margin: 20px 0;
+  max-width: 450px;
+}
+
+.hero .btn_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+.hero .btn_group a {
+  font-size: 14px;
+  line-height: 1;
+  padding: 0.7em 2.2em;
+}
 /*# sourceMappingURL=index.module.css.map */
