@@ -1,7 +1,7 @@
 .container{
     display: flex;
     padding: 60px 2.5%;
-    justify-content: space-between;
+    justify-content: space-around;
     color: #4D4D4D;
     .content{
         flex-basis: 45%;
@@ -24,6 +24,10 @@
             color: #fff;
             font-weight: 600;
             cursor: pointer;
+            transition: background-color 300ms ease-in-out;
+            &:hover{
+            background-color: rgba(157, 80, 246, 0.75);
+            }
         }
     }
     .team{
