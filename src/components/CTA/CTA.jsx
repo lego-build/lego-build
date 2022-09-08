@@ -14,9 +14,9 @@ const CTA = () => {
                 <span>SUPPORT</span>
             </div>
             <div className={style.team}>
-                <p>THE O.G. TEAM</p>
+                <h3>THE O.G. TEAM</h3>
                 <div className={style.teamMembers}>
-                    {ogTeam.map((data)=><CtaTeam {...data} />)}
+                    {ogTeam.map((data, i)=><CtaTeam {...data} key={i} />)}
                 </div>
             </div>
         </section>
