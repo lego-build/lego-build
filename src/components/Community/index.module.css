@@ -21,7 +21,21 @@
 .container .content .details {
   line-height: 30px;
 }
-.container .content .communityLink {
+.container .content .linkContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.container .content .linkContainer .linkIcon {
+  transition: margin-left 500ms ease-in-out;
+}
+.container .content .linkContainer:hover .linkIcon {
+  margin-left: 12px;
+}
+.container .content .linkContainer .communityLink {
   background-image: linear-gradient(138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -29,7 +43,7 @@
   text-decoration: underline;
   position: relative;
 }
-.container .content .communityLink::after {
+.container .content .linkContainer .communityLink::after {
   content: "";
   position: absolute;
   display: block;
