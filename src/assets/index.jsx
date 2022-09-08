@@ -7,6 +7,7 @@ export { default as CommunityPageIllustration } from "./illustrations/CommunityP
 export { default as Crystals } from "./illustrations/Crystals";
 export { default as Curve } from "./illustrations/Curve";
 export { default as Dots } from "./illustrations/Dots";
+export { default as EarthGlobe } from "./illustrations/EarthGlobe";
 export { default as Ellipse } from "./illustrations/Ellipse";
 export { default as FlexBiceps } from "./illustrations/FlexBiceps";
 export { default as HouseIllustration } from "./illustrations/HouseIllustration";
