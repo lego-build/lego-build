@@ -1,6 +1,6 @@
-const AppreciateBottomTopRight = () => {
+const AppreciateBottomTopRight = (props) => {
     return ( 
-        <svg width="362" height="361" viewBox="0 0 362 361" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg {...props} width="362" height="361" viewBox="0 0 362 361" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.7">
                 <path opacity="0.7" d="M1 223.945L221.88 1.62842" stroke="#DEDEDE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 0.3" />
                 <path opacity="0.7" d="M2.77002 242.078L237.53 5.40625" stroke="#DEDEDE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 0.3" />
