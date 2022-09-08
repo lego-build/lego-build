@@ -48,13 +48,12 @@
     z-index: 1;
     margin-top: 28px;
     .link {
-      text-decoration: underline #058d74;
+      text-decoration: underline;
       color: #058d74;
       cursor: pointer;
-      transition: color 350ms ease-in-out;
+      transition: color 300ms ease-in-out;
       &:hover {
         color: #09cda9;
-        text-decoration-color: #09cda9;
       }
     }
   }

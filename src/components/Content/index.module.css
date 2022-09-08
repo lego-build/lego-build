@@ -89,6 +89,7 @@
 
 .container .illustration {
   max-width: 100%;
+  height: auto;
 }
 
 .container .biceps {

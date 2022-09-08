@@ -1,39 +1,46 @@
-.container{
-    display: flex;
-    width: 100%;
-    position: relative;
-    color: #000000;
-    padding: 20px 10px;
-    @media screen and (max-width: 650px){
-        flex-direction: column;
+.container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  color: #000000;
+  padding: 60px 50px;
+  gap: 40px;
+  @media screen and (max-width: 1070px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 650px) {
+    padding: 60px 25px;
+  }
+  justify-content: space-between;
+  align-items: center;
+  .LeftZigZag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .illustration {
+    max-width: 100%;
+    height: auto;
+  }
+  .content {
+    .header {
+      font-weight: 700;
+      font-size: 2em;
+      margin-bottom: 8px;
     }
-    justify-content: space-around;
-    align-items: center;
-    .LeftZigZag{
-        position: absolute;
-        left: 0;
-        top: -20%;
-        z-index: -1;
+    .details {
+      line-height: 28px;
+      max-width: 600px;
+      span {
+        font-weight: 600;
+      }
     }
-    .illustration{
-        flex-basis: 40%;
-    }
-    .content{
-        flex-basis: 40%;
-        .header{
-            font-weight: 700;
-            font-size: 35px;
-        }
-        .details{
-            span{
-                font-weight: 600;
-            }
-        }
-    }
-    .RightZigZag{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-    }
+  }
+  .RightZigZag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
 }
