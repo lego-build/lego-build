@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroIcon } from "../../assets";
 import Button from "../Button/Button";
+import Editor from "../Editor/Editor";
 import style from "./index.module.css";
 
 function Hero() {
@@ -26,6 +27,7 @@ function Hero() {
           </Button>
         </div>
       </div>
+      <Editor />
     </section>
   );
 }
