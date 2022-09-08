@@ -9,6 +9,7 @@ export { default as Curve } from "./illustrations/Curve";
 export { default as Dots } from "./illustrations/Dots";
 export { default as Ellipse } from "./illustrations/Ellipse";
 export { default as FlexBiceps } from "./illustrations/FlexBiceps";
+export { default as HouseIllustration } from "./illustrations/HouseIllustration";
 export { default as LeftDots } from "./illustrations/LeftDots";
 export { default as LeftZigZag } from "./illustrations/LeftZigZag";
 export { default as Logo } from "./illustrations/Logo";
