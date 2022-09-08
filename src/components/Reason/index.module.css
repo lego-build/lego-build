@@ -1,0 +1,77 @@
+.container {
+  padding: 60px 2.5%;
+  width: 100%;
+  font-size: 16px;
+  background-color: #FBFDFD;
+  position: relative;
+  color: #4D4D4D;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+@media screen and (max-width: 650px) {
+  .container {
+    padding: 40px 2.5%;
+  }
+}
+.container .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+.container .details .heading {
+  font-weight: 700;
+  font-size: 2em;
+  color: #000000;
+}
+.container .watermark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  z-index: 0;
+}
+.container .cards {
+  display: flex;
+  justify-content: space-between;
+  justify-items: flex-start;
+  z-index: 1;
+}
+@media screen and (max-width: 650px) {
+  .container .cards {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+.container .cta {
+  z-index: 1;
+}
+.container .cta .link {
+  -webkit-text-decoration: underline #058d74;
+          text-decoration: underline #058d74;
+  color: #058d74;
+  cursor: pointer;
+  transition: color 350ms ease-in-out;
+}
+.container .cta .link:hover {
+  color: #09cda9;
+  -webkit-text-decoration-color: #09cda9;
+          text-decoration-color: #09cda9;
+}
+.container .block1 {
+  position: absolute;
+  bottom: 20px;
+  left: 20%;
+}
+.container .block2 {
+  position: absolute;
+  right: 20%;
+  bottom: 20px;
+}
+.container .block3 {
+  position: absolute;
+  left: 47%;
+  bottom: 50px;
+}/*# sourceMappingURL=index.module.css.map */

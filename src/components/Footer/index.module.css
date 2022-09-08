@@ -4,61 +4,44 @@
   padding: 40px 50px;
   padding-bottom: 70px;
 }
-
 .footer .logo {
   width: 50px;
 }
-
 .footer p {
   font-size: 15px;
   line-height: 1.5;
 }
-
 .footer h3 {
   font-weight: 700;
 }
-
 .footer .grid {
   margin-top: 20px;
-  display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 60px;
-          column-gap: 60px;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  grid-template-columns: 1fr 1fr;
 }
-
 .footer .grid .talk {
   max-width: 400px;
 }
-
 .footer .contact p {
   margin-bottom: 10px;
   margin-top: 4px;
 }
-
 .footer .contact .icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .footer .contact .icons a {
   width: 25px;
 }
-
 .footer .contact .icons a:last-child {
   width: 20px;
 }
-
 .footer .contact .icons svg {
   width: 100%;
 }
-
 .footer .bottom {
   margin-top: 80px;
   text-align: center;
@@ -66,8 +49,7 @@
 
 @media screen and (max-width: 760px) {
   .footer .grid {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     row-gap: 30px;
   }
   .footer .bottom {
@@ -75,11 +57,9 @@
     margin-top: 50px;
   }
 }
-
 @media screen and (max-width: 460px) {
   .footer {
     padding: 40px 20px;
     padding-bottom: 70px;
   }
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */

@@ -1,46 +1,69 @@
 .container {
   display: flex;
-  position: relative;
   padding: 60px 2.5%;
   justify-content: space-around;
-  align-items: center;
   background-color: #FCFAFF;
+  position: relative;
+  width: 100%;
 }
 @media screen and (max-width: 650px) {
   .container {
     flex-direction: column-reverse;
+    padding: 40px 2.5%;
   }
 }
 .container .content {
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  z-index: 1;
+  line-height: 37px;
 }
 .container .content .header {
-  font-size: 40px;
+  position: relative;
+  font-size: 30px;
   font-weight: 700;
+  z-index: 1;
 }
-.container .content .header span {
-  color: #9D50F6;
+.container .content .header::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 5ch;
+  font-size: 30px;
+  height: 13px;
+  background-color: #C99EFA;
+  bottom: 5px;
+  z-index: -1;
+  left: 1px;
 }
 .container .content .details {
+  color: #4D4D4D;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  line-height: 30px;
-  color: #4D4D4D;
+  font-size: 16px;
 }
 .container .content .details b {
   color: #000000;
 }
 .container .illustration {
   flex-basis: 40%;
-  z-index: 1;
 }
-.container .rightBlurBlob {
+.container .biceps {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  left: 25%;
+  bottom: 20px;
   z-index: 0;
+}
+.container .leftDots {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+.container .rightDots {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
 }/*# sourceMappingURL=index.module.css.map */

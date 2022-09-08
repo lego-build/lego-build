@@ -1,73 +1,47 @@
 .search {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   --horizontal-padding: 50px;
   padding: 0 var(--horizontal-padding);
   gap: 1.5em;
 }
-
 .search .label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   width: 100%;
 }
-
 .search .label span {
   position: absolute;
   top: 0px;
   bottom: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   cursor: pointer;
 }
-
 .search .label .icon {
   left: 15px;
 }
-
 .search .label .clear {
   right: 15px;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
   transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+  transform-origin: center;
 }
-
 .search .label .clear.hidden {
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-
 .search .label .clear.show {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-user-select: auto;
      -moz-user-select: auto;
       -ms-user-select: auto;
           user-select: auto;
 }
-
 .search .label .input {
   padding: 10px 55px;
   width: 100%;
@@ -76,23 +50,15 @@
   outline: none;
   color: #4d4d4d;
 }
-
-.search .label .input::-webkit-input-placeholder {
+.search .label .input::-moz-placeholder {
   color: #a6a6a6;
 }
-
 .search .label .input:-ms-input-placeholder {
   color: #a6a6a6;
 }
-
-.search .label .input::-ms-input-placeholder {
-  color: #a6a6a6;
-}
-
 .search .label .input::placeholder {
   color: #a6a6a6;
 }
-
 .search .contribute {
   text-decoration: underline;
   -webkit-text-decoration-color: #3d3dff;
@@ -100,10 +66,8 @@
   color: #3d3dff;
   font-size: 1.05em;
 }
-
 @media screen and (max-width: 650px) {
   .search {
     --horizontal-padding: 25px;
   }
-}
-/*# sourceMappingURL=index.module.css.map */
+}/*# sourceMappingURL=index.module.css.map */
