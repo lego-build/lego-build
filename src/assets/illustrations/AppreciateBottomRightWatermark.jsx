@@ -1,6 +1,6 @@
-const AppreciateBottomRightWatermark = () => {
+const AppreciateBottomRightWatermark = (props) => {
     return ( 
-        <svg width="252" height="275" viewBox="0 0 252 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg {...props} width="252" height="275" viewBox="0 0 252 275" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.7">
                 <path opacity="0.7" d="M375.28 141.304L152.122 361.582" stroke="#DEDEDE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 0.3" />
                 <path opacity="0.7" d="M373.697 123.151L136.512 357.657" stroke="#DEDEDE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 0.3" />
