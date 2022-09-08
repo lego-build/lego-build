@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    padding: 60px 2.5%;
+    justify-content: space-around;
+    .content{
+        flex-basis: 45%;
+    }
+    .team{
+        flex-basis: 35%;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    }
+}
