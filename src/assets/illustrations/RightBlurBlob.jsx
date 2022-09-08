@@ -1,6 +1,6 @@
-const RightBlurBlob = () => {
+const RightBlurBlob = (props) => {
     return ( 
-        <svg width="248" height="282" viewBox="0 0 248 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg {...props} width="248" height="282" viewBox="0 0 248 282" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_f_928_1758)">
                 <circle cx="181" cy="181" r="114" fill="url(#paint0_linear_928_1758)" fill-opacity="0.25" />
             </g>
