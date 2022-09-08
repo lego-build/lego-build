@@ -16,6 +16,7 @@
   z-index: 0;
 }
 .container .content {
+  z-index: 1;
   flex-basis: 60%;
   padding-left: 30px;
   display: flex;
