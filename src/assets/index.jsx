@@ -1,3 +1,4 @@
+export { default as AppreciateTopLeft } from "./illustrations/AppreciateTopLeft";
 export { default as Arrow } from "./illustrations/Arrow";
 export { default as Block } from "./illustrations/Block";
 export { default as BlurBlob } from "./illustrations/BlurBlob";
