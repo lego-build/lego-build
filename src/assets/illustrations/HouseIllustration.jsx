@@ -1,6 +1,6 @@
-const HouseIllustration = () => {
+const HouseIllustration = (props) => {
     return ( 
-        <svg width="539" height="527" viewBox="0 0 539 527" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg {...props} width="539" height="527" viewBox="0 0 539 527" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="365.828" width="70.8969" height="112.49" fill="#671C18" />
             <mask id="path-2-inside-1_928_1759" fill="white">
                 <path d="M365.828 0H436.725V22.687H365.828V0Z" />
