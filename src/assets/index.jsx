@@ -23,5 +23,6 @@ export { default as ArrowsExpandOutline } from "./icons/ArrowsExpandOutline";
 export { default as ClarityBlockLine } from "./icons/ClarityBlockLine";
 export { default as Clear } from "./icons/Clear";
 export { default as ClockOutline } from "./icons/ClockOutline";
+export { default as CommunityLinkIcon } from "./icons/CommunityLinkIcon";
 export { default as HeaderAccent } from "./icons/HeaderAccent";
 export { default as SearchBar } from "./icons/SearchBar";
