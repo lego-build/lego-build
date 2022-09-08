@@ -16,6 +16,7 @@ export { default as Logo } from "./illustrations/Logo";
 export { default as Mail } from "./illustrations/Mail";
 export { default as ProductivityIllustration } from "./illustrations/ProductivityIllustration";
 export { default as RightZigZag } from "./illustrations/RightZigZag";
+export { default as RightBlurBlob } from "./illustrations/RightBlurBlob";
 export { default as ShadowCircle } from "./illustrations/ShadowCircle";
 export { default as TransparentRectangle } from "./illustrations/TransparentRectangle";
 export { default as ArrowsExpandOutline } from "./icons/ArrowsExpandOutline";
