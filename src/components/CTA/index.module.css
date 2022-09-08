@@ -1,12 +1,47 @@
 .container {
   display: flex;
   padding: 60px 2.5%;
-  justify-content: space-around;
+  justify-content: space-between;
+  color: #4D4D4D;
 }
 .container .content {
   flex-basis: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+}
+.container .content p {
+  line-height: 30px;
+}
+.container .content span {
+  background-color: #9D50F6;
+  border-radius: 999px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 7px 30px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
 }
 .container .team {
   flex-basis: 35%;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  padding: 25px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.container .team h3 {
+  font-weight: 500;
+}
+.container .team .teamMembers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }/*# sourceMappingURL=index.module.css.map */
