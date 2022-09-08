@@ -1,4 +1,10 @@
+import CtaTeam from "../CtaTeam/CtaTeam";
 import style from "./index.module.css";
+const ogTeam = [
+    { name: "Akpeti Trust", details: "UI Designer, Front-end developer." },
+    { name: "Olubowale Lana", details: "Package developer." },
+    { name: "Onyela Udochukwuka", details: "Front-end developer." }
+];
 const CTA = () => {
     return (
         <section className={style.container}>
@@ -9,7 +15,9 @@ const CTA = () => {
             </div>
             <div className={style.team}>
                 <p>THE O.G. TEAM</p>
-                
+                <div className={style.teamMembers}>
+                    {ogTeam.map((data)=><CtaTeam {...data} />)}
+                </div>
             </div>
         </section>
     );
