@@ -33,11 +33,11 @@
   content: "";
   position: absolute;
   display: block;
-  width: 50px;
+  width: 100%;
   font-size: 30px;
-  height: 5px;
-  background-color: #C99EFA;
-  bottom: 5px;
+  height: 2px;
+  background-image: linear-gradient(138.94deg, #9D50F6 33.05%, #00D1AB 80.37%);
+  bottom: -2px;
   left: 1px;
 }
 .container .illustration {
