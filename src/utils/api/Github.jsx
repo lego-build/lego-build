@@ -9,18 +9,30 @@ const Github = {
     let { tree } = await response.json();
     tree = tree.filter((file) => file.path.endsWith("description.json"));
 
-    let result = [];
+    let results = [];
+    let promises = [];
 
     for (let i = 0; i < tree.length; i++) {
       const { path } = tree[i];
-      const descriptionBlob = await fetch(
-        `https://raw.githubusercontent.com/${this.username}/${this.repo}/${this.branch}/${path}`
+      const id = path.split("/")[1];
+      const descriptionPromise = this.fetchDescription(
+        `https://raw.githubusercontent.com/${this.username}/${this.repo}/${this.branch}/${path}`,
+        id
       );
-      const description = await descriptionBlob.json();
-      result.push({ ...description, id: path.split("/")[1] });
+      promises.push(descriptionPromise);
     }
 
-    return result;
+    results = await Promise.all(promises);
+
+    return results;
+  },
+
+  fetchDescription(url, id) {
+    return new Promise((resolve, _) => {
+      fetch(url)
+        .then((descriptionBlob) => descriptionBlob.json())
+        .then((descriptionJSON) => resolve({ ...descriptionJSON, id }));
+    });
   },
 
   async getJSON(workflowName) {
