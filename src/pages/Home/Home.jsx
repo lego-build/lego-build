@@ -1,18 +1,26 @@
-import { Community, Content, CTA, Productivity, Hero, Layout, Problem, Reason } from "../../components";
+import {
+  Community,
+  Content,
+  CTA,
+  Productivity,
+  Hero,
+  Layout,
+  Problem,
+  Reason,
+} from "../../components";
 
 const Home = () => {
-    return (
-        <Layout>
-            <Hero />
-            <Problem />
-            <Productivity />
-            <Content />
-            <Reason />
-            <Community />
-            <CTA />
-            
-        </Layout>
-    );
-}
+  return (
+    <Layout>
+      <Hero />
+      <Problem />
+      <Productivity />
+      <Content />
+      <Reason />
+      <Community />
+      <CTA />
+    </Layout>
+  );
+};
 
 export default Home;

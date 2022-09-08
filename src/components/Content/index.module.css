@@ -1,66 +1,112 @@
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  padding: 60px 2.5%;
-  justify-content: space-around;
-  background-color: #FCFAFF;
+  padding: 60px 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fcfaff;
   position: relative;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
-@media screen and (max-width: 650px) {
+
+@media screen and (max-width: 1070px) {
   .container {
-    flex-direction: column-reverse;
-    padding: 40px 2.5%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 30px;
   }
 }
-.container .content {
-  flex-basis: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 1;
-  line-height: 37px;
+
+@media screen and (max-width: 650px) {
+  .container {
+    padding: 40px 25px;
+  }
 }
-.container .content .header {
+
+.container .content {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
   position: relative;
-  font-size: 30px;
+  z-index: 2;
+  line-height: 28px;
+}
+
+.container .content .header {
+  font-size: 2em;
   font-weight: 700;
   z-index: 1;
+  color: #000;
+  line-height: 1.1;
 }
-.container .content .header::before {
+
+.container .content .header span {
+  position: relative;
+}
+
+.container .content .header span::before {
   content: "";
   position: absolute;
   display: block;
   width: 5ch;
   font-size: 30px;
-  height: 13px;
-  background-color: #C99EFA;
+  height: 8px;
+  background-color: #c99efa;
   bottom: 5px;
   z-index: -1;
   left: 1px;
 }
+
 .container .content .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 30px;
   font-size: 16px;
 }
-.container .illustration {
-  flex-basis: 40%;
+
+.container .content .details b {
+  color: #000;
 }
+
+.container .illustration {
+  max-width: 100%;
+}
+
 .container .biceps {
   position: absolute;
-  bottom: 0;
-  z-index: 0;
+  bottom: -50px;
+  z-index: -1;
+  right: 20px;
 }
+
 .container .leftDots {
   position: absolute;
   left: 0;
   bottom: 30px;
 }
+
 .container .rightDots {
   position: absolute;
   right: 0;
   bottom: 30px;
 }
-
 /*# sourceMappingURL=index.module.css.map */

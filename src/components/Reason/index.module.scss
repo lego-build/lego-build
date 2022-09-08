@@ -1,69 +1,78 @@
-.container{
-    padding: 60px 50px;
-    font-size: 16px;
-    background-color: #FBFDFD;
-    position: relative;
-    color: #4D4D4D;
+.container {
+  padding: 60px 50px;
+  font-size: 16px;
+  background-color: #fbfdfd;
+  position: relative;
+  color: #4d4d4d;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  @media screen and (max-width: 650px) {
+    padding: 60px 25px;
+  }
+
+  .details {
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    .details{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1;
-        .heading{
-            font-weight: 700;
-            font-size: 2em;
-            color: #000000;
-        }
+    gap: 10px;
+    z-index: 1;
+    .heading {
+      font-weight: 700;
+      font-size: 2em;
+      color: #000000;
     }
-    .watermark{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 250px;
-        height: 250px;
-        z-index: 0;
+    .detail {
+      max-width: 700px;
     }
-    .cards{
-        display: flex;
-        justify-content: space-between;
-        justify-items: flex-start;
-        z-index: 1;
-        @media screen and (max-width: 650px) {
-            flex-direction: column;
-            gap: 50px;
-        }
+  }
+  .watermark {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    z-index: 0;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    justify-items: flex-start;
+    z-index: 1;
+    @media screen and (max-width: 1130px) {
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
     }
-    .cta{
-        z-index: 1;
-        .link{
-            text-decoration: underline #058d74;
-            color: #058d74;
-            cursor: pointer;
-            transition: color 350ms ease-in-out;
-            &:hover{
-            color: #09cda9;
-            text-decoration-color: #09cda9;
-            }
-        }
+  }
+  .cta {
+    z-index: 1;
+    margin-top: 28px;
+    .link {
+      text-decoration: underline #058d74;
+      color: #058d74;
+      cursor: pointer;
+      transition: color 350ms ease-in-out;
+      &:hover {
+        color: #09cda9;
+        text-decoration-color: #09cda9;
+      }
     }
-                .block1 {
-                    position: absolute;
-                    bottom: 20px;
-                    left: 20%;
-                }
-        
-                .block2 {
-                    position: absolute;
-                    right: 20%;
-                    bottom: 20px;
-                }
-        
-                .block3 {
-                    position: absolute;
-                    left: 47%;
-                    bottom: 50px;
-                }
+  }
+  .block1 {
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+  }
+
+  .block2 {
+    position: absolute;
+    right: 20%;
+    bottom: 20px;
+  }
+
+  .block3 {
+    position: absolute;
+    left: 47%;
+    bottom: 50px;
+  }
 }
