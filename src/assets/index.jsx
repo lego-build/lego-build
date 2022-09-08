@@ -1,4 +1,5 @@
 export { default as AppreciateBottomRightWatermark } from "./illustrations/AppreciateBottomRightWatermark";
+export { default as AppreciateBottomTopRight } from "./illustrations/AppreciateBottomTopRight";
 export { default as AppreciateTopLeft } from "./illustrations/AppreciateTopLeft";
 export { default as Arrow } from "./illustrations/Arrow";
 export { default as Block } from "./illustrations/Block";
@@ -12,6 +13,7 @@ export { default as Dots } from "./illustrations/Dots";
 export { default as EarthGlobe } from "./illustrations/EarthGlobe";
 export { default as Ellipse } from "./illustrations/Ellipse";
 export { default as FlexBiceps } from "./illustrations/FlexBiceps";
+export { default as GearIllustration } from "./illustrations/GearIllustration";
 export { default as HouseIllustration } from "./illustrations/HouseIllustration";
 export { default as LeftDots } from "./illustrations/LeftDots";
 export { default as LeftZigZag } from "./illustrations/LeftZigZag";
