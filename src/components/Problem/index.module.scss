@@ -34,7 +34,10 @@
   .illustration {
     flex-basis: 40%;
     z-index: 1;
+  @media screen and (max-width: 650px) {
+    width: 75%;
   }
+}
   .rightBlurBlob {
     position: absolute;
     bottom: 0;

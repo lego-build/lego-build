@@ -38,6 +38,11 @@
   flex-basis: 40%;
   z-index: 1;
 }
+@media screen and (max-width: 650px) {
+  .container .illustration {
+    width: 75%;
+  }
+}
 .container .rightBlurBlob {
   position: absolute;
   bottom: 0;
