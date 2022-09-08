@@ -1,6 +1,6 @@
-const CommunityPageIllustration = () => {
+const CommunityPageIllustration = (props) => {
     return ( 
-        <svg width="616" height="769" viewBox="0 0 616 769" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg {...props} width="616" height="769" viewBox="0 0 616 769" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_822_1614)">
                 <rect width="833.829" height="1066" rx="15" fill="white" />
                 <path d="M51.5628 115.809L59.5591 101.195L66.4526 115.809L59.5591 130.699L51.5628 115.809Z" fill="#EBFFFB" />
