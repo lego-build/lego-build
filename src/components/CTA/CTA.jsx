@@ -1,3 +1,4 @@
+import style from "./index.module.css";
 const CTA = () => {
     return (
         <section>
