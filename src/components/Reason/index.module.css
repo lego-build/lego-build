@@ -4,29 +4,44 @@
   background-color: #fbfdfd;
   position: relative;
   color: #4d4d4d;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 35px;
 }
+
 @media screen and (max-width: 650px) {
   .container {
     padding: 60px 25px;
   }
 }
+
 .container .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 10px;
   z-index: 1;
 }
+
 .container .details .heading {
   font-weight: 700;
   font-size: 2em;
   color: #000000;
 }
+
 .container .details .detail {
   max-width: 700px;
 }
+
 .container .watermark {
   position: absolute;
   bottom: 0;
@@ -35,44 +50,63 @@
   height: 250px;
   z-index: 0;
 }
+
 .container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   justify-items: flex-start;
   z-index: 1;
 }
+
 @media screen and (max-width: 1130px) {
   .container .cards {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 50px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
+
 .container .cta {
   z-index: 1;
   margin-top: 28px;
 }
+
 .container .cta .link {
   text-decoration: underline;
   color: #058d74;
   cursor: pointer;
+  -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
 }
+
 .container .cta .link:hover {
   color: #09cda9;
 }
+
 .container .block1 {
   position: absolute;
   bottom: 20px;
   left: 20%;
 }
+
 .container .block2 {
   position: absolute;
   right: 20%;
   bottom: 20px;
 }
+
 .container .block3 {
   position: absolute;
   left: 47%;
   bottom: 50px;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */

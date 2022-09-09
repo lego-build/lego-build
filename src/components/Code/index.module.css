@@ -2,32 +2,40 @@
   margin-bottom: 20px;
   position: relative;
 }
+
 .code pre {
   background-color: #1e1e1e;
   border-radius: 7px;
 }
+
 .code pre::-webkit-scrollbar {
   height: 11px;
   width: 11px;
   border-radius: 15px;
 }
+
 .code pre::-webkit-scrollbar-corner {
   background-color: rgba(0, 0, 0, 0);
 }
+
 .code pre::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
 .code pre::-webkit-scrollbar-thumb {
   background-color: #333;
   border-radius: 15px;
 }
+
 .code:last-child {
   margin-bottom: 0;
 }
+
 .code .absolute {
   position: absolute;
   opacity: 0;
 }
+
 .code .copied {
   font-size: 14px;
   color: #fff;
@@ -41,6 +49,8 @@
   top: 25px;
   right: 20px;
 }
+
 .code:hover .absolute {
   opacity: 1;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */
