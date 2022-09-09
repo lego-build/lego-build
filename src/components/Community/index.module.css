@@ -3,10 +3,16 @@
   align-items: center;
   background-color: #FCFAFF;
   position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  --vertical-padding: 60px;
+  --horizontal-padding: 30px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
 }
 @media screen and (max-width: 650px) {
   .container {
     flex-direction: column;
+    gap: 45px;
   }
 }
 .container .waterMark {
@@ -35,7 +41,6 @@
 .container .content {
   z-index: 1;
   flex-basis: 60%;
-  padding-left: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -70,7 +75,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-decoration: underline;
   position: relative;
 }
 .container .content .linkContainer .communityLink::after {
@@ -86,15 +90,17 @@
 }
 .container .illustration {
   flex-basis: 40%;
-  padding-left: 7.5%;
-  padding-top: 7.5%;
+  --padding: 7.5%;
+  padding-left: var(--padding);
+  padding-top: var(--padding);
   border-top-left-radius: 50px;
   background: linear-gradient(100.55deg, #7450F6 13.34%, #CF50F6 97.24%);
   position: relative;
 }
 @media screen and (max-width: 650px) {
   .container .illustration {
-    width: 75%;
+    width: 100%;
+    margin-inline: auto;
     padding-left: 7.5px;
     padding-top: 7.5px;
     height: -webkit-fit-content;
