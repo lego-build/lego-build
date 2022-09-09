@@ -90,6 +90,11 @@ function Editor() {
         },
       ],
     },
+    {
+      name: "README.md",
+      type: "info",
+      content: null,
+    },
   ]);
 
   return (

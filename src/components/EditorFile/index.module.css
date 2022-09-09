@@ -7,4 +7,9 @@
           align-items: center;
   gap: 5px;
 }
+
+.file svg {
+  width: 20px;
+  height: auto;
+}
 /*# sourceMappingURL=index.module.css.map */

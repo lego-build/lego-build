@@ -1,6 +1,6 @@
 .nav {
   background-color: #252526;
-  padding: 18px;
+  padding: 17px;
   border-radius: 8px 0 0 8px;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
@@ -15,5 +15,12 @@
 
 .nav button {
   padding: 3px 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=index.module.css.map */

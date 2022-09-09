@@ -1,6 +1,6 @@
 .nav {
   background-color: #252526;
-  padding: 18px;
+  padding: 17px;
   border-radius: 8px 0 0 8px;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
@@ -10,5 +10,8 @@
 
   button {
     padding: 3px 4px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
   }
 }

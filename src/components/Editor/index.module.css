@@ -1,8 +1,8 @@
 .editor {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 22% 1fr;
-      grid-template-columns: 22% 1fr;
+  -ms-grid-columns: 30% 1fr;
+      grid-template-columns: 30% 1fr;
   -ms-grid-rows: 3fr 1fr;
       grid-template-rows: 3fr 1fr;
   background-color: #1e1e1e;
