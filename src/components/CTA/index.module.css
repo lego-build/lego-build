@@ -1,9 +1,18 @@
 .container {
   display: flex;
-  padding: 60px 2.5%;
+  --vertical-padding: 60px;
+  --horizontal-padding: 30px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
   justify-content: space-around;
   color: #4D4D4D;
   position: relative;
+  width: 100%;
+}
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: column;
+    gap: 45px;
+  }
 }
 .container .bottomLeft {
   position: absolute;
@@ -12,6 +21,7 @@
   z-index: -1;
 }
 .container .content {
+  z-index: 1;
   flex-basis: 45%;
   display: flex;
   flex-direction: column;
@@ -41,6 +51,7 @@
   background-color: rgba(157, 80, 246, 0.75);
 }
 .container .team {
+  background-color: #fff;
   flex-basis: 35%;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
   padding: 25px 50px;
