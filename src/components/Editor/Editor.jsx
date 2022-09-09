@@ -19,8 +19,18 @@ function Editor() {
           content: null,
         },
         {
+          name: "logo192.png",
+          type: "media",
+          content: null,
+        },
+        {
           name: "logo512.png",
           type: "media",
+          content: null,
+        },
+        {
+          name: "manifest.json",
+          type: "json",
           content: null,
         },
       ],
@@ -89,6 +99,26 @@ function Editor() {
           content: null,
         },
       ],
+    },
+    {
+      name: "lego.json",
+      type: "json",
+      content: null,
+    },
+    {
+      name: ".gitignore",
+      type: "gitignore",
+      content: null,
+    },
+    {
+      name: "package.json",
+      type: "json",
+      content: null,
+    },
+    {
+      name: "package-lock.json",
+      type: "json",
+      content: null,
     },
     {
       name: "README.md",

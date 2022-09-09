@@ -26,7 +26,7 @@ function ToggleWrapper({ tree, depth, name }) {
           <g clipPath="url(#clip0_20_103)">
             <path
               d="M2.58203 2.45691L5.93852 5.8134L2.58203 9.1699"
-              stroke="#EBEBEB"
+              stroke="#ccc"
               strokeWidth="0.78687"
             />
           </g>
