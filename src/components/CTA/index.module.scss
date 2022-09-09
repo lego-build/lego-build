@@ -4,6 +4,12 @@
     justify-content: space-around;
     color: #4D4D4D;
     position: relative;
+    .bottomLeft {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+        }
     .content{
         flex-basis: 45%;
         display: flex;
@@ -36,8 +42,11 @@
         box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
         padding: 25px 50px;
         display: flex;
+        position: relative;
         flex-direction: column;
         gap: 15px;
+        border-radius: 8px;
+        z-index: 1;
         h3{
             font-weight: 500;
         }
@@ -52,4 +61,36 @@
         top: 0;
         left: 0;
     }
+    .bottomTopLeft{
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+    }
+    .gear{
+        animation: move 5s ease-in infinite alternate-reverse;
+        position: absolute;
+        bottom: 0;
+    }
+    .gear2{
+        animation: move 4s ease-in infinite alternate-reverse;
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+    }
+    .gear3{
+        animation: move 3s ease-in infinite alternate-reverse;
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+    }
+        @keyframes move {
+            from{
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+            to{
+                transform: translate(60px, -30px) rotate(270deg);
+            }
+        }
+
+    
 }
