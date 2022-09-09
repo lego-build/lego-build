@@ -3,7 +3,7 @@ import EditorFile from "../EditorFile/EditorFile";
 import ToggleWrapper from "../ToggleWrapper/ToggleWrapper";
 import style from "./index.module.css";
 
-function FolderWrapper({ tree, depth = 0, wrapperRef, height }) {
+function FolderWrapper({ tree, depth = 0, height }) {
   const fileTypeToIcon = useMemo(
     () => ({
       jsx: "",
@@ -18,10 +18,9 @@ function FolderWrapper({ tree, depth = 0, wrapperRef, height }) {
   return (
     <div
       className={style.wrapper}
-      ref={wrapperRef}
       style={{
         paddingLeft: `${depth * 8}px`,
-        height: typeof height === "number" ? height : null,
+        height: height !== undefined ? height : "auto",
       }}
     >
       {tree.map((item) =>
