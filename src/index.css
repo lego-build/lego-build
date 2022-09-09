@@ -34,6 +34,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./assets/fonts/SEGOEUI.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --primary-color: #9d50f6;
 }
