@@ -1,7 +1,11 @@
 .container {
   display: flex;
   position: relative;
-  padding: 60px 2.5%;
+  --vertical-padding: 60px;
+  --horizontal-padding: 30px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  width: 100%;
+  overflow-x: hidden;
   justify-content: space-around;
   align-items: center;
   background-color: #fcfaff;
@@ -9,6 +13,7 @@
 @media screen and (max-width: 650px) {
   .container {
     flex-direction: column-reverse;
+    gap: 30px;
   }
 }
 .container .content {
@@ -17,9 +22,19 @@
   flex-direction: column;
   gap: 20px;
 }
+@media screen and (max-width: 650px) {
+  .container .content {
+    gap: 5px;
+  }
+}
 .container .content .header {
   font-size: 2em;
   font-weight: 700;
+}
+@media screen and (max-width: 650px) {
+  .container .content .header {
+    font-size: 1.85em;
+  }
 }
 .container .content .header span {
   color: #9d50f6;
