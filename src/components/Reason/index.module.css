@@ -34,6 +34,23 @@
   width: 250px;
   height: 250px;
   z-index: 0;
+  animation: skew 4s ease infinite alternate-reverse;
+}
+@-webkit-keyframes skew {
+  from {
+    transform: skew(0deg, 0deg);
+  }
+  to {
+    transform: skew(30deg, -30deg);
+  }
+}
+@keyframes skew {
+  from {
+    transform: skew(0deg, 0deg);
+  }
+  to {
+    transform: skew(30deg, -30deg);
+  }
 }
 .container .cards {
   display: flex;
@@ -65,14 +82,33 @@
   position: absolute;
   bottom: 20px;
   left: 20%;
+  animation: move 4s ease infinite alternate-reverse;
 }
 .container .block2 {
   position: absolute;
   right: 20%;
   bottom: 20px;
+  animation: move 4s ease infinite alternate-reverse;
 }
 .container .block3 {
   position: absolute;
   left: 47%;
   bottom: 50px;
+  animation: move 4s ease infinite alternate-reverse;
+}
+@-webkit-keyframes move {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(30px, -30px);
+  }
+}
+@keyframes move {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(30px, -30px);
+  }
 }/*# sourceMappingURL=index.module.css.map */
