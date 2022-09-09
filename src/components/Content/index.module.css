@@ -1,6 +1,8 @@
 .container {
   display: flex;
-  padding: 60px 50px;
+  --vertical-padding: 60px;
+  --horizontal-padding: 30px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
   justify-content: space-between;
   align-items: center;
   background-color: #fcfaff;
