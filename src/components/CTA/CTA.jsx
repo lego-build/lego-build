@@ -1,3 +1,4 @@
+import { AppreciateTopLeft } from "../../assets";
 import CtaTeam from "../CtaTeam/CtaTeam";
 import style from "./index.module.css";
 const ogTeam = [
@@ -8,6 +9,7 @@ const ogTeam = [
 const CTA = () => {
     return (
         <section className={style.container}>
+            <AppreciateTopLeft className={style.topLeft} /> 
             <div className={style.content}>
                 <h1>Appreciate the tool?</h1>
                 <p>This tool is currently being maintained and refined by a small team of broke devs working from the trenches, if you appreciate it, abeg epp boys and show support.</p>
