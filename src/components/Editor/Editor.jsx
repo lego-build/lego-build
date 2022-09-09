@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EditorCodeArea from "../EditorCodeArea/EditorCodeArea";
 import EditorNav from "../EditorNav/EditorNav";
 import style from "./index.module.css";
 
@@ -108,7 +109,30 @@ function Editor() {
     {
       name: ".gitignore",
       type: "gitignore",
-      content: null,
+      content: `# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+      # dependencies
+      /node_modules
+      /.pnp
+      .pnp.js
+      
+      # testing
+      /coverage
+      
+      # production
+      /build
+      
+      # misc
+      .DS_Store
+      .env.local
+      .env.development.local
+      .env.test.local
+      .env.production.local
+      
+      npm-debug.log*
+      yarn-debug.log*
+      yarn-error.log*
+      `,
     },
     {
       name: "package.json",
@@ -127,9 +151,16 @@ function Editor() {
     },
   ]);
 
+  const [activeFile, setActiveFile] = useState(undefined);
+
   return (
     <div className={style.editor}>
-      <EditorNav documentTree={documentTree} />
+      <EditorNav
+        documentTree={documentTree}
+        key={"DON'T_RE-RENDER"}
+        setActiveFile={setActiveFile}
+      />
+      <EditorCodeArea activeFile={activeFile} setActiveFile={setActiveFile} />
     </div>
   );
 }

@@ -2,10 +2,10 @@ import React from "react";
 import FolderWrapper from "../FolderWrapper/FolderWrapper";
 import style from "./index.module.css";
 
-function EditorNav({ documentTree }) {
+function EditorNav({ documentTree, setActiveFile }) {
   return (
     <div className={style.nav}>
-      <FolderWrapper tree={documentTree} />
+      <FolderWrapper tree={documentTree} setActiveFile={setActiveFile} />
     </div>
   );
 }

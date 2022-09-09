@@ -3,7 +3,7 @@ import EditorFile from "../EditorFile/EditorFile";
 import ToggleWrapper from "../ToggleWrapper/ToggleWrapper";
 import style from "./index.module.css";
 
-function FolderWrapper({ tree, depth = 0, height }) {
+function FolderWrapper({ tree, depth = 0, height, setActiveFile }) {
   const fileTypeToIcon = useMemo(
     () => ({
       jsx: (
@@ -109,6 +109,7 @@ function FolderWrapper({ tree, depth = 0, height }) {
             content={item.content}
             icon={fileTypeToIcon[item.type]}
             key={item.name}
+            setActiveFile={setActiveFile}
           />
         ) : (
           <ToggleWrapper
@@ -116,6 +117,7 @@ function FolderWrapper({ tree, depth = 0, height }) {
             tree={item.children}
             depth={depth + 1}
             key={item.name}
+            setActiveFile={setActiveFile}
           />
         )
       )}

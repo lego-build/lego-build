@@ -1,0 +1,94 @@
+.code_area {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 35px 1fr;
+      grid-template-rows: 35px 1fr;
+}
+
+.code_area .placeholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+}
+
+.code_area .top {
+  background-color: #252526;
+}
+
+.code_area .top .tab {
+  background-color: #1e1e1e;
+  height: 100%;
+  padding: 4px 5px;
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+}
+
+.code_area .top .tab .file_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.code_area .top .tab .file_name svg {
+  width: 18px;
+  height: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.code_area .top .tab .close {
+  width: 18px;
+  height: 18px;
+  border-radius: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.code_area .top .tab .close:hover {
+  background-color: #2a2d2e;
+}
+
+.code_area .top .tab .close svg {
+  width: 12px;
+  height: auto;
+}
+/*# sourceMappingURL=index.module.css.map */

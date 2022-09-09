@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FolderWrapper from "../FolderWrapper/FolderWrapper";
 import style from "./index.module.css";
 
-function ToggleWrapper({ tree, depth, name }) {
+function ToggleWrapper({ tree, depth, name, setActiveFile }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -44,7 +44,12 @@ function ToggleWrapper({ tree, depth, name }) {
 
         {name}
       </button>
-      <FolderWrapper height={open ? "auto" : 0} tree={tree} depth={depth} />
+      <FolderWrapper
+        height={open ? "auto" : 0}
+        tree={tree}
+        depth={depth}
+        setActiveFile={setActiveFile}
+      />
     </div>
   );
 }
