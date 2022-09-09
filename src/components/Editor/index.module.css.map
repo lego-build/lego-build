@@ -1,1 +1,9 @@
-{"version":3,"sources":["index.module.scss","index.module.css"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,8BAAA;EACA,2BAAA;EACA,yBAAA;EACA,kBAAA;ACCF","file":"index.module.css"}
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,OAAO;EAC9B,kBAAkB,EAAE,OAAO;EAC3B,gBAAgB,EAAE,OAAO;EACzB,aAAa,EAAE,GAAG;CACnB",
+    "sources": [
+        "index.module.scss"
+    ],
+    "names": [],
+    "file": "index.module.css"
+}

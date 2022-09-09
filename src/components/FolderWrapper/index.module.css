@@ -1,4 +1,6 @@
 .wrapper {
   overflow: hidden;
+  -webkit-transition: height 0.25s ease-in-out;
   transition: height 0.25s ease-in-out;
-}/*# sourceMappingURL=index.module.css.map */
+}
+/*# sourceMappingURL=index.module.css.map */
