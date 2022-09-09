@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EditorNav from "../EditorNav/EditorNav";
 import style from "./index.module.css";
 
 function Editor() {
@@ -91,7 +92,11 @@ function Editor() {
     },
   ]);
 
-  return <div className={style.editor}></div>;
+  return (
+    <div className={style.editor}>
+      <EditorNav documentTree={documentTree} />
+    </div>
+  );
 }
 
 export default Editor;
