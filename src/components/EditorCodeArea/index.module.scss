@@ -2,7 +2,7 @@
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   display: grid;
-  grid-template-rows: 35px 1fr;
+  grid-template-rows: 35px minmax(0, 1fr);
   .placeholder {
     display: flex;
     justify-content: center;
@@ -12,6 +12,7 @@
   }
   .top {
     background-color: #252526;
+    border-radius: 0 8px 0 0;
 
     .tab {
       background-color: #1e1e1e;
@@ -52,6 +53,27 @@
           height: auto;
         }
       }
+    }
+  }
+
+  pre {
+    &::-webkit-scrollbar {
+      height: 11px;
+      width: 11px;
+      border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 15px;
     }
   }
 }

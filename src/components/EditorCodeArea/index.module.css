@@ -7,8 +7,8 @@
   grid-row: 1 / 2;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 35px 1fr;
-      grid-template-rows: 35px 1fr;
+  -ms-grid-rows: 35px minmax(0, 1fr);
+      grid-template-rows: 35px minmax(0, 1fr);
 }
 
 .code_area .placeholder {
@@ -29,6 +29,7 @@
 
 .code_area .top {
   background-color: #252526;
+  border-radius: 0 8px 0 0;
 }
 
 .code_area .top .tab {
@@ -90,5 +91,24 @@
 .code_area .top .tab .close svg {
   width: 12px;
   height: auto;
+}
+
+.code_area pre::-webkit-scrollbar {
+  height: 11px;
+  width: 11px;
+  border-radius: 15px;
+}
+
+.code_area pre::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.code_area pre::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.code_area pre::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 15px;
 }
 /*# sourceMappingURL=index.module.css.map */

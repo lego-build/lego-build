@@ -11,6 +11,26 @@
   color: #ccc;
   font-size: 13.5px;
   font-family: "Segoe UI", sans-serif;
+  overflow: auto;
+}
+
+.nav::-webkit-scrollbar {
+  height: 9px;
+  width: 9px;
+  border-radius: 15px;
+}
+
+.nav::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.nav::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 15px;
 }
 
 .nav button {

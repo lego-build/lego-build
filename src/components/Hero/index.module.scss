@@ -1,5 +1,6 @@
 .hero {
-  padding: 90px 50px;
+  --hero-padding: 80px;
+  padding: var(--hero-padding) 50px;
   height: 85vh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

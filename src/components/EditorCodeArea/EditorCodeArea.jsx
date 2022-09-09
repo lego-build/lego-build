@@ -1,8 +1,29 @@
 import React from "react";
 import style from "./index.module.css";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function EditorCodeArea({ activeFile, setActiveFile }) {
   const { name, icon, content } = activeFile || {};
+
+  const extensionToLanguage = {
+    json: "json",
+    js: "javascript",
+    html: "html",
+    jsx: "jsx",
+    css: "css",
+    gitignore: "git",
+    md: "markdown",
+  };
+
+  let language = "";
+
+  if (name) {
+    const splitName = name.split(".");
+    const extension = splitName[splitName.length - 1];
+    language = extensionToLanguage[extension];
+  }
+
   return (
     <div className={style.code_area}>
       {!activeFile ? (
@@ -73,6 +94,23 @@ function EditorCodeArea({ activeFile, setActiveFile }) {
               </button>
             </div>
           </div>
+          <SyntaxHighlighter
+            language={language}
+            customStyle={{
+              padding: "15px 0",
+              paddingLeft: "20px",
+              fontFamily: "Consolas, monospace",
+            }}
+            codeTagProps={{
+              style: {
+                fontSize: "14px",
+                fontFamily: "Consolas, monospace",
+              },
+            }}
+            style={vscDarkPlus}
+          >
+            {content}
+          </SyntaxHighlighter>
         </>
       )}
     </div>

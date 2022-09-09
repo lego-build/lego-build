@@ -1,11 +1,12 @@
 .editor {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 28% 1fr;
-      grid-template-columns: 28% 1fr;
-  -ms-grid-rows: 2fr 1fr;
-      grid-template-rows: 2fr 1fr;
+  -ms-grid-columns: 28% minmax(0, 1fr);
+      grid-template-columns: 28% minmax(0, 1fr);
+  -ms-grid-rows: minmax(0, 2.6fr) minmax(0, 1fr);
+      grid-template-rows: minmax(0, 2.6fr) minmax(0, 1fr);
   background-color: #1e1e1e;
   border-radius: 8px;
+  max-height: calc(85vh - (2 * var(--hero-padding)));
 }
 /*# sourceMappingURL=index.module.css.map */

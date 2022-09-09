@@ -1,7 +1,8 @@
 .editor {
   display: grid;
-  grid-template-columns: 28% 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-columns: 28% minmax(0, 1fr);
+  grid-template-rows: minmax(0, 2.6fr) minmax(0, 1fr);
   background-color: #1e1e1e;
   border-radius: 8px;
+  max-height: calc(85vh - (2 * var(--hero-padding)));
 }
