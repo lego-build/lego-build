@@ -63,6 +63,17 @@
     bottom: -50px;
     z-index: -1;
     right: 20px;
+    animation: skew 4s ease infinite alternate-reverse;
+    
+      @keyframes skew {
+        from {
+          transform: skew(0deg, 0deg);
+        }
+    
+        to {
+          transform: skew(30deg, -30deg);
+        }
+      }
   }
   .leftDots {
     position: absolute;
