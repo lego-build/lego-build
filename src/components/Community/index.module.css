@@ -14,6 +14,23 @@
   top: 75px;
   left: 0;
   z-index: 0;
+  animation: scale 4s ease infinite alternate-reverse;
+}
+@-webkit-keyframes scale {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes scale {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 .container .content {
   z-index: 1;
