@@ -86,17 +86,32 @@
   left: 20%;
   animation: move 4s ease infinite alternate-reverse;
 }
+@media screen and (max-width: 650px) {
+  .container .block1 {
+    scale: 0.5;
+  }
+}
 .container .block2 {
   position: absolute;
   right: 20%;
   bottom: 20px;
   animation: move 4s ease infinite alternate-reverse;
 }
+@media screen and (max-width: 650px) {
+  .container .block2 {
+    scale: 0.5;
+  }
+}
 .container .block3 {
   position: absolute;
   left: 47%;
   bottom: 50px;
   animation: move 4s ease infinite alternate-reverse;
+}
+@media screen and (max-width: 650px) {
+  .container .block3 {
+    scale: 0.5;
+  }
 }
 @-webkit-keyframes move {
   from {

@@ -74,12 +74,18 @@
     bottom: 20px;
     left: 20%;
     animation: move 4s ease infinite alternate-reverse;
+      @media screen and (max-width: 650px) {
+        scale: 0.5;
+      }
   }
     .block2 {
       position: absolute;
       right: 20%;
       bottom: 20px;
       animation: move 4s ease infinite alternate-reverse;
+      @media screen and (max-width: 650px) {
+          scale: 0.5;
+        }
     }
   
     .block3 {
@@ -87,6 +93,9 @@
       left: 47%;
       bottom: 50px;
       animation: move 4s ease infinite alternate-reverse;
+      @media screen and (max-width: 650px) {
+          scale: 0.5;
+        }
     }
       @keyframes move {
         from {
