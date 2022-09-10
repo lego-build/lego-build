@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.css";
+import { useLocation } from "react-router-dom";
 
 function EditorTerminal({ setActiveFile }) {
   const [inputText, setInputText] = useState("");
@@ -17,6 +18,8 @@ function EditorTerminal({ setActiveFile }) {
   const [writingAnimationShouldStart, setWritingAnimationShouldStart] =
     useState(false);
   const [animationHasFinished, setAnimationHasFinished] = useState(false);
+
+  const location = useLocation();
 
   const navFile = {
     name: "Nav.jsx",
@@ -43,10 +46,14 @@ export default Nav`,
       setWritingAnimationShouldStart(true);
     });
 
+    if (document.readyState === "complete") {
+      setWritingAnimationShouldStart(true);
+    }
+
     return () => {
       window.removeEventListener("load", listener);
     };
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     if (!writingAnimationShouldStart) return;
