@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import style from "./index.module.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function EditorCodeArea({ activeFile, setActiveFile }) {
+  const codeRef = useRef();
+
   const { name, icon, content } = activeFile || {};
 
   const extensionToLanguage = {
@@ -23,6 +25,10 @@ function EditorCodeArea({ activeFile, setActiveFile }) {
     const extension = splitName[splitName.length - 1];
     language = extensionToLanguage[extension];
   }
+
+  useEffect(() => {
+    codeRef.current?.scrollTo(0, 0);
+  }, [activeFile]);
 
   return (
     <div className={style.code_area}>
@@ -96,6 +102,7 @@ function EditorCodeArea({ activeFile, setActiveFile }) {
           </div>
           <SyntaxHighlighter
             language={language}
+            PreTag={(props) => <pre {...props} ref={codeRef} />}
             customStyle={{
               padding: "15px 0",
               paddingLeft: "20px",

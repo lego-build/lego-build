@@ -4,8 +4,8 @@
   height: 85vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr);
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  -ms-grid-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
 }
 
 .hero h1 {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EditorCodeArea from "../EditorCodeArea/EditorCodeArea";
 import EditorNav from "../EditorNav/EditorNav";
+import EditorTerminal from "../EditorTerminal/EditorTerminal";
 import style from "./index.module.css";
 
 function Editor() {
@@ -151,12 +152,19 @@ export default Nav`,
                 {
                   name: "Contact.jsx",
                   type: "jsx",
-                  content: null,
+                  content: `import React from "react";
+import style from "./index.module.css";
+
+function Contact() {
+  return <section className={style.Contact}>Contact</section>;
+}
+
+export default Contact;`,
                 },
                 {
                   name: "Contact.css",
                   type: "css",
-                  content: null,
+                  content: `/* */`,
                 },
                 {
                   name: "Contact.test.js",
@@ -170,7 +178,27 @@ export default Nav`,
         {
           name: "index.js",
           type: "javascript",
-          content: null,
+          content: `import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Community, Contact, Docs, Home } from "./pages";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/contact" exact element={<Contact />} />
+        <Route path="/docs" exact element={<Docs />} />
+        <Route path="/docs/:subpage" exact element={<Docs />} />
+        <Route path="/community" exact element={<Community />} />
+        <Route path="/community/:workflow_id" exact element={<Community />} />
+      </Routes>
+    </Router>
+  </React.StrictMode>
+);`,
         },
       ],
     },
@@ -233,6 +261,7 @@ yarn-error.log*`,
         setActiveFile={setActiveFile}
       />
       <EditorCodeArea activeFile={activeFile} setActiveFile={setActiveFile} />
+      <EditorTerminal setActiveFile={setActiveFile} />
     </div>
   );
 }
