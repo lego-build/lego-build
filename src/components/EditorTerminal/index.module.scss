@@ -59,6 +59,24 @@
       pointer-events: none;
       user-select: none;
     }
+    span:last-child {
+      position: relative;
+      &.animation_is_over::after {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        right: 0;
+        top: 50%;
+        transform: translate(calc(100% + 2px), -50%);
+        width: 5px;
+        height: 13px;
+        background-color: #ebebeb;
+      }
+    }
   }
 
   .success {

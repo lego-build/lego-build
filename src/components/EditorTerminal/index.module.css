@@ -78,6 +78,27 @@
           user-select: none;
 }
 
+.terminal .input span:last-child {
+  position: relative;
+}
+
+.terminal .input span:last-child.animation_is_over::after {
+  display: none;
+}
+
+.terminal .input span:last-child::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(calc(100% + 2px), -50%);
+          transform: translate(calc(100% + 2px), -50%);
+  width: 5px;
+  height: 13px;
+  background-color: #ebebeb;
+}
+
 .terminal .success {
   color: #00cc00;
   line-height: 1em;

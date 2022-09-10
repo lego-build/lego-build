@@ -12,6 +12,10 @@ function EditorTerminal({ setActiveFile }) {
   const [finalInputValue, setFinalInputValue] = useState(
     "lego-build component Nav"
   );
+  const [successAnimationShouldStart, setSuccessAnimationShouldStart] =
+    useState(false);
+  const [writingAnimationShouldStart, setWritingAnimationShouldStart] =
+    useState(false);
   const [animationHasFinished, setAnimationHasFinished] = useState(false);
 
   const navFile = {
@@ -35,12 +39,26 @@ export default Nav`,
   };
 
   useEffect(() => {
+    const listener = window.addEventListener("load", () => {
+      setWritingAnimationShouldStart(true);
+    });
+
+    return () => {
+      window.removeEventListener("load", listener);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!writingAnimationShouldStart) return;
+
     const writingAnimation = setInterval(() => {
       setInputText((prevValue) => {
         const currentIndex = prevValue.length;
         if (currentIndex === finalInputValue.length) {
           clearInterval(writingAnimation);
-          animateSuccesses();
+          setTimeout(() => {
+            setSuccessAnimationShouldStart(true);
+          }, 500);
           return prevValue;
         }
 
@@ -48,28 +66,34 @@ export default Nav`,
       });
     }, 70);
 
-    function animateSuccesses() {
-      const successAnimation = setInterval(() => {
-        setSuccesses((prevValue) => {
-          const currentIndex = prevValue.length;
-          if (currentIndex === finalSuccesses.length) {
-            clearInterval(successAnimation);
-            setTimeout(() => {
-              setAnimationHasFinished(true);
-              setActiveFile(navFile);
-            }, 1000);
-            return prevValue;
-          }
-
-          return [...prevValue, finalSuccesses[currentIndex]];
-        });
-      }, 1000);
-    }
-
     return () => {
       clearInterval(writingAnimation);
     };
-  }, []);
+  }, [writingAnimationShouldStart]);
+
+  useEffect(() => {
+    if (!successAnimationShouldStart) return;
+
+    const successAnimation = setInterval(() => {
+      setSuccesses((prevValue) => {
+        const currentIndex = prevValue.length;
+        if (currentIndex === finalSuccesses.length) {
+          clearInterval(successAnimation);
+          setAnimationHasFinished(true);
+          setTimeout(() => {
+            setActiveFile(navFile);
+          }, 200);
+          return prevValue;
+        }
+
+        return [...prevValue, finalSuccesses[currentIndex]];
+      });
+    }, 200);
+
+    return () => {
+      clearInterval(successAnimation);
+    };
+  }, [successAnimationShouldStart]);
 
   return (
     <div className={style.terminal}>
@@ -80,7 +104,13 @@ export default Nav`,
         </div>
         <div className={style.input}>
           <span>$</span>
-          <span>{inputText}</span>
+          <span
+            className={
+              successAnimationShouldStart ? style.animation_is_over : ""
+            }
+          >
+            {inputText}
+          </span>
         </div>
 
         {successes.map((file) => (
