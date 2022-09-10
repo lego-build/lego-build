@@ -261,7 +261,10 @@ yarn-error.log*`,
         setActiveFile={setActiveFile}
       />
       <EditorCodeArea activeFile={activeFile} setActiveFile={setActiveFile} />
-      <EditorTerminal setActiveFile={setActiveFile} />
+      <EditorTerminal
+        setActiveFile={setActiveFile}
+        key={"DON'T_RE-RENDER_TOO"}
+      />
     </div>
   );
 }
