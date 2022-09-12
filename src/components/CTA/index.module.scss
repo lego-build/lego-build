@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  --vertical-padding: 80px;
+  align-items: center;
+  --vertical-padding: 100px;
   --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   gap: 200px;
@@ -14,7 +15,6 @@
   }
   @media screen and (max-width: 800px) {
     flex-direction: column;
-    align-items: center;
     --horizontal-padding: 25px;
     gap: 60px;
   }
@@ -37,7 +37,7 @@
       line-height: 1.1;
     }
     p {
-      line-height: 30px;
+      line-height: 28px;
     }
     .link {
       background-color: #9d50f6;

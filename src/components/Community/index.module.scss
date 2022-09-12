@@ -13,8 +13,13 @@
   @media screen and (max-width: 1140px) {
     flex-direction: column;
     gap: 45px;
-    padding: 60px 25px;
+    padding: 80px 25px;
   }
+
+  @media screen and (max-width: 800px) {
+    padding-bottom: 0;
+  }
+
   .waterMark {
     position: absolute;
     top: 75px;
@@ -52,6 +57,7 @@
     .details {
       line-height: 28px;
       max-width: 500px;
+      color: #4d4d4d;
     }
     .linkContainer {
       display: flex;
@@ -110,6 +116,7 @@
       display: none;
     }
     @media screen and (max-width: 800px) {
+      --padding: 40px;
       width: 100%;
       display: initial;
       margin-inline: auto;

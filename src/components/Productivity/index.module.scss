@@ -3,13 +3,13 @@
   width: 100%;
   position: relative;
   color: #000000;
-  padding: 60px 50px;
+  padding: 100px 50px;
   gap: 40px;
   @media screen and (max-width: 1070px) {
     flex-direction: column;
   }
   @media screen and (max-width: 650px) {
-    padding: 60px 25px;
+    padding: 70px 25px;
   }
   justify-content: space-between;
   align-items: center;
@@ -28,12 +28,15 @@
       font-weight: 700;
       font-size: 2em;
       margin-bottom: 8px;
+      line-height: 1.1;
     }
     .details {
       line-height: 28px;
       max-width: 600px;
+      color: #4d4d4d;
       span {
         font-weight: 600;
+        color: #000;
       }
     }
   }

@@ -2,7 +2,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  --vertical-padding: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  --vertical-padding: 100px;
   --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   gap: 200px;
@@ -27,9 +30,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     --horizontal-padding: 25px;
     gap: 60px;
   }
@@ -64,7 +64,7 @@
 }
 
 .container .content p {
-  line-height: 30px;
+  line-height: 28px;
 }
 
 .container .content .link {

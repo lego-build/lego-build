@@ -1,7 +1,7 @@
 .hero {
   --hero-padding: 80px;
   padding: var(--hero-padding) 50px;
-  height: 85vh;
+  min-height: 85vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: minmax(0, 1fr) minmax(0, 1.3fr);
@@ -20,6 +20,7 @@
 @media screen and (max-width: 650px) {
   .hero {
     padding: var(--hero-padding) 25px;
+    padding-bottom: calc(var(--hero-padding) + 20px);
   }
 }
 

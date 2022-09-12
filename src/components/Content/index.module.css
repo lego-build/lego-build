@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  --vertical-padding: 60px;
+  --vertical-padding: 100px;
   --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   -webkit-box-pack: justify;
@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 650px) {
   .container {
-    padding: 40px 25px;
+    padding: 70px 25px;
   }
 }
 

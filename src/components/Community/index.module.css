@@ -23,7 +23,13 @@
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 45px;
-    padding: 60px 25px;
+    padding: 80px 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding-bottom: 0;
   }
 }
 
@@ -86,6 +92,7 @@
 .container .content .details {
   line-height: 28px;
   max-width: 500px;
+  color: #4d4d4d;
 }
 
 .container .content .linkContainer {
@@ -155,6 +162,7 @@
 
 @media screen and (max-width: 800px) {
   .container .illustration {
+    --padding: 40px;
     width: 100%;
     display: initial;
     margin-inline: auto;

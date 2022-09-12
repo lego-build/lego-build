@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  --vertical-padding: 60px;
+  --vertical-padding: 100px;
   --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   justify-content: space-between;
@@ -14,7 +14,7 @@
     gap: 30px;
   }
   @media screen and (max-width: 650px) {
-    padding: 40px 25px;
+    padding: 70px 25px;
   }
   .content {
     flex-basis: 50%;

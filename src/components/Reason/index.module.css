@@ -1,5 +1,5 @@
 .container {
-  --vertical-padding: 60px;
+  --vertical-padding: 100px;
   --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   font-size: 16px;
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 650px) {
   .container {
-    padding: 60px 25px;
+    padding: 70px 25px;
   }
 }
 
@@ -42,6 +42,7 @@
 
 .container .details .detail {
   max-width: 700px;
+  line-height: 28px;
 }
 
 .container .watermark {

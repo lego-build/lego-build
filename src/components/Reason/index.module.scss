@@ -1,5 +1,5 @@
 .container {
-  --vertical-padding: 60px;
+  --vertical-padding: 100px;
   --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   font-size: 16px;
@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 35px;
   @media screen and (max-width: 650px) {
-    padding: 60px 25px;
+    padding: 70px 25px;
   }
 
   .details {
@@ -25,6 +25,7 @@
     }
     .detail {
       max-width: 700px;
+      line-height: 28px;
     }
   }
   .watermark {

@@ -27,10 +27,10 @@ root.render(
 );
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (pathname.includes("#")) return;
+    if (!!hash) return;
 
     window.scrollTo(0, 0);
   }, [pathname]);
