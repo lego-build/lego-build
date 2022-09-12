@@ -117,6 +117,17 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 999px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.setupcontainer .setup .content .download .container:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .setupcontainer .setup .content .download .container .template {
