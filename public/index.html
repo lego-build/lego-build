@@ -10,20 +10,35 @@
       content="Lego-build is a CLI tool that makes development fun again by automating routine tasks. It's a flexible tool that improves performance and greatly reduces the time it takes to ship a web application."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <meta property="og:type" content="website" />
+
+    <meta property="og:title" content="Lego-build" />
+    <meta
+      property="og:description"
+      content="Lego-build is a CLI tool that makes development fun again by automating routine tasks. It's a flexible tool that improves performance and greatly reduces the time it takes to ship a web application."
+    />
+    <meta
+      property="og:image"
+      content="https://lego-build.github.io/og_image.jpg"
+      itemprop="image"
+    />
+
+    <meta
+      property="og:image:secure_url"
+      content="https://lego-build.github.io/og_image.jpg"
+      itemprop="image"
+    />
+    <meta
+      property="og:image:url"
+      content="https://lego-build.github.io/og_image.jpg"
+    />
+
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="400" />
+
     <title>Lego-build</title>
   </head>
   <body>
@@ -39,5 +54,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- Redirecting -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
   </body>
 </html>
