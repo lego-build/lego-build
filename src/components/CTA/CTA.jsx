@@ -36,7 +36,11 @@ const CTA = () => {
           broke devs working from the trenches, if you appreciate it, abeg epp
           boys and show support.
         </p>
-        <a href="#" target={"_blank"} className={style.link}>
+        <a
+          href="https://opencollective.com/lego-build-collective"
+          target={"_blank"}
+          className={style.link}
+        >
           SUPPORT
         </a>
       </div>

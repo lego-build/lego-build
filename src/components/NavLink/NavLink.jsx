@@ -1,17 +1,27 @@
-import React, {memo} from "react";
+import React, { memo } from "react";
 import { NavLink as Link } from "react-router-dom";
 import style from "./index.module.css";
 
-function NavLink({ children, to }) {
+function NavLink({ children, to, href, external }) {
+  const Wrapper = ({ href, children, ...props }) =>
+    external ? (
+      <a target={"_blank"} href={href} {...props} className={style.link}>
+        {children}
+      </a>
+    ) : (
+      <Link {...props}>{children}</Link>
+    );
+
   return (
-    <Link
+    <Wrapper
       to={to}
+      href={href}
       className={({ isActive }) =>
         `${style.link} ${isActive ? style.active : ""}`
       }
     >
       {children}
-    </Link>
+    </Wrapper>
   );
 }
 
