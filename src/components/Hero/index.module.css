@@ -1,0 +1,108 @@
+.hero {
+  --hero-padding: 80px;
+  padding: var(--hero-padding) 50px;
+  min-height: 85vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1060px) {
+  .hero {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .hero {
+    padding: var(--hero-padding) 25px;
+    padding-bottom: calc(var(--hero-padding) + 20px);
+  }
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: 2em;
+  max-width: 600px;
+  line-height: 1.3em;
+}
+
+.hero h1 span {
+  position: relative;
+}
+
+.hero h1 span svg {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 3.5ch;
+}
+
+@media screen and (max-width: 1060px) {
+  .hero .left {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+.hero .talk {
+  color: #4d4d4d;
+  line-height: 28px;
+  margin: 20px 0;
+  max-width: 450px;
+  position: relative;
+}
+
+.hero .talk::before {
+  content: "";
+  position: absolute;
+  --size: 250px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  left: -120px;
+  bottom: -200%;
+  background-image: linear-gradient(164.74deg, rgba(157, 80, 246, 0.25) 0.17%, rgba(0, 245, 200, 0.25) 79.81%);
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
+  z-index: -1;
+}
+
+@media screen and (max-width: 1060px) {
+  .hero .talk::before {
+    display: none;
+  }
+}
+
+.hero .btn_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+.hero .btn_group a {
+  font-size: 14px;
+  line-height: 1;
+  padding: 0.7em 2.2em;
+}
+
+@media screen and (max-width: 1060px) {
+  .hero .btn_group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .hero .btn_group a {
+    width: 100%;
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

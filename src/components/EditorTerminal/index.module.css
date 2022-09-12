@@ -1,0 +1,118 @@
+.terminal {
+  font-family: Consolas, monospace;
+  font-size: 13.5px;
+  background-color: #1e1e1e;
+  border-top: 1px solid #595959;
+}
+
+.terminal pre {
+  white-space: nowrap;
+  overflow: auto;
+  padding: 20px;
+  font-family: Consolas, monospace;
+  height: 100%;
+}
+
+.terminal pre::-webkit-scrollbar {
+  height: 11px;
+  width: 11px;
+  border-radius: 15px;
+}
+
+.terminal pre::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.terminal pre::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 15px;
+}
+
+.terminal pre::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
+
+.terminal .head {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.terminal .head span {
+  color: #d539c3;
+}
+
+.terminal .head span:first-child {
+  color: #00cc00;
+}
+
+.terminal .head span:last-child {
+  color: #e3e524;
+}
+
+.terminal .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 9px;
+  color: #ebebeb;
+  margin-top: 1px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.terminal .input span:first-child {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.terminal .input span:last-child {
+  position: relative;
+}
+
+.terminal .input span:last-child.animation_is_over::after {
+  display: none;
+}
+
+.terminal .input span:last-child::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(calc(100% + 2px), -50%);
+          transform: translate(calc(100% + 2px), -50%);
+  width: 5px;
+  height: 13px;
+  background-color: #ebebeb;
+}
+
+.terminal .success {
+  color: #00cc00;
+  line-height: 1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.terminal .final_message {
+  color: #ebebeb;
+  margin-top: 20px;
+}
+
+.terminal .final_message span {
+  color: #e3e524;
+}
+/*# sourceMappingURL=index.module.css.map */

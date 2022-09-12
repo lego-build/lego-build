@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  align-items: center;
+  --vertical-padding: 100px;
+  --horizontal-padding: 50px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  gap: 200px;
+  color: #4d4d4d;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  @media screen and (max-width: 1000px) {
+    gap: 80px;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    --horizontal-padding: 25px;
+    gap: 60px;
+  }
+  .bottomLeft {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .content {
+    z-index: 1;
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h1 {
+      font-size: 2em;
+      font-weight: 700;
+      color: #000;
+      line-height: 1.1;
+    }
+    p {
+      line-height: 28px;
+    }
+    .link {
+      background-color: #9d50f6;
+      border-radius: 999px;
+      width: fit-content;
+      padding: 7px 30px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 300ms ease-in-out;
+      &:hover {
+        background-color: rgba(157, 80, 246, 0.75);
+      }
+    }
+  }
+  .team {
+    background-color: #fff;
+    width: fit-content;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    padding: 25px 40px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 8px;
+    z-index: 1;
+    h2 {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    a {
+      font-weight: 500;
+    }
+    .teamMembers {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+  .topLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .bottomTopLeft {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+  }
+  .gear {
+    animation: move 5s ease-in infinite alternate-reverse;
+    position: absolute;
+    bottom: 0;
+  }
+  .gear2 {
+    animation: move 4s ease-in infinite alternate-reverse;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+  }
+  .gear3 {
+    animation: move 3s ease-in infinite alternate-reverse;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+  }
+  @keyframes move {
+    from {
+      transform: translate(0px, 0px) rotate(0deg);
+    }
+    to {
+      transform: translate(60px, -30px) rotate(270deg);
+    }
+  }
+}

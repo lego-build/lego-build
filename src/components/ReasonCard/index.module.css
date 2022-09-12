@@ -1,0 +1,68 @@
+.container {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  max-width: 400px;
+  background-color: #fbfdfd;
+  -webkit-box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-box-shadow;
+  transition: -webkit-box-shadow;
+  transition: box-shadow;
+  transition: box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  z-index: 1;
+  font-size: 16px;
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  color: #4d4d4d;
+}
+
+.container:hover {
+  -webkit-box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container .icon {
+  background-color: #008f75;
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.container .icon svg {
+  width: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.container .heading {
+  font-size: 1.1em;
+  color: #000000;
+  font-weight: 700;
+}
+
+.container .detail b {
+  color: #000;
+}
+/*# sourceMappingURL=index.module.css.map */

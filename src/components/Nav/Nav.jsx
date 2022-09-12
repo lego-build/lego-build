@@ -23,7 +23,8 @@ function Nav() {
     },
     {
       text: "Sponsor",
-      to: "/sponsor",
+      external: true,
+      href: "https://opencollective.com/lego-build-collective",
     },
   ];
   const [navIsActive, setNavIsActive] = useState(false);
@@ -85,9 +86,9 @@ function Nav() {
         </svg>
       </Link>
       <ul className={navIsActive ? style.active : ""}>
-        {navItems.map(({ text, to }) => (
+        {navItems.map(({ text, ...props }) => (
           <li key={text}>
-            <NavLink to={to}>{text}</NavLink>
+            <NavLink {...props}>{text}</NavLink>
           </li>
         ))}
       </ul>

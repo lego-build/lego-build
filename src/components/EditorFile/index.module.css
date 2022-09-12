@@ -1,0 +1,15 @@
+.file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.file svg {
+  width: 20px;
+  height: auto;
+}
+/*# sourceMappingURL=index.module.css.map */

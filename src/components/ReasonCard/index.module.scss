@@ -1,0 +1,47 @@
+.container {
+  flex-basis: 30%;
+  max-width: 400px;
+  background-color: #fbfdfd;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+  z-index: 1;
+  &:hover {
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+  }
+  font-size: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #4d4d4d;
+
+  .icon {
+    background-color: #008f75;
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    svg {
+      width: 20px;
+      flex-shrink: 0;
+    }
+  }
+  .heading {
+    font-size: 1.1em;
+    color: #000000;
+    font-weight: 700;
+  }
+
+  .detail {
+    b {
+      color: #000;
+    }
+  }
+}

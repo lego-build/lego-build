@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  --vertical-padding: 100px;
+  --horizontal-padding: 50px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfaff;
+  position: relative;
+  color: #4d4d4d;
+  overflow: hidden;
+  @media screen and (max-width: 1070px) {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  @media screen and (max-width: 650px) {
+    padding: 70px 25px;
+  }
+  .content {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    line-height: 28px;
+    .header {
+      font-size: 2em;
+      font-weight: 700;
+      z-index: 1;
+      color: #000;
+      line-height: 1.1;
+      span {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 5ch;
+          font-size: 30px;
+          height: 8px;
+          background-color: #c99efa;
+          bottom: 5px;
+          z-index: -1;
+          left: 1px;
+        }
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      font-size: 16px;
+
+      b {
+        color: #000;
+      }
+    }
+  }
+  .illustration {
+    max-width: 100%;
+    height: auto;
+  }
+  .biceps {
+    position: absolute;
+    bottom: -50px;
+    z-index: -1;
+    right: 20px;
+    animation: skew 4s ease infinite alternate-reverse;
+
+    @keyframes skew {
+      from {
+        transform: skew(0deg, 0deg);
+      }
+
+      to {
+        transform: skew(30deg, -30deg);
+      }
+    }
+  }
+  .leftDots {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+  }
+  .rightDots {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+  }
+}

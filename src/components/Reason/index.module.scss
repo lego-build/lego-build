@@ -1,0 +1,110 @@
+.container {
+  --vertical-padding: 100px;
+  --horizontal-padding: 50px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  font-size: 16px;
+  background-color: #fbfdfd;
+  position: relative;
+  color: #4d4d4d;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  @media screen and (max-width: 650px) {
+    padding: 70px 25px;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1;
+    .heading {
+      font-weight: 700;
+      font-size: 2em;
+      color: #000000;
+    }
+    .detail {
+      max-width: 700px;
+      line-height: 28px;
+    }
+  }
+  .watermark {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    z-index: 0;
+    animation: skew 4s ease infinite alternate-reverse;
+    @keyframes skew {
+      from {
+        transform: skew(0deg, 0deg);
+      }
+
+      to {
+        transform: skew(30deg, -30deg);
+      }
+    }
+  }
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    justify-items: flex-start;
+    z-index: 1;
+    @media screen and (max-width: 1130px) {
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+    }
+  }
+  .cta {
+    z-index: 1;
+    margin-top: 28px;
+    .link {
+      text-decoration: underline;
+      color: #058d74;
+      cursor: pointer;
+      transition: color 300ms ease-in-out;
+      &:hover {
+        color: #09cda9;
+      }
+    }
+  }
+  .block1 {
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    animation: move 4s ease infinite alternate-reverse;
+    @media screen and (max-width: 650px) {
+      scale: 0.5;
+    }
+  }
+  .block2 {
+    position: absolute;
+    right: 20%;
+    bottom: 20px;
+    animation: move 4s ease infinite alternate-reverse;
+    @media screen and (max-width: 650px) {
+      scale: 0.5;
+    }
+  }
+
+  .block3 {
+    position: absolute;
+    left: 47%;
+    bottom: 50px;
+    animation: move 4s ease infinite alternate-reverse;
+    @media screen and (max-width: 650px) {
+      scale: 0.5;
+    }
+  }
+  @keyframes move {
+    from {
+      transform: translate(0px, 0px);
+    }
+
+    to {
+      transform: translate(30px, -30px);
+    }
+  }
+}

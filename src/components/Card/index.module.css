@@ -33,6 +33,7 @@
       -ms-flex-align: center;
           align-items: center;
   z-index: 1;
+  font-family: "Raleway", sans-serif;
 }
 
 .card .header p {

@@ -1,0 +1,14 @@
+.container {
+  color: #4d4d4d;
+  font-weight: 400;
+  a {
+    color: #008f75;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

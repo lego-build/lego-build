@@ -1,0 +1,9 @@
+.wrapper .toggle svg {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  width: 11px;
+  height: auto;
+}
+/*# sourceMappingURL=index.module.css.map */

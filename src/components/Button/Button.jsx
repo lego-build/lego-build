@@ -1,10 +1,22 @@
 import style from "./index.module.css";
+import { Link } from "react-router-dom";
 
-const Button = ({ children, ...props }) => {
+const Button = ({ children, to, outline, ...props }) => {
+  const Wrapper = ({ children, ...props }) =>
+    to ? <Link {...props}>{children}</Link> : <a {...props}>{children}</a>;
+
+  const inlineStyle = outline
+    ? {
+        backgroundColor: "transparent",
+        border: "1px solid #008f75",
+        color: "#008f75",
+      }
+    : {};
+
   return (
-    <a {...props} className={style.button}>
+    <Wrapper {...props} className={style.button} style={inlineStyle} to={to}>
       {children}
-    </a>
+    </Wrapper>
   );
 };
 

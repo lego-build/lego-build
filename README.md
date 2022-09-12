@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+<br />
+<p align="center"><img src="logo.svg" style="width: 350px"  alt="Logo" /></p>
+<br />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Lego-build is a CLI tool that helps speed up front-end development workflow by reducing the amount of boilerplate code you write. You can easily create components, pages, reducers, actions, hooks or any special 'blocks' your app is made of — in one line.
 
-In the project directory, you can run:
+## Quick setup
 
-### `npm start`
+You can install lego-build globally from npm:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+npm i @ogteam/lego-build -g
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br />
+Then you can quickly create a component (Nav for instance) by running:
 
-### `npm test`
+```
+lego-build component Nav
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+But lego-build does more than just create 'components'. It's far more flexible and powerful than that.
 
-### `npm run build`
+## Documentation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For detailed (and easy to understand) documentation on how to configure lego-build, check out our [docs site](https://lego-build.github.io/docs).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features ⭐
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There are other CLI tools that help you make React components easily. But lego-build is far different. It:
 
-### `npm run eject`
+- is easily configurable.
+- can be used for any front-end framework.
+- has a vast [community of developers](https://lego-build.github.io/community) and the workflows they use to setup lego-build.
+- has shorter CLI commands to save your precious time even more.
+- enables you create any 'block' your app is composed of, not just components.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+We are open to any ideas you may have to make the tool better. Just open a new issue to tell us your idea for a new feature. For bug fixes (though we're sure there'll be none 😌) fork the repo and send in a pull request.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We're on a mission to make front-end development **fun** again!

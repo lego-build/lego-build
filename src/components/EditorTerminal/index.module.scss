@@ -1,0 +1,94 @@
+.terminal {
+  font-family: Consolas, monospace;
+  font-size: 13.5px;
+  background-color: #1e1e1e;
+  border-top: 1px solid #595959;
+
+  pre {
+    white-space: nowrap;
+    overflow: auto;
+    padding: 20px;
+    font-family: Consolas, monospace;
+    height: 100%;
+    &::-webkit-scrollbar {
+      height: 11px;
+      width: 11px;
+      border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+
+  .head {
+    pointer-events: none;
+    user-select: none;
+    width: max-content;
+    span {
+      color: #d539c3;
+
+      &:first-child {
+        color: #00cc00;
+      }
+
+      &:last-child {
+        color: #e3e524;
+      }
+    }
+  }
+
+  .input {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #ebebeb;
+    margin-top: 1px;
+    width: max-content;
+
+    span:first-child {
+      pointer-events: none;
+      user-select: none;
+    }
+    span:last-child {
+      position: relative;
+      &.animation_is_over::after {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        right: 0;
+        top: 50%;
+        transform: translate(calc(100% + 2px), -50%);
+        width: 5px;
+        height: 13px;
+        background-color: #ebebeb;
+      }
+    }
+  }
+
+  .success {
+    color: #00cc00;
+    line-height: 1em;
+    width: max-content;
+  }
+  .final_message {
+    color: #ebebeb;
+    margin-top: 20px;
+    span {
+      color: #e3e524;
+    }
+  }
+}

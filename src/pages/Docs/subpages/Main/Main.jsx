@@ -225,8 +225,8 @@ export default blockName;
           Initializing the JSON file
         </Heading>
         <p>
-          The first time try to make a block with lego-build, it automatically
-          creates your{" "}
+          The first time you try to make a block with lego-build, it
+          automatically creates your{" "}
           <a className={style.subtle_link} href="#json-structure">
             lego.json
           </a>{" "}

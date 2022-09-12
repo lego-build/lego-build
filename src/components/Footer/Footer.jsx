@@ -64,7 +64,7 @@ function Footer() {
           <h3>Find Us</h3>
           <p>Connect with us on Twitter and Github!</p>
           <div className={style.icons}>
-            <a href="https://github.com/lego-build" target="_blank">
+            <a href="#" target="_blank">
               <svg
                 width="32"
                 height="32"
@@ -78,7 +78,7 @@ function Footer() {
                 />
               </svg>
             </a>
-            <a href="#" target="_blank">
+            <a href="https://github.com/lego-build" target="_blank">
               <svg
                 width="27"
                 height="28"

@@ -1,4 +1,5 @@
-@import url('./sass/abstracts/_colors.scss');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap");
+@import url("./sass/abstracts/_colors.scss");
 @font-face {
   font-family: "Scandia";
   src: url("./assets/fonts/Scandia-Light.ttf") format("truetype");
@@ -33,6 +34,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./assets/fonts/SEGOEUI.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --primary-color: #9d50f6;
 }
@@ -48,6 +56,6 @@
 body {
   font-family: Scandia, sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }

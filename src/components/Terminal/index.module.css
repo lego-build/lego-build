@@ -11,6 +11,7 @@
   white-space: nowrap;
   overflow: auto;
   padding: 20px;
+  font-family: Consolas, monospace;
 }
 
 .terminal pre::-webkit-scrollbar {

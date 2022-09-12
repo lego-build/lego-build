@@ -1,0 +1,100 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  --vertical-padding: 100px;
+  --horizontal-padding: 50px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fcfaff;
+}
+
+@media screen and (max-width: 1070px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    padding: 70px 25px;
+  }
+}
+
+.container .content {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .container .content {
+    gap: 5px;
+  }
+}
+
+.container .content .header {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.container .content .header span {
+  color: #9d50f6;
+}
+
+.container .content .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  line-height: 28px;
+  color: #4d4d4d;
+}
+
+.container .content .details b {
+  color: #000000;
+}
+
+.container .illustration {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 650px) {
+  .container .illustration {
+    width: 100%;
+  }
+}
+
+.container .rightBlurBlob {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+/*# sourceMappingURL=index.module.css.map */
