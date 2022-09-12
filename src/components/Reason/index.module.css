@@ -1,6 +1,6 @@
 .container {
   --vertical-padding: 60px;
-  --horizontal-padding: 30px;
+  --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   font-size: 16px;
   background-color: #fbfdfd;

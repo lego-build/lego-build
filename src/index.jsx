@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { Community, Contact, Docs, Home } from "./pages";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/contact" exact element={<Contact />} />
@@ -19,3 +25,15 @@ root.render(
     </Router>
   </React.StrictMode>
 );
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname.includes("#")) return;
+
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}

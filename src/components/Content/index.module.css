@@ -3,7 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   --vertical-padding: 60px;
-  --horizontal-padding: 30px;
+  --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -14,6 +14,7 @@
   background-color: #fcfaff;
   position: relative;
   color: #4d4d4d;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1070px) {

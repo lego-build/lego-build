@@ -2,23 +2,36 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  --vertical-padding: 60px;
-  --horizontal-padding: 30px;
+  --vertical-padding: 80px;
+  --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  color: #4D4D4D;
+  gap: 200px;
+  color: #4d4d4d;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
+  .container {
+    gap: 80px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 45px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    --horizontal-padding: 25px;
+    gap: 60px;
   }
 }
 
@@ -44,17 +57,18 @@
 }
 
 .container .content h1 {
-  font-size: 40px;
+  font-size: 2em;
   font-weight: 700;
   color: #000;
+  line-height: 1.1;
 }
 
 .container .content p {
   line-height: 30px;
 }
 
-.container .content span {
-  background-color: #9D50F6;
+.container .content .link {
+  background-color: #9d50f6;
   border-radius: 999px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -67,17 +81,18 @@
   transition: background-color 300ms ease-in-out;
 }
 
-.container .content span:hover {
+.container .content .link:hover {
   background-color: rgba(157, 80, 246, 0.75);
 }
 
 .container .team {
   background-color: #fff;
-  -ms-flex-preferred-size: 35%;
-      flex-basis: 35%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-  padding: 25px 50px;
+  padding: 25px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,12 +101,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 15px;
+  gap: 25px;
   border-radius: 8px;
   z-index: 1;
 }
 
-.container .team h3 {
+.container .team h2 {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.container .team a {
   font-weight: 500;
 }
 
@@ -103,7 +123,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 }
 
 .container .topLeft {

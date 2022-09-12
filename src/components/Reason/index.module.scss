@@ -1,6 +1,6 @@
 .container {
   --vertical-padding: 60px;
-  --horizontal-padding: 30px;
+  --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   font-size: 16px;
   background-color: #fbfdfd;
@@ -35,15 +35,15 @@
     height: 250px;
     z-index: 0;
     animation: skew 4s ease infinite alternate-reverse;
-          @keyframes skew {
-              from {
-                transform: skew(0deg , 0deg);
-              }
-          
-              to {
-                transform:  skew(30deg, -30deg);
-              }
-            }
+    @keyframes skew {
+      from {
+        transform: skew(0deg, 0deg);
+      }
+
+      to {
+        transform: skew(30deg, -30deg);
+      }
+    }
   }
   .cards {
     display: flex;
@@ -74,36 +74,36 @@
     bottom: 20px;
     left: 20%;
     animation: move 4s ease infinite alternate-reverse;
-      @media screen and (max-width: 650px) {
-        scale: 0.5;
-      }
+    @media screen and (max-width: 650px) {
+      scale: 0.5;
+    }
   }
-    .block2 {
-      position: absolute;
-      right: 20%;
-      bottom: 20px;
-      animation: move 4s ease infinite alternate-reverse;
-      @media screen and (max-width: 650px) {
-          scale: 0.5;
-        }
+  .block2 {
+    position: absolute;
+    right: 20%;
+    bottom: 20px;
+    animation: move 4s ease infinite alternate-reverse;
+    @media screen and (max-width: 650px) {
+      scale: 0.5;
     }
-  
-    .block3 {
-      position: absolute;
-      left: 47%;
-      bottom: 50px;
-      animation: move 4s ease infinite alternate-reverse;
-      @media screen and (max-width: 650px) {
-          scale: 0.5;
-        }
+  }
+
+  .block3 {
+    position: absolute;
+    left: 47%;
+    bottom: 50px;
+    animation: move 4s ease infinite alternate-reverse;
+    @media screen and (max-width: 650px) {
+      scale: 0.5;
     }
-      @keyframes move {
-        from {
-          transform: translate(0px, 0px);
-        }
-    
-        to {
-          transform: translate(30px, -30px);
-        }
-      }
+  }
+  @keyframes move {
+    from {
+      transform: translate(0px, 0px);
+    }
+
+    to {
+      transform: translate(30px, -30px);
+    }
+  }
 }

@@ -2,15 +2,20 @@
   display: flex;
   position: relative;
   --vertical-padding: 60px;
-  --horizontal-padding: 30px;
+  --horizontal-padding: 50px;
   padding: var(--vertical-padding) var(--horizontal-padding);
   width: 100%;
   overflow-x: hidden;
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 1070px) {
     flex-direction: column-reverse;
-    gap: 30px;
+    gap: 50px;
   }
-  justify-content: space-around;
+  @media screen and (max-width: 650px) {
+    padding: 40px 25px;
+  }
+
+  justify-content: space-between;
+  gap: 40px;
   align-items: center;
   background-color: #fcfaff;
   .content {
@@ -18,15 +23,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-      @media screen and (max-width: 650px) {
-        gap: 5px;
-      }
+    @media screen and (max-width: 650px) {
+      gap: 5px;
+    }
     .header {
       font-size: 2em;
       font-weight: 700;
-      @media screen and (max-width: 650px) {
-         font-size: 1.85em;
-      }
       span {
         color: #9d50f6;
       }
@@ -35,7 +37,7 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
-      line-height: 30px;
+      line-height: 28px;
       color: #4d4d4d;
       b {
         color: #000000;
@@ -43,12 +45,12 @@
     }
   }
   .illustration {
-    flex-basis: 40%;
+    flex-basis: 50%;
     z-index: 1;
-  @media screen and (max-width: 650px) {
-    width: 75%;
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
   }
-}
   .rightBlurBlob {
     position: absolute;
     bottom: 0;

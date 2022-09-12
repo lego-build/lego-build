@@ -1,13 +1,14 @@
 .container {
   display: flex;
   --vertical-padding: 60px;
-    --horizontal-padding: 30px;
-    padding: var(--vertical-padding) var(--horizontal-padding);
+  --horizontal-padding: 50px;
+  padding: var(--vertical-padding) var(--horizontal-padding);
   justify-content: space-between;
   align-items: center;
   background-color: #fcfaff;
   position: relative;
   color: #4d4d4d;
+  overflow: hidden;
   @media screen and (max-width: 1070px) {
     flex-direction: column-reverse;
     gap: 30px;
@@ -66,16 +67,16 @@
     z-index: -1;
     right: 20px;
     animation: skew 4s ease infinite alternate-reverse;
-    
-      @keyframes skew {
-        from {
-          transform: skew(0deg, 0deg);
-        }
-    
-        to {
-          transform: skew(30deg, -30deg);
-        }
+
+    @keyframes skew {
+      from {
+        transform: skew(0deg, 0deg);
       }
+
+      to {
+        transform: skew(30deg, -30deg);
+      }
+    }
   }
   .leftDots {
     position: absolute;
