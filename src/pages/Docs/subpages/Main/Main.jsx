@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Code, Heading, Section, Terminal } from "../../../../components";
