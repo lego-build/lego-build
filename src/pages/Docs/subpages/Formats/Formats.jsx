@@ -13,13 +13,11 @@ function Formats() {
           File Formats
         </Heading>
         <p>
-          A file format is an object representing the pattern for a file used in
-          a block. It could also be represented by a string in the 'fileFormats'
-          property of the{" "}
+          A file format is an object that represents the pattern of a file that is utilized in a block. It might alternatively be represented by a string in the{" "}
           <Link className={style.subtle_link} to="/docs#json-structure">
             lego.json
           </Link>{" "}
-          file.
+          file's 'fileFormats' attribute.
         </p>
         <Table>
           <thead>
@@ -36,7 +34,7 @@ function Formats() {
               <td>-</td>
               <td>string</td>
               <td>
-                {"The file name. Use <name> to represent the block name."}
+                {"To indicate the name of the block, use <name>."}
               </td>
             </tr>
             <tr>
@@ -44,8 +42,7 @@ function Formats() {
               <td>-</td>
               <td>string</td>
               <td>
-                A path to your custom template for the file. Use “DEFAULT” to
-                use the default template if available.
+                A path to your own file template. If a default template is provided, use "DEFAULT."
               </td>
             </tr>
           </tbody>

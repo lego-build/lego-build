@@ -66,7 +66,7 @@ function Main() {
      // If the block is a folder, the formats for the files that make up the block.
      {
        "name": "<name>.jsx", // To indicate the name of the block, use <name>.
-       "template": "templates/jsxTemplate.jsx", // The path to the template file, if appropriate.
+       "template": "templates/jsxTemplate.jsx", // A path to your own file template. If a default template is provided, use "DEFAULT."
      },
      {
        "name": "<name>.scss",
@@ -101,7 +101,7 @@ function Main() {
  // String matching to file format objects
     "JSX": {
       "name": "<name>.jsx", // To indicate the name of the block, use <name>.
-      "template": "templates/jsxTemplate.jsx" //  The path to the template file, if appropriate.
+      "template": "templates/jsxTemplate.jsx" //  8The path to the template file, if appropriate.
     }
   }
 }
