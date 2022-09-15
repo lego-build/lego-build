@@ -40,6 +40,7 @@ const CTA = () => {
           href="https://opencollective.com/lego-build-collective"
           target={"_blank"}
           className={style.link}
+          rel="noreferrer"
         >
           SUPPORT
         </a>

@@ -53,7 +53,7 @@ const Setup = ({ loading, workflows }) => {
         <div className={style.content}>
           <span className={style.link}>
             By{" "}
-            <a href={author.profileLink} target="_blank">
+            <a href={author.profileLink} rel="noreferrer" target="_blank" >
               {author.name}
             </a>
           </span>
