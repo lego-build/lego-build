@@ -31,7 +31,7 @@ const Contact = () => {
             <a
               href="https://github.com/lego-build/lego-build/issues/new/choose"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               issue on github
             </a>
