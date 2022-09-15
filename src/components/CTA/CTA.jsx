@@ -32,9 +32,7 @@ const CTA = () => {
       <div className={style.content}>
         <h1>Appreciate the tool?</h1>
         <p>
-          This tool is currently being maintained and refined by a small team of
-          broke devs working from the trenches, if you appreciate it, abeg epp
-          boys and show support.
+          This tool is presently being updated and polished by a tiny team of broke developers laboring from the trenches; if you like it, please abeg epp guys and show your support.
         </p>
         <a
           href="https://opencollective.com/lego-build-collective"
