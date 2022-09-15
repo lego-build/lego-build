@@ -11,7 +11,8 @@
   "author": "The OG Team",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "terminal-image": "^2.0.0"
   },
   "devDependencies": {
     "jest": "^29.0.2"
