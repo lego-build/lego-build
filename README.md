@@ -43,13 +43,13 @@ It has a large [developer community](https://lego-build.github.io/community) and
 
 We welcome any suggestions for improving the tool. Simply create a [new issue](https://github.com/lego-build/lego-build/issues/new/choose) to inform us about your new feature proposal. To fix bugs assigned to you, [fork the repository](https://github.com/lego-build/lego-build/fork) and [submit a pull request](https://github.com/lego-build/lego-build/pulls).
 
-<br />
-
 
 We're on a quest to make front-end development **fun** again!
 
 ## License
 
 [MIT](LICENSE.md)
+
+<br />
 
 ---
