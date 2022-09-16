@@ -26,6 +26,9 @@ However, lego-build does more than merely generate 'components.' It's far more a
 ## Documentation
 Check out our [docs site](https://lego-build.github.io/docs) for thorough (and easy-to-understand) documentation on how to configure lego-build.
 
+## Help and discussions
+The [#lego-build]() channel of the [lego-build]() Discord community is our official resource for all questions related to using lego-build. lego-build is a great place to hang out, ask questions, and learn - please come and join us there!
+
 ## Features ⭐
 
 Other CLI tools make it simple to create components. But Lego-building is a very different story. It:
