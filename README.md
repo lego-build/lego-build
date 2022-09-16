@@ -49,6 +49,6 @@ We welcome any suggestions for improving the tool. Simply create a [new issue](h
 
 We're on a quest to make front-end development **fun** again!
 
-## 🛡️ License
+## License
 
 [MIT](LICENSE.md)
