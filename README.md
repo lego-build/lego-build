@@ -15,36 +15,31 @@ npm i @ogteam/lego-build -g
 ```
 
 <br />
-Then, for example, you can rapidly construct a component (Nav) by running:
+Then you can quickly create a component (Nav for instance) by running:
 
 ```
 lego-build component Nav
 ```
 
-However, lego-build does more than merely generate 'components.' It's far more adaptable and strong than that.
+However, lego-build does more than merely generate 'components.' It's far more flexible and powerful than that.
 
 ## Documentation
-Check out our [docs site](https://lego-build.github.io/docs) for thorough (and easy-to-understand) documentation on how to configure lego-build.
 
-## Help and discussions
-The [#lego-build]() channel of the [lego-build]() Discord community is our official resource for all questions related to using lego-build. lego-build is a great place to hang out, ask questions, and learn - please come and join us there!
+Check out our [docs site](https://lego-build.github.io/docs) for thorough (and easy-to-understand) documentation on how to configure lego-build.
 
 ## Features ⭐
 
-Other CLI tools make it simple to create components. But Lego-building is a very different story. It:
+There are other CLI tools that help you make React components easily. But lego-build is far different. It:
 
 - is readily customizable.
-- It may be applied to any front-end framework.
-It has a large [developer community](https://lego-build.github.io/community) and the procedures they use to set up lego-build.
-- features shorter CLI commands to save you even more time.
-- Allows you to construct whatever 'block' your program is made up of, not simply components.
+- may be applied to any front-end framework.
+- has a vast [developer community](https://lego-build.github.io/community) and the workflows they use to set up lego-build.
+- has shorter CLI commands to save you even more time.
+- allows you to create whatever 'block' your app is made up of, not just components.
 
 ## Contributing
 
 We welcome any suggestions for improving the tool. Simply create a [new issue](https://github.com/lego-build/lego-build/issues/new/choose) to inform us about your new feature proposal. To fix bugs assigned to you, [fork the repository](https://github.com/lego-build/lego-build/fork) and [submit a pull request](https://github.com/lego-build/lego-build/pulls).
-
-
-We're on a quest to make front-end development **fun** again!
 
 ## License
 
@@ -53,3 +48,5 @@ We're on a quest to make front-end development **fun** again!
 <br />
 
 ---
+
+We're on a quest to make front-end development **fun** again!
