@@ -27,14 +27,14 @@ class BlockFiles {
       process.exit();
     }
 
-    return fileName == -1 ? null : fileName;
+    return fileName == undefined ? null : fileName;
   }
 
   generateFilePath(file) {
     let fileName = this.generateFileName(file, this.blockName);
 
     if (fileName == null) {
-      console.log("Mistake somewhere");
+      Logger.logError("There was an issue generating the file name :(");
       return;
     }
 

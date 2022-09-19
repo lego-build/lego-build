@@ -25,7 +25,7 @@ class Block {
       //The template file doesn't exist so it throws an expected error, so use the default
       //template
       if (err) {
-        console.log("There was an error");
+        Logger.logError("There was an error reading the template file :(");
         templateFile = "";
       } else {
         templateFile = data.toString().replaceAll("blockName", blockName);

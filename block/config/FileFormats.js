@@ -38,7 +38,7 @@ class FileFormats {
       //Set The default formats
       else if (fileFormat[1].template && fileFormat[1].template == "DEFAULT") {
         const defaultFormat = this.defaultFormats.get(fileFormat[0]);
-        if (defaultFormat != -1) {
+        if (defaultFormat != undefined) {
           fileFormat[1].template = defaultFormat;
         }
       }
