@@ -14,7 +14,8 @@ const Header = () => {
         </h1>
       </div>
       <p>
-        Examine several procedures and templates to find the best match for your project. Try searching for 'TypeScript' or 'hooks.'
+        Check out different workflows and templates to fit your project's needs.
+        Try searching for 'TypeScript', or 'hooks'.
       </p>
     </header>
   );
