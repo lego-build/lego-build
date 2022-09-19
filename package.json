@@ -4,16 +4,10 @@
   "description": "Lego-build is a CLI tool that makes development fun again by automating routine tasks like creating components, pages, etc",
   "main": "lego-build.js",
   "bin": "lego-build.js",
-  "scripts": {
-    "test": "jest"
-  },
   "keywords": [],
   "author": "The OG Team",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2"
-  },
-  "devDependencies": {
-    "jest": "^29.0.2"
   }
 }
