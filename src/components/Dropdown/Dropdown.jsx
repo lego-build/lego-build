@@ -32,7 +32,8 @@ function Dropdown({ id, text, sublinks, current }) {
     });
 
     setOpen(sectionInDropdownIsActive);
-  }, [current]);
+    
+  }, [current, sublinks]);
 
   return (
     <div className={style.dropdown}>

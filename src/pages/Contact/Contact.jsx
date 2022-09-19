@@ -22,18 +22,17 @@ const Contact = () => {
         </div>
         <div className={style.details}>
           <p>
-            Have an idea you think will make the tool better? Or you just want
-            to reach out? Send a{" "}
+            Have a suggestion about how to improve the tool? Or do you simply wish to reach out? Send a {" "}
             <a href="#" target="_blank" rel="noreferrer">
               DM on Twitter
             </a>
-            , or post an{" "}
+            , or {" "}
             <a
               href="https://github.com/lego-build/lego-build/issues/new/choose"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
-              issue on github
+              open a github issue.
             </a>
             .
           </p>

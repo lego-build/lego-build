@@ -14,22 +14,22 @@ const Content = () => {
         </h1>
         <div className={style.details}>
           <p>
-            React, by design, is unopinionated. The implication of this is that
-            while every developer tries to maintain some structure in their
-            project, this structure can vary for each developer. Some developers
-            store their all their components in a 'src/components' folder,
-            others follow atomic design, so they have folders for atoms,
-            molecules etc. While most React developers have the concept of
-            'components' in their app, there are other building blocks that
-            could be in a React app, there are layouts, pages, reducers, actions
-            etc.
+            React, by design, is unopinionated. The implication is that, while
+            every developer strives to maintain some organization in their
+            project, this structure varies from developer to developer. Some
+            developers keep all of their components in a 'src/components'
+            folder, whereas others use atomic design and have folders for atoms,
+            molecules, and so on. While most React developers have the concept
+            of 'components' in their project, there are additional building
+            blocks that may be found in a React app, such as layouts, pages,
+            reducers, actions, and so on.
           </p>
           <p>
-            So you see, a tool that aims to help developers easily build blocks
-            must be very flexible, and not hard-coded. That's what{" "}
-            <b>lego-build</b> does. All the configuration power lies in the hand
-            of the developer. It's a <b>flexible</b> tool, that bends to the
-            will of its master.
+            As you can see, a tool that attempts to assist developers in easily
+            building blocks must be extremely flexible and not hard-coded. That
+            is exactly what <b>lego-build</b> does. All the configuration power
+            lies in the hand of the developer. It's a <b>flexible</b> tool, that
+            bends to the will of its master.
           </p>
         </div>
         <FlexBiceps className={style.biceps} />

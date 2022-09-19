@@ -13,19 +13,19 @@ const cardDetails = [
     icons: <ClarityBlockLine />,
     heading: "BLOCK CONCEPT",
     detail:
-      "While other tools just see 'components', we see all the parts your React app is composed of as <b>blocks</b>. So you can easily create other special files like hooks, reducers etc. Not just 'components'.",
+      "While other tools just see 'components,' we see all of the pieces of your React program as <b>blocks</b>. As a result, you may simply construct other special files such as hooks, reducers, and so on. Not only 'components.'",
   },
   {
     icons: <ClockOutline />,
     heading: "QUICK STARTUP",
     detail:
-      "By default, the tool provides you with the basic blocks you'll need, like components, pages, reducers and actions. So you can set up your project quickly, without needing to tweak the configuration.",
+      "By default, the tool includes the core building blocks you'll need, such as components, pages, reducers, and actions. As a result, you can get your project up and running immediately without having to tweak the configuration.",
   },
   {
     icons: <ArrowsExpandOutline />,
     heading: "FLEXIBLE",
     detail:
-      "No other tool comes close to us in terms of flexibility. If you're working with a team of developers, all of you can configure lego-build the same way and be in sync. It suits any workflow.",
+      "In terms of flexibility, no other tool comes close. If you're working with a group of developers, you can all setup lego-build in the same way and stay in sync. It is appropriate for any workflow.",
   },
 ];
 const Reason = () => {
@@ -34,8 +34,8 @@ const Reason = () => {
       <div className={style.details}>
         <h1 className={style.heading}>Why us?</h1>
         <p className={style.detail}>
-          There are already a few CLI tools available for easily creating
-          components, so why use lego-build? Good question.
+          Why use lego-build when there are already a few CLI utilities for
+          simply generating components? That's a good question.
         </p>
       </div>
       <div className={style.cards}>
@@ -47,7 +47,7 @@ const Reason = () => {
       </div>
       <BlurBlob className={style.watermark} />
       <p className={style.cta}>
-        Convinced that we're good?{" "}
+        Are you certain that we're good?{" "}
         <HashLink to={"/docs#"} className={style.link}>
           Get started
         </HashLink>

@@ -5,7 +5,7 @@ import style from "./index.module.css";
 function NavLink({ children, to, href, external }) {
   const Wrapper = ({ href, children, ...props }) =>
     external ? (
-      <a target={"_blank"} href={href} {...props} className={style.link}>
+      <a target={"_blank"} href={href} {...props} rel="noopener noreferrer" className={style.link}>
         {children}
       </a>
     ) : (

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Code, Heading, Section, Terminal } from "../../../../components";
@@ -25,7 +24,7 @@ function Main() {
         <Heading element={"h2"} id={`${location}#installation`}>
           Installation
         </Heading>
-        <p>To get started, install lego-build from npm globally.</p>
+        <p>Install lego-build from npm globally to get started.</p>
         <Terminal>npm i @ogteam/lego-build -g</Terminal>
       </Section>
       <Section id="quick-start">
@@ -38,8 +37,8 @@ function Main() {
         </p>
         <Terminal>lego-build component Nav</Terminal>
         <p>
-          But lego-build can do much more than make 'components'. Its beauty
-          lies in flexibility.
+          However, lego-build can do much more than just create "components."
+          Its beauty is in its flexibility.
         </p>
       </Section>
       <Section id="philosophy">
@@ -47,15 +46,16 @@ function Main() {
           Philosophy
         </Heading>
         <p>
-          While React is unopinionated, and every developer structures their
-          front-end app differently, every app is made up of special files and
-          folders we call{" "}
+          While React is unopinionated, and each developer structures their
+          front-end app differently, each app is comprised of specific files and
+          directories we call{" "}
           <a href="#blocks" className={style.emphasized_link}>
             blocks
           </a>
-          . These blocks could be components, pages, reducers, actions, hooks,
-          and so much more. Lego-build allows us easily to configure (and mould
-          🤓) the blocks we'll be using in our application, inside a{" "}
+          . These blocks might be components, pages, reducers, actions, hooks,
+          and a variety of other things. Lego-build allows us easily to
+          configure (and mould 🤓) the blocks we'll be using in our application,
+          in a{" "}
           <a href="#json-structure" className={style.emphasized_link}>
             lego.json
           </a>{" "}
@@ -67,16 +67,15 @@ function Main() {
         <Heading element={"h3"} id={`${location}#blocks`}>
           Blocks
         </Heading>
-        <p>Let's see how we'll model a 'component' block as an example:</p>
+        <p>As an example, consider how we'll model a 'component' block:</p>
         <Code>
           {`{
-   "type": "component", // Name of the block type
-   "path": "src/components", // Path where the block will be stored, relative to root
-   "isFile": false, // Whether the block is a file or a folder, false by default
-   "files": [
-     // Formats for files that make up the block, if the block is a folder
+   "type": "component", // The name of the block type
+   "path": "src/components", // Path relative to root where the block will be stored
+   "isFile": false, // Is this a file? or a folder? False by default.
+   "files": [ // If the block is a folder, the formats for the files that make up the block.
      {
-       "name": "<name>.jsx", // Use <name> to represent the block name
+       "name": "<name>.jsx", // To indicate the name of the block, use <name>.
        "template": "templates/jsxTemplate.jsx", // Path to file template if any
      },
      {
@@ -87,37 +86,37 @@ function Main() {
        "template": "templates/testTemplate.jsx",
      },
    ],
-   "file": null, // An object or a string(more on this) representing the file format, used if the block is a file and not a folder  
+   "file": null, // If the block is a file, this object or string (more on this) represents the file format.
 }`}
         </Code>
         <p>
           So basically, a block is a file or a collection of files, each with
-          their names and templates. With this configuration, a user has full
-          control over how the block is shaped and moulded.
+          their names and templates. With this arrangement, the user has
+          complete control over how the block is formed and moulded.
         </p>
         <p>
-          File formats that will be used over different blocks can be stored as
-          constants. For example, a JSX file may be used in several blocks like
-          'component', 'page', 'layout' etc. And all of them might use the same
-          template. So our config file will have a '
+          Constants can be used to store file formats that will be used across
+          multiple blocks. A JSX file, for example, can be used in several
+          blocks such as 'component,' 'page,' 'layout,' and so on. And they
+          might all be using the same template. As a result, our configuration
+          file will include a '
           <a href="#file-formats" className={style.emphasized_link}>
             fileFormats
           </a>
-          ' object, mapping strings to fileFormat objects.
+          ' object that will map strings to fileFormat objects.
         </p>
       </Section>
       <Section id="file-formats">
         <Heading element={"h3"} id={`${location}#file-formats`}>
           File Formats
         </Heading>
-        <p>Let's see how file formats can be reused in blocks:</p>
+        <p>Let's have a look at how file formats may be reused in blocks:</p>
         <Code>
           {`{
-  "fileFormats": {
-    // Object matching file format objects to strings
+  "fileFormats": { // Object matching file format objects to strings
     "JSX": {
-      "name": "<name>.jsx", // Use <name> to represent the block name
-      "template": "templates/jsxTemplate.jsx" // Path to file template if any
+      "name": "<name>.jsx", // To indicate the name of the block, use <name>.
+      "template": "templates/jsxTemplate.jsx" //  The path to the template file, if any.
     }
   }
 }
@@ -125,28 +124,33 @@ function Main() {
         </Code>
         <p>
           In the 'fileFormats' property of our JSON file, we have mapped the
-          string “JSX” to an object representing the JSX file format. Now,
+          string "JSX" to an object representing the JSX file format. Now,
           instead of typing objects in our blocks, we can just use the string
           properties specified in our 'fileFormats' object, as shown below:
         </p>
         <Code>
           {`{
-  "type": "component", // Name of the block type
-  "path": "src/components", // Path where the block will be stored, relative to root
-  "isFile": false, // Whether the block is a file or a folder, false by default
+  "type": "component", // The name of the block type
+  "path": "src/components", // Path relative to root where the block will be stored
+  "isFile": false, // Is this a file? or a folder? False by default.
   "files": ["JSX", "CSS", "TEST"],
-  "file": null // An object or a string(more on this) representing the file format, used if the block is a file and not a folder
+  "file": null // If the block is a file, this object or string represents the file format.
 }
 `}
         </Code>
         <p>
-          Far shorter and concise! You can specify the path to your custom
-          templates inside the file format object. If there is a default
+          Much shorter and more succinct! You can specify the path to your
+          custom templates inside the file format object. If there is a default
           template available, you can just specify “DEFAULT”. You can check out
           which file formats have default templates in the{" "}
-          <a href="#" target="_blank" className={style.subtle_link}>
-            default lego.json file.
-          </a>{" "}
+          <a
+            href="https://github.com/lego-build/lego-build/blob/package/lego.json"
+            target="_blank"
+            className={style.subtle_link}
+          >
+            default lego.json file
+          </a>
+          .
         </p>
       </Section>
       <Section id="templates">
@@ -155,9 +159,9 @@ function Main() {
         </Heading>
         <p>
           You can create your own custom templates for your blocks and block
-          files. All you have to do is use 'blockName' for places where you want
-          your block's name to appear. Take the default JSX template as an
-          example:
+          files. All you have to do is use 'blockName' everywhere you want your
+          block's name to appear. As an example, consider the default JSX
+          template:
         </p>
         <Code>
           {`import React from "react";
@@ -171,7 +175,11 @@ export default blockName;
         </Code>
         <p>
           View the available{" "}
-          <a href="#" className={style.subtle_link} target="_blank">
+          <a
+            href="https://github.com/lego-build/lego-build/tree/package/block/templates"
+            className={style.subtle_link}
+            target="_blank"
+          >
             template files here.
           </a>
         </p>
@@ -181,19 +189,19 @@ export default blockName;
           JSON Structure
         </Heading>
         <p>
-          Now that we've had a rundown of how blocks and fileFormats are
-          modeled, let's now see the overall structure of our lego.json file.
+          Let's take a look at the general layout of our lego.json file now that
+          we've seen how blocks and fileFormats are modeled.
         </p>
         <Code>
           {`{
   "blocks": [
     // An array of blocks
     {
-      "type": "component", // Name of the block type
-      "path": "src/components", // Path where the block will be stored, relative to root
-      "isFile": false, // Whether the block is a file or a folder, false by default
+      "type": "component", // The name of the block type
+      "path": "src/components", // Path relative to root where the block will be stored
+      "isFile": false, // Is this a file? or a folder? False by default.
       "files": ["JSX", "CSS", "TEST"],
-      "file": null // An object representing the file format, used if the block is a file and not a folder
+      "file": null // If the block is a file rather than a folder, this object or string represents the file format.
     }
     //...
   ],
@@ -201,8 +209,8 @@ export default blockName;
   "fileFormats": {
     // An object mapping file objects to strings
     "JSX": {
-      "name": "<name>.jsx", // Use <name> to represent the block name
-      "template": "templates/jsxTemplate.jsx" // Path to file template if any
+      "name": "<name>.jsx", // To indicate the name of the block, use <name>.
+      "template": "templates/jsxTemplate.jsx" // The path to the template file, if any.
     }
     //...
   }
@@ -215,9 +223,8 @@ export default blockName;
           Commands
         </Heading>
         <p>
-          There are 3 basic commands: One for making creating the lego.json
-          file, one for creating (moulding) blocks, and another for renaming
-          blocks.
+          There are three fundamental commands: one to create the lego.json
+          file, one to create (mould) blocks, and one to rename blocks.
         </p>
       </Section>
       <Section id="initializing">
@@ -238,14 +245,14 @@ export default blockName;
         <Heading element={"h3"} id={`${location}#making-blocks`}>
           Making blocks
         </Heading>
-        <p>The command for creating blocks follows this syntax:</p>
+        <p>The command for creating blocks has the following syntax:</p>
         <Terminal>{"lego-build <block-type> <block-name> <options>"}</Terminal>
         <p>
-          We'll see more about the{" "}
+          We'll go through the{" "}
           <a href="#options" className={style.subtle_link}>
             options
           </a>{" "}
-          later, but for now let's look at an example without options:
+          in more detail later, but for now, consider an example without them:
         </p>
         <Terminal>lego-build page HomePage</Terminal>
       </Section>
@@ -254,20 +261,20 @@ export default blockName;
           Renaming blocks
         </Heading>
         <p>
-          You can easily rename blocks, which includes the folder and all its
-          component files, with lego-build.
+          With lego-build, you can quickly rename blocks, which include the
+          folder and all of its component files.
         </p>
         <Terminal>
           {"lego-build rename <old-name>:<block-type> to <new-name>"}
         </Terminal>
-        <p>In this example, we're renaming a Nav component, to Navbar</p>
+        <p>We're renaming a Nav component to Navbar in this example.</p>
         <Terminal>lego-build rename Nav:component to Navbar</Terminal>
       </Section>
       <Section id="options">
         <Heading element={"h2"} id={`${location}#options`}>
           Options
         </Heading>
-        <p>You can pass some options when moulding a block, namely:</p>
+        <p>When moulding a block, you have the following options:</p>
         <ul className={style.ul}>
           <li>--path</li>
         </ul>
@@ -280,17 +287,16 @@ export default blockName;
           Path
         </Heading>
         <p>
-          The path option is used to override the default path for the block as
-          specified in the JSON file.
+          The path option is used to alter the block's default path as given in
+          the JSON file.
         </p>
         <Terminal>
           lego-build component Nav --path src/components/Navigation
         </Terminal>
         <p>
-          If the location for component blocks as specified in the lego.json
-          file was 'src/components', using the --path option creates this Nav
-          component in the new path specified, overriding the one in the
-          lego.json file.
+          If the destination for component blocks was 'src/components' in the
+          lego.json file, adding the --path option produces this Nav component
+          in the new path supplied, overriding the one in the lego.json file.
         </p>
       </Section>
       <Section id="summary">
@@ -298,25 +304,33 @@ export default blockName;
           Summary
         </Heading>
         <p>
-          We have seen how lego-build improves development workflow by making it
-          easy to configure and create the blocks your front-end app is made up
-          of. Although by default, lego-build was configured with React
-          developers in mind, because of its flexibility, it can actually be
-          used in other front-end frameworks. You can check out how other
-          developers are using lego-build in the{" "}
+          We've seen how lego-build enhances the development process by making
+          it simple to configure and generate the blocks that make up your
+          front-end project. Although lego-build was designed with React
+          developers in mind, its flexibility allows it to be used in other
+          front-end frameworks. In the{" "}
           <HashLink className={style.subtle_link} to="/community#">
             community
           </HashLink>{" "}
-          section.
+          area, you can see how other developers are utilizing lego-build.
         </p>
         <p>
-          We tried our best to make this documentation as detailed and easy to
-          understand as possible, but if you feel something is missing, feel
-          free to{" "}
+          We made every effort to make this documentation as clear and easy to
+          read as possible, but if you believe something is missing, please{" "}
           <HashLink className={style.subtle_link} to="/contact#">
-            contact
+            contact us
           </HashLink>{" "}
-          us. Thanks for using our tool, we know you'll find it very useful.
+          or{" "}
+          <a
+            className={style.subtle_link}
+            href="https://github.com/lego-build/lego-build/issues/new/choose"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            open an issue
+          </a>{" "}
+          with your recommendations. Thanks for using our tool, we know you'll
+          find it very useful.
         </p>
         <p>We're on a mission to make front-end development fun again!</p>
       </Section>

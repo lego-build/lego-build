@@ -13,9 +13,9 @@ function Blocks() {
           Blocks
         </Heading>
         <p>
-          A block is simply an object that represents the structure for a folder
-          or file that will be reused in your application, like a component,
-          hook, page, reducer etc.
+          A block is an object that defines the structure of a folder or file
+          that will be reused in your application, like a component, hook, page,
+          reducer, and so on.
         </p>
         <Table>
           <thead>
@@ -37,13 +37,13 @@ function Blocks() {
               <td>path</td>
               <td>-</td>
               <td>string</td>
-              <td>Path where the block will be stored, relative to root.</td>
+              <td>Path relative to root, where the block will be stored.</td>
             </tr>
             <tr>
               <td>isFile</td>
               <td>false</td>
               <td>boolean</td>
-              <td>Whether the block is a file, or a folder.</td>
+              <td>Specifies if the block is a file or a folder.</td>
             </tr>
             <tr>
               <td>files</td>
