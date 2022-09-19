@@ -1,6 +1,5 @@
 <br />
 <p align="center"><img src="logo.svg#gh-light-mode-only" style="width: 350px"  alt="Logo" /></p>
-<br />
 <p align="center"><img src="LogoDark.svg#gh-dark-mode-only" style="width: 350px"  alt="Logo" /></p>
 <br />
 
@@ -45,7 +44,7 @@ We welcome any suggestions for improving the tool. Simply create a [new issue](h
 
 ## License
 
-[MIT](LICENSE.md)
+[MIT](LICENSE)
 
 <br />
 
