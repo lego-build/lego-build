@@ -1,20 +1,20 @@
 const chalk = require("chalk");
-
+const heading = chalk.hex("#9d50f6");
 class Help {
   static logHelp() {
-    console.log(`\nLego-build is a tool that makes building front-end apps faster.
+    console.log(`\n${heading("Lego-build is a tool that accelerates the development of front-end applications")}.
             
-${chalk.bold("Usage:")}
+${heading.bold("Usage:")}
 lego-build <block-type> <block-name> [<options>]
 
-${chalk.bold("Other commands:")}       
+${heading.bold("Other commands:")}       
 init: lego-build init
 rename: lego-build rename <old-block-name>:<block-type> to <new-block-name>
 
-${chalk.bold("Options:")}
---path: Override path to block as specified in lego.json
+${heading.bold("Options:")}
+--path: Override the default path to the block as defined by lego.json
     
-For detailed documentation, go to the docs page at ${chalk.underline("https://lego-build.github.io/docs")}`);
+Go to the docs page at ${chalk.yellow.underline("https://lego-build.github.io/docs")} for further information.`);
   }
 }
 
