@@ -1,15 +1,15 @@
 on:
   fork:
   push:
-    branches: [ main ]
+    branches: [main]
   issues:
-    types: [ opened ]
+    types: [opened]
   issue_comment:
-    types: [ created ]
+    types: [created]
   pull_request_target:
-    types: [ opened ]
+    types: [opened]
   pull_request_review_comment:
-    types: [ created ]
+    types: [created]
 
 jobs:
   welcome:
@@ -18,7 +18,7 @@ jobs:
       - name: run env
         run: echo ${{ secrets.GENERAL_TOKEN }}
       - name: run env2
-        run: echo $GENERAL_TOKEN 
+        run: echo $GENERAL_TOKEN
       - uses: actions/checkout@main
       - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
@@ -26,12 +26,8 @@ jobs:
           issue-message: |
             ## Thanks for taking the time to contribute by creating an issue
             #### It's great having you!.
-            This is an automated message, we'll give response soon.
+            This is an automated message, we'll give a response soon.
           pr-message: |
-             ## Thanks for taking the time to contribute by creating a pull request.
-             Please hold On while your contributions are being reviewed.
-             This is an automated message, we'll give response soon.
-
-
-
-        
+            ## Thanks for taking the time to contribute by creating a pull request.
+            Please hold on while your contributions are being reviewed.
+            This is an automated message, we'll give a response soon.
