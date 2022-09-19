@@ -1,10 +1,12 @@
 <br />
-<p align="center"><img src="logo.svg" style="width: 350px"  alt="Logo" /></p>
+<p align="center"><img src="logo.svg#gh-light-mode-only" style="width: 350px"  alt="Logo" /></p>
+<br />
+<p align="center"><img src="LogoDark.svg#gh-dark-mode-only" style="width: 350px"  alt="Logo" /></p>
 <br />
 
 ## Overview
 
-Lego-build is a CLI tool that helps speed up front-end development workflow by reducing the amount of boilerplate code you write. You can easily create components, pages, reducers, actions, hooks or any special 'blocks' your app is made of — in one line.
+Lego-build is a command-line tool that speeds up front-end development workflow by minimizing boilerplate code. You can easily create components, pages, reducers, actions, hooks or any special 'blocks' your app is made of — in one line.
 
 ## Quick setup
 
@@ -21,28 +23,32 @@ Then you can quickly create a component (Nav for instance) by running:
 lego-build component Nav
 ```
 
-But lego-build does more than just create 'components'. It's far more flexible and powerful than that.
+However, lego-build does more than merely generate 'components.' It's far more flexible and powerful than that.
 
 ## Documentation
 
-For detailed (and easy to understand) documentation on how to configure lego-build, check out our [docs site](https://lego-build.github.io/docs).
+Check out our [docs site](https://lego-build.github.io/docs) for thorough (and easy-to-understand) documentation on how to configure lego-build.
 
 ## Features ⭐
 
 There are other CLI tools that help you make React components easily. But lego-build is far different. It:
 
-- is easily configurable.
-- can be used for any front-end framework.
-- has a vast [community of developers](https://lego-build.github.io/community) and the workflows they use to setup lego-build.
-- has shorter CLI commands to save your precious time even more.
-- enables you create any 'block' your app is composed of, not just components.
+- is readily customizable.
+- may be applied to any front-end framework.
+- has a vast [developer community](https://lego-build.github.io/community) and the workflows they use to set up lego-build.
+- has shorter CLI commands to save you even more time.
+- allows you to create whatever 'block' your app is made up of, not just components.
 
 ## Contributing
 
-We are open to any ideas you may have to make the tool better. Just open a new issue to tell us your idea for a new feature. For bug fixes (though we're sure there'll be none 😌) fork the repo and send in a pull request.
+We welcome any suggestions for improving the tool. Simply create a [new issue](https://github.com/lego-build/lego-build/issues/new/choose) to inform us about your new feature proposal. To fix bugs assigned to you, [fork the repository](https://github.com/lego-build/lego-build/fork) and [submit a pull request](https://github.com/lego-build/lego-build/pulls).
+
+## License
+
+[MIT](LICENSE.md)
 
 <br />
 
 ---
 
-We're on a mission to make front-end development **fun** again!
+We're on a quest to make front-end development **fun** again!
