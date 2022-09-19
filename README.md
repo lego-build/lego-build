@@ -1,10 +1,12 @@
 <br />
-<p align="center"><img src="logo.svg" style="width: 350px"  alt="Logo" /></p>
+<p align="center"><img src="logo.svg#gh-light-mode-only" style="width: 350px"  alt="Logo" /></p>
+<br />
+<p align="center"><img src="LogoDark.svg#gh-dark-mode-only" style="width: 350px"  alt="Logo" /></p>
 <br />
 
 ## Overview
 
-Lego-build is a command-line tool that speeds up front-end development workflow by minimizing boilerplate code. Components, pages, reducers, actions, hooks, and whatever specific 'blocks' your app is comprised of may all be created in one line.
+Lego-build is a command-line tool that speeds up front-end development workflow by minimizing boilerplate code. You can easily create components, pages, reducers, actions, hooks or any special 'blocks' your app is made of — in one line.
 
 ## Quick setup
 
