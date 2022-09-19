@@ -14,7 +14,11 @@ const Community = () => {
           Get help from a <span>vast</span> community
         </h1>
         <p className={style.details}>
-          Finding a scalable front end structure is difficult, but thankfully for us, there is a large community of people ready to share their scalable process with us. Examine how other developers are utilizing lego-build. Examine their workflows, templates, and configurations. You are also free to share yours with the community.
+          Finding a front end structure that scales well is hard (we know 😪),
+          but fortunately for us, there's a whole community of people willing to
+          share their scalable workflow with us. See how other developers are
+          using lego-build. Check out their workflows, templates and setups.
+          You're welcome to share yours with the community too!
         </p>
         <Link to={"/community"}>
           <span className={style.linkContainer}>

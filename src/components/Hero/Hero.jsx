@@ -16,7 +16,9 @@ function Hero() {
           out of React development
         </h1>
         <p className={style.talk}>
-          A command-line utility for accelerating your development workflow. It allows you to create components, pages, reducers, hooks, and other React building blocks using boilerplate code with a single command.
+          A command-line utility for accelerating your development workflow. It
+          allows you to create components, pages, reducers, hooks, (and other
+          React building blocks using boilerplate code) with a single command.
         </p>
         <div className={style.btn_group}>
           <Button to="/docs">DOCS</Button>

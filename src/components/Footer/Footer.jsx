@@ -55,16 +55,16 @@ function Footer() {
       </svg>
       <div className={style.grid}>
         <p className={style.talk}>
-          Lego-build is a command-line application that makes development more pleasurable by automating routine tasks. It is a flexible tool that improves performance and significantly reduces the time required to ship a web application.
+          Lego-build is a command-line application that makes development fun
+          again by automating routine tasks. It is a flexible tool that improves
+          performance and significantly reduces the time required to ship a web
+          application.
         </p>
         <div className={style.contact}>
           <h3>Find Us</h3>
-          <p>Follow us on Twitter and Github!</p>
+          <p>Connect with us on Twitter and Github!</p>
           <div className={style.icons}>
-            <a href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="#" target="_blank" rel="noopener noreferrer">
               <svg
                 width="32"
                 height="32"
@@ -78,7 +78,11 @@ function Footer() {
                 />
               </svg>
             </a>
-              <a href="https://github.com/lego-build" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/lego-build"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg
                 width="27"
                 height="28"
