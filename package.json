@@ -1,11 +1,27 @@
 {
   "name": "lego-build",
   "version": "1.0.0",
-  "description": "Lego-build is a CLI tool that makes development fun again by automating routine tasks like creating components, pages, etc",
+  "description": "Lego-build is a flexible CLI tool that makes development fun again by automating routine tasks like creating components, pages, etc",
+  "bugs": {
+    "url": "https://github.com/lego-build/lego-build/issues"
+  },
+  "funding": "https://opencollective.com/lego-build-collective",
   "main": "lego-build.js",
   "bin": "lego-build.js",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "redux",
+    "component-generator",
+    "cli",
+    "generator",
+    "boilerplate"
+  ],
   "author": "The OG Team",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lego-build/lego-build"
+  },
+  "homepage": "https://lego-build.github.io",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2"
