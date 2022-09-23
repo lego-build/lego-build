@@ -13,9 +13,9 @@ const Problem = () => {
             more structured, we divided our complicated programs into smaller
             parts that may be components, pages, hooks, and so on. It works
             though, because we can focus on one portion of our massive software
-            at a moment, but there's an issue. There are numerous repetitive
-            actions that must be completed in a React project with multiple
-            components (even tiny apps might have many components).
+            at a moment, but there's an issue. In a React app with a lot of
+            components (even small apps can have many components) there's a lot
+            of repetitive tasks that need to be done.
           </p>
           <p>
             Need a new component? Create a folder for it, a JSX file with the
