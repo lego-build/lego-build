@@ -7,7 +7,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { Community, Contact, Docs, Home } from "./pages";
+import { Community, Contact, Docs, Error, Home } from "./pages";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +21,7 @@ root.render(
         <Route path="/docs/:subpage" exact element={<Docs />} />
         <Route path="/community" exact element={<Community />} />
         <Route path="/community/:workflow_id" exact element={<Community />} />
+        <Route path="*" exact element={<Error />} />
       </Routes>
     </Router>
   </React.StrictMode>

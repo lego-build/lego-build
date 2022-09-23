@@ -1,0 +1,31 @@
+@import "../../sass/abstracts/abstract";
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  padding: 25px;
+  --horizontal-padding: 25px;
+  --vertical-padding: 8px;
+
+  h1,
+  p {
+    padding: var(--vertical-padding) var(--horizontal-padding);
+  }
+
+  h1 {
+    font-size: 25px;
+    font-weight: 600;
+    width: fit-content;
+    border-right: 1.5px solid #cccccc;
+  }
+  p {
+    color: #737373;
+    font-size: 17px;
+  }
+  a {
+    text-decoration: underline;
+    color: $Link;
+  }
+}
