@@ -141,7 +141,7 @@ class Block {
     if (
       this.config.blockExists(newBlockName)
     ) {
-      Logger.logError(`The block "${newBlockName}" already exists`);
+      Logger.logError(`The ${this.config.getBlockType()} "${newBlockName}" already exists`);
       process.exit();
     }
     const blockFileMap = this.config.getBlockFiles().generateBlockFilesMap();
