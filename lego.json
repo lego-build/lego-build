@@ -59,6 +59,14 @@
     },
     "MODULE_SCSS": {
       "name": "index.module.scss"
+    },
+    "REDUCER": {
+      "name": "<name>.jsx",
+      "template": "DEFAULT"
+    },
+    "ACTION": {
+      "name": "<name>.jsx",
+      "template": "DEFAULT"
     }
   }
 }
