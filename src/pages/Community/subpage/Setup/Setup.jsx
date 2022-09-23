@@ -52,10 +52,16 @@ const Setup = ({ loading, workflows }) => {
       <div className={style.setup}>
         <div className={style.content}>
           <span className={style.link}>
-            By{" "}
-            <a href={author.profileLink} rel="noreferrer" target="_blank" >
-              {author.name}
-            </a>
+            {author ? (
+              <>
+                By{" "}
+                <a href={author.profileLink} rel="noreferrer" target="_blank">
+                  {author.name}
+                </a>
+              </>
+            ) : (
+              <>Anonymous</>
+            )}
           </span>
           <h1
             className={style.title}

@@ -2,7 +2,8 @@ import React from "react";
 import { wordParser } from "../../utils/functions";
 import style from "./index.module.css";
 import { HashLink } from "react-router-hash-link";
-const Card = ({ id, title, description, author: { name } }) => {
+const Card = ({ id, title, description, author }) => {
+  const name = author?.name;
   return (
     <HashLink to={`/community/${id}#`}>
       <div className={style.card}>
@@ -16,7 +17,13 @@ const Card = ({ id, title, description, author: { name } }) => {
           <h1 className={style.title}>{title}</h1>
           <p>{description}</p>
           <span className={style.link}>
-            By <span>{name}</span>
+            {name ? (
+              <>
+                By <span>{name}</span>
+              </>
+            ) : (
+              <>Anonymous</>
+            )}
           </span>
         </div>
       </div>
