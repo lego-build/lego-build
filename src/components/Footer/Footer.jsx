@@ -64,7 +64,11 @@ function Footer() {
           <h3>Find Us</h3>
           <p>Connect with us on Twitter and Github!</p>
           <div className={style.icons}>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://twitter.com/npmlegobuild"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg
                 width="32"
                 height="32"
