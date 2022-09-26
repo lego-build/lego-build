@@ -1,5 +1,5 @@
 <br />
-<p align="center"><img src="logo.svg" style="width: 350px"  alt="Logo" /></p>
+<p align="center"><img src="./logo.svg?raw=true" style="width: 350px"  alt="Logo" /></p>
 <!-- <p align="center"><img src="LogoDark.svg#gh-dark-mode-only" style="width: 350px"  alt="Logo" /></p> -->
 <br />
 
