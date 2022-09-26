@@ -20,4 +20,4 @@ jobs:
        with:
           to: 'udochukwukaonyela@gmail.com'
           subject: 'Attention needed'
-          body: 'This is a notification from GitHub actions.'
+          body: 'This is a notification from Lego-build!'
