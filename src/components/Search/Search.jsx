@@ -27,7 +27,11 @@ const Search = ({ value, resetValue }) => {
           <Clear />{" "}
         </span>
       </label>
-      <a href="/#" target="_blank" className={style.contribute}>
+      <a
+        href="https://github.com/lego-build/community"
+        target="_blank"
+        className={style.contribute}
+      >
         Contribute yours
       </a>
     </div>
