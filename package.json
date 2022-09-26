@@ -1,5 +1,5 @@
 {
-  "name": "lego-build",
+  "name": "@ogteam/lego-build",
   "version": "1.0.0",
   "description": "Lego-build is a flexible CLI tool that makes development fun again by automating routine tasks like creating components, pages, etc",
   "bugs": {
