@@ -1,6 +1,6 @@
 <br />
-<p align="center"><img src="logo.svg#gh-light-mode-only" style="width: 350px"  alt="Logo" /></p>
-<p align="center"><img src="LogoDark.svg#gh-dark-mode-only" style="width: 350px"  alt="Logo" /></p>
+<p align="center"><img src="logo.svg" style="width: 350px"  alt="Logo" /></p>
+<!-- <p align="center"><img src="LogoDark.svg#gh-dark-mode-only" style="width: 350px"  alt="Logo" /></p> -->
 <br />
 
 ## Overview
