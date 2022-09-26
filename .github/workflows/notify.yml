@@ -15,16 +15,8 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
-     - name: Send to udoka
      - uses: cinotify/github-action@main
        with:
           to: 'udochukwukaonyela@gmail.com'
           subject: 'Attention needed'
           body: 'This is a notification from GitHub actions.'
-     - name: Send to trust
-     - uses: cinotify/github-action@main
-       with:
-        to: 'akpetitrust@gmail.com'
-        subject: 'Attention needed'
-        body: 'This is a notification from GitHub actions.'
-        
