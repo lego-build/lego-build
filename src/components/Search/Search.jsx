@@ -29,6 +29,7 @@ const Search = ({ value, resetValue }) => {
       </label>
       <a
         href="https://github.com/lego-build/community"
+        rel="noreferrer"
         target="_blank"
         className={style.contribute}
       >
