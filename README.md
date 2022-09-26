@@ -44,7 +44,7 @@ We welcome any suggestions for improving the tool. Simply create a [new issue](h
 
 ## 💪🏽 Thanks to all Contributors
 
-Thanks a lot for spending your time helping Lego-build grow. Thanks a lot! Keep rocking🍻
+Thanks a lot for spending your time helping Lego-build grow.
 
 [![Contributors](https://contrib.rocks/image?repo=lego-build/lego-build)](https://github.com/lego-build/lego-build/graphs/contributors)
 
