@@ -50,7 +50,7 @@ class Validators {
     //Check if the syntax is proper
     if (args[2] != "to" || !blockType || !oldBlockName) {
       Logger.logError(
-        `Invalid Syntax, syntax is - 'lego-build rename <block-type>:<old-block-name> to <new-block-name>'`
+        `Invalid Syntax, syntax is - 'lego-build rename <old-block-name>:<block-type> to <new-block-name>'`
       );
       return false;
     }
