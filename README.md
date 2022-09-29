@@ -42,9 +42,9 @@ There are other CLI tools that help you make React components easily. But lego-b
 
 We welcome any suggestions for improving the tool. Simply create a [new issue](https://github.com/lego-build/lego-build/issues/new/choose) to inform us about your new feature proposal. To fix bugs assigned to you, [fork the repository](https://github.com/lego-build/lego-build/fork) and [submit a pull request](https://github.com/lego-build/lego-build/pulls).
 
-## Thanks to all Contributors
+## Thanks to all contributors
 
-Thanks a lot for spending your time helping Lego-build grow.
+Thanks a lot for spending your time helping lego-build grow 🚀.
 
 [![Contributors](https://contrib.rocks/image?repo=lego-build/lego-build)](https://github.com/lego-build/lego-build/graphs/contributors)
 
