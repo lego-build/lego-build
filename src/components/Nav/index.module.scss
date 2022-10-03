@@ -7,7 +7,7 @@
   align-items: center;
   overflow: hidden;
 
-  svg {
+  & > a svg {
     width: 170px;
     position: relative;
     z-index: 8;
@@ -61,8 +61,14 @@
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1060px) {
   .nav {
+    .buttonContainer {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
     .menuBtnContainer {
       display: flex;
     }
@@ -95,7 +101,7 @@
     --horizontal-padding: 25px;
     --vertical-padding: 20px;
 
-    svg {
+    & > a svg {
       width: 145px;
     }
 

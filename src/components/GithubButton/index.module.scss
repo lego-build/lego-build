@@ -1,0 +1,34 @@
+.button {
+  font-size: 0.75em;
+  background-color: #008f75;
+  border: 2px solid #008f75;
+  width: fit-content;
+  color: white;
+  padding: 0.5em 1.2em;
+  border-radius: 9999px;
+  font-weight: 500;
+  transform: scale(1);
+  transition: transform 0.3s;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  line-height: 0.5em;
+
+  @media screen and (max-width: 600px) {
+    --size: 35px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+    position: relative;
+    z-index: 6;
+    span {
+      display: none;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

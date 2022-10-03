@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavLink from "../NavLink/NavLink";
 import style from "./index.module.css";
 import { NavLink as Link } from "react-router-dom";
+import GithubButton from "../GithubButton/GithubButton";
 
 function Nav() {
   const navItems = [
@@ -92,14 +93,17 @@ function Nav() {
           </li>
         ))}
       </ul>
-      <span
-        className={`${style.menuBtnContainer} ${
-          navIsActive ? style.active : ""
-        }`}
-        onClick={() => setNavIsActive((prevValue) => !prevValue)}
-      >
-        <span className={style.menuBtn}></span>
-      </span>
+      <div className={style.buttonContainer}>
+        <GithubButton />
+        <span
+          className={`${style.menuBtnContainer} ${
+            navIsActive ? style.active : ""
+          }`}
+          onClick={() => setNavIsActive((prevValue) => !prevValue)}
+        >
+          <span className={style.menuBtn}></span>
+        </span>
+      </div>
     </nav>
   );
 }
