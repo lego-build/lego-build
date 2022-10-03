@@ -47,7 +47,7 @@ const Reason = () => {
       </div>
       <BlurBlob className={style.watermark} />
       <p className={style.cta}>
-        Are you certain that we're good?{" "}
+        Convinced we're good?{" "}
         <HashLink to={"/docs#"} className={style.link}>
           Get started
         </HashLink>
