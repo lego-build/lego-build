@@ -3,6 +3,7 @@ const Logger = require("../utils/Logger");
 const ConfigFile = require("./config/ConfigFile");
 const UserInput = require("../utils/UserInput");
 const chalk = require("chalk");
+const File = require("../utils/File");
 
 class Block {
   constructor(blockName, configFile, fileFormats) {
@@ -14,34 +15,27 @@ class Block {
   createBlockFiles = (blockName, fileMap, index) => {
     //Base case
     if (fileMap.size == index) {
-      console.log(`\nCreated '${blockName}' ${chalk.yellow(this.config.getBlockType())} successfully`);
+      console.log(
+        `\nCreated '${blockName}' ${chalk.yellow(
+          this.config.getBlockType()
+        )} successfully`
+      );
       process.exit();
     }
 
     let file = fileMap.get(index);
 
     let templateFile;
-    fs.readFile(file.templateFilePath, (err, data) => {
-      //The template file doesn't exist so it throws an expected error, so use the default
-      //template
-      if (err) {
-        Logger.logError("There was an error reading the template file :(");
-        templateFile = "";
-      } else {
-        templateFile = data.toString().replaceAll("blockName", blockName);
-      }
 
-      fs.writeFile(file.filePath, templateFile, (err) => {
-        if (err) {
-          Logger.logError("There was an error creating new file :)");
-          throw err;
-        } else {
-          Logger.logSuccess(`created '${file.filePath}' successfully`);
+    const data = File.read(file.templateFilePath);
 
-          this.createBlockFiles(blockName, fileMap, ++index);
-        }
-      });
-    });
+    templateFile = !data
+      ? ""
+      : data.toString().replaceAll("blockName", blockName);
+
+    File.write(file.filePath, templateFile);
+
+    this.createBlockFiles(blockName, fileMap, ++index);
   };
 
   createBlock(blockName) {
@@ -50,27 +44,14 @@ class Block {
 
     let directory = this.config.getBlockDirectory(blockName);
 
-    fs.mkdir(directory, { recursive: true }, (err) => {
-      if (err) {
-        Logger.logError("Error occured creating directory");
-        return;
-      } else {
-        this.createBlockFiles(blockName, filePathsMap, 0);
-      }
-    });
+    File.mkdir(directory);
+
+    this.createBlockFiles(blockName, filePathsMap, 0);
   }
 
   renameDirectory(oldDirectory, newDirectory) {
-    fs.rename(oldDirectory, newDirectory, (err) => {
-      if (err && err.code === "ENOENT") {
-        // Old directory doesn't exist
-        Logger.logError(
-          `The directory "${oldDirectory}" doesn't exist to be renamed`
-        );
-      }
-
-      process.exit();
-    });
+    File.rename(oldDirectory, newDirectory);
+    process.exit();
   }
 
   generateNewBlockPath(oldBlockPath, oldBlockName, newBlockName) {
@@ -112,20 +93,9 @@ class Block {
         newBlockName
       );
 
-      fs.rename(oldFileName, newFileName, (err) => {
-        if (err && err.code === "ENOENT") {
-          // Old file doesn't exist
-          Logger.logError(
-            `The file "${oldFileName}" doesn't exist to be renamed`
-          );
-        } else {
-          Logger.logSuccess(
-            `${oldFileName} was renamed to ${newFileName} successfully`
-          );
-        }
+      File.rename(oldFileName, newFileName);
 
-        this.renameAllFiles(oldBlockName, newBlockName, fileMap, ++index);
-      });
+      this.renameAllFiles(oldBlockName, newBlockName, fileMap, ++index);
     }
   }
 
@@ -138,10 +108,10 @@ class Block {
   rename(oldBlockName, newBlockName) {
     //Check if the block already exists
 
-    if (
-      this.config.blockExists(newBlockName)
-    ) {
-      Logger.logError(`The ${this.config.getBlockType()} "${newBlockName}" already exists`);
+    if (this.config.blockExists(newBlockName)) {
+      Logger.logError(
+        `The ${this.config.getBlockType()} "${newBlockName}" already exists`
+      );
       process.exit();
     }
     const blockFileMap = this.config.getBlockFiles().generateBlockFilesMap();

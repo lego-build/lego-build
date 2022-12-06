@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const Logger = require("./Logger");
+const File = require("./File");
 const UserInput = require("./UserInput");
 
 class Init {
@@ -9,7 +10,7 @@ class Init {
   }
 
   createPackageFile() {
-    let defaaultPackage = `{
+    let defaultPackage = `{
   "blocks": [
     {
       "type": "component",
@@ -71,15 +72,9 @@ class Init {
 }
     `;
 
-    fs.writeFile("lego.json", defaaultPackage, (err) => {
-      if (err) {
-        Logger.logError("There was an error creating the package file :(");
-        return;
-      } else {
-        Logger.logSuccess("Package file created successfully");
-        this.callback();
-      }
-    });
+    File.write("lego.json", defaultPackage);
+
+    this.callback();
   }
 
   generatePackageFile() {

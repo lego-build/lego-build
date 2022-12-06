@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const FileFormats = require("./FileFormats");
 const BlockFiles = require("./BlockFiles");
+const File = require("../../utils/File");
 
 class ConfigFile {
   constructor(blockName, configFile, fileFormats) {
@@ -9,10 +10,9 @@ class ConfigFile {
     this.blockFiles = new BlockFiles(blockName, this.FileFormats, configFile);
     this.blockName = blockName;
     this.configFile = configFile;
-  
   }
 
-  getBlockFiles(){
+  getBlockFiles() {
     return this.blockFiles;
   }
 
@@ -20,16 +20,14 @@ class ConfigFile {
     return !!this.configFile.isFile;
   }
 
-  blockExists(blockName){
-    if(this.configFile.isFile){
+  blockExists(blockName) {
+    if (this.configFile.isFile) {
       let filePath = this.blockFiles.generateFilePath(this.configFile.file);
       filePath = filePath.replaceAll(this.blockName, blockName);
-      return fs.existsSync(filePath)
+      return File.exists(filePath);
     }
 
-    return fs.existsSync(this.configFile.path + "/" + blockName);
-
-
+    return File.exists(this.configFile.path + "/" + blockName);
   }
   getBlockDirectory(blockName) {
     if (this.isFile()) {

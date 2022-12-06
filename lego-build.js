@@ -5,6 +5,7 @@ const Help = require("./utils/Help.js");
 const Init = require("./utils/init");
 const Logger = require("./utils/Logger.js");
 const validators = require("./utils/validators");
+const File = require("./utils/File");
 
 let config;
 
@@ -52,21 +53,14 @@ const arguments = process.argv.slice(2);
 const main = () => {
   if (fs.existsSync("lego.json")) {
     //Package already exists
-    fs.readFile("lego.json", (err, data) => {
-      if (err) {
-        Logger.logError("There was an issue reading your file :(");
-        return;
-      }
+    const data = File.read("lego.json");
 
-      try {
-        config = JSON.parse(data.toString());
-      } catch (e) {
-        Logger.logError("There was an issue parsing your lego.json :(");
-        return;
-      }
+    const config = catchSync(JSON.parse(data.toString()), (err) =>
+      Logger.logError("There was an issue parsing your lego.json :(")
+    );
 
-      start();
-    });
+    if (!config) return; // Just to be safe
+    start();
   } else {
     if (arguments[0] != "init" && arguments[0] != "help") {
       const init = new Init(main);
